@@ -88,23 +88,27 @@ ql_symbiflow -compile -src /root/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v 
 apio drivers --serial-enable
 
 
-#Open a terminal in termux
+#From termux-ubuntu
 cd /storage/emulated/0/Download
 svn co https://github.com/gadepall/pygmy/trunk/installation/blink
-
-#From termux-ubuntu
-svn co https://github.com/gadepall/pygmy/trunk/installation/blink
 ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
-#helloworldfpga.bin must be generated successfully in /storage/emulated/0/Download/blink
+#helloworldfpga.bin must be generated successfully in /storage/emulated/0/Download/#blink
 
+#Transfer .bin file to RPI
+scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
 
-ssh -tt -n -L 8086:localhost:8086 pi@192.168.0.114 '/usr/sbin/ser2net -d -C "8086:raw:600:/dev/ttyACM0:115200 NONE 1STOPBIT 8DATABITS -XONXOFF LOCAL -RTSCTS HANGUP_WHEN_DONE "' 
-#Modify the ip address 10.0.0.8 and the port /dev/ttyACM0 if necessary  The terminal will hang, do not disturb it.
+#On RPI execute the following 
+
+python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+
+#ssh -tt -n -L 8086:localhost:8086 pi@192.168.0.114 '/usr/sbin/ser2net -d -C "8086:raw:600:/#dev/ttyACM0:115200 NONE 1STOPBIT 8DATABITS -XONXOFF LOCAL -RTSCTS #HANGUP_WHEN_DONE "' 
+#Modify the ip address 10.0.0.8 and the port /dev/ttyACM0 if necessary  The terminal will #hang, do not disturb it.
 
 #avrdude -p atmega328p -c arduino -P net:localhost:8086 -U flash:w:hello.hex
 
+#python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-#programmer-gui.py --port net:localhost:8086  --appfpga /storage/emulated/0/Download/#blink/helloworldfpga.bin --mode fpga
 
-python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port net:localhost:8086  --appfpga /storage/emulated/0/Download/blink/helloworldfpga.bin --mode fpga
+
 
 
 

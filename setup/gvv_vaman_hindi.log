@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  15 JAN 2021 19:05
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  15 JAN 2021 21:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1972,97 +1972,105 @@ File: tikzlibraryshapes.gates.logic.IEC.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/generic/pgf/libra
 ries/shapes/circuits/pgflibraryshapes.gates.logic.IEC.code.tex))
 
-Package fontspec Info: Font family 'Nakula.ttf(0)' created for font
-(fontspec)             'Nakula.ttf' with options [Ligatures=TeX].
+Package fontspec Info: Font family 'Sanskrit_2003.ttf(0)' created for font
+(fontspec)             'Sanskrit_2003.ttf' with options [Ligatures=TeX].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[Nakula.ttf]/OT:language=dflt;mapping=tex-text;"
+(fontspec)             <->"[Sanskrit_2003.ttf]/OT:language=dflt;mapping=tex-tex
+t;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
+
+
+Package Listings Warning: Unknown column format `fullflexible literate' on inpu
+t line 99.
 
 (./gvv_vaman_hindi.aux)
 \openout1 = `gvv_vaman_hindi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 102.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 106.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
-102.
+106.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oml
 txmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 106.
 LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
-102.
+106.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oms
 txsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 106.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-02.
+06.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr
 .fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 106.
 LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
-102.
+106.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/omx
 txex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 106.
 LaTeX Font Info:    Trying to load font information for U+txexa on input line 1
-02.
+06.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 exa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
 
 
-LaTeX Font Warning: Font shape `TU/Nakula.ttf(0)/b/n' undefined
-(Font)              using `TU/Nakula.ttf(0)/m/n' instead on input line 102.
+LaTeX Font Warning: Font shape `TU/Sanskrit_2003.ttf(0)/b/n' undefined
+(Font)              using `TU/Sanskrit_2003.ttf(0)/m/n' instead on input line 1
+06.
 
 
-LaTeX Font Warning: Font shape `TU/Nakula.ttf(0)/m/it' undefined
-(Font)              using `TU/Nakula.ttf(0)/m/n' instead on input line 102.
+LaTeX Font Warning: Font shape `TU/Sanskrit_2003.ttf(0)/m/it' undefined
+(Font)              using `TU/Sanskrit_2003.ttf(0)/m/n' instead on input line 1
+06.
 
 
-LaTeX Font Warning: Font shape `TU/Nakula.ttf(0)/b/it' undefined
-(Font)              using `TU/Nakula.ttf(0)/b/n' instead on input line 102.
+LaTeX Font Warning: Font shape `TU/Sanskrit_2003.ttf(0)/b/it' undefined
+(Font)              using `TU/Sanskrit_2003.ttf(0)/b/n' instead on input line 1
+06.
 
 -- Lines per column: 50 (exact).
-LaTeX Info: Redefining \celsius on input line 102.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 102
+LaTeX Info: Redefining \celsius on input line 106.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 106
 .
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 102.
-Package gensymb Info: Using \Omega for \ohm on input line 102.
+LaTeX Info: Redefining \ohm on input line 106.
+Package gensymb Info: Using \Omega for \ohm on input line 106.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -2088,7 +2096,7 @@ Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box135
-Package hyperref Info: Link coloring OFF on input line 102.
+Package hyperref Info: Link coloring OFF on input line 106.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/hyperref/na
 meref.sty
@@ -2104,71 +2112,71 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count403
 )
-LaTeX Info: Redefining \ref on input line 102.
-LaTeX Info: Redefining \pageref on input line 102.
-LaTeX Info: Redefining \nameref on input line 102.
+LaTeX Info: Redefining \ref on input line 106.
+LaTeX Info: Redefining \pageref on input line 106.
+LaTeX Info: Redefining \nameref on input line 106.
  (./gvv_vaman_hindi.out) (./gvv_vaman_hindi.out)
 \@outlinefile=\write5
 \openout5 = `gvv_vaman_hindi.out'.
 
 \c@lstlisting=\count404
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
-02.
+06.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1
 txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
-2.
+6.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ur
 sfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 1
-02.
+06.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 mia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 1
-02.
+06.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 sya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 1
-02.
+06.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 syb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 1
-02.
+06.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/utx
 syc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for OT1+txss on input line 
-102.
+106.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1
 txss.fd
 File: ot1txss.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 102.
+(Font)              scaled to size 11.39996pt on input line 106.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 102.
+(Font)              scaled to size 7.59998pt on input line 106.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 5.69998pt on input line 102.
+(Font)              scaled to size 5.69998pt on input line 106.
 LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 
-102.
+106.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1
 txtt.fd
@@ -2180,17 +2188,18 @@ File: ot1txtt.fd 2000/12/15 v3.1
 \c@lemma=\count408
 \c@example=\count409
 \c@rem=\count410
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 258.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 262.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 13.29996pt on input line 258.
+(Font)              scaled to size 13.29996pt on input line 262.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 9.30992pt on input line 258.
+(Font)              scaled to size 9.30992pt on input line 262.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 258.
+(Font)              scaled to size 6.64998pt on input line 262.
 
 
-LaTeX Font Warning: Font shape `TU/Nakula.ttf(0)/m/sc' undefined
-(Font)              using `TU/Nakula.ttf(0)/m/n' instead on input line 261.
+LaTeX Font Warning: Font shape `TU/Sanskrit_2003.ttf(0)/m/sc' undefined
+(Font)              using `TU/Sanskrit_2003.ttf(0)/m/n' instead on input line 2
+65.
 
 (./gvv_vaman_hindi.toc)
 \tf@toc=\write6
@@ -2201,30 +2210,40 @@ LaTeX Font Warning: Font shape `TU/Nakula.ttf(0)/m/sc' undefined
 /se-ascii-print.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
-)) (./hindi/nomen.tex) [1
+)) (./hindi/nomen.tex)
+Underfull \vbox (badness 1189) has occurred while \output is active []
 
+
+Underfull \hbox (badness 3601) in paragraph at lines 364--365
+\TU/Sanskrit_2003.ttf(0)/m/sc/12 ऊपर helloworldfpga.bin सञ्चिका प्रेषण पूर्व
+ []
+
+[1
+
+
+] [2
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 381.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 381.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
  (./gvv_vaman_hindi.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 381.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 381.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 408.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 408.
 Package rerunfilecheck Info: File `gvv_vaman_hindi.out' has not changed.
-(rerunfilecheck)             Checksum: A37F0648932631B7CC8D1323F728CCA5;110.
+(rerunfilecheck)             Checksum: 3350D5E7632C7B86D1E43BF9187FC08A;178.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 381.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 408.
  ) 
 Here is how much of TeX's memory you used:
- 49308 strings out of 479418
- 1154286 string characters out of 5874903
- 1634923 words of memory out of 5000000
- 65895 multiletter control sequences out of 15000+600000
+ 49309 strings out of 479418
+ 1154724 string characters out of 5874903
+ 1677042 words of memory out of 5000000
+ 65896 multiletter control sequences out of 15000+600000
  559448 words of font info for 125 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191
- 60i,8n,91p,678b,1013s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,91p,678b,2179s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gvv_vaman_hindi.pdf (1 page).
+Output written on gvv_vaman_hindi.pdf (2 pages).

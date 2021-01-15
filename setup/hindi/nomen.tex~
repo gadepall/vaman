@@ -25,13 +25,18 @@
 %\nomenclature{C Program}{ C क्रमादेश}
 \nomenclature{Programming}{  क्रमादेशन}
 \nomenclature{Frequency}{ आवृत्ति}
-\nomenclature{Bitlenght}{ मात्राभार}
+\nomenclature{Bit length}{ मात्राभार}
 \nomenclature{File}{ पत्र}
 \nomenclature{Cable}{ रज्जु}
 \nomenclature{Button}{ घुंडी}
 \nomenclature{Left}{ वाम}
 \nomenclature{Right}{दक्षिण}
 \nomenclature{Blink}{श्मील}
+\nomenclature{IP Address}{अनिकेत}
+\nomenclature{Send}{प्रेषण}
+\nomenclature{File}{सञ्चिका}
+\nomenclature{Setup}{सप्रतिष्ठान}
+\nomenclature{Execute}{चालयन}
 
 %\nomenclature{Binary}{ द्विआधारी}
 %\nomenclature{Truth Table}{सत्य सारणी}
@@ -55,7 +60,8 @@
 \nomenclature{Hardware}{यंत्रोपवस्तु}
 \nomenclature{Software}{अयंत्रोपवस्तु}
 \nomenclature{Computer}{संगणक}
-\nomenclature{Board}{मंडल}
+\nomenclature{Board}{परिपथफलक}
+\nomenclature{Port}{पत्तन}
 
 
 

@@ -64,8 +64,8 @@
 
 %\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
 \usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
-%\setmainfont{Sanskrit_2003.ttf}
-\setmainfont{Nakula.ttf}
+\setmainfont{Sanskrit_2003.ttf}
+%\setmainfont{Nakula.ttf}
 %\setmainfont{Lohit-Devanagari.ttf}
 
 
@@ -87,11 +87,15 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 \def\inputGnumericTable{}                                 %%
 
+
 \lstset{
-%language=C,
+%language=shell,
+%language = Prolog,
 frame=single, 
 breaklines=true,
+%showstringspaces=false,
 columns=fullflexible
+literate = {-}{-}1
 }
 %\lstset{
 %language=tex,
@@ -302,8 +306,8 @@ columns=fullflexible
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-वामन एक सूक्ष्म नियंत्रण मंडल है जो  प्राथमिक विद्यालयों से लेकर  विश्व विद्यालयों के सभी  छात्रों को एक सरल विधि से संगणक क्रमादेश,  यंत्रोपवस्तु एवं अयंत्रोपवस्तु
-सीखने में सहायक है.  इस लेख के द्वारा  वामन से छात्रों का परिचय कराया जाएगा.
+वामन एक सूक्ष्म नियंत्रण परिपथफलक है जो  प्राथमिक विद्यालयों से लेकर  विश्व विद्यालयों के सभी  छात्रों को एक सरल विधि से संगणक क्रमादेश,  यंत्रोपवस्तु एवं अयंत्रोपवस्तु
+सीखने में सहायक है।  इस लेख के द्वारा  वामन से छात्रों का परिचय कराया जाएगा।
 
 
 %ॐ श्री गणेशाय नमः॥
@@ -323,30 +327,46 @@ columns=fullflexible
 \numberwithin{equation}{enumi}
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
-\item वामन की आवृत्ति 72 MHz है. इसका मात्राभार  ज्ञात कीजिये.
+\item वामन की आवृत्ति 72 MHz है। इसका मात्राभार  ज्ञात कीजिये।
 \\
 \solution 
 \begin{align}
 \log_2\brak{72000000} \approx 27
 \end{align}
-\item पायथन क्रमादेश लिख कर उक्त उत्तर प्राप्त करें.
+\item पायथन क्रमादेश लिख कर उक्त उत्तर प्राप्त करें।
 \\
-\solution निम्न क्रमादेश को निष्पादित करें.
+\solution निम्न क्रमादेश का चालयन करें।
 \begin{lstlisting}
 codes/blink/freq_count.py
 \end{lstlisting}
+\end{enumerate}
 %
-\item वामन एवं रास्पबेरी पइ  की यूएसबी रज्जु से संधि करें.
-\item संधि स्थल के निकट वाम दिशा में एक प्रकाश उत्सर्जक यंत्र एवं घुंडी  उपस्थित है.  वहीं दक्षिण में एक और घुंडी है.  
-\item दक्षिण घुंडी को दबाकर शीघ्र वाम घुंडी को दबायें.  हरित दीप श्मीलित होते हुए दिखेगा.  यह संकेत हैं कि वामन
-क्रमादेश के लिए सिद्ध है.
+\section{सप्रतिष्ठान}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
 
-\item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों को निष्पादित करें.
+\item वामन एवं रास्पबेरी पै  को यूएसबी रज्जु से योजित करें।
+\item योजित स्थल के निकट वाम दिशा में एक प्रकाश उत्सर्जक यंत्र एवं गण्ड  उपस्थित है।  वहीं दक्षिण में एक और गण्ड है।  
+\item दक्षिण गण्ड को दबाकर शीघ्र वाम गण्ड को दबायें।  हरित दीप श्मीलित होते हुए दिखेगा।  यह संकेत हैं कि वामन
+क्रमादेश के लिए सिद्ध है।
+
+\item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों का चालयन करें।
 \begin{lstlisting}
 cd /storage/emulated/0/Download
-
+svn co https://github.com/gadepall/pygmy/trunk/installation/blink
+ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
 \end{lstlisting}
-
+ऊपर helloworldfpga.bin सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें। 
+\item अब रास्पबेरी पै  में प्रवेश कर निम्न  आदेश का चालयन करें
+\begin{lstlisting}
+python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+\end{lstlisting}
+\item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक रक्तिम रंग में श्मीलित होगा। 
 \end{enumerate}
 
 %\input{hindi/sevenseg.tex}

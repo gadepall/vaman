@@ -3,11 +3,17 @@
 \nomenclatureentry{aBit length@[{Bit length}]\begingroup  मात्राभार\nomeqref {0.0.0}|nompageref}{1}
 \nomenclatureentry{aFile@[{File}]\begingroup  पत्र\nomeqref {0.0.0}|nompageref}{1}
 \nomenclatureentry{aCable@[{Cable}]\begingroup  रज्जु\nomeqref {0.0.0}|nompageref}{1}
-\nomenclatureentry{aButton@[{Button}]\begingroup  घुंडी\nomeqref {0.0.0}|nompageref}{1}
+\nomenclatureentry{aButton@[{Button}]\begingroup  गण्ड\nomeqref {0.0.0}|nompageref}{1}
 \nomenclatureentry{aLeft@[{Left}]\begingroup  वाम\nomeqref {0.0.0}|nompageref}{1}
 \nomenclatureentry{aRight@[{Right}]\begingroup दक्षिण\nomeqref {0.0.0}|nompageref}{1}
 \nomenclatureentry{aBlink@[{Blink}]\begingroup श्मील\nomeqref {0.0.0}|nompageref}{1}
+\nomenclatureentry{aIP Address@[{IP Address}]\begingroup अनिकेत\nomeqref {0.0.0}|nompageref}{1}
+\nomenclatureentry{aSend@[{Send}]\begingroup प्रेषण\nomeqref {0.0.0}|nompageref}{1}
+\nomenclatureentry{aFile@[{File}]\begingroup सञ्चिका\nomeqref {0.0.0}|nompageref}{1}
+\nomenclatureentry{aSetup@[{Setup}]\begingroup सप्रतिष्ठान\nomeqref {0.0.0}|nompageref}{1}
+\nomenclatureentry{aExecute@[{Execute}]\begingroup चालयन\nomeqref {0.0.0}|nompageref}{1}
 \nomenclatureentry{aHardware@[{Hardware}]\begingroup यंत्रोपवस्तु\nomeqref {0.0.0}|nompageref}{1}
 \nomenclatureentry{aSoftware@[{Software}]\begingroup अयंत्रोपवस्तु\nomeqref {0.0.0}|nompageref}{1}
 \nomenclatureentry{aComputer@[{Computer}]\begingroup संगणक\nomeqref {0.0.0}|nompageref}{1}
-\nomenclatureentry{aBoard@[{Board}]\begingroup मंडल\nomeqref {0.0.0}|nompageref}{1}
+\nomenclatureentry{aBoard@[{Board}]\begingroup परिपथफलक\nomeqref {0.0.0}|nompageref}{1}
+\nomenclatureentry{aPort@[{Port}]\begingroup पत्तन\nomeqref {0.0.0}|nompageref}{1}
