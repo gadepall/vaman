@@ -73,7 +73,6 @@ yosys -h
 qlfasm -h
 ql_symbiflow -h
 
-sudo su
 #Test installation
 cd $INSTALL_DIR/quicklogic-arch-defs/tests/counter_16bit
 ql_symbiflow -compile -d ql-eos-s3 -P pd64 -v counter_16bit.v -t top -p chandalar.pcf -dump binary
@@ -81,14 +80,31 @@ ql_symbiflow -compile -d ql-eos-s3 -P pd64 -v counter_16bit.v -t top -p chandala
 
 #Blink program
 cd /root/
-svn co https://github.com/gadepall/termux/trunk/pygmy/blink
+svn co https://github.com/gadepall/pygmy/trunk/installation/blink
 ql_symbiflow -compile -src /root/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
 #helloworldfpga.bin must be generated successfully in /root/blink
 
 #Now flashing to the board through usb
 apio drivers --serial-enable
 
-python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /root/blink/helloworldfpga.bin --mode fpga
+
+#Open a terminal in termux
+cd /storage/emulated/0/Download
+svn co https://github.com/gadepall/pygmy/trunk/installation/blink
+
+#From termux-ubuntu
+svn co https://github.com/gadepall/pygmy/trunk/installation/blink
+ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+#helloworldfpga.bin must be generated successfully in /storage/emulated/0/Download/blink
+
+
+ssh -tt -n -L 8086:localhost:8086 pi@192.168.0.114 '/usr/sbin/ser2net -d -C "8086:raw:600:/dev/ttyACM0:115200 NONE 1STOPBIT 8DATABITS -XONXOFF LOCAL -RTSCTS HANGUP_WHEN_DONE "' 
+#Modify the ip address 10.0.0.8 and the port /dev/ttyACM0 if necessary  The terminal will hang, do not disturb it.
+
+#avrdude -p atmega328p -c arduino -P net:localhost:8086 -U flash:w:hello.hex
+
+#On Raspberry Pi
+python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port net:localhost:8086  --appfpga /storage/emulated/0/Download/blink/helloworldfpga.bin --mode fpga
 
 
 

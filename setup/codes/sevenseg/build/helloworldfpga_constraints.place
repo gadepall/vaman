@@ -1,0 +1,10 @@
+$iopadmap$helloworldfpga.redled  22  32  0  # set_io redled		34
+$iopadmap$helloworldfpga.greenled  24  32  0  # set_io greenled		39
+$iopadmap$helloworldfpga.blueled  30  32  0  # set_io blueled		38
+$iopadmap$helloworldfpga.leda   8   3  0  # set_io leda     6
+$iopadmap$helloworldfpga.ledb  12   3  0  # set_io ledb     3
+$iopadmap$helloworldfpga.ledc  14   3  0  # set_io ledc     64
+$iopadmap$helloworldfpga.ledd  18   3  0  # set_io ledd     63
+$iopadmap$helloworldfpga.lede  20   3  0  # set_io lede     61
+$iopadmap$helloworldfpga.ledf  24   3  0  # set_io ledf     59
+$iopadmap$helloworldfpga.ledg  26   3  0  # set_io ledg     57

@@ -1,0 +1,2 @@
+\contentsline {section}{\nonumberline नामकरण}{1}{section*.2}%
+\contentsline {section}{\numberline {1}आवृत्ति}{1}{section.1}%
