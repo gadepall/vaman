@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  16 JAN 2021 15:18
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  16 JAN 2021 17:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2231,9 +2231,6 @@ Package rerunfilecheck Info: File `gvv_vaman_hindi.out' has not changed.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 412.
  ) 
