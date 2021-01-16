@@ -357,12 +357,12 @@ python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-progr
 \numberwithin{equation}{enumi}
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
-\item निम्न क्रमादेश 
+\item निम्न वेरिलॉग क्रमादेश
 \label{सम:क्रमादेश}
 \begin{lstlisting}
 codes/blink/helloworldfpga.v
 \end{lstlisting}
-की  इन पङ्क्तियों पर ध्यान दें.
+की  इन पङ्क्तियों पर ध्यान दें । 
 %
 \begin{lstlisting}
 delay = delay+1;                                                                                                   
@@ -373,7 +373,7 @@ led=!led;
 end
 \end{lstlisting}
 %
-इससे हैम ज्ञात कर सकते हैं की वामन के दीप की श्मीलनावृत्ति  20 MHz है. 
+इससे हम ज्ञात कर सकते हैं की वामन के दीप की श्मीलनावृत्ति  20 MHz है ।  
 \item निर्देश \ref{सम:क्रमादेश} में 
 \label{सम:द्विआधार}
 \begin{lstlisting}
@@ -384,16 +384,18 @@ if(delay > 20000000)
 \begin{lstlisting}
 if(delay==27'b1001100010010110100000000)
 \end{lstlisting}
-से प्रतिस्थापित कर क्रमादेश का चालयन करें. 
+से प्रतिस्थापित कर क्रमादेश का चालयन करें ।  
+\item यह विदित है कि यदि आवृत्ति 20 MHz है तो अतिकाल 1 निमिश है.  
+वेरिलॉग क्रमादेश में संशोधन कर अतिकाल को 0.5 निमिश करें.
 \item 20 MHz का  मात्राभार  ज्ञात कीजिये।
 \\
 \solution 
 \begin{align}
-\log_2\brak{72000000} \approx 27
+\log_2\brak{20000000} \approx 27
 \end{align}
 \item पायथन क्रमादेश लिख कर उक्त उत्तर प्राप्त करें।
 \\
-\solution निम्न क्रमादेश का चालयन कर निर्देश \ref{सम:द्विआधार} से तुलना करें.
+\solution निम्न क्रमादेश का चालयन कर निर्देश \ref{सम:द्विआधार} से तुलना करें । 
 \begin{lstlisting}
 codes/blink/freq_count.py
 \end{lstlisting}
@@ -405,7 +407,7 @@ assign redled = led; //If you want to change led colour to red,
 \begin{lstlisting}
 assign blueled = led; 
 \end{lstlisting}
-से प्रतिस्थापित कर निष्पादित करें.
+से प्रतिस्थापित कर निष्पादित करें । 
 \end{enumerate}
 \end{document}
 
