@@ -49,7 +49,7 @@
 %\nomenclature{Block Diagram}{खण्डारेख}
 %\nomenclature{Circuit}{परिपथ}
 %\nomenclature{Simplified Expression}{सरलीकृत व्यंजक}
-%\nomenclature{Delay}{अतिकाल}
+\nomenclature{Delay}{अतिकाल}
 %\nomenclature{Synchronous}{तुल्यकालिक}
 %\nomenclature{Finite State Machine}{परिमित अवस्था यंत्र}
 %\nomenclature{State Transition Table}{अवस्थान्तरण सारणी}

@@ -19,13 +19,14 @@ module helloworldfpga(
     reg[26:0] delay;
      reg	led;
 always@(posedge clk) begin
-delay = delay+1;
+delay = delay+1; //incrementing the counter.
+//counts from 0 to 20000000 in 1 second
 
 //if(delay==27'b1001100010010110100000000) // blink delay in bits
 if(delay > 20000000) //blink delay in decimal
 begin
 delay=27'b0;
-led=!led;
+led=!led; //reset the led
 end
 end
 //    assign blueled = led;	//If you want to change led colour to blue, 
