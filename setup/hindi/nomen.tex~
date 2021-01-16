@@ -26,9 +26,8 @@
 \nomenclature{Programming}{  क्रमादेशन}
 \nomenclature{Frequency}{ आवृत्ति}
 \nomenclature{Bit length}{ मात्राभार}
-\nomenclature{File}{ पत्र}
 \nomenclature{Cable}{ रज्जु}
-\nomenclature{Button}{ घुंडी}
+\nomenclature{Button}{ गण्ड}
 \nomenclature{Left}{ वाम}
 \nomenclature{Right}{दक्षिण}
 \nomenclature{Blink}{श्मील}
@@ -37,6 +36,7 @@
 \nomenclature{File}{सञ्चिका}
 \nomenclature{Setup}{सप्रतिष्ठान}
 \nomenclature{Execute}{चालयन}
+\nomenclature{Interval}{अंतराल}
 
 %\nomenclature{Binary}{ द्विआधारी}
 %\nomenclature{Truth Table}{सत्य सारणी}

@@ -320,26 +320,6 @@ literate = {-}{-}1
 \printnomenclature[1.7in]
 \input{hindi/nomen.tex}
 
-\section{आवृत्ति}
-\renewcommand{\theequation}{\theenumi}
-\renewcommand{\thefigure}{\theenumi}
-\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
-\numberwithin{equation}{enumi}
-\numberwithin{figure}{enumi}
-\numberwithin{table}{enumi}
-\item वामन की आवृत्ति 72 MHz है। इसका मात्राभार  ज्ञात कीजिये।
-\\
-\solution 
-\begin{align}
-\log_2\brak{72000000} \approx 27
-\end{align}
-\item पायथन क्रमादेश लिख कर उक्त उत्तर प्राप्त करें।
-\\
-\solution निम्न क्रमादेश का चालयन करें।
-\begin{lstlisting}
-codes/blink/freq_count.py
-\end{lstlisting}
-\end{enumerate}
 %
 \section{सप्रतिष्ठान}
 \renewcommand{\theequation}{\theenumi}
@@ -361,50 +341,72 @@ svn co https://github.com/gadepall/pygmy/trunk/installation/blink
 ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
 scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
 \end{lstlisting}
-ऊपर helloworldfpga.bin सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें.
+ऊपर helloworldfpga.bin सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें। 
 \item अब रास्पबेरी पै  में प्रवेश कर निम्न  आदेश का चालयन करें
 \begin{lstlisting}
 python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
 \end{lstlisting}
-\item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें।कुछ समय पश्चचात प्रकाश उत्सर्जक रक्तिम रंग में श्मीलित होगा.
+\item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक रक्तिम रंग में श्मीलित होगा। 
 \end{enumerate}
+%
+\section{आवृत्ति}
 
-%\input{hindi/sevenseg.tex}
-%\section{परवर्ती गूढ़वाचक}
-%\input{hindi/incdec.tex}
-%\section{प्रदर्शी गूढ़वाचक}
-%\input{hindi/dispdec.tex}
-%%
-%\section{कार्नो मानचित्र}
-%\subsection{परवर्ती गूढ़वाचक}
-%\input{hindi/kmap_inc.tex}
-%\subsection{प्रदर्शी गूढ़वाचक}
-%\input{hindi/kmap_disp.tex}
-%%
-%\section{निर्गुण अवस्था}
-%\subsection{परवर्ती गूढ़वाचक}
-%\input{hindi/kmapX_inc.tex}
-%\subsection{प्रदर्शी गूढ़वाचक}
-%\input{hindi/kmapX_disp.tex}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+\item निम्न क्रमादेश 
+\label{सम:क्रमादेश}
+\begin{lstlisting}
+codes/blink/helloworldfpga.v
+\end{lstlisting}
+की  इन पङ्क्तियों पर ध्यान दें.
 %
-%\section{तर्क द्वार}
-%\input{hindi/gates.tex}
-%\section{योग-गुणन}
-%\input{hindi/kmap_inc_pos.tex}
-%\section{दशक गणित्र}
-%\input{hindi/decade_counter.tex}
+\begin{lstlisting}
+delay = delay+1;                                                                                                   
+if(delay > 20000000)
+begin
+delay=27'b0;
+led=!led;
+end
+\end{lstlisting}
 %
-%\section{Programming}
-%%\input{chapters/prog.tex}
+इससे हैम ज्ञात कर सकते हैं की वामन के दीप की श्मीलनावृत्ति  20 MHz है. 
+\item निर्देश \ref{सम:क्रमादेश} में 
+\label{सम:द्विआधार}
+\begin{lstlisting}
+if(delay > 20000000)
+\end{lstlisting}
 %
-%
-%
-
-%%\subsection{Incrementing Decoder}
-%\input{chapters/kmap_inc_pos.tex}
-
-%\onecolumn
-
+को 
+\begin{lstlisting}
+if(delay==27'b1001100010010110100000000)
+\end{lstlisting}
+से प्रतिस्थापित कर क्रमादेश का चालयन करें. 
+\item 20 MHz का  मात्राभार  ज्ञात कीजिये।
+\\
+\solution 
+\begin{align}
+\log_2\brak{72000000} \approx 27
+\end{align}
+\item पायथन क्रमादेश लिख कर उक्त उत्तर प्राप्त करें।
+\\
+\solution निम्न क्रमादेश का चालयन कर निर्देश \ref{सम:द्विआधार} से तुलना करें.
+\begin{lstlisting}
+codes/blink/freq_count.py
+\end{lstlisting}
+\item निर्देश \ref{सम:क्रमादेश} में प्रदत्त क्रमादेश में निम्न पङ्क्ति 
+\begin{lstlisting}
+assign redled = led; //If you want to change led colour to red,
+\end{lstlisting}
+को 
+\begin{lstlisting}
+assign blueled = led; 
+\end{lstlisting}
+से प्रतिस्थापित कर निष्पादित करें.
+\end{enumerate}
 \end{document}
 
 

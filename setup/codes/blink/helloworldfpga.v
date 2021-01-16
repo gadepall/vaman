@@ -1,4 +1,10 @@
-/*Program for blinking LED*/
+/*Program for blinking LED
+January 16,2021
+Code by G V V Sharma
+Released under GNU GPL
+*/
+
+//declaring the blink module
 module helloworldfpga(
     output wire redled,
     output wire greenled,
@@ -14,14 +20,19 @@ module helloworldfpga(
      reg	led;
 always@(posedge clk) begin
 delay = delay+1;
-if(delay==27'b101111101011110000100000000)
+
+//if(delay==27'b1001100010010110100000000) // blink delay in bits
+if(delay > 20000000) //blink delay in decimal
 begin
 delay=27'b0;
 led=!led;
 end
 end
-//    assign blueled = led;	
-assign redled = led; //If you want to change to red, 
+//    assign blueled = led;	//If you want to change led colour to blue, 
+assign redled = led; //If you want to change led colour to red, 
 endmodule
+//end of the module
+
+
 
 

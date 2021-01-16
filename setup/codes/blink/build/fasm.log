@@ -18,15 +18,15 @@ Architecture file: /root/symbiflow/quicklogic-arch-defs/share/arch/ql-eos-s3_wlc
 Circuit name: helloworldfpga
 
 Loading Architecture Description
-Loading Architecture Description took 0.46 seconds (max_rss 26.8 MiB, delta_rss +23.0 MiB)
+Loading Architecture Description took 0.46 seconds (max_rss 26.5 MiB, delta_rss +23.0 MiB)
 Building complex block graph
-Building complex block graph took 0.10 seconds (max_rss 33.6 MiB, delta_rss +6.8 MiB)
+Building complex block graph took 0.10 seconds (max_rss 33.4 MiB, delta_rss +6.9 MiB)
 Load circuit
-Load circuit took 0.01 seconds (max_rss 34.7 MiB, delta_rss +1.1 MiB)
+Load circuit took 0.01 seconds (max_rss 35.0 MiB, delta_rss +1.7 MiB)
 Clean circuit
-Absorbed 708 LUT buffers
+Absorbed 979 LUT buffers
 Inferred  106 additional primitive pins as constant generators since they have no combinationally connected inputs
-Inferred   37 additional primitive pins as constant generators due to constant inputs
+Inferred   39 additional primitive pins as constant generators due to constant inputs
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
 Inferred    0 additional primitive pins as constant generators due to constant inputs
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -35,35 +35,35 @@ Swept input(s)      : 0
 Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 141
 Swept block(s)      : 1
-Constant Pins Marked: 143
-Clean circuit took 0.00 seconds (max_rss 34.7 MiB, delta_rss +0.0 MiB)
+Constant Pins Marked: 145
+Clean circuit took 0.00 seconds (max_rss 35.6 MiB, delta_rss +0.5 MiB)
 Compress circuit
-Compress circuit took 0.00 seconds (max_rss 34.7 MiB, delta_rss +0.0 MiB)
+Compress circuit took 0.00 seconds (max_rss 35.6 MiB, delta_rss +0.0 MiB)
 Verify circuit
-Verify circuit took 0.00 seconds (max_rss 34.7 MiB, delta_rss +0.0 MiB)
+Verify circuit took 0.00 seconds (max_rss 35.6 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
-  Blocks: 101
+  Blocks: 112
     .output   :       3
     ASSP      :       1
     BIDIR_CELL:       3
-    C_FRAG    :      13
-    F_FRAG    :       2
+    C_FRAG    :      32
+    F_FRAG    :       1
     GND       :       1
     Q_FRAG    :      28
-    T_FRAG    :      49
+    T_FRAG    :      42
     VCC       :       1
-  Nets  : 98
-    Avg Fanout:     9.1
-    Max Fanout:   394.0
+  Nets  : 109
+    Avg Fanout:     9.9
+    Max Fanout:   505.0
     Min Fanout:     1.0
   Netlist Clocks: 1
 Build Timing Graph
-  Timing Graph Nodes: 985
-  Timing Graph Edges: 1551
+  Timing Graph Nodes: 1191
+  Timing Graph Edges: 1941
   Timing Graph Levels: 24
-Build Timing Graph took 0.00 seconds (max_rss 34.7 MiB, delta_rss +0.0 MiB)
+Build Timing Graph took 0.00 seconds (max_rss 35.6 MiB, delta_rss +0.0 MiB)
 Netlist contains 1 clocks
-  Netlist Clock 'clk' Fanout: 28 pins (2.8%), 28 blocks (27.7%)
+  Netlist Clock 'clk' Fanout: 28 pins (2.4%), 28 blocks (25.0%)
 Load Timing Constraints
 
 SDC file 'helloworldfpga.sdc' not found
@@ -73,7 +73,7 @@ Setting default timing constraints:
 Timing constraints created 1 clocks
   Constrained Clock 'clk' Source: 'u_qlal4s3b_cell_macro.Sys_Clk0[0]'
 
-Load Timing Constraints took 0.00 seconds (max_rss 34.7 MiB, delta_rss +0.0 MiB)
+Load Timing Constraints took 0.00 seconds (max_rss 35.6 MiB, delta_rss +0.0 MiB)
 Timing analysis: ON
 Circuit netlist file: helloworldfpga.net
 Circuit placement file: helloworldfpga.place
@@ -189,17 +189,17 @@ Load Packing
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'helloworldfpga.net'.
 Detected 2 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.024702 seconds).
-Load Packing took 0.03 seconds (max_rss 35.6 MiB, delta_rss +0.9 MiB)
+Finished loading packed FPGA netlist file (took 0.029151 seconds).
+Load Packing took 0.03 seconds (max_rss 36.5 MiB, delta_rss +0.9 MiB)
 Warning 1: Netlist contains 0 global net to non-global architecture pin connections
-Warning 2: Logic block #42 ($false) has only 1 output pin '$false.GND0_GND[0]'. It may be a constant generator.
-Warning 3: Logic block #43 ($true) has only 1 output pin '$true.VCC0_VCC[0]'. It may be a constant generator.
+Warning 2: Logic block #57 ($false) has only 1 output pin '$false.GND0_GND[0]'. It may be a constant generator.
+Warning 3: Logic block #58 ($true) has only 1 output pin '$true.VCC0_VCC[0]'. It may be a constant generator.
 
-Netlist num_nets: 72
-Netlist num_blocks: 44
+Netlist num_nets: 81
+Netlist num_blocks: 59
 Netlist EMPTY blocks: 0.
 Netlist PB-GMUX blocks: 0.
-Netlist PB-LOGIC blocks: 38.
+Netlist PB-LOGIC blocks: 53.
 Netlist PB-CLOCK blocks: 0.
 Netlist PB-MULT blocks: 0.
 Netlist PB-SDIOMUX blocks: 0.
@@ -213,21 +213,21 @@ Netlist output pins: 9
 
 
 Pb types usage...
-  PB-LOGIC          : 38
-   LOGIC            : 38
-    FRAGS           : 38
-     c_frag_modes   : 38
-      SINGLE        : 13
-       c_frag       : 13
-      SPLIT         : 25
-       b_frag       : 25
-       t_frag       : 24
-     f_frag         : 2
+  PB-LOGIC          : 53
+   LOGIC            : 53
+    FRAGS           : 53
+     c_frag_modes   : 53
+      SINGLE        : 32
+       c_frag       : 32
+      SPLIT         : 21
+       b_frag       : 21
+       t_frag       : 21
+     f_frag         : 1
      q_frag_modes   : 28
-      INT           : 23
-       q_frag       : 23
-      EXT           : 5
-       q_frag       : 5
+      INT           : 25
+       q_frag       : 25
+      EXT           : 3
+       q_frag       : 3
   PB-SYN_VCC        : 1
    VCC              : 1
   PB-BIDIR          : 3
@@ -250,7 +250,7 @@ Resource usage...
 	Architecture
 		5	blocks of type: TL-GMUX
 	Netlist
-		38	blocks of type: PB-LOGIC
+		53	blocks of type: PB-LOGIC
 	Architecture
 		891	blocks of type: TL-LOGIC
 	Netlist
@@ -286,9 +286,9 @@ Resource usage...
 	Architecture
 		1	blocks of type: TL-ASSP
 
-Device Utilization: 0.03 (target 1.00)
+Device Utilization: 0.04 (target 1.00)
 	Physical Tile TL-LOGIC:
-	Block Utilization: 0.04 Logical Block: PB-LOGIC
+	Block Utilization: 0.06 Logical Block: PB-LOGIC
 	Physical Tile TL-RAM:
 	Block Utilization: 0.00 Logical Block: PB-RAM
 	Physical Tile TL-MULT:
@@ -308,14 +308,14 @@ Device Utilization: 0.03 (target 1.00)
 	Physical Tile TL-SYN_GND:
 	Block Utilization: 1.00 Logical Block: PB-SYN_GND
 
-# Build Device Grid took 0.01 seconds (max_rss 35.7 MiB, delta_rss +0.0 MiB)
+# Build Device Grid took 0.01 seconds (max_rss 36.5 MiB, delta_rss +0.0 MiB)
 # Loading routing resource graph
 
 
-# Loading routing resource graph took 1.14 seconds (max_rss 466.5 MiB, delta_rss +430.8 MiB)
+# Loading routing resource graph took 1.17 seconds (max_rss 466.5 MiB, delta_rss +429.9 MiB)
   RR Graph Nodes: 1396446
   RR Graph Edges: 2337988
-Create Device took 2.39 seconds (max_rss 514.1 MiB, delta_rss +478.3 MiB)
+Create Device took 2.40 seconds (max_rss 514.1 MiB, delta_rss +477.5 MiB)
 
 Load Placement
 Reading helloworldfpga.place.
@@ -327,18 +327,18 @@ Load Placement took 0.00 seconds (max_rss 514.1 MiB, delta_rss +0.0 MiB)
 Load Routing
 Begin loading FPGA routing file.
 Finished loading route file
-Load Routing took 0.10 seconds (max_rss 514.1 MiB, delta_rss +0.0 MiB)
+Load Routing took 0.11 seconds (max_rss 514.1 MiB, delta_rss +0.0 MiB)
 
 Checking to ensure routing is legal...
 Completed routing consistency check successfully.
 
-Serial number (magic cookie) for the routing is: -1077872864
+Serial number (magic cookie) for the routing is: -1349138943
 Circuit successfully routed with a channel width factor of 100.
 
-Incr Slack updates 1 in 1.8542e-05 sec
-Full Max Req/Worst Slack updates 1 in 5.261e-06 sec
+Incr Slack updates 1 in 2.3125e-05 sec
+Full Max Req/Worst Slack updates 1 in 5.677e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 1.875e-05 sec
+Full Criticality updates 1 in 2.3229e-05 sec
 Writing Implementation FASM: helloworldfpga.fasm
-The entire flow of VPR took 3.15663 seconds.
+The entire flow of VPR took 3.21568 seconds.

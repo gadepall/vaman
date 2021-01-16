@@ -1,9 +1,9 @@
 #Code by GVV Sharma
-#Jan 15, 2021
+#Jan 16, 2021
 #Released under GNU GPL
-#Program to find the bit length for a 72 MHz clock
+#Program to find the bit length for a 20 MHz clock
 
-fre = int(72e6)
+fre = int(20e6)
 
 print(bin(fre),fre.bit_length())
 
