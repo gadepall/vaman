@@ -36,137 +36,137 @@
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=$false QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I0_LUT3_O.XB2
 .cname delay_dff_Q
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=$false QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I0_LUT3_O.XSL
 .cname delay_dff_Q_1
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(16) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_6_I0_LUT2_O.XSL
 .cname delay_dff_Q_10
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(15) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_7_I0_LUT3_O.XSL
 .cname delay_dff_Q_11
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(14) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_8_I0_LUT3_O.XB2
 .cname delay_dff_Q_12
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(13) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_9_I0_LUT2_O.XSL
 .cname delay_dff_Q_13
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(12) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_8_I0_LUT3_O_I2_LUT4_O.BB2
 .cname delay_dff_Q_14
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(11) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_8_I0_LUT3_O_I2_LUT4_O.TSL
 .cname delay_dff_Q_15
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(10) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_8_I0_LUT3_O_I2_LUT4_O.TAB
 .cname delay_dff_Q_16
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(9) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_15_I0_LUT2_O_I1_LUT4_I3.BB2
 .cname delay_dff_Q_17
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(8) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_15_I0_LUT2_O_I1_LUT4_I3.TSL
 .cname delay_dff_Q_18
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(7) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_15_I0_LUT2_O_I1_LUT4_I3.TAB
 .cname delay_dff_Q_19
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(24) QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I1_LUT2_O.XAB
 .cname delay_dff_Q_2
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(6) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_16_I0_LUT3_O.XB2
 .cname delay_dff_Q_20
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(5) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_17_I0_LUT2_O.XSL
 .cname delay_dff_Q_21
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(4) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_18_I0_LUT2_O.XSL
 .cname delay_dff_Q_22
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(3) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_19_I0_LUT2_O.XSL
 .cname delay_dff_Q_23
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(2) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_20_I0_LUT3_O.XB2
 .cname delay_dff_Q_24
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(1) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_21_I0_LUT2_O.XSL
 .cname delay_dff_Q_25
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(0) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_21_I0_LUT2_O.XAB
 .cname delay_dff_Q_26
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(23) QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I1_LUT2_O_I0_LUT3_O.XB2
 .cname delay_dff_Q_3
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(22) QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I1_LUT2_O_I0_LUT3_O.XSL
 .cname delay_dff_Q_4
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(21) QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I2_LUT4_O_I3_LUT2_O.XSL
 .cname delay_dff_Q_5
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(20) QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I2_LUT4_O_I3_LUT2_O.XAB
 .cname delay_dff_Q_6
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(19) QEN=$true QRT=$false QST=$false QZ=delay_dff_Q_9_D_LUT4_O_3_I0_LUT2_O_I1_LUT4_I3.TAB
 .cname delay_dff_Q_7
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(18) QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I2_LUT4_O_I2_LUT3_O_I0_LUT3_O.XB2
 .cname delay_dff_Q_8
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt Q_FRAG CONST0=$false CONST1=$true QCK=clk QD=delay_dff_Q_9_D(17) QEN=$true QRT=$false QST=$false QZ=led_dffe_Q_EN_LUT3_O_I2_LUT4_O_I2_LUT3_O_I0_LUT3_O.XSL
 .cname delay_dff_Q_9
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20.1-30.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21.1-31.4|/share/yosys/quicklogic/pp3_ffs_map.v:14.9-14.50|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:736.3-747.4"
 .param Z_QCKS 1
 .subckt T_FRAG TBS=$true XA1=$false XA2=$false XAB=led_dffe_Q_EN_LUT3_O_I1 XB1=$false XB2=led_dffe_Q_EN_LUT3_O_I0 XSL=led_dffe_Q_EN_LUT3_O_I2 XZ=delay_dff_Q_9_D(24)
 .cname delay_dff_Q_9_D_LUT3_O.t_frag
@@ -900,7 +900,7 @@
 .subckt ASSP Device_ID[0]=$false Device_ID[1]=$false Device_ID[2]=$false Device_ID[3]=$false Device_ID[4]=$false Device_ID[5]=$false Device_ID[6]=$false Device_ID[7]=$false Device_ID[8]=$false Device_ID[9]=$false Device_ID[10]=$false Device_ID[11]=$false Device_ID[12]=$false Device_ID[13]=$false Device_ID[14]=$false Device_ID[15]=$false FB_Busy=$false FB_Int_Clr[0]=$false FB_Int_Clr[1]=$false FB_Int_Clr[2]=$false FB_Int_Clr[3]=$false FB_Int_Clr[4]=$false FB_Int_Clr[5]=$false FB_Int_Clr[6]=$false FB_Int_Clr[7]=$false FB_PKfbData[0]=$false FB_PKfbData[1]=$false FB_PKfbData[2]=$false FB_PKfbData[3]=$false FB_PKfbData[4]=$false FB_PKfbData[5]=$false FB_PKfbData[6]=$false FB_PKfbData[7]=$false FB_PKfbData[8]=$false FB_PKfbData[9]=$false FB_PKfbData[10]=$false FB_PKfbData[11]=$false FB_PKfbData[12]=$false FB_PKfbData[13]=$false FB_PKfbData[14]=$false FB_PKfbData[15]=$false FB_PKfbData[16]=$false FB_PKfbData[17]=$false FB_PKfbData[18]=$false FB_PKfbData[19]=$false FB_PKfbData[20]=$false FB_PKfbData[21]=$false FB_PKfbData[22]=$false FB_PKfbData[23]=$false FB_PKfbData[24]=$false FB_PKfbData[25]=$false FB_PKfbData[26]=$false FB_PKfbData[27]=$false FB_PKfbData[28]=$false FB_PKfbData[29]=$false FB_PKfbData[30]=$false FB_PKfbData[31]=$false FB_PKfbEOF=$false FB_PKfbOverflow=$techmap2006\u_qlal4s3b_cell_macro.FB_PKfbOverflow FB_PKfbPush[0]=$false FB_PKfbPush[1]=$false FB_PKfbPush[2]=$false FB_PKfbPush[3]=$false FB_PKfbSOF=$false FB_Start=$techmap2006\u_qlal4s3b_cell_macro.FB_Start FB_msg_out[0]=$false FB_msg_out[1]=$false FB_msg_out[2]=$false FB_msg_out[3]=$false SDMA_Active[0]=$techmap2006\u_qlal4s3b_cell_macro.SDMA_Active[0] SDMA_Active[1]=$techmap2006\u_qlal4s3b_cell_macro.SDMA_Active[1] SDMA_Active[2]=$techmap2006\u_qlal4s3b_cell_macro.SDMA_Active[2] SDMA_Active[3]=$techmap2006\u_qlal4s3b_cell_macro.SDMA_Active[3] SDMA_Done[0]=$techmap2006\u_qlal4s3b_cell_macro.SDMA_Done[0] SDMA_Done[1]=$techmap2006\u_qlal4s3b_cell_macro.SDMA_Done[1] SDMA_Done[2]=$techmap2006\u_qlal4s3b_cell_macro.SDMA_Done[2] SDMA_Done[3]=$techmap2006\u_qlal4s3b_cell_macro.SDMA_Done[3] SDMA_Req[0]=$false SDMA_Req[1]=$false SDMA_Req[2]=$false SDMA_Req[3]=$false SDMA_Sreq[0]=$false SDMA_Sreq[1]=$false SDMA_Sreq[2]=$false SDMA_Sreq[3]=$false SPIm_PEnable=$false SPIm_PReady=$techmap2006\u_qlal4s3b_cell_macro.SPIm_PReady SPIm_PSlvErr=$techmap2006\u_qlal4s3b_cell_macro.SPIm_PSlvErr SPIm_PWdata[0]=$false SPIm_PWdata[1]=$false SPIm_PWdata[2]=$false SPIm_PWdata[3]=$false SPIm_PWdata[4]=$false SPIm_PWdata[5]=$false SPIm_PWdata[6]=$false SPIm_PWdata[7]=$false SPIm_PWdata[8]=$false SPIm_PWdata[9]=$false SPIm_PWdata[10]=$false SPIm_PWdata[11]=$false SPIm_PWdata[12]=$false SPIm_PWdata[13]=$false SPIm_PWdata[14]=$false SPIm_PWdata[15]=$false SPIm_PWdata[16]=$false SPIm_PWdata[17]=$false SPIm_PWdata[18]=$false SPIm_PWdata[19]=$false SPIm_PWdata[20]=$false SPIm_PWdata[21]=$false SPIm_PWdata[22]=$false SPIm_PWdata[23]=$false SPIm_PWdata[24]=$false SPIm_PWdata[25]=$false SPIm_PWdata[26]=$false SPIm_PWdata[27]=$false SPIm_PWdata[28]=$false SPIm_PWdata[29]=$false SPIm_PWdata[30]=$false SPIm_PWdata[31]=$false SPIm_PWrite=$false SPIm_Paddr[0]=$false SPIm_Paddr[1]=$false SPIm_Paddr[2]=$false SPIm_Paddr[3]=$false SPIm_Paddr[4]=$false SPIm_Paddr[5]=$false SPIm_Paddr[6]=$false SPIm_Paddr[7]=$false SPIm_Paddr[8]=$false SPIm_Paddr[9]=$false SPIm_Paddr[10]=$false SPIm_Paddr[11]=$false SPIm_Paddr[12]=$false SPIm_Paddr[13]=$false SPIm_Paddr[14]=$false SPIm_Paddr[15]=$false SPIm_Prdata[0]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[0] SPIm_Prdata[1]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[1] SPIm_Prdata[2]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[2] SPIm_Prdata[3]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[3] SPIm_Prdata[4]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[4] SPIm_Prdata[5]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[5] SPIm_Prdata[6]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[6] SPIm_Prdata[7]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[7] SPIm_Prdata[8]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[8] SPIm_Prdata[9]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[9] SPIm_Prdata[10]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[10] SPIm_Prdata[11]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[11] SPIm_Prdata[12]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[12] SPIm_Prdata[13]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[13] SPIm_Prdata[14]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[14] SPIm_Prdata[15]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[15] SPIm_Prdata[16]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[16] SPIm_Prdata[17]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[17] SPIm_Prdata[18]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[18] SPIm_Prdata[19]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[19] SPIm_Prdata[20]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[20] SPIm_Prdata[21]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[21] SPIm_Prdata[22]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[22] SPIm_Prdata[23]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[23] SPIm_Prdata[24]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[24] SPIm_Prdata[25]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[25] SPIm_Prdata[26]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[26] SPIm_Prdata[27]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[27] SPIm_Prdata[28]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[28] SPIm_Prdata[29]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[29] SPIm_Prdata[30]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[30] SPIm_Prdata[31]=$techmap2006\u_qlal4s3b_cell_macro.SPIm_Prdata[31] Sensor_Int[0]=$techmap2006\u_qlal4s3b_cell_macro.Sensor_Int[0] Sensor_Int[1]=$techmap2006\u_qlal4s3b_cell_macro.Sensor_Int[1] Sensor_Int[2]=$techmap2006\u_qlal4s3b_cell_macro.Sensor_Int[2] Sensor_Int[3]=$techmap2006\u_qlal4s3b_cell_macro.Sensor_Int[3] Sensor_Int[4]=$techmap2006\u_qlal4s3b_cell_macro.Sensor_Int[4] Sensor_Int[5]=$techmap2006\u_qlal4s3b_cell_macro.Sensor_Int[5] Sensor_Int[6]=$techmap2006\u_qlal4s3b_cell_macro.Sensor_Int[6] Sensor_Int[7]=$techmap2006\u_qlal4s3b_cell_macro.Sensor_Int[7] Sys_Clk0=clk Sys_Clk0_Rst=$techmap2006\u_qlal4s3b_cell_macro.Sys_Clk0_Rst Sys_Clk1=$techmap2006\u_qlal4s3b_cell_macro.Sys_Clk1 Sys_Clk1_Rst=$techmap2006\u_qlal4s3b_cell_macro.Sys_Clk1_Rst Sys_PKfb_Clk=$false Sys_PKfb_Rst=$techmap2006\u_qlal4s3b_cell_macro.Sys_PKfb_Rst Sys_PSel=$false Sys_Pclk=$techmap2006\u_qlal4s3b_cell_macro.Sys_Pclk Sys_Pclk_Rst=$techmap2006\u_qlal4s3b_cell_macro.Sys_Pclk_Rst TimeStamp[0]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[0] TimeStamp[1]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[1] TimeStamp[2]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[2] TimeStamp[3]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[3] TimeStamp[4]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[4] TimeStamp[5]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[5] TimeStamp[6]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[6] TimeStamp[7]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[7] TimeStamp[8]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[8] TimeStamp[9]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[9] TimeStamp[10]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[10] TimeStamp[11]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[11] TimeStamp[12]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[12] TimeStamp[13]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[13] TimeStamp[14]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[14] TimeStamp[15]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[15] TimeStamp[16]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[16] TimeStamp[17]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[17] TimeStamp[18]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[18] TimeStamp[19]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[19] TimeStamp[20]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[20] TimeStamp[21]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[21] TimeStamp[22]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[22] TimeStamp[23]=$techmap2006\u_qlal4s3b_cell_macro.TimeStamp[23] WB_CLK=$false WB_RST=$techmap2006\u_qlal4s3b_cell_macro.WB_RST WBs_ACK=$false WBs_ADR[0]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[0] WBs_ADR[1]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[1] WBs_ADR[2]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[2] WBs_ADR[3]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[3] WBs_ADR[4]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[4] WBs_ADR[5]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[5] WBs_ADR[6]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[6] WBs_ADR[7]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[7] WBs_ADR[8]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[8] WBs_ADR[9]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[9] WBs_ADR[10]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[10] WBs_ADR[11]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[11] WBs_ADR[12]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[12] WBs_ADR[13]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[13] WBs_ADR[14]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[14] WBs_ADR[15]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[15] WBs_ADR[16]=$techmap2006\u_qlal4s3b_cell_macro.WBs_ADR[16] WBs_BYTE_STB[0]=$techmap2006\u_qlal4s3b_cell_macro.WBs_BYTE_STB[0] WBs_BYTE_STB[1]=$techmap2006\u_qlal4s3b_cell_macro.WBs_BYTE_STB[1] WBs_BYTE_STB[2]=$techmap2006\u_qlal4s3b_cell_macro.WBs_BYTE_STB[2] WBs_BYTE_STB[3]=$techmap2006\u_qlal4s3b_cell_macro.WBs_BYTE_STB[3] WBs_CYC=$techmap2006\u_qlal4s3b_cell_macro.WBs_CYC WBs_RD=$techmap2006\u_qlal4s3b_cell_macro.WBs_RD WBs_RD_DAT[0]=$false WBs_RD_DAT[1]=$false WBs_RD_DAT[2]=$false WBs_RD_DAT[3]=$false WBs_RD_DAT[4]=$false WBs_RD_DAT[5]=$false WBs_RD_DAT[6]=$false WBs_RD_DAT[7]=$false WBs_RD_DAT[8]=$false WBs_RD_DAT[9]=$false WBs_RD_DAT[10]=$false WBs_RD_DAT[11]=$false WBs_RD_DAT[12]=$false WBs_RD_DAT[13]=$false WBs_RD_DAT[14]=$false WBs_RD_DAT[15]=$false WBs_RD_DAT[16]=$false WBs_RD_DAT[17]=$false WBs_RD_DAT[18]=$false WBs_RD_DAT[19]=$false WBs_RD_DAT[20]=$false WBs_RD_DAT[21]=$false WBs_RD_DAT[22]=$false WBs_RD_DAT[23]=$false WBs_RD_DAT[24]=$false WBs_RD_DAT[25]=$false WBs_RD_DAT[26]=$false WBs_RD_DAT[27]=$false WBs_RD_DAT[28]=$false WBs_RD_DAT[29]=$false WBs_RD_DAT[30]=$false WBs_RD_DAT[31]=$false WBs_STB=$techmap2006\u_qlal4s3b_cell_macro.WBs_STB WBs_WE=$techmap2006\u_qlal4s3b_cell_macro.WBs_WE WBs_WR_DAT[0]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[0] WBs_WR_DAT[1]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[1] WBs_WR_DAT[2]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[2] WBs_WR_DAT[3]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[3] WBs_WR_DAT[4]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[4] WBs_WR_DAT[5]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[5] WBs_WR_DAT[6]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[6] WBs_WR_DAT[7]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[7] WBs_WR_DAT[8]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[8] WBs_WR_DAT[9]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[9] WBs_WR_DAT[10]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[10] WBs_WR_DAT[11]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[11] WBs_WR_DAT[12]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[12] WBs_WR_DAT[13]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[13] WBs_WR_DAT[14]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[14] WBs_WR_DAT[15]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[15] WBs_WR_DAT[16]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[16] WBs_WR_DAT[17]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[17] WBs_WR_DAT[18]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[18] WBs_WR_DAT[19]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[19] WBs_WR_DAT[20]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[20] WBs_WR_DAT[21]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[21] WBs_WR_DAT[22]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[22] WBs_WR_DAT[23]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[23] WBs_WR_DAT[24]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[24] WBs_WR_DAT[25]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[25] WBs_WR_DAT[26]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[26] WBs_WR_DAT[27]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[27] WBs_WR_DAT[28]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[28] WBs_WR_DAT[29]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[29] WBs_WR_DAT[30]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[30] WBs_WR_DAT[31]=$techmap2006\u_qlal4s3b_cell_macro.WBs_WR_DAT[31]
 .cname u_qlal4s3b_cell_macro
 .attr module_not_derived 00000000000000000000000000000001
-.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:14.25-16.6|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:1015.12-1060.4"
+.attr src "/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:15.25-17.6|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:1015.12-1060.4"
 .names delay_dff_Q_9_D_LUT4_O_21_I0_LUT2_O.XAB delay(0)
 1 1
 .names delay_dff_Q_9_D_LUT4_O_21_I0_LUT2_O.XSL delay(1)

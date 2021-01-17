@@ -219,7 +219,7 @@ Cleaned up 0 empty switches.
 4.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
 Marked 1 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$39 in module MULT.
 Marked 2 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$21 in module Q_FRAG.
-Marked 1 switch rules as full_case in process $proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20$1 in module helloworldfpga.
+Marked 1 switch rules as full_case in process $proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$1 in module helloworldfpga.
 Removed a total of 0 dead cases.
 
 4.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -241,7 +241,7 @@ Creating decoders for process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/
 Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$22'.
 Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$21'.
      1/1: $0\QZ[0:0]
-Creating decoders for process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20$1'.
+Creating decoders for process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$1'.
      1/2: $1\led[0:0]
      2/2: $1\delay[26:0]
 
@@ -253,9 +253,9 @@ Creating register for signal `\MULT.\Cmult' using process `\MULT.$proc$/root/sym
 Creating register for signal `\Q_FRAG.\QZ' using process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$21'.
 Warning: Complex async reset for dff `\QZ'.
   created $dffsr cell `$procdff$896' with positive edge clock and multiple level-sensitive resets.
-Creating register for signal `\helloworldfpga.\delay' using process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20$1'.
+Creating register for signal `\helloworldfpga.\delay' using process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$1'.
   created $dff cell `$procdff$897' with positive edge clock.
-Creating register for signal `\helloworldfpga.\led' using process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20$1'.
+Creating register for signal `\helloworldfpga.\led' using process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$1'.
   created $dff cell `$procdff$898' with positive edge clock.
 
 4.4.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
@@ -264,8 +264,8 @@ Removing empty process `MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/te
 Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$22'.
 Found and cleaned up 1 empty switch in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$21'.
 Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$21'.
-Found and cleaned up 1 empty switch in `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20$1'.
-Removing empty process `helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:20$1'.
+Found and cleaned up 1 empty switch in `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$1'.
+Removing empty process `helloworldfpga.$proc$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$1'.
 Cleaned up 6 empty switches.
 
 4.5. Executing FLATTEN pass (flatten design).
@@ -365,10 +365,10 @@ Optimizing module helloworldfpga.
 4.14.9. Finished OPT passes. (There is nothing left to do.)
 
 4.15. Executing WREDUCE pass (reducing word size of cells).
-Removed top 31 bits (of 32) from port B of cell helloworldfpga.$add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$2 ($add).
-Removed top 5 bits (of 32) from port Y of cell helloworldfpga.$add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$2 ($add).
-Removed top 7 bits (of 32) from port B of cell helloworldfpga.$gt$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:25$3 ($gt).
-Removed top 5 bits (of 32) from wire helloworldfpga.$add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$2_Y.
+Removed top 31 bits (of 32) from port B of cell helloworldfpga.$add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:22$2 ($add).
+Removed top 5 bits (of 32) from port Y of cell helloworldfpga.$add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:22$2 ($add).
+Removed top 7 bits (of 32) from port B of cell helloworldfpga.$gt$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:26$3 ($gt).
+Removed top 5 bits (of 32) from wire helloworldfpga.$add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:22$2_Y.
 
 4.16. Executing PEEPOPT pass (run peephole optimizers).
 
@@ -381,11 +381,11 @@ Removed 0 unused cells and 1 unused wires.
 
 4.19. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module helloworldfpga:
-  creating $macc model for $add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$2 ($add).
-  creating $alu model for $macc $add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$2.
-  creating $alu model for $gt$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:25$3 ($gt): new $alu
-  creating $alu cell for $gt$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:25$3: $auto$alumacc.cc:485:replace_alu$901
-  creating $alu cell for $add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:21$2: $auto$alumacc.cc:485:replace_alu$906
+  creating $macc model for $add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:22$2 ($add).
+  creating $alu model for $macc $add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:22$2.
+  creating $alu model for $gt$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:26$3 ($gt): new $alu
+  creating $alu cell for $gt$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:26$3: $auto$alumacc.cc:485:replace_alu$901
+  creating $alu cell for $add$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:22$2: $auto$alumacc.cc:485:replace_alu$906
   created 2 $alu and 0 $macc cells.
 
 4.20. Executing OPT pass (performing simple optimizations).
@@ -512,7 +512,7 @@ Finding unused cells or wires in module \helloworldfpga..
 4.26. Executing PP3_BRAMINIT pass.
 cell type $auto$alumacc.cc:485:replace_alu$901
 cell type $auto$alumacc.cc:485:replace_alu$906
-cell type $logic_not$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:28$4
+cell type $logic_not$/storage/emulated/0/github/vaman/setup/codes/blink/helloworldfpga.v:29$4
 cell type $procdff$897
 cell type $procdff$898
 cell type $procmux$879
@@ -1239,6 +1239,6 @@ Removed 0 unused cells and 135 unused wires.
 Dumping module `\helloworldfpga'.
 
 Warnings: 10 unique messages, 13 total
-End of script. Logfile hash: 31c333795a, CPU: user 2.67s system 0.20s, MEM: 222.32 MB peak
+End of script. Logfile hash: 35806efb0a, CPU: user 2.76s system 0.15s, MEM: 223.96 MB peak
 Yosys 0.9+2406 (git sha1 ca763e6d, gcc 9.3.0-17ubuntu1~20.04 -fPIC -Os)
 Time spent: 58% 18x read_verilog (1 sec), 9% 23x opt_clean (0 sec), ...

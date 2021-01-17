@@ -1,0 +1,17 @@
+Netlist_File: sevenseg.net Netlist_ID: SHA256:1684d5586470bd51ee0888620e650e730ea544c0d8501c4886a7b17e06a3bd72
+Array size: 39 x 35 logic blocks
+
+#block name	x	y	subblk	block number
+#----------	--	--	------	------------
+$iopadmap$helloworldfpga.blueled	30	32	0	#0
+$iopadmap$helloworldfpga.greenled	24	32	0	#1
+$iopadmap$helloworldfpga.leda	8	3	0	#2
+$iopadmap$helloworldfpga.ledb	12	3	0	#3
+$iopadmap$helloworldfpga.ledc	14	3	0	#4
+$iopadmap$helloworldfpga.ledd	18	3	0	#5
+$iopadmap$helloworldfpga.lede	20	3	0	#6
+$iopadmap$helloworldfpga.ledf	24	3	0	#7
+$iopadmap$helloworldfpga.ledg	26	3	0	#8
+$iopadmap$helloworldfpga.redled	22	32	0	#9
+$false		3	1	0	#10
+$true		2	1	0	#11
