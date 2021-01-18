@@ -332,7 +332,7 @@ https://github.com/gadepall/vaman/tree/master/sevenseg/codes
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-\item आकृति. \ref{fig:pin_sheet} में  वामन के समस्त कुशाव्यूह  प्रस्तुत हैं.  कुशाव्यूह J5 को  आकृति \ref{fig:sevenseg} में प्रदत्त सप्तांश प्रदर्शी के कुशों से सारणी \ref{table:sevenseg} के द्वारा योजित करें। स्मरण रहे कि COM एवं 3.3V के मध्य एक प्रतिरोधी अनिवार्य है। 
+\item आकृति. \ref{fig:pin_sheet} में  वामन के समस्त कुशाव्यूह  प्रस्तुत हैं.  कुशाव्यूह J5 को  आकृति \ref{fig:sevenseg} में प्रदत्त सप्तांश प्रदर्शी के कुशों से सारणी \ref{table:sevenseg} के द्वारा योजित करें। ध्यान  रहे कि COM एवं 3.3V के मध्य एक प्रतिरोधी अनिवार्य है। 
 \begin{table}[!ht]
 \centering
 \resizebox{\columnwidth}{!}{
@@ -352,13 +352,14 @@ https://github.com/gadepall/vaman/tree/master/sevenseg/codes
 \end{figure}
 
 
-\begin{figure*}
+\begin{figure*}[!ht]
 \centering
 \includegraphics[width = \textwidth]{figs/pin_sheet.png}
 \caption{कुश आरेख}
 \label{fig:pin_sheet}
 \end{figure*}
-\begin{figure*}
+
+\begin{figure*}[!ht]
 \centering
 \includegraphics[width = \textwidth]{figs/pins.jpg}
 \caption{कुश पर्याय}
@@ -366,17 +367,21 @@ https://github.com/gadepall/vaman/tree/master/sevenseg/codes
 \end{figure*}
 
 
-\item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों का चालयन करें।
+\item अब निम्न क्रमादेश का चालयन करें।
+\label{code:sevenseg}
 \begin{lstlisting}
-cd /storage/emulated/0/Download
-svn co https://github.com/gadepall/pygmy/trunk/installation/blink
-ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
-scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+codes/static/sevenseg.v
 \end{lstlisting}
-ऊपर helloworldfpga.bin सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें। 
-\item अब रास्पबेरी पै  में प्रवेश कर निम्न  आदेश का चालयन करें
+उत्पत्त helloworldfpga.bin सञ्चिका  को  वामन में प्रस्फुरण करें।  प्रदर्शी में आप 5 अंक देख पाएंगे.
+\item आदेश \ref{code:sevenseg} में निम्न पङ्क्तियों से  अंक  प्रदर्शित होते हैं.
 \begin{lstlisting}
-python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+assign     a=led;
+assign     b=!led;
+assign     c=led;
+assign     d=led;
+assign     e=!led;
+assign     f=led;
+assign     g=led;
 \end{lstlisting}
 \item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक रक्तिम रंग में श्मीलित होगा। 
 \end{enumerate}

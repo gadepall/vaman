@@ -7,8 +7,8 @@ Scanning style file /data/data/com.termux/files/usr/share/texlive/texmf-dist/mak
 ** Input style error (file = /data/data/com.termux/files/usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist, line = 38):
    -- Unknown specifier lethead_flag.
 ....done (12 attributes redefined, 3 ignored).
-Scanning input file gvv_sevenseg_hindi.nlo....done (8 entries accepted, 0 rejected).
-Sorting entries....done (33 comparisons).
-Generating output file gvv_sevenseg_hindi.nls....done (13 lines written, 0 warnings).
+Scanning input file gvv_sevenseg_hindi.nlo....done (10 entries accepted, 0 rejected).
+Sorting entries....done (35 comparisons).
+Generating output file gvv_sevenseg_hindi.nls....done (15 lines written, 0 warnings).
 Output written in gvv_sevenseg_hindi.nls.
 Transcript written in gvv_sevenseg_hindi.ilg.
