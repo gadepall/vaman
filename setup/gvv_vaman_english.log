@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Termux) (preloaded format=pdflatex 2021.1.11)  16 JAN 2021 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Termux) (preloaded format=pdflatex 2021.1.11)  18 JAN 2021 09:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2075,7 +2075,7 @@ File: ot1txtt.fd 2000/12/15 v3.1
 pdfTeX warning: pdflatex (file /data/data/com.termux/files/home/texmf/tex/latex
 /logo/iith_logo.pdf): PDF inclusion: found PDF version <1.7>, but at most versi
 on <1.5> allowed
-<iith_logo.pdf, id=39, 359.3425pt x 486.81876pt>
+<iith_logo.pdf, id=43, 359.3425pt x 486.81876pt>
 File: iith_logo.pdf Graphic file (type pdf)
 <use iith_logo.pdf>
 Package pdftex.def Info: iith_logo.pdf  used on input line 264.
@@ -2087,7 +2087,7 @@ LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
 (Font)              scaled to size 15.95987pt on input line 264.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <17> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 264.
-<tlc.pdf, id=40, 597.51233pt x 845.0471pt>
+<tlc.pdf, id=44, 597.51233pt x 845.0471pt>
 File: tlc.pdf Graphic file (type pdf)
 <use tlc.pdf>
 Package pdftex.def Info: tlc.pdf  used on input line 264.
@@ -2135,20 +2135,17 @@ Overfull \hbox (14.40588pt too wide) in paragraph at lines 264--264
 \openout6 = `gvv_vaman_english.toc'.
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 332--333
+Underfull \hbox (badness 2318) in paragraph at lines 337--338
 []\OT1/txr/m/n/12 Connect the Pygmy to the Rasp-berry Pi
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 3
-40.
+45.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1
 txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+) [1
 Non-PDF special ignored!
 <special> papersize=614.295pt,794.96999pt
 {/data/data/com.termux/files/usr/share/texlive/texmf-dist/fonts/map/pdftex/updm
@@ -2158,35 +2155,33 @@ ap/pdftex.map}
  </data/data/com.termux/files/home/texmf/tex/latex/logo/iith_logo.pdf> </data/d
 ata/com.termux/files/home/texmf/tex/latex/logo/tlc.pdf>]
 LaTeX Font Info:    Trying to load font information for OML+txr on input line 3
-68.
+73.
 
 (/data/data/com.termux/files/usr/share/texlive/texmf-dist/tex/latex/txfonts/oml
 txr.fd
 File: omltxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OML/txr/m/n' in size <12> not available
-(Font)              Font shape `OML/txmi/m/it' tried instead on input line 368.
+(Font)              Font shape `OML/txmi/m/it' tried instead on input line 373.
 
- [2
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
+ [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 422.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 422.
  (./gvv_vaman_english.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 422.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 422.
 Package rerunfilecheck Info: File `gvv_vaman_english.out' has not changed.
-(rerunfilecheck)             Checksum: 380A1B43324DCC0A277CFB472E4D452B;84.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 411.
+(rerunfilecheck)             Checksum: C2A0013EF49C8BC0F35A2E76C5CBB390;127.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 422.
  ) 
 Here is how much of TeX's memory you used:
- 44742 strings out of 480608
- 1038305 string characters out of 5892806
- 1531412 words of memory out of 5000000
- 59675 multiletter control sequences out of 15000+600000
+ 44749 strings out of 480608
+ 1038390 string characters out of 5892806
+ 1542412 words of memory out of 5000000
+ 59676 multiletter control sequences out of 15000+600000
  617205 words of font info for 214 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 60i,10n,91p,686b,1595s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,10n,91p,686b,2304s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/data/data/com.termux/files/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
 e/8r.enc}</data/data/com.termux/files/usr/share/texlive/texmf-dist/fonts/type1/
 public/txfonts/rtcxr.pfb></data/data/com.termux/files/usr/share/texlive/texmf-d
@@ -2199,10 +2194,10 @@ ublic/txfonts/txsy.pfb></data/data/com.termux/files/usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmb8a.pfb></data/data/com.termux/files/usr/share/texli
 ve/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></data/data/com.termux/files/us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on gvv_vaman_english.pdf (2 pages, 566550 bytes).
+Output written on gvv_vaman_english.pdf (2 pages, 568395 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
 
