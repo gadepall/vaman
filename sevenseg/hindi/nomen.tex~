@@ -25,7 +25,7 @@
 %\nomenclature{C Program}{ C क्रमादेश}
 \nomenclature{Programming}{  क्रमादेशन}
 %\nomenclature{Frequency}{ आवृत्ति}
-%\nomenclature{Bit length}{ मात्राभार}
+\nomenclature{Wordlength length}{ मात्राभार}
 %\nomenclature{Cable}{ रज्जु}
 %\nomenclature{Button}{ गण्ड}
 %\nomenclature{Left}{ वाम}
@@ -68,8 +68,8 @@
 \nomenclature{Download}{अवाहरत}
 \nomenclature{Resistance}{प्रतिरोध}
 \nomenclature{Flash}{प्रस्फुरण}
-\nomenclature{Flash}{क्रमचय}
-\nomenclature{Flash}{संचय}
+\nomenclature{Permutation}{क्रमचय}
+\nomenclature{Combination}{संचय}
 
 
 
