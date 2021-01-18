@@ -43,7 +43,7 @@ end
 //assign redled = led; //If you want to change led colour to red, 
 assign greenled = !led; //If you want to change led colour to green, 
 assign     a=led;
-assign     b=led;
+assign     b=!led;
 assign     c=led;
 assign     d=led;
 assign     e=!led;

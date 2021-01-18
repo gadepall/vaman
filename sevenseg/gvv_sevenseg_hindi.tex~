@@ -306,8 +306,7 @@ literate = {-}{-}1
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-वामन एक सूक्ष्म नियंत्रण परिपथफलक है जो  प्राथमिक विद्यालयों से लेकर  विश्व विद्यालयों के सभी  छात्रों को एक सरल विधि से संगणक क्रमादेश,  यंत्रोपवस्तु एवं अयंत्रोपवस्तु
-सीखने में सहायक है।  इस लेख के द्वारा  वामन से छात्रों का परिचय कराया जाएगा।
+इस आलेख में वामन को  दशक गणित्र के रूप में उपयोग करने का विधान प्रस्तुत है.
 
 
 %ॐ श्री गणेशाय नमः॥
@@ -319,7 +318,11 @@ literate = {-}{-}1
 %\section{Nomenclature}
 \printnomenclature[1.7in]
 \input{hindi/nomen.tex}
-
+\section{तंत्रांश}
+इस आलेख के समस्त क्रमादेश निम्न जालबन्धन में उपलब्ध हैं.
+\begin{lstlisting}
+https://github.com/gadepall/vaman/tree/master/sevenseg/codes
+\end{lstlisting}
 %
 \section{सप्रतिष्ठान}
 \renewcommand{\theequation}{\theenumi}
@@ -329,16 +332,39 @@ literate = {-}{-}1
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-\item वामन एवं रास्पबेरी पै  को यूएसबी रज्जु से योजित करें।
+\item आकृति. \ref{fig:pin_sheet} में  वामन के समस्त कुशाव्यूह  प्रस्तुत हैं.  कुशाव्यूह J5 को  आकृति \ref{fig:sevenseg} में प्रदत्त सप्तांश प्रदर्शी के कुशों से सारणी \label{table:sevenseg} के द्वारा योजित करें। स्मरण रहे कि COM एवं 3.3V के मध्य एक प्रतिरोधी अनिवार्य है। 
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tables/vaman_sevenseg.tex}
+}
+\caption{सप्तांश प्रदर्शी-वामन कुश योजना.}
+\label{table:sevenseg}
+\end{table}
+
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg.tex}
+}
+\caption{सप्तांश प्रदर्शी}
+\label{fig:sevenseg}
+\end{figure}
+
+
 \begin{figure*}
 \centering
-\includegraphics[width = \columnwidth]{figs/pin_sheet.png}
+\includegraphics[width = \textwidth]{figs/pin_sheet.png}
 \caption{कुश आरेख}
 \label{fig:pin_sheet}
 \end{figure*}
-\item योजित स्थल के निकट वाम दिशा में एक प्रकाश उत्सर्जक यंत्र एवं गण्ड  उपस्थित है।  वहीं दक्षिण में एक और गण्ड है।  
-\item दक्षिण गण्ड को दबाकर शीघ्र वाम गण्ड को दबायें।  हरित दीप श्मीलित होते हुए दिखेगा।  यह संकेत हैं कि वामन
-क्रमादेश के लिए सिद्ध है।
+\begin{figure*}
+\centering
+\includegraphics[width = \textwidth]{figs/pins.jpg}
+\caption{कुश पर्याय}
+\label{fig:pins}
+\end{figure*}
+
 
 \item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों का चालयन करें।
 \begin{lstlisting}
@@ -355,66 +381,6 @@ python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-progr
 \item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक रक्तिम रंग में श्मीलित होगा। 
 \end{enumerate}
 %
-\section{आवृत्ति}
-
-\renewcommand{\theequation}{\theenumi}
-\renewcommand{\thefigure}{\theenumi}
-\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
-\numberwithin{equation}{enumi}
-\numberwithin{figure}{enumi}
-\numberwithin{table}{enumi}
-\item निम्न वेरिलॉग क्रमादेश
-\label{सम:क्रमादेश}
-\begin{lstlisting}
-codes/blink/helloworldfpga.v
-\end{lstlisting}
-की  इन पङ्क्तियों पर ध्यान दें । 
-%
-\begin{lstlisting}
-delay = delay+1;                                                                                                   
-if(delay > 20000000)
-begin
-delay=27'b0;
-led=!led;
-end
-\end{lstlisting}
-%
-इससे हम ज्ञात कर सकते हैं की वामन के दीप की श्मीलनावृत्ति  20 MHz है ।  
-\item निर्देश \ref{सम:क्रमादेश} में 
-\label{सम:द्विआधार}
-\begin{lstlisting}
-if(delay > 20000000)
-\end{lstlisting}
-%
-को 
-\begin{lstlisting}
-if(delay==27'b1001100010010110100000000)
-\end{lstlisting}
-से प्रतिस्थापित कर क्रमादेश का चालयन करें ।  
-\item यह विदित है कि यदि आवृत्ति 20 MHz है तो अतिकाल 1 निमिश है ।   
-वेरिलॉग क्रमादेश में संशोधन कर अतिकाल को 0.5 निमिश करें । 
-\item 20 MHz का  मात्राभार  ज्ञात कीजिये।
-\\
-\solution 
-\begin{align}
-\log_2\brak{20000000} \approx 27
-\end{align}
-\item पायथन क्रमादेश लिख कर उक्त उत्तर प्राप्त करें।
-\\
-\solution निम्न क्रमादेश का चालयन कर निर्देश \ref{सम:द्विआधार} से तुलना करें । 
-\begin{lstlisting}
-codes/blink/freq_count.py
-\end{lstlisting}
-\item निर्देश \ref{सम:क्रमादेश} में प्रदत्त क्रमादेश में निम्न पङ्क्ति 
-\begin{lstlisting}
-assign redled = led; //If you want to change led colour to red,
-\end{lstlisting}
-को 
-\begin{lstlisting}
-assign blueled = led; 
-\end{lstlisting}
-से प्रतिस्थापित कर निष्पादित करें । 
-\end{enumerate}
 \end{document}
 
 
