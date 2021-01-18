@@ -69,4 +69,8 @@
 .param FIXHOLD 0
 .param OSEL 1
 .param WPD 0
+.names $false gpio_out(0)
+1 1
+.names $true gpio_out(2)
+1 1
 .end

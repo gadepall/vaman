@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  18 JAN 2021 17:09
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  18 JAN 2021 20:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1988,7 +1988,11 @@ t;"
 Package Listings Warning: Unknown column format `fullflexible literate' on inpu
 t line 99.
 
-(./gvv_sevenseg_hindi.aux)
+(./gvv_sevenseg_hindi.aux
+
+LaTeX Warning: Label `code:sevenseg' multiply defined.
+
+)
 \openout1 = `gvv_sevenseg_hindi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 106.
@@ -2218,37 +2222,46 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 \gnumericColB=\skip98
 \gnumericColC=\skip99
 )
-(./figs/sevenseg.tex)
+(./figs/sevenseg.tex) (./figs/sevenseg12.tex)
 File: figs/pin_sheet.png Graphic file (type bmp)
 <figs/pin_sheet.png>
+ (./tables/arduinoport.tex
+\gnumericColD=\skip100
+\gnumericColE=\skip101
+\gnumericColF=\skip102
+\gnumericColG=\skip103
+\gnumericColH=\skip104
+)
 File: figs/pins.jpg Graphic file (type bmp)
 <figs/pins.jpg>
- [1
+
+[1
 
 
-] [2
-
-] [3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 382.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 382.
+] [2] [3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 414.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 414.
  (./gvv_sevenseg_hindi.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 382.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 382.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 414.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 414.
 Package rerunfilecheck Info: File `gvv_sevenseg_hindi.out' has not changed.
 (rerunfilecheck)             Checksum: 3C82A1F087A9A92B49DFE2FD90C3B5C3;181.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 382.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 414.
  ) 
 Here is how much of TeX's memory you used:
- 49578 strings out of 479418
- 1159817 string characters out of 5874903
- 1658054 words of memory out of 5000000
- 66152 multiletter control sequences out of 15000+600000
+ 49597 strings out of 479418
+ 1160147 string characters out of 5874903
+ 1665316 words of memory out of 5000000
+ 66165 multiletter control sequences out of 15000+600000
  559448 words of font info for 125 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191
- 60i,13n,91p,681b,1017s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,91p,681b,1064s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on gvv_sevenseg_hindi.pdf (4 pages).

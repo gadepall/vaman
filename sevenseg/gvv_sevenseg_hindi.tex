@@ -186,7 +186,7 @@ literate = {-}{-}1
 
 \title{
 %	\logo{
-वामन से परिचय
+वामन द्वारा सप्तांश प्रदर्शी का नियंत्रण
 %	}
 }
 \author{ गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
@@ -350,6 +350,14 @@ https://github.com/gadepall/vaman/tree/master/sevenseg/codes
 \caption{सप्तांश प्रदर्शी}
 \label{fig:sevenseg}
 \end{figure}
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg12.tex}
+}
+\caption{सारणी \ref{table:arduinoport} की चित्राकृति. }
+\label{fig:sevenseg12}
+\end{figure}
 
 
 \begin{figure*}[!ht]
@@ -359,6 +367,45 @@ https://github.com/gadepall/vaman/tree/master/sevenseg/codes
 \label{fig:pin_sheet}
 \end{figure*}
 
+
+
+\item अब निम्न क्रमादेश का चालयन करें।
+\label{code:sevenseg}
+\label{code:sevenseg}
+\begin{lstlisting}
+codes/static/sevenseg.v
+\end{lstlisting}
+उत्पत्त helloworldfpga.bin सञ्चिका  को  वामन में प्रस्फुरण करें।  प्रदर्शी में आप 5 अंक देख पाएंगे।
+निम्न पङ्क्तियों से  यह अंक  प्रदर्शित होता  है।
+\begin{lstlisting}
+assign     a=0;
+assign     b=1;
+assign     c=0;
+assign     d=0;
+assign     e=1;
+assign     f=0;
+assign     g=0;
+\end{lstlisting}
+\item उपरोक्त क्रमादेश में उचित संशोधन करके सारणी \ref{table:arduinoport} एवं आकृति.  \ref{fig:sevenseg12} की सहायता से 0-9 सभी अंकों तो प्रदर्शित करें.
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tables/arduinoport.tex}
+}
+\caption{सप्तांश प्रदर्शी के कुश मूल्यों से उप्तन्न दशमलव संख्या. }
+\label{table:arduinoport}
+\end{table}
+\item  सारणी \ref{table:sevenseg} एवं 
+आकृति \ref{fig:pins}  की PU 64 सारणी के माध्यम से निम्न सञ्चिका में सप्तांश प्रदर्शी के खंडों के कुश-मानचित्र का बोध होता है.  
+%इसमें संशोधन कर वामन के कुशों के अनेक संचय के लिए क्रमादेश \ref{code:sevenseg} का चालयन करें.
+\begin{lstlisting}
+codes/static/pygmy.pcf
+\end{lstlisting}
+\item निम्न क्रमादेश का चालयन करें.  इसमें प्रदर्शी के सभी कुशों को एक द्विआधारी शब्द से नियंत्रित किया गया है.
+\begin{lstlisting}
+codes/static/sevenseg_word.v
+\end{lstlisting}
+
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width = \textwidth]{figs/pins.jpg}
@@ -366,24 +413,6 @@ https://github.com/gadepall/vaman/tree/master/sevenseg/codes
 \label{fig:pins}
 \end{figure*}
 
-
-\item अब निम्न क्रमादेश का चालयन करें।
-\label{code:sevenseg}
-\begin{lstlisting}
-codes/static/sevenseg.v
-\end{lstlisting}
-उत्पत्त helloworldfpga.bin सञ्चिका  को  वामन में प्रस्फुरण करें।  प्रदर्शी में आप 5 अंक देख पाएंगे.
-\item आदेश \ref{code:sevenseg} में निम्न पङ्क्तियों से  अंक  प्रदर्शित होते हैं.
-\begin{lstlisting}
-assign     a=led;
-assign     b=!led;
-assign     c=led;
-assign     d=led;
-assign     e=!led;
-assign     f=led;
-assign     g=led;
-\end{lstlisting}
-\item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक रक्तिम रंग में श्मीलित होगा। 
 \end{enumerate}
 %
 \end{document}

@@ -18,13 +18,13 @@ Architecture file: /root/symbiflow/quicklogic-arch-defs/share/arch/ql-eos-s3_wlc
 Circuit name: helloworldfpga
 
 Loading Architecture Description
-Loading Architecture Description took 0.42 seconds (max_rss 27.3 MiB, delta_rss +23.7 MiB)
+Loading Architecture Description took 0.47 seconds (max_rss 26.8 MiB, delta_rss +23.0 MiB)
 Building complex block graph
-Building complex block graph took 0.09 seconds (max_rss 34.2 MiB, delta_rss +6.8 MiB)
+Building complex block graph took 0.10 seconds (max_rss 33.6 MiB, delta_rss +6.8 MiB)
 Load circuit
-Load circuit took 0.00 seconds (max_rss 34.2 MiB, delta_rss +0.0 MiB)
+Load circuit took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Clean circuit
-Absorbed 0 LUT buffers
+Absorbed 2 LUT buffers
 Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
 Inferred    7 additional primitive pins as constant generators due to constant inputs
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -36,11 +36,11 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 1
 Swept block(s)      : 1
 Constant Pins Marked: 10
-Clean circuit took 0.00 seconds (max_rss 34.2 MiB, delta_rss +0.0 MiB)
+Clean circuit took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Compress circuit
-Compress circuit took 0.00 seconds (max_rss 34.2 MiB, delta_rss +0.0 MiB)
+Compress circuit took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Verify circuit
-Verify circuit took 0.00 seconds (max_rss 34.2 MiB, delta_rss +0.0 MiB)
+Verify circuit took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
   Blocks: 16
     .output   :       7
@@ -56,7 +56,7 @@ Build Timing Graph
   Timing Graph Nodes: 37
   Timing Graph Edges: 42
   Timing Graph Levels: 4
-Build Timing Graph took 0.00 seconds (max_rss 34.2 MiB, delta_rss +0.0 MiB)
+Build Timing Graph took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Netlist contains 0 clocks
 Load Timing Constraints
 
@@ -67,7 +67,7 @@ Setting default timing constraints:
 Timing constraints created 1 clocks
   Constrained Clock 'virtual_io_clock' (Virtual Clock)
 
-Load Timing Constraints took 0.00 seconds (max_rss 34.2 MiB, delta_rss +0.0 MiB)
+Load Timing Constraints took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Timing analysis: ON
 Circuit netlist file: helloworldfpga.net
 Circuit placement file: helloworldfpga.place
@@ -183,8 +183,8 @@ Load Packing
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'helloworldfpga.net'.
 Detected 2 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.007035 seconds).
-Load Packing took 0.01 seconds (max_rss 34.5 MiB, delta_rss +0.3 MiB)
+Finished loading packed FPGA netlist file (took 0.007037 seconds).
+Load Packing took 0.01 seconds (max_rss 34.0 MiB, delta_rss +0.4 MiB)
 Warning 1: Netlist contains 0 global net to non-global architecture pin connections
 Warning 2: Logic block #7 ($false) has only 1 output pin '$false.GND0_GND[0]'. It may be a constant generator.
 Warning 3: Logic block #8 ($true) has only 1 output pin '$true.VCC0_VCC[0]'. It may be a constant generator.
@@ -285,26 +285,26 @@ Device Utilization: 0.01 (target 1.00)
 	Physical Tile TL-SYN_GND:
 	Block Utilization: 1.00 Logical Block: PB-SYN_GND
 
-# Build Device Grid took 0.01 seconds (max_rss 34.6 MiB, delta_rss +0.0 MiB)
+# Build Device Grid took 0.01 seconds (max_rss 34.1 MiB, delta_rss +0.0 MiB)
 # Loading routing resource graph
 
 
-# Loading routing resource graph took 1.11 seconds (max_rss 465.4 MiB, delta_rss +430.7 MiB)
+# Loading routing resource graph took 1.16 seconds (max_rss 464.9 MiB, delta_rss +430.8 MiB)
   RR Graph Nodes: 1396446
   RR Graph Edges: 2337988
-Create Device took 2.33 seconds (max_rss 513.0 MiB, delta_rss +478.3 MiB)
+Create Device took 2.39 seconds (max_rss 512.5 MiB, delta_rss +478.4 MiB)
 
 Load Placement
 Reading helloworldfpga.place.
 
 Successfully read helloworldfpga.place.
 
-Load Placement took 0.00 seconds (max_rss 513.0 MiB, delta_rss +0.0 MiB)
+Load Placement took 0.00 seconds (max_rss 512.5 MiB, delta_rss +0.0 MiB)
 
 Load Routing
 Begin loading FPGA routing file.
 Finished loading route file
-Load Routing took 0.04 seconds (max_rss 513.0 MiB, delta_rss +0.0 MiB)
+Load Routing took 0.04 seconds (max_rss 512.5 MiB, delta_rss +0.0 MiB)
 
 Checking to ensure routing is legal...
 Completed routing consistency check successfully.
@@ -312,10 +312,10 @@ Completed routing consistency check successfully.
 Serial number (magic cookie) for the routing is: -1962890
 Circuit successfully routed with a channel width factor of 100.
 
-Incr Slack updates 1 in 1.0417e-05 sec
-Full Max Req/Worst Slack updates 1 in 3.021e-06 sec
+Incr Slack updates 1 in 7.135e-06 sec
+Full Max Req/Worst Slack updates 1 in 3.125e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 3.021e-06 sec
+Full Criticality updates 1 in 3.802e-06 sec
 Writing Implementation FASM: helloworldfpga.fasm
-The entire flow of VPR took 2.86481 seconds.
+The entire flow of VPR took 2.96095 seconds.
