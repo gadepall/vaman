@@ -306,7 +306,7 @@ literate = {-}{-}1
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-वामन एक सूक्ष्म नियंत्रण परिपथफलक है जो  प्राथमिक विद्यालयों से लेकर  विश्व विद्यालयों के सभी  छात्रों को एक सरल विधि से संगणक क्रमादेश,  यंत्रोपवस्तु एवं अयंत्रोपवस्तु
+वामन एक सूक्ष्म नियंत्रण परिपथफलक है जो  प्राथमिक विद्यालयों से लेकर  विश्व विद्यालयों के सभी  छात्रों को एक सरल विधि से संगणक क्रमादेश,  यंत्रान्श एवं तंत्रांश
 सीखने में सहायक है।  इस लेख के द्वारा  वामन से छात्रों का परिचय कराया जाएगा।
 
 
@@ -320,7 +320,14 @@ literate = {-}{-}1
 \printnomenclature[1.7in]
 \input{hindi/nomen.tex}
 
+\section{तंत्रांश}
 %
+निम्न जालबन्धन से इस लिख में उपयोग किए गए समस्त क्रमादेश अवाहरत करें।
+\begin{lstlisting}
+https://github.com/gadepall/vaman/tree/master/setup/codes
+\end{lstlisting}
+
+
 \section{सप्रतिष्ठान}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
@@ -408,6 +415,13 @@ assign redled = led; //If you want to change led colour to red,
 assign blueled = led; 
 \end{lstlisting}
 से प्रतिस्थापित कर निष्पादित करें । 
+\item इदान  वेरिलॉग के द्वारा दीप में स्थायी रूप से  हरित वर्ण को उपलब्ध करें।
+\\
+\solution निम्न क्रमादेश का चालयन करें।
+\begin{lstlisting}
+codes/blink/onoff.v
+\end{lstlisting}
+
 \end{enumerate}
 \end{document}
 

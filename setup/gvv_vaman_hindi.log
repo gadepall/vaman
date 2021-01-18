@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  16 JAN 2021 17:52
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  18 JAN 2021 09:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2211,36 +2211,34 @@ LaTeX Font Warning: Font shape `TU/Sanskrit_2003.ttf(0)/m/sc' undefined
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
 )) (./hindi/nomen.tex)
-Underfull \hbox (badness 3601) in paragraph at lines 344--345
+Underfull \hbox (badness 3601) in paragraph at lines 351--352
 \TU/Sanskrit_2003.ttf(0)/m/sc/12 ऊपर helloworldfpga.bin सञ्चिका प्रेषण पूर्व
  []
 
 [1
 
 
-] [2
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 412.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 412.
+] [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 426.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 426.
  (./gvv_vaman_hindi.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 412.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 412.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 426.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 426.
 Package rerunfilecheck Info: File `gvv_vaman_hindi.out' has not changed.
-(rerunfilecheck)             Checksum: 97588924ECA728AB06F8F10D33040AC4;178.
+(rerunfilecheck)             Checksum: 84DAA3DB89E0A30C6147A8C957EE7F54;237.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 412.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 426.
  ) 
 Here is how much of TeX's memory you used:
  49311 strings out of 479418
  1154750 string characters out of 5874903
- 1687042 words of memory out of 5000000
+ 1704042 words of memory out of 5000000
  65898 multiletter control sequences out of 15000+600000
  559448 words of font info for 125 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191
- 60i,8n,91p,678b,1024s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,91p,678b,2178s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on gvv_vaman_hindi.pdf (2 pages).
