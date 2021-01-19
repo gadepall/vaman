@@ -22,10 +22,10 @@
  Yosys 0.9+2406 (git sha1 ca763e6d, gcc 9.3.0-17ubuntu1~20.04 -fPIC -Os)
 
 
--- Parsing `/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_word.v' using frontend `verilog' --
+-- Parsing `/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v' using frontend `verilog' --
 
-1. Executing Verilog-2005 frontend: /storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_word.v
-Parsing Verilog input from `/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_word.v' to AST representation.
+1. Executing Verilog-2005 frontend: /storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v
+Parsing Verilog input from `/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v' to AST representation.
 Generating RTLIL representation for module `\helloworldfpga'.
 Successfully finished Verilog frontend.
 
@@ -214,51 +214,54 @@ Removed 0 unused modules.
 4.4. Executing PROC pass (convert processes to netlists).
 
 4.4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Cleaned up 0 empty switches.
+Found and cleaned up 1 empty switch in `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:0$3'.
+Cleaned up 1 empty switch.
 
 4.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$36 in module MULT.
-Marked 2 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$18 in module Q_FRAG.
+Marked 1 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$42 in module MULT.
+Marked 2 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$24 in module Q_FRAG.
 Removed a total of 0 dead cases.
 
 4.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
 Removed 0 redundant assignments.
-Promoted 2 assignments to connections.
+Promoted 5 assignments to connections.
 
 4.4.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$19'.
+Found init rule in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$25'.
   Set init value: \QZ = 1'0
 
 4.4.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \QST in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$18'.
-Found async reset \QRT in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$18'.
+Found async reset \QST in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$24'.
+Found async reset \QRT in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$24'.
 
 4.4.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$36'.
+Creating decoders for process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$42'.
      1/2: $0\Cmult[63:0] [63:32]
      2/2: $0\Cmult[63:0] [31:0]
-Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$19'.
-Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$18'.
+Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$25'.
+Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$24'.
      1/1: $0\QZ[0:0]
-Creating decoders for process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_word.v:19$1'.
+Creating decoders for process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:0$3'.
 
 4.4.7. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\helloworldfpga.\gpio_out' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_word.v:19$1'.
+No latch inferred for signal `\helloworldfpga.$func$\gpio_out$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:47$1$\gpio_out' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:0$3'.
+No latch inferred for signal `\helloworldfpga.$func$\gpio_out$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:47$2$\gpio_out' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:0$3'.
+No latch inferred for signal `\helloworldfpga.$func$\gpio_out$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:47$2$\num_i' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:0$3'.
 
 4.4.8. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\MULT.\Cmult' using process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$36'.
+Creating register for signal `\MULT.\Cmult' using process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$42'.
   created direct connection (no actual register cell created).
-Creating register for signal `\Q_FRAG.\QZ' using process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$18'.
+Creating register for signal `\Q_FRAG.\QZ' using process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$24'.
 Warning: Complex async reset for dff `\QZ'.
-  created $dffsr cell `$procdff$887' with positive edge clock and multiple level-sensitive resets.
+  created $dffsr cell `$procdff$893' with positive edge clock and multiple level-sensitive resets.
 
 4.4.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 4 empty switches in `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$36'.
-Removing empty process `MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$36'.
-Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$19'.
-Found and cleaned up 1 empty switch in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$18'.
-Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$18'.
-Removing empty process `helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_word.v:19$1'.
+Found and cleaned up 4 empty switches in `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$42'.
+Removing empty process `MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$42'.
+Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$25'.
+Found and cleaned up 1 empty switch in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$24'.
+Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$24'.
+Removing empty process `helloworldfpga.$proc$/storage/emulated/0/github/vaman/sevenseg/codes/static/sevenseg_dec.v:0$3'.
 Cleaned up 5 empty switches.
 
 4.5. Executing FLATTEN pass (flatten design).
@@ -270,7 +273,7 @@ Optimizing module helloworldfpga.
 
 4.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \helloworldfpga..
-Removed 0 unused cells and 1 unused wires.
+Removed 0 unused cells and 7 unused wires.
 <suppressed ~1 debug messages>
 
 4.9. Executing DEMINOUT pass (demote inout ports to input or output).
@@ -821,10 +824,10 @@ Removed 0 unused modules.
 
 === helloworldfpga ===
 
-   Number of wires:                  8
-   Number of wire bits:             14
-   Number of public wires:           8
-   Number of public wire bits:      14
+   Number of wires:                  7
+   Number of wire bits:              7
+   Number of public wires:           7
+   Number of public wire bits:       7
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -853,8 +856,8 @@ Mapping port helloworldfpga.g using outpad.
 
 4.66. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \helloworldfpga..
-Removed 0 unused cells and 14 unused wires.
-<suppressed ~6 debug messages>
+Removed 0 unused cells and 7 unused wires.
+<suppressed ~1 debug messages>
 
 4.67. Executing CHECK pass (checking for obvious problems).
 checking module helloworldfpga..
@@ -866,8 +869,8 @@ found and reported 0 problems.
 
    Number of wires:                  9
    Number of wire bits:              9
-   Number of public wires:           9
-   Number of public wire bits:       9
+   Number of public wires:           7
+   Number of public wire bits:       7
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -929,8 +932,8 @@ Generating RTLIL representation for module `\qlal4s3_mult_cell_macro'.
 Successfully finished Verilog frontend.
 
 7.2. Continuing TECHMAP pass.
-Using template logic_1 for cells of type logic_1.
 Using template logic_0 for cells of type logic_0.
+Using template logic_1 for cells of type logic_1.
 No more expansions possible.
 <suppressed ~2 debug messages>
 
@@ -971,8 +974,8 @@ Generating RTLIL representation for module `\qlal4s3_mult_cell_macro'.
 Successfully finished Verilog frontend.
 
 8.2. Continuing TECHMAP pass.
-Using template $paramod$02aa829d7bb4d3bbae67ad5ee2e5a326704559e9\outpad for cells of type outpad.
 Using template $paramod$d8b4ab69a8b5413c066ad38d899c9d4a3dedc93a\outpad for cells of type outpad.
+Using template $paramod$02aa829d7bb4d3bbae67ad5ee2e5a326704559e9\outpad for cells of type outpad.
 Using template $paramod$3494bf91dff70d828c5f5312272dede938de1112\outpad for cells of type outpad.
 Using template $paramod$fa3380cd31d3eaf3369d75f1d1b91f2cba5e8470\outpad for cells of type outpad.
 Using template $paramod$03fa78d84bd5e07f6e124fa217a4ce84543d615a\outpad for cells of type outpad.
@@ -996,7 +999,7 @@ Optimizing module helloworldfpga.
 
 11. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \helloworldfpga..
-Removed 0 unused cells and 16 unused wires.
+Removed 0 unused cells and 18 unused wires.
 <suppressed ~1 debug messages>
 
 12. Executing SETUNDEF pass (replace undef values with defined constants).
@@ -1005,10 +1008,10 @@ Removed 0 unused cells and 16 unused wires.
 
 === helloworldfpga ===
 
-   Number of wires:                  9
-   Number of wire bits:              9
-   Number of public wires:           9
-   Number of public wire bits:       9
+   Number of wires:                  7
+   Number of wire bits:              7
+   Number of public wires:           7
+   Number of public wire bits:       7
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -1021,6 +1024,6 @@ Removed 0 unused cells and 16 unused wires.
 Dumping module `\helloworldfpga'.
 
 Warnings: 8 unique messages, 11 total
-End of script. Logfile hash: 909d990820, CPU: user 2.29s system 0.15s, MEM: 220.33 MB peak
+End of script. Logfile hash: c5e67e0320, CPU: user 2.31s system 0.12s, MEM: 220.36 MB peak
 Yosys 0.9+2406 (git sha1 ca763e6d, gcc 9.3.0-17ubuntu1~20.04 -fPIC -Os)
-Time spent: 69% 18x read_verilog (1 sec), 8% 21x opt_clean (0 sec), ...
+Time spent: 68% 18x read_verilog (1 sec), 8% 21x opt_clean (0 sec), ...

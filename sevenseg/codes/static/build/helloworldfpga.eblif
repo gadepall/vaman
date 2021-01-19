@@ -15,7 +15,7 @@
 .param FIXHOLD 0
 .param OSEL 1
 .param WPD 0
-.subckt BIDIR_CELL I_EN=$false O_DAT=$true O_EN=$true O_PAD_$out=b
+.subckt BIDIR_CELL I_EN=$false O_DAT=$false O_EN=$true O_PAD_$out=b
 .cname $iopadmap$helloworldfpga.b
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:81.9-88.8"
@@ -51,7 +51,7 @@
 .param FIXHOLD 0
 .param OSEL 1
 .param WPD 0
-.subckt BIDIR_CELL I_EN=$false O_DAT=$false O_EN=$true O_PAD_$out=f
+.subckt BIDIR_CELL I_EN=$false O_DAT=$true O_EN=$true O_PAD_$out=f
 .cname $iopadmap$helloworldfpga.f
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:81.9-88.8"
@@ -69,8 +69,4 @@
 .param FIXHOLD 0
 .param OSEL 1
 .param WPD 0
-.names $false gpio_out(0)
-1 1
-.names $true gpio_out(2)
-1 1
 .end

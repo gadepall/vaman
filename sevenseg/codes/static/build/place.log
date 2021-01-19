@@ -18,13 +18,13 @@ Architecture file: /root/symbiflow/quicklogic-arch-defs/share/arch/ql-eos-s3_wlc
 Circuit name: helloworldfpga
 
 # Loading Architecture Description
-# Loading Architecture Description took 0.41 seconds (max_rss 27.0 MiB, delta_rss +23.7 MiB)
+# Loading Architecture Description took 0.41 seconds (max_rss 26.9 MiB, delta_rss +23.7 MiB)
 # Building complex block graph
-# Building complex block graph took 0.09 seconds (max_rss 33.8 MiB, delta_rss +6.7 MiB)
+# Building complex block graph took 0.09 seconds (max_rss 33.7 MiB, delta_rss +6.7 MiB)
 # Load circuit
-# Load circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Load circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 # Clean circuit
-Absorbed 2 LUT buffers
+Absorbed 0 LUT buffers
 Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
 Inferred    7 additional primitive pins as constant generators due to constant inputs
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -36,11 +36,11 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 1
 Swept block(s)      : 1
 Constant Pins Marked: 10
-# Clean circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Clean circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 # Compress circuit
-# Compress circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Compress circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 # Verify circuit
-# Verify circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Verify circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
   Blocks: 16
     .output   :       7
@@ -56,7 +56,7 @@ Circuit Statistics:
   Timing Graph Nodes: 37
   Timing Graph Edges: 42
   Timing Graph Levels: 4
-# Build Timing Graph took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Build Timing Graph took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 Netlist contains 0 clocks
 # Load Timing Constraints
 
@@ -67,7 +67,7 @@ Setting default timing constraints:
 Timing constraints created 1 clocks
   Constrained Clock 'virtual_io_clock' (Virtual Clock)
 
-# Load Timing Constraints took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Load Timing Constraints took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 Timing analysis: ON
 Circuit netlist file: helloworldfpga.net
 Circuit placement file: helloworldfpga.place
@@ -135,7 +135,7 @@ RoutingArch.Fs: 3
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'helloworldfpga.net'.
 Detected 2 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.006672 seconds).
+Finished loading packed FPGA netlist file (took 0.006608 seconds).
 # Load Packing took 0.01 seconds (max_rss 33.9 MiB, delta_rss +0.2 MiB)
 Warning 1: Netlist contains 0 global net to non-global architecture pin connections
 Warning 2: Logic block #7 ($false) has only 1 output pin '$false.GND0_GND[0]'. It may be a constant generator.
@@ -241,10 +241,10 @@ Device Utilization: 0.01 (target 1.00)
 ## Loading routing resource graph
 
 
-## Loading routing resource graph took 0.55 seconds (max_rss 341.7 MiB, delta_rss +307.7 MiB)
+## Loading routing resource graph took 0.56 seconds (max_rss 341.6 MiB, delta_rss +307.6 MiB)
   RR Graph Nodes: 1396446
   RR Graph Edges: 2337988
-# Create Device took 1.76 seconds (max_rss 389.4 MiB, delta_rss +355.4 MiB)
+# Create Device took 1.77 seconds (max_rss 389.4 MiB, delta_rss +355.4 MiB)
 
 # Computing router lookahead map
 ## Computing wire lookahead
@@ -252,15 +252,15 @@ Warning 4: Unable to find any sample location for segment CHANX type 'generic' (
 Warning 5: Unable to find any sample location for segment CHANY type 'generic' (length 1)
 Warning 6: Unable to find any sample location for segment CHANX type 'pad' (length 1)
 Warning 7: Unable to find any sample location for segment CHANY type 'pad' (length 1)
-## Computing wire lookahead took 26.37 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
+## Computing wire lookahead took 25.98 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
 ## Computing src/opin lookahead
 ## Computing src/opin lookahead took 0.00 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
-# Computing router lookahead map took 26.37 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 25.98 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
 # Placement
 ## Computing placement delta delay look-up
   RR Graph Nodes: 1396446
   RR Graph Edges: 2337988
-## Computing placement delta delay look-up took 1.20 seconds (max_rss 447.4 MiB, delta_rss +58.0 MiB)
+## Computing placement delta delay look-up took 1.11 seconds (max_rss 447.4 MiB, delta_rss +58.0 MiB)
 Warning 8: CHANX place cost fac is 0 at 2 2
 Warning 9: CHANX place cost fac is 0 at 34 34
 Warning 10: CHANY place cost fac is 0 at 38 38
@@ -326,16 +326,16 @@ Placement total # of swap attempts: 45
 	Swaps accepted:  0 ( 0.0 %)
 	Swaps rejected:  0 ( 0.0 %)
 	Swaps aborted : 45 (100.0 %)
-Placement Quench timing analysis took 2.0729e-05 seconds (1.2761e-05 STA, 7.968e-06 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
-Placement Total  timing analysis took 0.000124791 seconds (8.349e-05 STA, 4.1301e-05 slack) (4 full updates: 4 setup, 0 hold, 0 combined).
+Placement Quench timing analysis took 2.1094e-05 seconds (1.2969e-05 STA, 8.125e-06 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+Placement Total  timing analysis took 0.000122603 seconds (8.2187e-05 STA, 4.0416e-05 slack) (4 full updates: 4 setup, 0 hold, 0 combined).
 update_td_costs: connections 0 nets 0 sum_nets 0 total 0
-Incr Slack updates 4 in 1.0676e-05 sec
-Full Max Req/Worst Slack updates 4 in 7.448e-06 sec
+Incr Slack updates 4 in 9.687e-06 sec
+Full Max Req/Worst Slack updates 4 in 7.24e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
 Full Criticality updates 4 in 8.021e-06 sec
-# Placement took 1.20 seconds (max_rss 447.4 MiB, delta_rss +58.0 MiB)
+# Placement took 1.12 seconds (max_rss 447.4 MiB, delta_rss +58.0 MiB)
 
-Flow timing analysis took 0.000124791 seconds (8.349e-05 STA, 4.1301e-05 slack) (4 full updates: 4 setup, 0 hold, 0 combined).
+Flow timing analysis took 0.000122603 seconds (8.2187e-05 STA, 4.0416e-05 slack) (4 full updates: 4 setup, 0 hold, 0 combined).
 VPR succeeded
-The entire flow of VPR took 29.87 seconds (max_rss 447.4 MiB)
+The entire flow of VPR took 29.41 seconds (max_rss 447.4 MiB)

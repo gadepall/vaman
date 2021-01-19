@@ -18,13 +18,13 @@ Architecture file: /root/symbiflow/quicklogic-arch-defs/share/arch/ql-eos-s3_wlc
 Circuit name: helloworldfpga
 
 # Loading Architecture Description
-# Loading Architecture Description took 0.45 seconds (max_rss 27.1 MiB, delta_rss +23.8 MiB)
+# Loading Architecture Description took 0.41 seconds (max_rss 26.9 MiB, delta_rss +23.7 MiB)
 # Building complex block graph
-# Building complex block graph took 0.11 seconds (max_rss 33.8 MiB, delta_rss +6.8 MiB)
+# Building complex block graph took 0.09 seconds (max_rss 33.7 MiB, delta_rss +6.7 MiB)
 # Load circuit
-# Load circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Load circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 # Clean circuit
-Absorbed 2 LUT buffers
+Absorbed 0 LUT buffers
 Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
 Inferred    7 additional primitive pins as constant generators due to constant inputs
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -36,11 +36,11 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 1
 Swept block(s)      : 1
 Constant Pins Marked: 10
-# Clean circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Clean circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 # Compress circuit
-# Compress circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Compress circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 # Verify circuit
-# Verify circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Verify circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
   Blocks: 16
     .output   :       7
@@ -56,7 +56,7 @@ Circuit Statistics:
   Timing Graph Nodes: 37
   Timing Graph Edges: 42
   Timing Graph Levels: 4
-# Build Timing Graph took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Build Timing Graph took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 Netlist contains 0 clocks
 # Load Timing Constraints
 
@@ -67,7 +67,7 @@ Setting default timing constraints:
 Timing constraints created 1 clocks
   Constrained Clock 'virtual_io_clock' (Virtual Clock)
 
-# Load Timing Constraints took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
+# Load Timing Constraints took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
 Timing analysis: ON
 Circuit netlist file: helloworldfpga.net
 Circuit placement file: helloworldfpga.place
@@ -183,8 +183,8 @@ RoutingArch.Fs: 3
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'helloworldfpga.net'.
 Detected 2 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.006623 seconds).
-# Load Packing took 0.01 seconds (max_rss 34.0 MiB, delta_rss +0.2 MiB)
+Finished loading packed FPGA netlist file (took 0.006644 seconds).
+# Load Packing took 0.01 seconds (max_rss 33.8 MiB, delta_rss +0.2 MiB)
 Warning 1: Netlist contains 0 global net to non-global architecture pin connections
 Warning 2: Logic block #7 ($false) has only 1 output pin '$false.GND0_GND[0]'. It may be a constant generator.
 Warning 3: Logic block #8 ($true) has only 1 output pin '$true.VCC0_VCC[0]'. It may be a constant generator.
@@ -285,21 +285,21 @@ Device Utilization: 0.01 (target 1.00)
 	Physical Tile TL-SYN_GND:
 	Block Utilization: 1.00 Logical Block: PB-SYN_GND
 
-## Build Device Grid took 0.01 seconds (max_rss 34.1 MiB, delta_rss +0.0 MiB)
+## Build Device Grid took 0.01 seconds (max_rss 34.0 MiB, delta_rss +0.0 MiB)
 ## Loading routing resource graph
 
 
-## Loading routing resource graph took 0.68 seconds (max_rss 341.8 MiB, delta_rss +307.6 MiB)
+## Loading routing resource graph took 0.56 seconds (max_rss 341.7 MiB, delta_rss +307.7 MiB)
   RR Graph Nodes: 1396446
   RR Graph Edges: 2337988
-# Create Device took 1.92 seconds (max_rss 389.5 MiB, delta_rss +355.4 MiB)
+# Create Device took 1.79 seconds (max_rss 389.4 MiB, delta_rss +355.5 MiB)
 
 # Load Placement
 Reading helloworldfpga.place.
 
 Successfully read helloworldfpga.place.
 
-# Load Placement took 0.00 seconds (max_rss 389.5 MiB, delta_rss +0.0 MiB)
+# Load Placement took 0.00 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
 
 # Computing router lookahead map
 ## Computing wire lookahead
@@ -307,10 +307,10 @@ Warning 4: Unable to find any sample location for segment CHANX type 'generic' (
 Warning 5: Unable to find any sample location for segment CHANY type 'generic' (length 1)
 Warning 6: Unable to find any sample location for segment CHANX type 'pad' (length 1)
 Warning 7: Unable to find any sample location for segment CHANY type 'pad' (length 1)
-## Computing wire lookahead took 26.36 seconds (max_rss 389.5 MiB, delta_rss +0.0 MiB)
+## Computing wire lookahead took 25.79 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
 ## Computing src/opin lookahead
-## Computing src/opin lookahead took 0.00 seconds (max_rss 389.5 MiB, delta_rss +0.0 MiB)
-# Computing router lookahead map took 26.36 seconds (max_rss 389.5 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead took 0.00 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 25.79 seconds (max_rss 389.4 MiB, delta_rss +0.0 MiB)
 # Routing
   RR Graph Nodes: 1396446
   RR Graph Edges: 2337988
@@ -327,13 +327,13 @@ Initial Net Connection Criticality Histogram:
 [      0.7:      0.8)  0 (  0.0%) |
 [      0.8:      0.9)  0 (  0.0%) |
 [      0.9:        1)  0 (  0.0%) |
-## Initializing router criticalities took 0.00 seconds (max_rss 447.5 MiB, delta_rss +0.0 MiB)
+## Initializing router criticalities took 0.00 seconds (max_rss 447.4 MiB, delta_rss +0.0 MiB)
 ---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
 Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
       (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
 ---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
-   1    0.0     0.0    0   97827       2      21      21 ( 0.002%)     434 ( 0.0%)      nan      0.000      0.000      0.000      0.000      N/A
-   2    0.0     4.0    0   55013       1      12       0 ( 0.000%)     434 ( 0.0%)      nan      0.000      0.000      0.000      0.000      N/A
+   1    0.0     0.0    0   97772       2      21       6 ( 0.000%)     434 ( 0.0%)      nan      0.000      0.000      0.000      0.000      N/A
+   2    0.0     4.0    0   55029       1      12       0 ( 0.000%)     434 ( 0.0%)      nan      0.000      0.000      0.000      0.000      N/A
 Restoring best routing
 Critical path: nan ns
 Successfully routed after 2 routing iterations.
@@ -348,20 +348,20 @@ Final Net Connection Criticality Histogram:
 [      0.7:      0.8)  0 (  0.0%) |
 [      0.8:      0.9)  0 (  0.0%) |
 [      0.9:        1)  0 (  0.0%) |
-Router Stats: total_nets_routed: 3 total_connections_routed: 33 total_heap_pushes: 152840 total_heap_pops: 128949
-# Routing took 1.27 seconds (max_rss 447.5 MiB, delta_rss +58.0 MiB)
+Router Stats: total_nets_routed: 3 total_connections_routed: 33 total_heap_pushes: 152801 total_heap_pops: 129147
+# Routing took 1.15 seconds (max_rss 447.4 MiB, delta_rss +58.0 MiB)
 
 Checking to ensure routing is legal...
 Completed routing consistency check successfully.
 
-Serial number (magic cookie) for the routing is: -1962890
+Serial number (magic cookie) for the routing is: -1953990
 Circuit successfully routed with a channel width factor of 100.
 
-Incr Slack updates 3 in 2.7449e-05 sec
-Full Max Req/Worst Slack updates 3 in 1.0781e-05 sec
+Incr Slack updates 3 in 2.9791e-05 sec
+Full Max Req/Worst Slack updates 3 in 1.0626e-05 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 3 in 9.323e-06 sec
+Full Criticality updates 3 in 9.063e-06 sec
 
 Average number of bends per net: 179.500  Maximum # of bends: 196
 
@@ -511,11 +511,11 @@ Final setup slack histogram:
 Final geomean non-virtual intra-domain period: nan ns (nan MHz)
 Final fanout-weighted geomean non-virtual intra-domain period: nan ns (nan MHz)
 
-Incr Slack updates 1 in 9.948e-06 sec
-Full Max Req/Worst Slack updates 1 in 3.959e-06 sec
+Incr Slack updates 1 in 1e-05 sec
+Full Max Req/Worst Slack updates 1 in 3.802e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 3.281e-06 sec
-Flow timing analysis took 0.000360678 seconds (0.000268334 STA, 9.2344e-05 slack) (4 full updates: 0 setup, 0 hold, 4 combined).
+Full Criticality updates 1 in 3.177e-06 sec
+Flow timing analysis took 0.00034875 seconds (0.000255417 STA, 9.3333e-05 slack) (4 full updates: 0 setup, 0 hold, 4 combined).
 VPR succeeded
-The entire flow of VPR took 30.20 seconds (max_rss 447.5 MiB)
+The entire flow of VPR took 29.31 seconds (max_rss 447.4 MiB)

@@ -2,7 +2,7 @@
  
 current_dir := /storage/emulated/0/github/vaman/sevenseg/codes/static
 TOP := helloworldfpga
-VERILOG := ${current_dir}/sevenseg_word.v  
+VERILOG := ${current_dir}/sevenseg_dec.v  
 PARTNAME := PU64
 DEVICE  := ql-eos-s3_wlcsp
 PCF := ${current_dir}/pygmy.pcf
