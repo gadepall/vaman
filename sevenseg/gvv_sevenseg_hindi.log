@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  18 JAN 2021 20:23
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  19 JAN 2021 15:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2239,11 +2239,11 @@ File: figs/pin_sheet.png Graphic file (type bmp)
 File: figs/pins.jpg Graphic file (type bmp)
 <figs/pins.jpg>
  [2] [3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 418.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 418.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 430.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 430.
  (./gvv_sevenseg_hindi.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 418.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 418.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 430.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 430.
 Package rerunfilecheck Info: File `gvv_sevenseg_hindi.out' has not changed.
 (rerunfilecheck)             Checksum: 3C82A1F087A9A92B49DFE2FD90C3B5C3;181.
 
@@ -2253,7 +2253,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 418.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 430.
  ) 
 Here is how much of TeX's memory you used:
  49597 strings out of 479418
