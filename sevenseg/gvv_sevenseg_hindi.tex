@@ -371,7 +371,6 @@ https://github.com/gadepall/vaman/tree/master/sevenseg/codes
 
 \item अब निम्न क्रमादेश का चालयन करें।
 \label{code:sevenseg}
-\label{code:sevenseg}
 \begin{lstlisting}
 codes/static/sevenseg.v
 \end{lstlisting}
@@ -395,6 +394,18 @@ assign     g=0;
 \caption{सप्तांश प्रदर्शी के कुश मूल्यों से उप्तन्न दशमलव संख्या. }
 \label{table:arduinoport}
 \end{table}
+\end{enumerate}
+%
+\section{उदाहरण}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+
+
+
 \item  सारणी \ref{table:sevenseg} एवं 
 आकृति \ref{fig:pins}  की PU 64 सारणी के माध्यम से निम्न सञ्चिका में सप्तांश प्रदर्शी के खंडों के कुश-मानचित्र का बोध होता है.  
 %इसमें संशोधन कर वामन के कुशों के अनेक संचय के लिए क्रमादेश \ref{code:sevenseg} का चालयन करें.
@@ -423,7 +434,10 @@ codes/static/sevenseg_dec.v
 \end{lstlisting}
 \item वामन को एक दशक गणित्र बनावें.
 \\
-\solution 
+\solution निम्न सञ्चिका को निष्पादित करें.
+\begin{lstlisting}
+codes/loop/decade_counter.v
+\end{lstlisting}
 \end{enumerate}
 %
 
