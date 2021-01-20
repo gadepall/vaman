@@ -22,24 +22,25 @@ output wire g
 
 );
 
-/*initial
+initial
 
 begin
 A <= 1;
 B <=0;
-C <=0;
+C <=1;
 D <=0;
 end
-*/
 
-reg A, B, C, D;
+
+//reg A, B, C, D;
 
 always @*
 begin
-  A <=W;
+/*  A <=W;
   B <=X;
   C <=Y;
   D <=Z;
+*/
   a=(!D&!C&!B&A)|(!D&C&!B&!A);
   b=(!D&C&!B&A)|(!D&C&B&!A);
   c=(!D&!C&B&!A);

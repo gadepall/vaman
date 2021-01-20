@@ -1,25 +1,14 @@
-Netlist_File: helloworldfpga.net Netlist_ID: SHA256:841fa3f210ce79442fae1e5e3eb9d538e01ae5915a67adf06f3e2d7eff3bc083
+Netlist_File: helloworldfpga.net Netlist_ID: SHA256:28899db56765b843463c3e636c080a36234d1507e4c482e35d2ca9931308fac4
 Array size: 39 x 35 logic blocks
 
 #block name	x	y	subblk	block number
 #----------	--	--	------	------------
-a_LUT4_O.c_frag	16	20	0	#0
-c_LUT4_O.c_frag	16	19	0	#1
-d_LUT4_O.c_frag	19	24	0	#2
-e_LUT4_O.c_frag	20	19	0	#3
-g_LUT4_O.c_frag	20	24	0	#4
-b_LUT4_O.c_frag	18	19	0	#5
-f_LUT4_O.c_frag	20	23	0	#6
-$iopadmap$helloworldfpga.a	12	3	0	#7
-$iopadmap$helloworldfpga.c	16	3	0	#8
-$iopadmap$helloworldfpga.d	18	3	0	#9
-$iopadmap$helloworldfpga.e	20	3	0	#10
-$iopadmap$helloworldfpga.g	26	3	0	#11
-$iopadmap$helloworldfpga.b	14	3	0	#12
-$iopadmap$helloworldfpga.f	24	3	0	#13
-W		28	3	0	#14
-X		4	32	0	#15
-Y		20	32	0	#16
-Z		10	32	0	#17
-$false		3	1	0	#18
-$true		2	1	0	#19
+$iopadmap$helloworldfpga.a	12	3	0	#0
+$iopadmap$helloworldfpga.b	14	3	0	#1
+$iopadmap$helloworldfpga.c	16	3	0	#2
+$iopadmap$helloworldfpga.d	18	3	0	#3
+$iopadmap$helloworldfpga.e	20	3	0	#4
+$iopadmap$helloworldfpga.f	24	3	0	#5
+$iopadmap$helloworldfpga.g	26	3	0	#6
+$false		3	1	0	#7
+$true		2	1	0	#8
