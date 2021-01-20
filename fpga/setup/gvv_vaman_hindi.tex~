@@ -415,11 +415,37 @@ assign redled = led; //If you want to change led colour to red,
 assign blueled = led; 
 \end{lstlisting}
 से प्रतिस्थापित कर निष्पादित करें । 
-\item इदान  वेरिलॉग के द्वारा डीप में स्थायी रूप से  हरित वर्ण को उपलब्ध करें।
+\item इदान  वेरिलॉग के द्वारा दीप में स्थायी रूप से  हरित वर्ण को उपलब्ध करें।
 \\
 \solution निम्न क्रमादेश का चालयन करें।
 \begin{lstlisting}
 codes/blink/onoff.v
+\end{lstlisting}
+\item  सारणी \ref{table:input} एवं आकृति. \ref{fig:pin_sheet} द्वारा वामन में आगत कुश का उपयोग कर परिपथफलक में उपस्थित दीप
+को प्रकाशित करें.  एक अन्य कुश को निर्गत रूप देकर किसी बाह्य दीप को प्रकाशोर्जित करें.
+
+\begin{table}[]
+\begin{tabular}{|l|l|l|}
+\hline
+प्रकार & वामन कुश  &  गम्य \\ \hline
+आगत &  IO\_28 &  GND\\ \hline
+निर्गत  & IO\_11  &  LED\\ \hline
+\end{tabular}
+\caption{वामन के आगत/निर्गत कुश.}
+\label{table:input}
+\end{table}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width = \textwidth]{figs/pin_sheet.png}
+\caption{कुश आरेख}
+\label{fig:pin_sheet}
+\end{figure*}
+\solution निम्न क्रमादेश का चालयन करें. तत्पश्चात GND से योजित तंतु को दूर करें  एवं पुनः मेलन करें.  इस क्रिया 
+को परस्पर दोहरायें.
+\begin{lstlisting}
+codes/input/blink_ip.v
+codes/input/pygmy.pcf
 \end{lstlisting}
 
 \end{enumerate}

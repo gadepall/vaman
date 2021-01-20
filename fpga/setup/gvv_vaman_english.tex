@@ -417,6 +417,36 @@ and execute the code.
 \begin{lstlisting}
 codes/blink/onoff.v
 \end{lstlisting}
+\item  Using Table \ref{table:input} and Fig.  \ref{fig:pin_sheet}, control the onboard LED
+through an external input. Connect an external LED and control it using an output pin as well.
+
+
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Type & Pygmy Pin  &  Connection \\ \hline
+Input &  IO\_28 &  GND\\ \hline
+Output  & IO\_11  &  LED\\ \hline
+\end{tabular}
+\caption{Pygmy Input/Output.}
+\label{table:input}
+\end{table}
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width = \textwidth]{figs/pin_sheet.png}
+\caption{कुश आरेख}
+\label{fig:pin_sheet}
+\end{figure*}
+\solution Execute the following code and take out the input pin connect to GND. Plug it again.
+Do this repeatedly.
+
+\begin{lstlisting}
+codes/input/blink_ip.v
+codes/input/pygmy.pcf
+\end{lstlisting}
+
 
 \end{enumerate}
 \end{document}
