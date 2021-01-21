@@ -16,7 +16,7 @@ module helloworldfpga(
 
 );
 
-reg [6:0] gpio_out=7'b1000100;
+reg [6:0] gpio_out=7'b1001100;
 
 assign {a, b,c,d,e,f,g}=gpio_out[6:0];
 endmodule
