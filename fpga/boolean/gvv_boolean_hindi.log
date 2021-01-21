@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  21 JAN 2021 09:09
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Termux) (preloaded format=xelatex 2020.12.28)  21 JAN 2021 11:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1988,11 +1988,7 @@ t;"
 Package Listings Warning: Unknown column format `fullflexible literate' on inpu
 t line 99.
 
-(./gvv_boolean_hindi.aux
-
-LaTeX Warning: Label `code:sevenseg' multiply defined.
-
-)
+(./gvv_boolean_hindi.aux)
 \openout1 = `gvv_boolean_hindi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 106.
@@ -2214,60 +2210,108 @@ LaTeX Font Warning: Font shape `TU/Sanskrit_2003.ttf(0)/m/sc' undefined
 /se-ascii-print.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
-)) (./hindi/nomen.tex) (./tables/vaman_sevenseg.tex
+)) (./hindi/nomen.tex) (./tables/disp_dec.tex
 \gnumericTableWidth=\skip94
 \gnumericTableWidthComplete=\skip95
 \gnumericMultiRowLength=\skip96
 \gnumericColA=\skip97
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 157--157
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
 \gnumericColB=\skip98
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 158--158
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
 \gnumericColC=\skip99
-)
-(./figs/sevenseg.tex) (./figs/sevenseg12.tex)
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 159--159
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColD=\skip100
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 160--160
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColE=\skip101
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 161--161
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColF=\skip102
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 162--162
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColG=\skip103
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 163--163
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColH=\skip104
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 164--164
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColI=\skip105
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 165--165
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColJ=\skip106
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 166--166
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColK=\skip107
+
+Overfull \hbox (1.19336pt too wide) in paragraph at lines 167--167
+[]|\TU/Sanskrit_2003.ttf(0)/m/sc/12 x| 
+ []
+
+\gnumericColL=\skip108
+) (./tables/vaman_sevenseg.tex) (./figs/sevenseg.tex) (./figs/sevenseg12.tex)
 File: figs/pin_sheet.png Graphic file (type bmp)
 <figs/pin_sheet.png>
- (./tables/arduinoport.tex
-\gnumericColD=\skip100
-\gnumericColE=\skip101
-\gnumericColF=\skip102
-\gnumericColG=\skip103
-\gnumericColH=\skip104
-)
+
 [1
 
 
-]
+] (./tables/arduinoport.tex)
 File: figs/pins.jpg Graphic file (type bmp)
 <figs/pins.jpg>
  [2] [3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 455.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 455.
  (./gvv_boolean_hindi.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 445.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 455.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 455.
+Package rerunfilecheck Info: File `gvv_boolean_hindi.out' has not changed.
+(rerunfilecheck)             Checksum: 3FC023B5208C1A2281B552F435139D75;234.
 
-
-Package rerunfilecheck Warning: File `gvv_boolean_hindi.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `gvv_boolean_hindi.out':
-(rerunfilecheck)             Before: 77960BD3FDE4F0EA613A8598A5AD88AF;180
-(rerunfilecheck)             After:  3FC023B5208C1A2281B552F435139D75;234.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 455.
  ) 
 Here is how much of TeX's memory you used:
- 49597 strings out of 479418
- 1160123 string characters out of 5874903
- 1664141 words of memory out of 5000000
- 66165 multiletter control sequences out of 15000+600000
+ 49607 strings out of 479418
+ 1160280 string characters out of 5874903
+ 1678169 words of memory out of 5000000
+ 66172 multiletter control sequences out of 15000+600000
  559448 words of font info for 125 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191
- 60i,13n,91p,680b,1064s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,14n,91p,680b,1064s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on gvv_boolean_hindi.pdf (4 pages).

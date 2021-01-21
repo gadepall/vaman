@@ -332,6 +332,17 @@ https://github.com/gadepall/vaman/tree/master/fpga/boolean/codes
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
+\item abcd 
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tables/disp_dec.tex}
+}
+\caption{प्रदर्शी गूढ़वाचक की सत्य सारणी.}
+\label{table:disp_dec}
+\end{table}
+
+
 \item आकृति. \ref{fig:pin_sheet} में  वामन के समस्त कुशाव्यूह  प्रस्तुत हैं.  कुशाव्यूह J5 को  आकृति \ref{fig:sevenseg} में प्रदत्त सप्तांश प्रदर्शी के कुशों से सारणी \ref{table:sevenseg} के द्वारा योजित करें। ध्यान  रहे कि COM एवं 3.3V के मध्य एक प्रतिरोधी अनिवार्य है। 
 \begin{table}[!ht]
 \centering
