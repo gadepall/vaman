@@ -323,7 +323,7 @@ We show how to use Pygmy as a decade counter.
 \section{Software}
 All codes used in this manual are available at the following link.
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/fpga/sevenseg/codes
+https://github.com/gadepall/vaman/tree/master/sevenseg/codes
 \end{lstlisting}
 %
 \section{Setup}

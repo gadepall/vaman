@@ -186,7 +186,7 @@ literate = {-}{-}1
 
 \title{
 %	\logo{
-वामन द्वारा सप्तांश प्रदर्शी का नियंत्रण
+वामन द्वारा बूलीय तर्क विधि
 %	}
 }
 \author{ गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
@@ -321,7 +321,7 @@ literate = {-}{-}1
 \section{तंत्रांश}
 इस आलेख के समस्त क्रमादेश निम्न जालबन्धन में उपलब्ध हैं.
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/sevenseg/codes
+https://github.com/gadepall/vaman/tree/master/fpga/boolean/codes
 \end{lstlisting}
 %
 \section{सप्रतिष्ठान}

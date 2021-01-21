@@ -58,13 +58,13 @@
 \usepackage{chngcntr}
 \usepackage{blkarray}
 \usepackage{karnaugh-map}
-\usepackage{fontspec}
+%\usepackage{fontspec}
 \usepackage[intoc]{nomencl}
 \makenomenclature
 
 %\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
 \usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
-\setmainfont{Sanskrit_2003.ttf}
+%\setmainfont{Sanskrit_2003.ttf}
 %\setmainfont{Nakula.ttf}
 %\setmainfont{Lohit-Devanagari.ttf}
 
@@ -182,16 +182,17 @@ literate = {-}{-}1
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 
-\vspace{3cm}
+%\vspace{3cm}
 
 \title{
-%	\logo{
-Display Control through Pygmy
-%	}
+	\logo{
+Introduction to Pygmy
+	}
 }
-\author{ 
-G. V. V. Sharma $^{*}$% <-this % stops a space
+\author{ G. V. V. Sharma $^{*}$% <-this % stops a space
 	\thanks{*The author is with the Department of Electrical Engineering, IIT Hyderabad, 502285, India. email: gadepall@ee.iith.ac.in.  All material in this document is released under GNU GPL.  Free to use for anything.}
+%\author{ गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
+%	\thanks{*रचयिता भारतीय प्रौद्योगिकी संस्थान, हैदराबाद,५०२२८५ के विद्युत अभियान्त्रिकी विभाग में कार्यरत हैं, ईमेल:gadepall@ee.iith.ac.in। यह लेख मुक्त स्रोत विचारधारा के अनुरूप  है।}
 	
 }	
 %\title{
@@ -268,12 +269,12 @@ G. V. V. Sharma $^{*}$% <-this % stops a space
 
 \bigskip
 
-\renewcommand{\thefigure}{\theenumi}
-\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\thefigure}{\theenumi}
+%\renewcommand{\thetable}{\theenumi}
 %\renewcommand{\abstractname}{सार}
 %\renewcommand{\nomname}{नामकरण}
 %\renewcommand{\solution}{हल: }
-%\renewcommand{\figurename}{Fig. }
+%\renewcommand{\figurename}{आकृति.}
 %\renewcommand{\tablename}{सारणी.}
 %\renewcommand{\theequation}{\theenumi}
 
@@ -307,9 +308,7 @@ G. V. V. Sharma $^{*}$% <-this % stops a space
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-We show how to use Pygmy as a decade counter.
-%इस आलेख में वामन को  दशक गणित्र के रूप में उपयोग करने का विधान प्रस्तुत है.
-
+This document provides a simple introduction to software and hardware using the Pygmy FPGA/microcontroller board.  The exercises provided here are suitable for students from primary school till college.
 
 %ॐ श्री गणेशाय नमः॥
 %\\
@@ -320,12 +319,13 @@ We show how to use Pygmy as a decade counter.
 %\section{Nomenclature}
 %\printnomenclature[1.7in]
 %\input{hindi/nomen.tex}
-\section{Software}
-All codes used in this manual are available at the following link.
-\begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/fpga/sevenseg/codes
-\end{lstlisting}
 %
+\section{Software}
+Download codes from the following link
+\begin{lstlisting}
+https://github.com/gadepall/vaman/tree/master/setup/codes/
+\end{lstlisting}
+%%
 \section{Setup}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
@@ -334,123 +334,121 @@ https://github.com/gadepall/vaman/tree/master/fpga/sevenseg/codes
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-
-\item The pin sheet for the Pygmy is available in Fig.  \ref{fig:pin_sheet}.  
-Connect the pins in the bank J5 of the pygmy with the seven segment display  shown in 
-Fig.  \ref{fig:sevenseg} according to Table \ref{table:sevenseg}.  Ensure that the COM pin
-is connected to 3.3V through a resistor.
-\begin{table}[!ht]
-\centering
-\resizebox{\columnwidth}{!}{
-\input{tables/pygmy_sevenseg.tex}
-}
-\caption{Seven segment display - pygmy connection.}
-\label{table:sevenseg}
-\end{table}
-
-\begin{figure}[!ht]
-\centering
-\resizebox{\columnwidth}{!}{
-\input{figs/sevenseg.tex}
-}
-\caption{seven segment display }
-\label{fig:sevenseg}
-\end{figure}
-\begin{figure}[!ht]
-\centering
-\resizebox{\columnwidth}{!}{
-\input{figs/sevenseg12.tex}
-}
-\caption{Companion figure for Table \ref{table:arduinoport}. }
-\label{fig:sevenseg12}
-\end{figure}
-
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width = \textwidth]{figs/pin_sheet.png}
-\caption{Pin Diagram }
-\label{fig:pin_sheet}
-\end{figure*}
-
-
-
-\item Now execute the following code.
-\label{code:sevenseg}
-\begin{lstlisting}
-codes/static/sevenseg.v
-\end{lstlisting}
-Flash the helloworldfpga.bin file to pygmy. You should see the number 5 displayed.
-The following lines are used for generating numbers on the display.
-\begin{lstlisting}
-assign     a=0;
-assign     b=1;
-assign     c=0;
-assign     d=0;
-assign     e=1;
-assign     f=0;
-assign     g=0;
-\end{lstlisting}
-\item Modify the above code appropriately 
-with the help of  Table \ref{table:arduinoport} and  Fig.  \ref{fig:sevenseg12} 
-to generate the numbers from 0-9 on the display.
-\begin{table}[!ht]
-\centering
-\resizebox{\columnwidth}{!}{
-\input{tables/arduinoport.tex}
-}
-\caption{Pin values used for generating decimal numbers on the seven segment display. }
-\label{table:arduinoport}
-\end{table}
-\end{enumerate}
+\item Connect the Pygmy to the Raspberry Pi through USB.
+\item There is a button and an LED to the left of the USB port on the Pygmy.  There is another button to the right of teh LED.
+\item Press the right button first and immediately press the left button.  The LED will be blinking green.  The Pygmy is now in bootloader mode.
 %
-\section{Examples}
+\item Login to termux-ubuntu on the android device and execute the following commands
+\begin{lstlisting}
+cd /storage/emulated/0/Download
+svn co https://github.com/gadepall/pygmy/trunk/installation/blink
+ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+\end{lstlisting}
+Make sure that the appropriate IP address for the raspberry pi is given in the above command.
+\item Now execute the following commands on the raspberry pi.
+\begin{lstlisting}
+python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+\end{lstlisting}
+\item Make sure that the correct USB port address is given in the above command.  Then press the button to the right of the USB port.  After some time, the LED will start blinking red.
+\end{enumerate}
+%%
+\section{Frequency}
+%
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{enumi}
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
+\item In the following verilog program, 
+\label{eq:program}
+\begin{lstlisting}
+codes/blink/helloworldfpga.v
+\end{lstlisting}
+pay attention to the following lines
+%%
+\begin{lstlisting}
+delay = delay+1;                                                                                                   
+if(delay > 20000000)
+begin
+delay=27'b0;
+led=!led;
+end
+\end{lstlisting}
+%%
+It may be deduced from the above that the blink frequency is 20 MHz.
+\item In instruction  \ref{eq:program}, replace
+\label{eq:binary}
+\begin{lstlisting}
+if(delay > 20000000)
+\end{lstlisting}
+%
+with
+\begin{lstlisting}
+if(delay==27'b1001100010010110100000000)
+\end{lstlisting}
+and execute the verilog code.
+\item Since the delay is 20 MHz, the blink period is 1 second.  Modify the verilog code
+so that the blink period becomes 0.5s.
+\item Find the bit length of 20 MHz.
+\\
+\solution 
+\begin{align}
+\log_2\brak{20000000} \approx 27
+\end{align}
+\item Obtain the above answer using a Python code.
+\\
+\solution Exeucte the following code and compare with instruction  \ref{eq:binary}.
+\begin{lstlisting}
+codes/blink/freq_count.py
+\end{lstlisting}
+\item Replace  the following line in the code in instruciton  \ref{eq:program} 
+\begin{lstlisting}
+assign redled = led; //If you want to change led colour to red,
+\end{lstlisting}
+with
+\begin{lstlisting}
+assign blueled = led; 
+\end{lstlisting}
+and execute the code.
+\item Ensure that the LED stays on in green colour.
+\solution  Execute the following code
+\begin{lstlisting}
+codes/blink/onoff.v
+\end{lstlisting}
+\item  Using Table \ref{table:input} and Fig.  \ref{fig:pin_sheet}, control the onboard LED
+through an external input. Connect an external LED and control it using an output pin as well.
 
 
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Type & Pygmy Pin  &  Connection \\ \hline
+Input &  IO\_28 &  GND\\ \hline
+Output  & IO\_11  &  LED\\ \hline
+\end{tabular}
+\caption{Pygmy Input/Output.}
+\label{table:input}
+\end{table}
 
-\item  Table \ref{table:sevenseg} and
-the PU 64 table in Fig. \ref{fig:pins}  explain the pin numbering in the following file.
-\begin{lstlisting}
-codes/static/pygmy.pcf
-\end{lstlisting}
-\item Execute the code below.  All the pins in the display are controlled using a 7 bit word.
-\begin{lstlisting}
-codes/static/sevenseg_word.v
-\end{lstlisting}
-The above file is used for generating the number 4 on the display.  The process is
-explained by the completion of 
-Table \ref{table:arduinoport}. 
-\begin{lstlisting}
-gpio_out=7'b0100100;
-\end{lstlisting}
 \begin{figure*}[!ht]
 \centering
-\includegraphics[width = \textwidth]{figs/pins.jpg}
-\caption{Pin Definitions}
-\label{fig:pins}
+\includegraphics[width = \textwidth]{figs/pin_sheet.png}
+\caption{कुश आरेख}
+\label{fig:pin_sheet}
 \end{figure*}
-\item Use a verilog function that takes a decimal input and display it on the seven segement
-display. 
-\\
-\solution  Execute the following code.
-\begin{lstlisting}
-codes/static/sevenseg_dec.v
-\end{lstlisting}
-\item Use the pygmy as a decade counter.
-\\
-\solution Execute the following code.
-\begin{lstlisting}
-codes/loop/decade_counter.v
-\end{lstlisting}
-\end{enumerate}
-%%
+\solution Execute the following code and take out the input pin connect to GND. Plug it again.
+Do this repeatedly.
 
+\begin{lstlisting}
+codes/input/blink_ip.v
+codes/input/pygmy.pcf
+\end{lstlisting}
+
+
+\end{enumerate}
 \end{document}
 
 

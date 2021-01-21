@@ -324,7 +324,7 @@ literate = {-}{-}1
 %
 निम्न जालबन्धन से इस लिख में उपयोग किए गए समस्त क्रमादेश अवाहरत करें।
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/setup/codes
+https://github.com/gadepall/vaman/tree/master/setup/fpga/codes
 \end{lstlisting}
 
 
@@ -425,6 +425,7 @@ codes/blink/onoff.v
 को प्रकाशित करें.  एक अन्य कुश को निर्गत रूप देकर किसी बाह्य दीप को प्रकाशोर्जित करें.
 
 \begin{table}[]
+\centering
 \begin{tabular}{|l|l|l|}
 \hline
 प्रकार & वामन कुश  &  गम्य \\ \hline
