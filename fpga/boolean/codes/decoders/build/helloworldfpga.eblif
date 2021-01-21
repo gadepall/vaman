@@ -15,7 +15,7 @@
 .param FIXHOLD 0
 .param OSEL 1
 .param WPD 0
-.subckt BIDIR_CELL I_DAT=g_LUT4_O.TSL I_EN=$true I_PAD_$inp=X O_EN=$false
+.subckt BIDIR_CELL I_DAT=g_LUT4_O.TAB I_EN=$true I_PAD_$inp=X O_EN=$false
 .cname $iopadmap$helloworldfpga.X
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:43.9-50.8"
@@ -24,7 +24,7 @@
 .param FIXHOLD 0
 .param OSEL 1
 .param WPD 0
-.subckt BIDIR_CELL I_DAT=g_LUT4_O.TA1 I_EN=$true I_PAD_$inp=Y O_EN=$false
+.subckt BIDIR_CELL I_DAT=g_LUT4_O.TSL I_EN=$true I_PAD_$inp=Y O_EN=$false
 .cname $iopadmap$helloworldfpga.Y
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:43.9-50.8"
@@ -33,7 +33,7 @@
 .param FIXHOLD 0
 .param OSEL 1
 .param WPD 0
-.subckt BIDIR_CELL I_DAT=g_LUT4_O.TAB I_EN=$true I_PAD_$inp=Z O_EN=$false
+.subckt BIDIR_CELL I_DAT=g_LUT4_O.TB1 I_EN=$true I_PAD_$inp=Z O_EN=$false
 .cname $iopadmap$helloworldfpga.Z
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:43.9-50.8"
@@ -105,7 +105,7 @@
 .param FIXHOLD 0
 .param OSEL 1
 .param WPD 0
-.subckt C_FRAG BA1=$false BA2=$false BAB=g_LUT4_O.TSL BB1=$false BB2=$false BSL=g_LUT4_O.TA1 CZ=$iopadmap$a TA1=g_LUT4_O.TBS TA2=g_LUT4_O.TBS TAB=g_LUT4_O.TSL TB1=$false TB2=$false TBS=g_LUT4_O.TAB TSL=g_LUT4_O.TA1
+.subckt C_FRAG BA1=$false BA2=$false BAB=g_LUT4_O.TSL BB1=$false BB2=$false BSL=g_LUT4_O.TAB CZ=$iopadmap$a TA1=g_LUT4_O.TBS TA2=g_LUT4_O.TBS TAB=g_LUT4_O.TSL TB1=$false TB2=$false TBS=g_LUT4_O.TB1 TSL=g_LUT4_O.TAB
 .cname a_LUT4_O.c_frag
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
@@ -113,23 +113,19 @@
 .param BAS2 0
 .param BBS1 0
 .param BBS2 0
-.param TAS1 0
-.param TAS2 1
-.param TBS1 0
-.param TBS2 0
-.subckt C_FRAG BA1=$false BA2=$false BAB=g_LUT4_O.TSL BB1=$false BB2=$false BSL=g_LUT4_O.TBS CZ=$iopadmap$b TA1=$false TA2=g_LUT4_O.TA1 TAB=g_LUT4_O.TSL TB1=g_LUT4_O.TA1 TB2=$false TBS=g_LUT4_O.TAB TSL=g_LUT4_O.TBS
-.cname b_LUT4_O.c_frag
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
-.param BAS1 0
-.param BAS2 0
-.param BBS1 0
-.param BBS2 0
-.param TAS1 0
+.param TAS1 1
 .param TAS2 0
 .param TBS1 0
 .param TBS2 0
-.subckt C_FRAG BA1=$false BA2=$false BAB=g_LUT4_O.TA1 BB1=$false BB2=$false BSL=g_LUT4_O.TBS CZ=$iopadmap$c TA1=g_LUT4_O.TSL TA2=$false TAB=g_LUT4_O.TA1 TB1=$false TB2=$false TBS=g_LUT4_O.TAB TSL=g_LUT4_O.TBS
+.subckt T_FRAG TBS=$true XA1=g_LUT4_O.TSL XA2=$false XAB=g_LUT4_O.TB1 XB1=$false XB2=$false XSL=g_LUT4_O.TAB XZ=$iopadmap$b
+.cname b_LUT3_O.t_frag
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/share/yosys/quicklogic/pp3_lut_map.v:36.63-36.121|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:590.3-600.4"
+.param XAS1 0
+.param XAS2 0
+.param XBS1 0
+.param XBS2 0
+.subckt C_FRAG BA1=$false BA2=$false BAB=g_LUT4_O.TAB BB1=$false BB2=$false BSL=g_LUT4_O.TSL CZ=$iopadmap$c TA1=g_LUT4_O.TBS TA2=$false TAB=g_LUT4_O.TAB TB1=$false TB2=$false TBS=g_LUT4_O.TB1 TSL=g_LUT4_O.TSL
 .cname c_LUT4_O.c_frag
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
@@ -141,7 +137,7 @@
 .param TAS2 0
 .param TBS1 0
 .param TBS2 0
-.subckt C_FRAG BA1=$false BA2=$false BAB=g_LUT4_O.TSL BB1=$false BB2=$false BSL=g_LUT4_O.TA1 CZ=$iopadmap$d TA1=g_LUT4_O.TBS TA2=g_LUT4_O.TBS TAB=g_LUT4_O.TSL TB1=$false TB2=g_LUT4_O.TBS TBS=g_LUT4_O.TAB TSL=g_LUT4_O.TA1
+.subckt C_FRAG BA1=$false BA2=$false BAB=g_LUT4_O.TBS BB1=$false BB2=$false BSL=g_LUT4_O.TSL CZ=$iopadmap$d TA1=g_LUT4_O.TAB TA2=g_LUT4_O.TAB TAB=g_LUT4_O.TBS TB1=g_LUT4_O.TAB TB2=$false TBS=g_LUT4_O.TB1 TSL=g_LUT4_O.TSL
 .cname d_LUT4_O.c_frag
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
@@ -149,36 +145,12 @@
 .param BAS2 0
 .param BBS1 0
 .param BBS2 0
-.param TAS1 0
-.param TAS2 1
+.param TAS1 1
+.param TAS2 0
 .param TBS1 0
 .param TBS2 0
-.subckt C_FRAG BA1=g_LUT4_O.TBS BA2=$false BAB=g_LUT4_O.TSL BB1=$false BB2=$false BSL=g_LUT4_O.TA1 CZ=$iopadmap$e TA1=g_LUT4_O.TBS TA2=$false TAB=g_LUT4_O.TSL TB1=g_LUT4_O.TBS TB2=g_LUT4_O.TBS TBS=g_LUT4_O.TAB TSL=g_LUT4_O.TA1
+.subckt C_FRAG BA1=g_LUT4_O.TAB BA2=$false BAB=g_LUT4_O.TBS BB1=$false BB2=$false BSL=g_LUT4_O.TSL CZ=$iopadmap$e TA1=$false TA2=$false TAB=g_LUT4_O.TBS TB1=g_LUT4_O.TAB TB2=$false TBS=g_LUT4_O.TB1 TSL=g_LUT4_O.TSL
 .cname e_LUT4_O.c_frag
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
-.param BAS1 0
-.param BAS2 0
-.param BBS1 0
-.param BBS2 0
-.param TAS1 0
-.param TAS2 1
-.param TBS1 0
-.param TBS2 0
-.subckt C_FRAG BA1=$false BA2=$false BAB=g_LUT4_O.TSL BB1=$false BB2=g_LUT4_O.TAB BSL=g_LUT4_O.TBS CZ=$iopadmap$f TA1=$false TA2=g_LUT4_O.TAB TAB=g_LUT4_O.TSL TB1=g_LUT4_O.TAB TB2=g_LUT4_O.TAB TBS=g_LUT4_O.TA1 TSL=g_LUT4_O.TBS
-.cname f_LUT4_O.c_frag
-.attr module_not_derived 00000000000000000000000000000001
-.attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
-.param BAS1 0
-.param BAS2 0
-.param BBS1 0
-.param BBS2 1
-.param TAS1 0
-.param TAS2 1
-.param TBS1 1
-.param TBS2 1
-.subckt C_FRAG BA1=g_LUT4_O.TA1 BA2=g_LUT4_O.TA1 BAB=g_LUT4_O.TAB BB1=$false BB2=$false BSL=g_LUT4_O.TSL CZ=$iopadmap$g TA1=g_LUT4_O.TA1 TA2=$false TAB=g_LUT4_O.TAB TB1=$false TB2=$false TBS=g_LUT4_O.TBS TSL=g_LUT4_O.TSL
-.cname g_LUT4_O.c_frag
 .attr module_not_derived 00000000000000000000000000000001
 .attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
 .param BAS1 1
@@ -186,9 +158,33 @@
 .param BBS1 0
 .param BBS2 0
 .param TAS1 1
-.param TAS2 0
+.param TAS2 1
 .param TBS1 0
 .param TBS2 0
+.subckt C_FRAG BA1=g_LUT4_O.TAB BA2=$false BAB=g_LUT4_O.TBS BB1=$false BB2=$false BSL=g_LUT4_O.TB1 CZ=$iopadmap$f TA1=$false TA2=$false TAB=g_LUT4_O.TBS TB1=g_LUT4_O.TAB TB2=$false TBS=g_LUT4_O.TSL TSL=g_LUT4_O.TB1
+.cname f_LUT4_O.c_frag
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
+.param BAS1 0
+.param BAS2 0
+.param BBS1 0
+.param BBS2 0
+.param TAS1 1
+.param TAS2 0
+.param TBS1 1
+.param TBS2 0
+.subckt C_FRAG BA1=g_LUT4_O.TB1 BA2=g_LUT4_O.TB1 BAB=g_LUT4_O.TAB BB1=g_LUT4_O.TB1 BB2=g_LUT4_O.TB1 BSL=g_LUT4_O.TSL CZ=$iopadmap$g TA1=g_LUT4_O.TB1 TA2=g_LUT4_O.TB1 TAB=g_LUT4_O.TAB TB1=g_LUT4_O.TB1 TB2=$false TBS=g_LUT4_O.TBS TSL=g_LUT4_O.TSL
+.cname g_LUT4_O.c_frag
+.attr module_not_derived 00000000000000000000000000000001
+.attr src "/share/yosys/quicklogic/pp3_lut_map.v:40.63-40.132|/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_map.v:702.3-718.4"
+.param BAS1 0
+.param BAS2 0
+.param BBS1 0
+.param BBS2 0
+.param TAS1 1
+.param TAS2 0
+.param TBS1 0
+.param TBS2 1
 .names $false a_LUT4_O.BA1
 1 1
 .names $false a_LUT4_O.BA2
@@ -199,7 +195,7 @@
 1 1
 .names $false a_LUT4_O.BB2
 1 1
-.names g_LUT4_O.TA1 a_LUT4_O.BSL
+.names g_LUT4_O.TAB a_LUT4_O.BSL
 1 1
 .names $false a_LUT4_O.I0
 1 1
@@ -221,57 +217,41 @@
 1 1
 .names $false a_LUT4_O.TB2
 1 1
-.names g_LUT4_O.TAB a_LUT4_O.TBS
+.names g_LUT4_O.TB1 a_LUT4_O.TBS
 1 1
-.names g_LUT4_O.TA1 a_LUT4_O.TSL
+.names g_LUT4_O.TAB a_LUT4_O.TSL
 1 1
-.names $false b_LUT4_O.BA1
+.names $false b_LUT3_O.I0
 1 1
-.names $false b_LUT4_O.BA2
+.names $false b_LUT3_O.I1
 1 1
-.names g_LUT4_O.TSL b_LUT4_O.BAB
+.names $false b_LUT3_O.I2
 1 1
-.names $false b_LUT4_O.BB1
+.names $false b_LUT3_O.O
 1 1
-.names $false b_LUT4_O.BB2
+.names g_LUT4_O.TSL b_LUT3_O.XA1
 1 1
-.names g_LUT4_O.TBS b_LUT4_O.BSL
+.names $false b_LUT3_O.XA2
 1 1
-.names $false b_LUT4_O.I0
+.names g_LUT4_O.TB1 b_LUT3_O.XAB
 1 1
-.names $false b_LUT4_O.I1
+.names $false b_LUT3_O.XB1
 1 1
-.names $false b_LUT4_O.I2
+.names $false b_LUT3_O.XB2
 1 1
-.names $false b_LUT4_O.I3
-1 1
-.names $false b_LUT4_O.O
-1 1
-.names $false b_LUT4_O.TA1
-1 1
-.names g_LUT4_O.TA1 b_LUT4_O.TA2
-1 1
-.names g_LUT4_O.TSL b_LUT4_O.TAB
-1 1
-.names g_LUT4_O.TA1 b_LUT4_O.TB1
-1 1
-.names $false b_LUT4_O.TB2
-1 1
-.names g_LUT4_O.TAB b_LUT4_O.TBS
-1 1
-.names g_LUT4_O.TBS b_LUT4_O.TSL
+.names g_LUT4_O.TAB b_LUT3_O.XSL
 1 1
 .names $false c_LUT4_O.BA1
 1 1
 .names $false c_LUT4_O.BA2
 1 1
-.names g_LUT4_O.TA1 c_LUT4_O.BAB
+.names g_LUT4_O.TAB c_LUT4_O.BAB
 1 1
 .names $false c_LUT4_O.BB1
 1 1
 .names $false c_LUT4_O.BB2
 1 1
-.names g_LUT4_O.TBS c_LUT4_O.BSL
+.names g_LUT4_O.TSL c_LUT4_O.BSL
 1 1
 .names $false c_LUT4_O.I0
 1 1
@@ -283,31 +263,31 @@
 1 1
 .names $false c_LUT4_O.O
 1 1
-.names g_LUT4_O.TSL c_LUT4_O.TA1
+.names g_LUT4_O.TBS c_LUT4_O.TA1
 1 1
 .names $false c_LUT4_O.TA2
 1 1
-.names g_LUT4_O.TA1 c_LUT4_O.TAB
+.names g_LUT4_O.TAB c_LUT4_O.TAB
 1 1
 .names $false c_LUT4_O.TB1
 1 1
 .names $false c_LUT4_O.TB2
 1 1
-.names g_LUT4_O.TAB c_LUT4_O.TBS
+.names g_LUT4_O.TB1 c_LUT4_O.TBS
 1 1
-.names g_LUT4_O.TBS c_LUT4_O.TSL
+.names g_LUT4_O.TSL c_LUT4_O.TSL
 1 1
 .names $false d_LUT4_O.BA1
 1 1
 .names $false d_LUT4_O.BA2
 1 1
-.names g_LUT4_O.TSL d_LUT4_O.BAB
+.names g_LUT4_O.TBS d_LUT4_O.BAB
 1 1
 .names $false d_LUT4_O.BB1
 1 1
 .names $false d_LUT4_O.BB2
 1 1
-.names g_LUT4_O.TA1 d_LUT4_O.BSL
+.names g_LUT4_O.TSL d_LUT4_O.BSL
 1 1
 .names $false d_LUT4_O.I0
 1 1
@@ -319,31 +299,31 @@
 1 1
 .names $false d_LUT4_O.O
 1 1
-.names g_LUT4_O.TBS d_LUT4_O.TA1
+.names g_LUT4_O.TAB d_LUT4_O.TA1
 1 1
-.names g_LUT4_O.TBS d_LUT4_O.TA2
+.names g_LUT4_O.TAB d_LUT4_O.TA2
 1 1
-.names g_LUT4_O.TSL d_LUT4_O.TAB
+.names g_LUT4_O.TBS d_LUT4_O.TAB
 1 1
-.names $false d_LUT4_O.TB1
+.names g_LUT4_O.TAB d_LUT4_O.TB1
 1 1
-.names g_LUT4_O.TBS d_LUT4_O.TB2
+.names $false d_LUT4_O.TB2
 1 1
-.names g_LUT4_O.TAB d_LUT4_O.TBS
+.names g_LUT4_O.TB1 d_LUT4_O.TBS
 1 1
-.names g_LUT4_O.TA1 d_LUT4_O.TSL
+.names g_LUT4_O.TSL d_LUT4_O.TSL
 1 1
-.names g_LUT4_O.TBS e_LUT4_O.BA1
+.names g_LUT4_O.TAB e_LUT4_O.BA1
 1 1
 .names $false e_LUT4_O.BA2
 1 1
-.names g_LUT4_O.TSL e_LUT4_O.BAB
+.names g_LUT4_O.TBS e_LUT4_O.BAB
 1 1
 .names $false e_LUT4_O.BB1
 1 1
 .names $false e_LUT4_O.BB2
 1 1
-.names g_LUT4_O.TA1 e_LUT4_O.BSL
+.names g_LUT4_O.TSL e_LUT4_O.BSL
 1 1
 .names $false e_LUT4_O.I0
 1 1
@@ -355,31 +335,31 @@
 1 1
 .names $false e_LUT4_O.O
 1 1
-.names g_LUT4_O.TBS e_LUT4_O.TA1
+.names $false e_LUT4_O.TA1
 1 1
 .names $false e_LUT4_O.TA2
 1 1
-.names g_LUT4_O.TSL e_LUT4_O.TAB
+.names g_LUT4_O.TBS e_LUT4_O.TAB
 1 1
-.names g_LUT4_O.TBS e_LUT4_O.TB1
+.names g_LUT4_O.TAB e_LUT4_O.TB1
 1 1
-.names g_LUT4_O.TBS e_LUT4_O.TB2
+.names $false e_LUT4_O.TB2
 1 1
-.names g_LUT4_O.TAB e_LUT4_O.TBS
+.names g_LUT4_O.TB1 e_LUT4_O.TBS
 1 1
-.names g_LUT4_O.TA1 e_LUT4_O.TSL
+.names g_LUT4_O.TSL e_LUT4_O.TSL
 1 1
-.names $false f_LUT4_O.BA1
+.names g_LUT4_O.TAB f_LUT4_O.BA1
 1 1
 .names $false f_LUT4_O.BA2
 1 1
-.names g_LUT4_O.TSL f_LUT4_O.BAB
+.names g_LUT4_O.TBS f_LUT4_O.BAB
 1 1
 .names $false f_LUT4_O.BB1
 1 1
-.names g_LUT4_O.TAB f_LUT4_O.BB2
+.names $false f_LUT4_O.BB2
 1 1
-.names g_LUT4_O.TBS f_LUT4_O.BSL
+.names g_LUT4_O.TB1 f_LUT4_O.BSL
 1 1
 .names $false f_LUT4_O.I0
 1 1
@@ -393,27 +373,27 @@
 1 1
 .names $false f_LUT4_O.TA1
 1 1
-.names g_LUT4_O.TAB f_LUT4_O.TA2
+.names $false f_LUT4_O.TA2
 1 1
-.names g_LUT4_O.TSL f_LUT4_O.TAB
+.names g_LUT4_O.TBS f_LUT4_O.TAB
 1 1
 .names g_LUT4_O.TAB f_LUT4_O.TB1
 1 1
-.names g_LUT4_O.TAB f_LUT4_O.TB2
+.names $false f_LUT4_O.TB2
 1 1
-.names g_LUT4_O.TA1 f_LUT4_O.TBS
+.names g_LUT4_O.TSL f_LUT4_O.TBS
 1 1
-.names g_LUT4_O.TBS f_LUT4_O.TSL
+.names g_LUT4_O.TB1 f_LUT4_O.TSL
 1 1
-.names g_LUT4_O.TA1 g_LUT4_O.BA1
+.names g_LUT4_O.TB1 g_LUT4_O.BA1
 1 1
-.names g_LUT4_O.TA1 g_LUT4_O.BA2
+.names g_LUT4_O.TB1 g_LUT4_O.BA2
 1 1
 .names g_LUT4_O.TAB g_LUT4_O.BAB
 1 1
-.names $false g_LUT4_O.BB1
+.names g_LUT4_O.TB1 g_LUT4_O.BB1
 1 1
-.names $false g_LUT4_O.BB2
+.names g_LUT4_O.TB1 g_LUT4_O.BB2
 1 1
 .names g_LUT4_O.TSL g_LUT4_O.BSL
 1 1
@@ -427,9 +407,9 @@
 1 1
 .names $false g_LUT4_O.O
 1 1
-.names $false g_LUT4_O.TA2
+.names g_LUT4_O.TB1 g_LUT4_O.TA1
 1 1
-.names $false g_LUT4_O.TB1
+.names g_LUT4_O.TB1 g_LUT4_O.TA2
 1 1
 .names $false g_LUT4_O.TB2
 1 1

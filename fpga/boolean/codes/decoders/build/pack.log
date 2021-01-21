@@ -18,13 +18,13 @@ Architecture file: /root/symbiflow/quicklogic-arch-defs/share/arch/ql-eos-s3_wlc
 Circuit name: helloworldfpga
 
 # Loading Architecture Description
-# Loading Architecture Description took 0.42 seconds (max_rss 27.0 MiB, delta_rss +23.7 MiB)
+# Loading Architecture Description took 0.43 seconds (max_rss 27.1 MiB, delta_rss +23.8 MiB)
 # Building complex block graph
-# Building complex block graph took 0.09 seconds (max_rss 33.7 MiB, delta_rss +6.7 MiB)
+# Building complex block graph took 0.09 seconds (max_rss 33.8 MiB, delta_rss +6.7 MiB)
 # Load circuit
-# Load circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
+# Load circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
 # Clean circuit
-Absorbed 122 LUT buffers
+Absorbed 114 LUT buffers
 Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
 Inferred    0 additional primitive pins as constant generators due to constant inputs
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -36,29 +36,30 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 1
 Swept block(s)      : 1
 Constant Pins Marked: 3
-# Clean circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
+# Clean circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
 # Compress circuit
-# Compress circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
+# Compress circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
 # Verify circuit
-# Verify circuit took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
+# Verify circuit took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
   Blocks: 31
     .input    :       4
     .output   :       7
     BIDIR_CELL:      11
-    C_FRAG    :       7
+    C_FRAG    :       6
     GND       :       1
+    T_FRAG    :       1
     VCC       :       1
   Nets  : 24
-    Avg Fanout:     5.5
-    Max Fanout:    48.0
+    Avg Fanout:     5.2
+    Max Fanout:    45.0
     Min Fanout:     1.0
   Netlist Clocks: 0
 # Build Timing Graph
-  Timing Graph Nodes: 155
-  Timing Graph Edges: 244
+  Timing Graph Nodes: 149
+  Timing Graph Edges: 232
   Timing Graph Levels: 8
-# Build Timing Graph took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
+# Build Timing Graph took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
 Netlist contains 0 clocks
 # Load Timing Constraints
 
@@ -69,7 +70,7 @@ Setting default timing constraints:
 Timing constraints created 1 clocks
   Constrained Clock 'virtual_io_clock' (Virtual Clock)
 
-# Load Timing Constraints took 0.00 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
+# Load Timing Constraints took 0.00 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
 Timing analysis: ON
 Circuit netlist file: helloworldfpga.net
 Circuit placement file: helloworldfpga.place
@@ -124,26 +125,26 @@ Not enough resources expand FPGA size to (39 x 35)
 Complex block 0: 'a_LUT4_O.c_frag' (PB-LOGIC) .
 Complex block 1: 'c_LUT4_O.c_frag' (PB-LOGIC) .
 Complex block 2: 'd_LUT4_O.c_frag' (PB-LOGIC) .
-Complex block 3: 'e_LUT4_O.c_frag' (PB-LOGIC) .
-Complex block 4: 'g_LUT4_O.c_frag' (PB-LOGIC) .
-Complex block 5: 'b_LUT4_O.c_frag' (PB-LOGIC) .
-Complex block 6: 'f_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 3: 'g_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 4: 'e_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 5: 'f_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 6: 'b_LUT3_O.t_frag' (PB-LOGIC) .
 Complex block 7: '$iopadmap$helloworldfpga.a' (PB-BIDIR) .
 Complex block 8: '$iopadmap$helloworldfpga.c' (PB-BIDIR) .
 Complex block 9: '$iopadmap$helloworldfpga.d' (PB-BIDIR) .
-Complex block 10: '$iopadmap$helloworldfpga.e' (PB-BIDIR) .
-Complex block 11: '$iopadmap$helloworldfpga.g' (PB-BIDIR) .
-Complex block 12: '$iopadmap$helloworldfpga.b' (PB-BIDIR) .
-Complex block 13: '$iopadmap$helloworldfpga.f' (PB-BIDIR) .
+Complex block 10: '$iopadmap$helloworldfpga.g' (PB-BIDIR) .
+Complex block 11: '$iopadmap$helloworldfpga.e' (PB-BIDIR) .
+Complex block 12: '$iopadmap$helloworldfpga.f' (PB-BIDIR) .
+Complex block 13: '$iopadmap$helloworldfpga.b' (PB-BIDIR) .
 Complex block 14: 'W' (PB-BIDIR) .
 Complex block 15: 'X' (PB-BIDIR) .
-Complex block 16: 'Y' (PB-BIDIR) .
-Complex block 17: 'Z' (PB-BIDIR) .
+Complex block 16: 'Z' (PB-BIDIR) .
+Complex block 17: 'Y' (PB-BIDIR) .
 Complex block 18: '$false' (PB-SYN_GND) .
 Complex block 19: '$true' (PB-SYN_VCC) .
 	EMPTY: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
 	PB-GMUX: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
-	PB-LOGIC: # blocks: 7, average # input + clock pins used: 13, average # output pins used: 1
+	PB-LOGIC: # blocks: 7, average # input + clock pins used: 12.1429, average # output pins used: 1
 	PB-CLOCK: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
 	PB-MULT: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
 	PB-SDIOMUX: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
@@ -153,11 +154,11 @@ Complex block 19: '$true' (PB-SYN_VCC) .
 	PB-SYN_GND: # blocks: 1, average # input + clock pins used: 0, average # output pins used: 1
 	PB-ASSP: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
 Absorbed logical nets 11 out of 24 nets, 13 nets not absorbed.
-Incr Slack updates 1 in 9.323e-06 sec
-Full Max Req/Worst Slack updates 1 in 3.438e-06 sec
+Incr Slack updates 1 in 6.771e-06 sec
+Full Max Req/Worst Slack updates 1 in 3.49e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 5.209e-06 sec
+Full Criticality updates 1 in 5.26e-06 sec
 FPGA sized to 39 x 35 (ql-eos-s3)
 Device Utilization: 0.01 (target 1.00)
 	Block Utilization: 0.01 Type: PB-LOGIC
@@ -168,13 +169,13 @@ Device Utilization: 0.01 (target 1.00)
 
 Netlist conversion complete.
 
-# Packing took 0.03 seconds (max_rss 33.7 MiB, delta_rss +0.0 MiB)
+# Packing took 0.03 seconds (max_rss 33.8 MiB, delta_rss +0.0 MiB)
 # Load Packing
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'helloworldfpga.net'.
 Detected 2 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.008892 seconds).
-# Load Packing took 0.01 seconds (max_rss 33.9 MiB, delta_rss +0.2 MiB)
+Finished loading packed FPGA netlist file (took 0.00883 seconds).
+# Load Packing took 0.01 seconds (max_rss 34.0 MiB, delta_rss +0.2 MiB)
 Warning 7: Netlist contains 0 global net to non-global architecture pin connections
 Warning 8: Logic block #18 ($false) has only 1 output pin '$false.GND0_GND[0]'. It may be a constant generator.
 Warning 9: Logic block #19 ($true) has only 1 output pin '$true.VCC0_VCC[0]'. It may be a constant generator.
@@ -201,8 +202,10 @@ Pb types usage...
    LOGIC            : 7
     FRAGS           : 7
      c_frag_modes   : 7
-      SINGLE        : 7
-       c_frag       : 7
+      SINGLE        : 6
+       c_frag       : 6
+      SPLIT         : 1
+       b_frag       : 1
   PB-SYN_VCC        : 1
    VCC              : 1
   PB-BIDIR          : 11
@@ -288,12 +291,12 @@ Device Utilization: 0.01 (target 1.00)
 ## Loading routing resource graph
 
 
-## Loading routing resource graph took 0.56 seconds (max_rss 342.0 MiB, delta_rss +307.9 MiB)
+## Loading routing resource graph took 0.55 seconds (max_rss 342.0 MiB, delta_rss +308.0 MiB)
   RR Graph Nodes: 1396446
   RR Graph Edges: 2337988
-# Create Device took 1.77 seconds (max_rss 389.7 MiB, delta_rss +355.6 MiB)
+# Create Device took 1.77 seconds (max_rss 389.7 MiB, delta_rss +355.7 MiB)
 
 
-Flow timing analysis took 7.9792e-05 seconds (5.6302e-05 STA, 2.349e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+Flow timing analysis took 7.1927e-05 seconds (5.0989e-05 STA, 2.0938e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
 VPR succeeded
-The entire flow of VPR took 2.35 seconds (max_rss 389.7 MiB)
+The entire flow of VPR took 2.36 seconds (max_rss 389.7 MiB)

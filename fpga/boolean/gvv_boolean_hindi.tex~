@@ -406,35 +406,49 @@ g &= W^{\prime}X^{\prime}Y^{\prime}Z^{\prime}+WX^{\prime}Y^{\prime}Z^{\prime}+WX
 codes/decoders/dispdec.v
 codes/decoders/pygmy.pcf
 \end{lstlisting}
-$W, X, Y, Z$ को GND से योजित करें.  तत्पश्चात के भिन्न संचय के लिये प्रदर्शी में प्राप्त अंकों को सारणी \ref{table:disp_dec}  से सत्यापित करें.
-\item अब निम्न क्रमादेश का चालयन करें।
-\label{code:sevenseg}
-\begin{lstlisting}
-codes/static/sevenseg.v
-\end{lstlisting}
-उत्पत्त helloworldfpga.bin सञ्चिका  को  वामन में प्रस्फुरण करें।  प्रदर्शी में आप 5 अंक देख पाएंगे।
-निम्न पङ्क्तियों से  यह अंक  प्रदर्शित होता  है।
-\begin{lstlisting}
-assign     a=0;
-assign     b=1;
-assign     c=0;
-assign     d=0;
-assign     e=1;
-assign     f=0;
-assign     g=0;
-\end{lstlisting}
-\item उपरोक्त क्रमादेश में उचित संशोधन करके सारणी \ref{table:arduinoport} एवं आकृति.  \ref{fig:sevenseg12} की सहायता से 0-9 सभी अंकों तो प्रदर्शित करें.
-\begin{table}[!ht]
+$W, X, Y, Z$ को GND से योजित करें.  तत्पश्चात चरों के भिन्न संचय के लिये प्रदर्शी में प्राप्त अंकों को सारणी \ref{table:disp_dec}  से सत्यापित करें.
+\item सारणी \ref{table:counter_decoder} में एक परवर्ती गूढ़वाचक के गुणधर्म का उल्लेख है.  बूलीय समीकरणों के द्वारा $A,B,C,D$ को $W,X,Y,Z$ के व्यञ्जकों में व्यक्त करें.  इसके पश्चात वामन के द्वारा परवर्ती गूढ़वाचक को कार्यान्वयित करें. 
+\label{prob:counter_decoder}
+\begin{table}
 \centering
-\resizebox{\columnwidth}{!}{
-\input{tables/arduinoport.tex}
-}
-\caption{सप्तांश प्रदर्शी के कुश मूल्यों से उप्तन्न दशमलव संख्या. }
-\label{table:arduinoport}
+\input{./tables/counter_decoder.tex}
+\caption{परवर्ती गूढ़वाचक की सत्य सारिणी ।}
+\label{table:counter_decoder}
 \end{table}
+\\
+\solution निम्न समीकरणों में आवश्यक व्यञ्जक उपलब्ध हैं.
+\begin{align}
+\label{eq:inc_A}
+A &= W^{\prime}X^{\prime}Y^{\prime}Z^{\prime} + W^{\prime}XY^{\prime}Z^{\prime}
++W^{\prime}X^{\prime}YZ^{\prime}
+\nonumber \\
+ & \quad +W^{\prime}XYZ^{\prime}
++W^{\prime}X^{\prime}Y^{\prime}Z
+\\
+\label{eq:inc_B}
+B &= WX^{\prime}Y^{\prime}Z^{\prime} + W^{\prime}XY^{\prime}Z^{\prime}
+\nonumber \\ 
+& \quad 
++WX^{\prime}YZ^{\prime}
++W^{\prime}XYZ^{\prime}
+\\
+\label{eq:inc_C}
+C &= WXY^{\prime}Z^{\prime} + W^{\prime}X^{\prime}YZ^{\prime}
+\nonumber \\ 
+& \quad 
++WX^{\prime}YZ^{\prime}
++W^{\prime}XYZ^{\prime}
+\\
+D &= WXYZ^{\prime} + W^{\prime}X^{\prime}Y^{\prime}Z
+\label{eq:inc_D}
+\end{align}
+निम्न क्रमादेश का चालयन करें। प्रदर्शी में परवर्ती अंक उत्पन्न होंगे.
+\begin{lstlisting}
+codes/decoders/incdec.v
+\end{lstlisting}
 \end{enumerate}
 %
-\section{उदाहरण}
+\section{दशक गणित्र}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
@@ -442,40 +456,18 @@ assign     g=0;
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-
-
-\item  सारणी \ref{table:sevenseg} एवं 
-आकृति \ref{fig:pins}  की PU 64 सारणी के माध्यम से निम्न सञ्चिका में सप्तांश प्रदर्शी के खंडों के कुश-मानचित्र का बोध होता है.  
-%इसमें संशोधन कर वामन के कुशों के अनेक संचय के लिए क्रमादेश \ref{code:sevenseg} का चालयन करें.
-\begin{lstlisting}
-codes/static/pygmy.pcf
-\end{lstlisting}
-\item निम्न क्रमादेश का चालयन करें.  इसमें प्रदर्शी के समस्त कुशों को एक द्विआधारी शब्द से नियंत्रित किया गया है, जिसका मात्राभार 7 है.
-\begin{lstlisting}
-codes/static/sevenseg_word.v
-\end{lstlisting}
-उपोरोक्त सञ्चिका में निम्न पङ्क्ति से प्रदर्शी पर अंक 4 उपलब्ध होता है.  यह घटना सारणी \ref{table:arduinoport}  के पूर्ण रूप में सत्यापित है. 
-\begin{lstlisting}
-gpio_out=7'b0100100;
-\end{lstlisting}
-\begin{figure*}[!ht]
+\item आकृति. \ref{fig:vaman_decade_counter} के आधार पर क्रमादेश \ref{prob:counter_decoder}
+में संशोधन करें एवं वामन के द्वारा दशक गणित्र का निर्माण करें.
+\begin{figure}[!ht]
 \centering
-\includegraphics[width = \textwidth]{figs/pins.jpg}
-\caption{कुश पर्याय}
-\label{fig:pins}
-\end{figure*}
-\item उपरोक्त क्रमादेश में उचित संशोदान करें जिससे आगत मूल्य दशमलव अंक  हो. इसके लिए वेरिलॉग फलन का उपयोग करें.
-\\
-\solution  निम्न सञ्चिका को निष्पादित करें.
-\begin{lstlisting}
-codes/static/sevenseg_dec.v
-\end{lstlisting}
-\item वामन को एक दशक गणित्र बनावें.
-\\
-\solution निम्न सञ्चिका को निष्पादित करें.
-\begin{lstlisting}
-codes/loop/decade_counter.v
-\end{lstlisting}
+\resizebox{\columnwidth}{!}{
+\input{figs/vaman_decade_counter.tex}
+}
+\caption{दशक गणित्र का खंड आरेख.}
+\label{fig:vaman_decade_counter}
+\end{figure}
+\item पूर्ववतरी गूढ़वाचक की अभिकल्पना एवं कार्यान्वयन करें.
+
 \end{enumerate}
 %
 

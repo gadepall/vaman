@@ -18,13 +18,13 @@ Architecture file: /root/symbiflow/quicklogic-arch-defs/share/arch/ql-eos-s3_wlc
 Circuit name: helloworldfpga
 
 Loading Architecture Description
-Loading Architecture Description took 0.44 seconds (max_rss 26.5 MiB, delta_rss +23.0 MiB)
+Loading Architecture Description took 0.44 seconds (max_rss 26.8 MiB, delta_rss +23.7 MiB)
 Building complex block graph
-Building complex block graph took 0.09 seconds (max_rss 33.4 MiB, delta_rss +6.8 MiB)
+Building complex block graph took 0.09 seconds (max_rss 33.6 MiB, delta_rss +6.8 MiB)
 Load circuit
-Load circuit took 0.00 seconds (max_rss 33.4 MiB, delta_rss +0.0 MiB)
+Load circuit took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Clean circuit
-Absorbed 122 LUT buffers
+Absorbed 114 LUT buffers
 Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
 Inferred    0 additional primitive pins as constant generators due to constant inputs
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -36,29 +36,30 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 1
 Swept block(s)      : 1
 Constant Pins Marked: 3
-Clean circuit took 0.00 seconds (max_rss 33.4 MiB, delta_rss +0.0 MiB)
+Clean circuit took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Compress circuit
-Compress circuit took 0.00 seconds (max_rss 33.4 MiB, delta_rss +0.0 MiB)
+Compress circuit took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Verify circuit
-Verify circuit took 0.00 seconds (max_rss 33.4 MiB, delta_rss +0.0 MiB)
+Verify circuit took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
   Blocks: 31
     .input    :       4
     .output   :       7
     BIDIR_CELL:      11
-    C_FRAG    :       7
+    C_FRAG    :       6
     GND       :       1
+    T_FRAG    :       1
     VCC       :       1
   Nets  : 24
-    Avg Fanout:     5.5
-    Max Fanout:    48.0
+    Avg Fanout:     5.2
+    Max Fanout:    45.0
     Min Fanout:     1.0
   Netlist Clocks: 0
 Build Timing Graph
-  Timing Graph Nodes: 155
-  Timing Graph Edges: 244
+  Timing Graph Nodes: 149
+  Timing Graph Edges: 232
   Timing Graph Levels: 8
-Build Timing Graph took 0.00 seconds (max_rss 33.4 MiB, delta_rss +0.0 MiB)
+Build Timing Graph took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Netlist contains 0 clocks
 Load Timing Constraints
 
@@ -69,7 +70,7 @@ Setting default timing constraints:
 Timing constraints created 1 clocks
   Constrained Clock 'virtual_io_clock' (Virtual Clock)
 
-Load Timing Constraints took 0.00 seconds (max_rss 33.4 MiB, delta_rss +0.0 MiB)
+Load Timing Constraints took 0.00 seconds (max_rss 33.6 MiB, delta_rss +0.0 MiB)
 Timing analysis: ON
 Circuit netlist file: helloworldfpga.net
 Circuit placement file: helloworldfpga.place
@@ -185,8 +186,8 @@ Load Packing
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'helloworldfpga.net'.
 Detected 2 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.009469 seconds).
-Load Packing took 0.01 seconds (max_rss 33.8 MiB, delta_rss +0.4 MiB)
+Finished loading packed FPGA netlist file (took 0.009295 seconds).
+Load Packing took 0.01 seconds (max_rss 33.9 MiB, delta_rss +0.3 MiB)
 Warning 1: Netlist contains 0 global net to non-global architecture pin connections
 Warning 2: Logic block #18 ($false) has only 1 output pin '$false.GND0_GND[0]'. It may be a constant generator.
 Warning 3: Logic block #19 ($true) has only 1 output pin '$true.VCC0_VCC[0]'. It may be a constant generator.
@@ -213,8 +214,10 @@ Pb types usage...
    LOGIC            : 7
     FRAGS           : 7
      c_frag_modes   : 7
-      SINGLE        : 7
-       c_frag       : 7
+      SINGLE        : 6
+       c_frag       : 6
+      SPLIT         : 1
+       b_frag       : 1
   PB-SYN_VCC        : 1
    VCC              : 1
   PB-BIDIR          : 11
@@ -296,37 +299,37 @@ Device Utilization: 0.01 (target 1.00)
 	Physical Tile TL-SYN_GND:
 	Block Utilization: 1.00 Logical Block: PB-SYN_GND
 
-# Build Device Grid took 0.01 seconds (max_rss 33.9 MiB, delta_rss +0.0 MiB)
+# Build Device Grid took 0.01 seconds (max_rss 34.0 MiB, delta_rss +0.0 MiB)
 # Loading routing resource graph
 
 
-# Loading routing resource graph took 1.12 seconds (max_rss 464.9 MiB, delta_rss +431.0 MiB)
+# Loading routing resource graph took 1.12 seconds (max_rss 465.0 MiB, delta_rss +431.0 MiB)
   RR Graph Nodes: 1396446
   RR Graph Edges: 2337988
-Create Device took 2.35 seconds (max_rss 512.5 MiB, delta_rss +478.6 MiB)
+Create Device took 2.33 seconds (max_rss 512.6 MiB, delta_rss +478.6 MiB)
 
 Load Placement
 Reading helloworldfpga.place.
 
 Successfully read helloworldfpga.place.
 
-Load Placement took 0.00 seconds (max_rss 512.5 MiB, delta_rss +0.0 MiB)
+Load Placement took 0.00 seconds (max_rss 512.6 MiB, delta_rss +0.0 MiB)
 
 Load Routing
 Begin loading FPGA routing file.
 Finished loading route file
-Load Routing took 0.05 seconds (max_rss 512.5 MiB, delta_rss +0.0 MiB)
+Load Routing took 0.05 seconds (max_rss 512.6 MiB, delta_rss +0.0 MiB)
 
 Checking to ensure routing is legal...
 Completed routing consistency check successfully.
 
-Serial number (magic cookie) for the routing is: -89480810
+Serial number (magic cookie) for the routing is: -75960181
 Circuit successfully routed with a channel width factor of 100.
 
-Incr Slack updates 1 in 2.4427e-05 sec
+Incr Slack updates 1 in 1.3281e-05 sec
 Full Max Req/Worst Slack updates 1 in 3.646e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 6.302e-06 sec
+Full Criticality updates 1 in 2.026e-05 sec
 Writing Implementation FASM: helloworldfpga.fasm
-The entire flow of VPR took 2.94105 seconds.
+The entire flow of VPR took 2.91411 seconds.

@@ -2,7 +2,7 @@
  
 current_dir := /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders
 TOP := helloworldfpga
-VERILOG := ${current_dir}/dispdec.v  
+VERILOG := ${current_dir}/incdec.v  
 PARTNAME := PU64
 DEVICE  := ql-eos-s3_wlcsp
 PCF := ${current_dir}/pygmy.pcf

@@ -22,18 +22,18 @@
  Yosys 0.9+2406 (git sha1 ca763e6d, gcc 9.3.0-17ubuntu1~20.04 -fPIC -Os)
 
 
--- Parsing `/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v' using frontend `verilog' --
+-- Parsing `/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v' using frontend `verilog' --
 
-1. Executing Verilog-2005 frontend: /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v
-Parsing Verilog input from `/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v' to AST representation.
+1. Executing Verilog-2005 frontend: /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v
+Parsing Verilog input from `/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v' to AST representation.
 Generating RTLIL representation for module `\helloworldfpga'.
-Warning: wire '\a' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:30.1-30.28.
-Warning: wire '\b' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:31.1-31.26.
-Warning: wire '\c' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:32.1-32.15.
-Warning: wire '\d' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:33.1-33.39.
-Warning: wire '\e' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34.1-34.75.
-Warning: wire '\f' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35.1-35.51.
-Warning: wire '\g' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:36.1-36.40.
+Warning: wire '\a' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51.1-51.28.
+Warning: wire '\b' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:52.1-52.26.
+Warning: wire '\c' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:53.1-53.15.
+Warning: wire '\d' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:54.1-54.39.
+Warning: wire '\e' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55.1-55.75.
+Warning: wire '\f' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:56.1-56.51.
+Warning: wire '\g' is assigned in a block at /storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:57.1-57.40.
 Successfully finished Verilog frontend.
 
 -- Running command `tcl /root/symbiflow/quicklogic-arch-defs/share/quicklogic/synth.tcl' --
@@ -224,54 +224,58 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 4.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$163 in module MULT.
-Marked 2 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$145 in module Q_FRAG.
+Marked 1 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$257 in module MULT.
+Marked 2 switch rules as full_case in process $proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$239 in module Q_FRAG.
 Removed a total of 0 dead cases.
 
 4.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
 Removed 0 redundant assignments.
-Promoted 8 assignments to connections.
+Promoted 12 assignments to connections.
 
 4.4.4. Executing PROC_INIT pass (extract init attributes).
-Found init rule in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$146'.
+Found init rule in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$240'.
   Set init value: \QZ = 1'0
 
 4.4.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \QST in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$145'.
-Found async reset \QRT in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$145'.
+Found async reset \QST in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$239'.
+Found async reset \QRT in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$239'.
 
 4.4.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$163'.
+Creating decoders for process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$257'.
      1/2: $0\Cmult[63:0] [63:32]
      2/2: $0\Cmult[63:0] [31:0]
-Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$146'.
-Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$145'.
+Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$240'.
+Creating decoders for process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$239'.
      1/1: $0\QZ[0:0]
-Creating decoders for process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
+Creating decoders for process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
 
 4.4.7. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\helloworldfpga.\a' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
-No latch inferred for signal `\helloworldfpga.\b' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
-No latch inferred for signal `\helloworldfpga.\c' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
-No latch inferred for signal `\helloworldfpga.\d' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
-No latch inferred for signal `\helloworldfpga.\e' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
-No latch inferred for signal `\helloworldfpga.\f' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
-No latch inferred for signal `\helloworldfpga.\g' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
+No latch inferred for signal `\helloworldfpga.\A' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\B' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\C' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\D' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\a' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\b' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\c' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\d' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\e' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\f' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
+No latch inferred for signal `\helloworldfpga.\g' from process `\helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
 
 4.4.8. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\MULT.\Cmult' using process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$163'.
+Creating register for signal `\MULT.\Cmult' using process `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$257'.
   created direct connection (no actual register cell created).
-Creating register for signal `\Q_FRAG.\QZ' using process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$145'.
+Creating register for signal `\Q_FRAG.\QZ' using process `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$239'.
 Warning: Complex async reset for dff `\QZ'.
-  created $dffsr cell `$procdff$1014' with positive edge clock and multiple level-sensitive resets.
+  created $dffsr cell `$procdff$1108' with positive edge clock and multiple level-sensitive resets.
 
 4.4.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 4 empty switches in `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$163'.
-Removing empty process `MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$163'.
-Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$146'.
-Found and cleaned up 1 empty switch in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$145'.
-Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$145'.
-Removing empty process `helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:27$1'.
+Found and cleaned up 4 empty switches in `\MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$257'.
+Removing empty process `MULT.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:4781$257'.
+Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:0$240'.
+Found and cleaned up 1 empty switch in `\Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$239'.
+Removing empty process `Q_FRAG.$proc$/root/symbiflow/quicklogic-arch-defs/share/techmaps/quicklogic/pp3/techmap/cells_sim.v:242$239'.
+Removing empty process `helloworldfpga.$proc$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:41$1'.
 Cleaned up 5 empty switches.
 
 4.5. Executing FLATTEN pass (flatten design).
@@ -283,7 +287,7 @@ Optimizing module helloworldfpga.
 
 4.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \helloworldfpga..
-Removed 0 unused cells and 14 unused wires.
+Removed 0 unused cells and 22 unused wires.
 <suppressed ~1 debug messages>
 
 4.9. Executing DEMINOUT pass (demote inout ports to input or output).
@@ -295,8 +299,8 @@ Optimizing module helloworldfpga.
 
 4.10.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\helloworldfpga'.
-<suppressed ~279 debug messages>
-Removed a total of 93 cells.
+<suppressed ~438 debug messages>
+Removed a total of 146 cells.
 
 4.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \helloworldfpga..
@@ -316,7 +320,7 @@ Removed a total of 0 cells.
 
 4.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \helloworldfpga..
-Removed 0 unused cells and 93 unused wires.
+Removed 0 unused cells and 146 unused wires.
 <suppressed ~1 debug messages>
 
 4.10.8. Executing OPT_EXPR pass (perform const folding).
@@ -495,40 +499,81 @@ Finding unused cells or wires in module \helloworldfpga..
 4.25. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
 
 4.26. Executing PP3_BRAMINIT pass.
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:30$11
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:30$13
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:31$19
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:31$24
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$60
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$81
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$83
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$84
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$107
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$108
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$88
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$90
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$91
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$95
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$97
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:36$116
-cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:36$125
-cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:30$10
-cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:30$12
-cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:30$2
-cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:30$3
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:30$14
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:31$25
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:33$49
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$61
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$68
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$74
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$79
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:34$85
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$104
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$109
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:35$98
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:36$123
-cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/dispdec.v:36$128
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$10
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$11
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$2
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$3
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$5
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$8
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$15
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$16
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$17
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$19
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$21
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$23
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$29
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$33
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$35
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:46$41
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:46$42
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:46$48
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$68
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$70
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$72
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$74
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$79
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$81
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$85
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$87
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$100
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$101
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$105
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$107
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:52$113
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:52$118
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$170
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$171
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$172
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$175
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$177
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$178
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:56$182
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:56$189
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:56$191
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:56$197
+cell type $and$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:57$210
+cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$4
+cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$6
+cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$7
+cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$9
+cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$102
+cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$104
+cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$106
+cell type $logic_not$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$97
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:44$12
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$24
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$30
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:45$36
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:46$49
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:46$55
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:46$61
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$75
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$82
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$88
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:47$95
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:51$108
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:52$119
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:54$143
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$155
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$162
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$168
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$173
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:55$179
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:56$192
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:56$198
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:56$203
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:57$217
+cell type $or$/storage/emulated/0/github/vaman/fpga/boolean/codes/decoders/incdec.v:57$222
 
 4.27. Executing TECHMAP pass (map to technology primitives).
 
@@ -634,11 +679,11 @@ Generating RTLIL representation for module `\_90_lut'.
 Successfully finished Verilog frontend.
 
 4.31.2. Continuing TECHMAP pass.
-Using extmapper simplemap for cells of type $logic_not.
 Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $logic_not.
 Using extmapper simplemap for cells of type $or.
 No more expansions possible.
-<suppressed ~34 debug messages>
+<suppressed ~75 debug messages>
 
 4.32. Executing OPT pass (performing simple optimizations).
 
@@ -831,7 +876,7 @@ No more expansions possible.
 4.52. Executing ABC pass (technology mapping using ABC).
 
 4.52.1. Extracting gate netlist of module `\helloworldfpga' to `<abc-temp-dir>/input.blif'..
-Extracted 34 gates and 38 wires to a netlist network with 4 inputs and 7 outputs.
+Extracted 75 gates and 79 wires to a netlist network with 4 inputs and 7 outputs.
 
 4.52.1.1. Executing ABC.
 Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
@@ -853,7 +898,7 @@ ABC: + write_blif <abc-temp-dir>/output.blif
 
 4.52.1.2. Re-integrating ABC results.
 ABC RESULTS:              $lut cells:        7
-ABC RESULTS:        internal signals:       27
+ABC RESULTS:        internal signals:       68
 ABC RESULTS:           input signals:        4
 ABC RESULTS:          output signals:        7
 Removing temp directory.
@@ -882,7 +927,7 @@ Successfully finished Verilog frontend.
 
 4.53.2. Continuing TECHMAP pass.
 No more expansions possible.
-Removed 0 unused cells and 38 unused wires.
+Removed 0 unused cells and 79 unused wires.
 
 4.54. Executing TECHMAP pass (map to technology primitives).
 
@@ -902,13 +947,13 @@ Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
 4.54.3. Continuing TECHMAP pass.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0101011100010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0001010000000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000100010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0100000100010000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0010000000000011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001000000000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001010000000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001010100010011 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=4\LUT=16'0000000100000000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=4\LUT=16'0000000011010100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000001100000101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111001000001 for cells of type $lut.
 No more expansions possible.
 <suppressed ~98 debug messages>
 Removed 0 unused cells and 14 unused wires.
@@ -942,7 +987,8 @@ Removed 0 unused modules.
    Number of memory bits:            0
    Number of processes:              0
    Number of cells:                  7
-     LUT4                            7
+     LUT3                            1
+     LUT4                            6
 
 4.60. Executing CHECK pass (checking for obvious problems).
 checking module helloworldfpga..
@@ -988,7 +1034,8 @@ found and reported 0 problems.
    Number of memory bits:            0
    Number of processes:              0
    Number of cells:                 18
-     LUT4                            7
+     LUT3                            1
+     LUT4                            6
      inpad                           4
      outpad                          7
 
@@ -1088,24 +1135,24 @@ Generating RTLIL representation for module `\qlal4s3_mult_cell_macro'.
 Successfully finished Verilog frontend.
 
 8.2. Continuing TECHMAP pass.
-Using template $paramod$adb3e2998d36d23e78e72d530fe94019908a146e\inpad for cells of type inpad.
-Using template $paramod$015025681cdfe240841a43078d1bf56412ef4b33\inpad for cells of type inpad.
 Using template $paramod$c599e89c9780e796e92f510903bafaf1550744d3\inpad for cells of type inpad.
+Using template $paramod$015025681cdfe240841a43078d1bf56412ef4b33\inpad for cells of type inpad.
 Using template $paramod$2ad60ae6cd0b8cd11192048bc3436e1efe622ce5\inpad for cells of type inpad.
-Using template $paramod$117fce6350e56289fd8dedf8156a2dedef7a8eae\LUT4 for cells of type LUT4.
-Using template $paramod$3494bf91dff70d828c5f5312272dede938de1112\outpad for cells of type outpad.
-Using template $paramod$2b1995275750ba1e9d060f9685a50af2da59292c\LUT4 for cells of type LUT4.
+Using template $paramod$adb3e2998d36d23e78e72d530fe94019908a146e\inpad for cells of type inpad.
+Using template $paramod$eafebecb3db6257d86869821964db3578640fe16\LUT4 for cells of type LUT4.
 Using template $paramod$d8b4ab69a8b5413c066ad38d899c9d4a3dedc93a\outpad for cells of type outpad.
-Using template $paramod$768cbfc50bec0c36fd8ce88c96aa5297101a129e\LUT4 for cells of type LUT4.
+Using template $paramod$36796efcfe8a67421ab19810a3b8c0e463e3d433\LUT4 for cells of type LUT4.
 Using template $paramod$fa3380cd31d3eaf3369d75f1d1b91f2cba5e8470\outpad for cells of type outpad.
-Using template $paramod$0d9aa11c31cb8651d29ceaceef9b01936bc0cb64\LUT4 for cells of type LUT4.
-Using template $paramod$a389f524cda2d55da4212e3544c72c8c9bd7cfb1\LUT4 for cells of type LUT4.
-Using template $paramod$51a9a4255281ba9cd71910c426311d68fc1c44e6\LUT4 for cells of type LUT4.
+Using template $paramod$5c5ff20706a16de24dba596c7bb8b30cc9c91b9d\LUT4 for cells of type LUT4.
+Using template $paramod$86fc6f3441a6779c63af6935d48b3ebd1c0460a9\LUT3 for cells of type LUT3.
+Using template $paramod$c61b0c605787b971c996eda33c5451956ed41feb\LUT4 for cells of type LUT4.
 Using template $paramod$666d57638572eef64b702648a4829c6da6ea5f7a\outpad for cells of type outpad.
 Using template $paramod$5439f95b730483be4c800922bcebe9a105e90f4d\LUT4 for cells of type LUT4.
-Using template $paramod$02aa829d7bb4d3bbae67ad5ee2e5a326704559e9\outpad for cells of type outpad.
+Using template $paramod$ced1dbc4c11023a68e131ea64fe9af6087a9a2a9\LUT4 for cells of type LUT4.
+Using template $paramod$3494bf91dff70d828c5f5312272dede938de1112\outpad for cells of type outpad.
 Using template $paramod$03fa78d84bd5e07f6e124fa217a4ce84543d615a\outpad for cells of type outpad.
 Using template $paramod$4da62a2f3593426548f45892aaeb7356ad46a6a4\outpad for cells of type outpad.
+Using template $paramod$02aa829d7bb4d3bbae67ad5ee2e5a326704559e9\outpad for cells of type outpad.
 No more expansions possible.
 <suppressed ~274 debug messages>
 
@@ -1121,7 +1168,7 @@ No more expansions possible.
 
 10. Executing OPT_EXPR pass (perform const folding).
 Optimizing module helloworldfpga.
-<suppressed ~35 debug messages>
+<suppressed ~34 debug messages>
 
 11. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \helloworldfpga..
@@ -1134,16 +1181,17 @@ Removed 0 unused cells and 26 unused wires.
 
 === helloworldfpga ===
 
-   Number of wires:                144
-   Number of wire bits:            144
-   Number of public wires:         137
-   Number of public wire bits:     137
+   Number of wires:                136
+   Number of wire bits:            136
+   Number of public wires:         129
+   Number of public wire bits:     129
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
    Number of cells:                 18
      BIDIR_CELL                     11
-     C_FRAG                          7
+     C_FRAG                          6
+     T_FRAG                          1
 
 14. Executing JSON backend.
 
@@ -1151,6 +1199,6 @@ Removed 0 unused cells and 26 unused wires.
 Dumping module `\helloworldfpga'.
 
 Warnings: 15 unique messages, 18 total
-End of script. Logfile hash: 4a20fcb972, CPU: user 2.44s system 0.12s, MEM: 222.86 MB peak
+End of script. Logfile hash: a4f1e85a95, CPU: user 2.45s system 0.17s, MEM: 221.17 MB peak
 Yosys 0.9+2406 (git sha1 ca763e6d, gcc 9.3.0-17ubuntu1~20.04 -fPIC -Os)
 Time spent: 65% 18x read_verilog (1 sec), 9% 22x opt_clean (0 sec), ...
