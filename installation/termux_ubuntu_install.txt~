@@ -130,3 +130,17 @@ export PATH=$INSTALL_DIR/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
 
 #Test the GNU RM GCC Embedded toolchain
 arm-none-eabi-gcc --version
+
+#Now execute the hello world program
+cd /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project
+make
+#qf_helloworldsw.bin should be generated in the /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project/ouput/
+directory
+
+#Transfer .bin file to RPI
+scp /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project/ouput/helloworldsw.bin  pi@192.168.0.114:
+
+#On RPI execute the following 
+#qfprog --port /dev/ttyACM0 --m4app output/bin/qf_helloworldsw.bin
+
+sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app qf_helloworldsw.bin --mode m4

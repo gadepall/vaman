@@ -6,7 +6,7 @@ apt upgrade
 apt install openssh-server
 
 # Install arm toolchain and hardware tools
-apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip
+apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev gcc-arm-none-eabi libnewlib-arm-none-eabi telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip
 
 #Install Python libraries (on device connecting pygmy to usb)
 pip3 install wheel python-constraint serial tinyfpgab apio
@@ -130,3 +130,17 @@ export PATH=$INSTALL_DIR/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
 
 #Test the GNU RM GCC Embedded toolchain
 arm-none-eabi-gcc --version
+
+#Now execute the hello world program
+cd /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project
+make
+#qf_helloworldsw.bin should be generated in the /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project/ouput/
+directory
+
+#Transfer .bin file to RPI
+scp /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project/ouput/helloworldsw.bin  pi@192.168.0.114:
+
+#On RPI execute the following 
+#qfprog --port /dev/ttyACM0 --m4app output/bin/qf_helloworldsw.bin
+
+sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app qf_helloworldsw.bin --mode m4

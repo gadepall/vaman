@@ -1,0 +1,9 @@
+#Block Name x   y   z    pcf_line
+#----- --  --  -    ----
+$iopadmap$helloworldfpga.a  12   3  0  # set_io a	3
+$iopadmap$helloworldfpga.b  14   3  0  # set_io b	64
+$iopadmap$helloworldfpga.c  16   3  0  # set_io c	62
+$iopadmap$helloworldfpga.d  18   3  0  # set_io d	63
+$iopadmap$helloworldfpga.e  20   3  0  # set_io e	61
+$iopadmap$helloworldfpga.f  24   3  0  # set_io f	59
+$iopadmap$helloworldfpga.g  26   3  0  # set_io g	57

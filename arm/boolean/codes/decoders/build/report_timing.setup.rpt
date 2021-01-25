@@ -1,0 +1,229 @@
+#Timing report of worst 7 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+#Path 1
+Startpoint: Z.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : out:d.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                                        Incr      Path
+-------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+input external delay                                                        0.000     0.000
+Z.inpad[0] (.input)                                                         0.000     0.000
+$iopadmap$helloworldfpga.Z.I_PAD_$inp[0] (BIDIR_CELL)                       0.000     0.000
+$iopadmap$helloworldfpga.Z.I_DAT[0] (BIDIR_CELL)                           10.958    10.958
+d_LUT4_O.c_frag.TBS[0] (C_FRAG)                                            10.403    21.361
+d_LUT4_O.c_frag.CZ[0] (C_FRAG)                                              0.996    22.357
+$iopadmap$helloworldfpga.d.O_DAT[0] (BIDIR_CELL)                            9.270    31.627
+$iopadmap$helloworldfpga.d.O_PAD_$out[0] (BIDIR_CELL)                       9.809    41.436
+out:d.outpad[0] (.output)                                                   0.000    41.436
+data arrival time                                                                    41.436
+
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+clock uncertainty                                                           0.000     0.000
+output external delay                                                       0.000     0.000
+data required time                                                                    0.000
+-------------------------------------------------------------------------------------------
+data required time                                                                    0.000
+data arrival time                                                                   -41.436
+-------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -41.436
+
+
+#Path 2
+Startpoint: Y.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : out:g.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                                        Incr      Path
+-------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+input external delay                                                        0.000     0.000
+Y.inpad[0] (.input)                                                         0.000     0.000
+$iopadmap$helloworldfpga.Y.I_PAD_$inp[0] (BIDIR_CELL)                       0.000     0.000
+$iopadmap$helloworldfpga.Y.I_DAT[0] (BIDIR_CELL)                           10.958    10.958
+g_LUT4_O.c_frag.TSL[0] (C_FRAG)                                            11.353    22.311
+g_LUT4_O.c_frag.CZ[0] (C_FRAG)                                              1.593    23.904
+$iopadmap$helloworldfpga.g.O_DAT[0] (BIDIR_CELL)                            6.281    30.185
+$iopadmap$helloworldfpga.g.O_PAD_$out[0] (BIDIR_CELL)                       9.809    39.994
+out:g.outpad[0] (.output)                                                   0.000    39.994
+data arrival time                                                                    39.994
+
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+clock uncertainty                                                           0.000     0.000
+output external delay                                                       0.000     0.000
+data required time                                                                    0.000
+-------------------------------------------------------------------------------------------
+data required time                                                                    0.000
+data arrival time                                                                   -39.994
+-------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -39.994
+
+
+#Path 3
+Startpoint: Y.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : out:f.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                                        Incr      Path
+-------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+input external delay                                                        0.000     0.000
+Y.inpad[0] (.input)                                                         0.000     0.000
+$iopadmap$helloworldfpga.Y.I_PAD_$inp[0] (BIDIR_CELL)                       0.000     0.000
+$iopadmap$helloworldfpga.Y.I_DAT[0] (BIDIR_CELL)                           10.958    10.958
+f_LUT4_O.c_frag.TBS[0] (C_FRAG)                                            11.482    22.440
+f_LUT4_O.c_frag.CZ[0] (C_FRAG)                                              0.996    23.436
+$iopadmap$helloworldfpga.f.O_DAT[0] (BIDIR_CELL)                            5.917    29.353
+$iopadmap$helloworldfpga.f.O_PAD_$out[0] (BIDIR_CELL)                       9.809    39.162
+out:f.outpad[0] (.output)                                                   0.000    39.162
+data arrival time                                                                    39.162
+
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+clock uncertainty                                                           0.000     0.000
+output external delay                                                       0.000     0.000
+data required time                                                                    0.000
+-------------------------------------------------------------------------------------------
+data required time                                                                    0.000
+data arrival time                                                                   -39.162
+-------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -39.162
+
+
+#Path 4
+Startpoint: Z.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : out:e.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                                        Incr      Path
+-------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+input external delay                                                        0.000     0.000
+Z.inpad[0] (.input)                                                         0.000     0.000
+$iopadmap$helloworldfpga.Z.I_PAD_$inp[0] (BIDIR_CELL)                       0.000     0.000
+$iopadmap$helloworldfpga.Z.I_DAT[0] (BIDIR_CELL)                           10.958    10.958
+e_LUT4_O.c_frag.TBS[0] (C_FRAG)                                             9.498    20.456
+e_LUT4_O.c_frag.CZ[0] (C_FRAG)                                              0.996    21.452
+$iopadmap$helloworldfpga.e.O_DAT[0] (BIDIR_CELL)                            7.584    29.036
+$iopadmap$helloworldfpga.e.O_PAD_$out[0] (BIDIR_CELL)                       9.809    38.845
+out:e.outpad[0] (.output)                                                   0.000    38.845
+data arrival time                                                                    38.845
+
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+clock uncertainty                                                           0.000     0.000
+output external delay                                                       0.000     0.000
+data required time                                                                    0.000
+-------------------------------------------------------------------------------------------
+data required time                                                                    0.000
+data arrival time                                                                   -38.845
+-------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -38.845
+
+
+#Path 5
+Startpoint: X.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : out:a.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                                        Incr      Path
+-------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+input external delay                                                        0.000     0.000
+X.inpad[0] (.input)                                                         0.000     0.000
+$iopadmap$helloworldfpga.X.I_PAD_$inp[0] (BIDIR_CELL)                       0.000     0.000
+$iopadmap$helloworldfpga.X.I_DAT[0] (BIDIR_CELL)                           10.958    10.958
+a_LUT4_O.c_frag.TSL[0] (C_FRAG)                                             9.032    19.990
+a_LUT4_O.c_frag.CZ[0] (C_FRAG)                                              1.593    21.583
+$iopadmap$helloworldfpga.a.O_DAT[0] (BIDIR_CELL)                            6.958    28.541
+$iopadmap$helloworldfpga.a.O_PAD_$out[0] (BIDIR_CELL)                       9.809    38.350
+out:a.outpad[0] (.output)                                                   0.000    38.350
+data arrival time                                                                    38.350
+
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+clock uncertainty                                                           0.000     0.000
+output external delay                                                       0.000     0.000
+data required time                                                                    0.000
+-------------------------------------------------------------------------------------------
+data required time                                                                    0.000
+data arrival time                                                                   -38.350
+-------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -38.350
+
+
+#Path 6
+Startpoint: X.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : out:b.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                                        Incr      Path
+-------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+input external delay                                                        0.000     0.000
+X.inpad[0] (.input)                                                         0.000     0.000
+$iopadmap$helloworldfpga.X.I_PAD_$inp[0] (BIDIR_CELL)                       0.000     0.000
+$iopadmap$helloworldfpga.X.I_DAT[0] (BIDIR_CELL)                           10.958    10.958
+b_LUT3_O.t_frag.XSL[0] (T_FRAG)                                            10.645    21.603
+b_LUT3_O.t_frag.XZ[0] (T_FRAG)                                              1.462    23.065
+$iopadmap$helloworldfpga.b.O_DAT[0] (BIDIR_CELL)                            5.310    28.376
+$iopadmap$helloworldfpga.b.O_PAD_$out[0] (BIDIR_CELL)                       9.809    38.185
+out:b.outpad[0] (.output)                                                   0.000    38.185
+data arrival time                                                                    38.185
+
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+clock uncertainty                                                           0.000     0.000
+output external delay                                                       0.000     0.000
+data required time                                                                    0.000
+-------------------------------------------------------------------------------------------
+data required time                                                                    0.000
+data arrival time                                                                   -38.185
+-------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -38.185
+
+
+#Path 7
+Startpoint: X.inpad[0] (.input clocked by virtual_io_clock)
+Endpoint  : out:c.outpad[0] (.output clocked by virtual_io_clock)
+Path Type : setup
+
+Point                                                                        Incr      Path
+-------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+input external delay                                                        0.000     0.000
+X.inpad[0] (.input)                                                         0.000     0.000
+$iopadmap$helloworldfpga.X.I_PAD_$inp[0] (BIDIR_CELL)                       0.000     0.000
+$iopadmap$helloworldfpga.X.I_DAT[0] (BIDIR_CELL)                           10.958    10.958
+c_LUT4_O.c_frag.TAB[0] (C_FRAG)                                             9.077    20.035
+c_LUT4_O.c_frag.CZ[0] (C_FRAG)                                              1.437    21.472
+$iopadmap$helloworldfpga.c.O_DAT[0] (BIDIR_CELL)                            6.544    28.016
+$iopadmap$helloworldfpga.c.O_PAD_$out[0] (BIDIR_CELL)                       9.809    37.825
+out:c.outpad[0] (.output)                                                   0.000    37.825
+data arrival time                                                                    37.825
+
+clock virtual_io_clock (rise edge)                                          0.000     0.000
+clock source latency                                                        0.000     0.000
+clock uncertainty                                                           0.000     0.000
+output external delay                                                       0.000     0.000
+data required time                                                                    0.000
+-------------------------------------------------------------------------------------------
+data required time                                                                    0.000
+data arrival time                                                                   -37.825
+-------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -37.825
+
+
+#End of timing report
