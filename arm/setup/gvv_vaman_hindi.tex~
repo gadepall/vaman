@@ -186,7 +186,7 @@ literate = {-}{-}1
 
 \title{
 %	\logo{
-वामन से परिचय
+वामन द्वारा आर्म क्रमादेश से परिचय
 %	}
 }
 \author{ गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
@@ -306,8 +306,7 @@ literate = {-}{-}1
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-वामन एक सूक्ष्म नियंत्रण परिपथफलक है जो  प्राथमिक विद्यालयों से लेकर  विश्व विद्यालयों के सभी  छात्रों को एक सरल विधि से संगणक क्रमादेश,  यंत्रान्श एवं तंत्रांश
-सीखने में सहायक है।  इस लेख के द्वारा  वामन से छात्रों का परिचय कराया जाएगा।
+इस लेख में  वामन  के द्वारा आर्म-क्रमादेशन  से छात्रों का परिचय कराया जाएगा।
 
 
 %ॐ श्री गणेशाय नमः॥
@@ -324,7 +323,7 @@ literate = {-}{-}1
 %
 निम्न जालबन्धन से इस लिख में उपयोग किए गए समस्त क्रमादेश अवाहरत करें।
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/setup/fpga/codes
+https://github.com/gadepall/vaman/tree/master/arm/codes/blink
 \end{lstlisting}
 
 
@@ -343,17 +342,18 @@ https://github.com/gadepall/vaman/tree/master/setup/fpga/codes
 
 \item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों का चालयन करें।
 \begin{lstlisting}
-cd /storage/emulated/0/Download
-svn co https://github.com/gadepall/pygmy/trunk/installation/blink
-ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
-scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+cd ˜
+svn co https://github.com/gadepall/vaman/trunk/arm/codes/blink
+cd GCC_Project
+make
+scp  output/bin/blink.bin pi@192.168.0.114:
 \end{lstlisting}
-ऊपर helloworldfpga.bin सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें। 
+ऊपर blink.bin  सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें। 
 \item अब रास्पबेरी पै  में प्रवेश कर निम्न  आदेश का चालयन करें
 \begin{lstlisting}
-python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4
 \end{lstlisting}
-\item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक रक्तिम रंग में श्मीलित होगा। 
+\item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक श्वेत रंग  में श्मीलित होगा। 
 \end{enumerate}
 %
 \section{आवृत्ति}
