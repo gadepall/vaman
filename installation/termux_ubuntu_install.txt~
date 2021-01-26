@@ -6,7 +6,7 @@ apt upgrade
 apt install openssh-server
 
 # Install arm toolchain and hardware tools
-apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip
+apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev gcc-arm-none-eabi libnewlib-arm-none-eabi telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip
 
 #Install Python libraries (on device connecting pygmy to usb)
 pip3 install wheel python-constraint serial tinyfpgab apio
@@ -108,39 +108,38 @@ python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-progr
 
 #python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-#programmer-gui.py --port net:localhost:8086  --appfpga /storage/emulated/0/Download/#blink/helloworldfpga.bin --mode fpga
 
+#End FPGA hello world
 
 
-
-
-#GCC-Compilation for C SRC (ARM) (need to test this)
-
-##For RPI3/4 in 32 -bit mode (Raspbian generally):
-#Download and unzip:
-cd $INSTALL_DIR
-wget https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v9.3.1-1.1/xpack-arm-none-eabi-gcc-9.3.1-1.1-linux-arm.tar.gz 
-tar -xvzf  xpack-arm-none-eabi-gcc-9.3.1-1.1-linux-arm.tar.gz 
-export PATH=$INSTALL_DIR/xpack-arm-none-eabi-gcc-9.3.1-1.1/bin:$PATH
-
-##For RPI4 in 64 -bit mode (Ubuntu 20.04):
-##OR for Termux on Android (ubuntu 20.04 proot)#Download and unzip:
-cd $INSTALL_DIR
-wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
-tar -xvjf  gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
-export PATH=$INSTALL_DIR/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
-
+#ARM Hello world
 #Test the GNU RM GCC Embedded toolchain
 arm-none-eabi-gcc --version
 
-#Now execute the hello world program
-cd /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project
+#Download the helloworld program
+cd ˜
+svn co https://github.com/gadepall/vaman/trunk/arm/codes/blink
+cd GCC_Project
 make
-#qf_helloworldsw.bin should be generated in the /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project/ouput/
-directory
 
+#blink.bin should be generated in ouput/bin/ directory
 #Transfer .bin file to RPI
-scp /root/pygmy-dev/pygmy-sdk/qf_apps/qf_helloworldsw/GCC_Project/ouput/helloworldsw.bin  pi@192.168.0.114:
+scp  output/bin/blink.bin pi@192.168.0.114:
+#Suitably modify the ip address above
 
 #On RPI execute the following 
-#qfprog --port /dev/ttyACM0 --m4app output/bin/qf_helloworldsw.bin
+sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4
+#This will flash the .bin file to the pygmy
 
-sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app qf_helloworldsw.bin --mode m4
+#End ARM testing
+
+##For RPI4 in 64 -bit mode (Ubuntu 20.04):
+##OR for Termux on Android (ubuntu 20.04 proot)#Download and unzip:
+#cd $INSTALL_DIR
+#wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
+#tar -xvjf  gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
+#export PATH=$INSTALL_DIR/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
+
+
+
+
+
