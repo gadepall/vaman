@@ -117,7 +117,7 @@ arm-none-eabi-gcc --version
 
 #Download the helloworld program
 cd ˜
-svn co https://github.com/gadepall/vaman/trunk/arm/codes/blink
+svn co https://github.com/gadepall/vaman/trunk/arm/codes/सेटअप/blink
 cd GCC_Project
 make
 
