@@ -66,12 +66,12 @@ void toggleLED()
     // dbg_str("high\n");
     vTaskDelay(1000);      
     HAL_GPIO_Write(6, 1);//red led
-    HAL_GPIO_Write(4, 1);
-    HAL_GPIO_Write(5, 1);
+//    HAL_GPIO_Write(4, 1);
+//    HAL_GPIO_Write(5, 1);
     vTaskDelay(1000);
     HAL_GPIO_Write(6, 0);
-    HAL_GPIO_Write(4, 0);
-    HAL_GPIO_Write(5, 0);
+//    HAL_GPIO_Write(4, 0);
+//    HAL_GPIO_Write(5, 0);
     // dbg_str("low\n");
     }
 }

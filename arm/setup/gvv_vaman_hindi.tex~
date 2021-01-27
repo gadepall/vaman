@@ -343,7 +343,7 @@ https://github.com/gadepall/vaman/tree/master/arm/codes/blink
 \item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों का चालयन करें।
 \begin{lstlisting}
 cd ˜
-svn co https://github.com/gadepall/vaman/trunk/arm/codes/blink
+svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/blink
 cd GCC_Project
 make
 scp  output/bin/blink.bin pi@192.168.0.114:
@@ -367,7 +367,7 @@ sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfp
 \item निम्न वेरिलॉग क्रमादेश
 \label{सम:क्रमादेश}
 \begin{lstlisting}
-codes/blink/src/main.c
+codes/setup/blink/src/main.c
 \end{lstlisting}
 की  इन पङ्क्तियों पर ध्यान दें । 
 %
@@ -393,41 +393,18 @@ vTaskDelay(1000);
 \begin{lstlisting}
 vTaskDelay(500);
 \end{lstlisting}
-से प्रतिस्थापित कर क्रमादेश का चालयन करें ।  क्या श्मीलनकाल में कोई परिवर्तन द्र्श्य है?
+से प्रतिस्थापित कर क्रमादेश का चालयन करें ।  क्या श्मीलनकाल में कोई परिवर्तन द्रश्य है?
 \item रक्तिम रंगोत्पदन के लिए निम्न गूढ़ का चालयन करें।  
 \begin{lstlisting}
-codes/red/src/main.c
+codes/setup/red/src/main.c
 \end{lstlisting}
+इदान हरित एवं नील रंग में दीप को श्मीलित करें।
 
-
-यह विदित है कि यदि आवृत्ति 20 MHz है तो अतिकाल 1 निमिश है ।   
-वेरिलॉग क्रमादेश में संशोधन कर अतिकाल को 0.5 निमिश करें । 
-\item 20 MHz का  मात्राभार  ज्ञात कीजिये।
-\\
-\solution 
-\begin{align}
-\log_2\brak{20000000} \approx 27
-\end{align}
-\item पायथन क्रमादेश लिख कर उक्त उत्तर प्राप्त करें।
-\\
-\solution निम्न क्रमादेश का चालयन कर निर्देश \ref{सम:द्विआधार} से तुलना करें । 
-\begin{lstlisting}
-codes/blink/freq_count.py
-\end{lstlisting}
-\item निर्देश \ref{सम:क्रमादेश} में प्रदत्त क्रमादेश में निम्न पङ्क्ति 
-\begin{lstlisting}
-assign redled = led; //If you want to change led colour to red,
-\end{lstlisting}
-को 
-\begin{lstlisting}
-assign blueled = led; 
-\end{lstlisting}
-से प्रतिस्थापित कर निष्पादित करें । 
-\item इदान  वेरिलॉग के द्वारा दीप में स्थायी रूप से  हरित वर्ण को उपलब्ध करें।
+\item इदान  आर्म-जीसीसी  के द्वारा दीप में स्थायी रूप से  हरित वर्ण को उपलब्ध करें।
 \\
 \solution निम्न क्रमादेश का चालयन करें।
 \begin{lstlisting}
-codes/blink/onoff.v
+codes/setup/onoff/src/main.c
 \end{lstlisting}
 \item  सारणी \ref{table:input} एवं आकृति. \ref{fig:pin_sheet} द्वारा वामन में आगत कुश का उपयोग कर परिपथफलक में उपस्थित दीप
 को प्रकाशित करें.  एक अन्य कुश को निर्गत रूप देकर किसी बाह्य दीप को प्रकाशोर्जित करें.
