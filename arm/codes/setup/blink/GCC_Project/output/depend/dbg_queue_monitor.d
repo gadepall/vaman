@@ -1,8 +1,8 @@
-/storage/emulated/0/github/vaman/arm/codes/blink/GCC_Project/output/dbg_queue_monitor.o: \
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/GCC_Project/output/dbg_queue_monitor.o: \
  /root/pygmy-dev/pygmy-sdk/Libraries/Utils/src/dbg_queue_monitor.c \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
@@ -15,11 +15,11 @@
  /root/pygmy-dev/pygmy-sdk/Libraries/Utils/inc/dbg_uart.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/Utils/inc/dbg_queue_monitor.h
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h:
 

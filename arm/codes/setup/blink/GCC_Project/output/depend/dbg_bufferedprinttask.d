@@ -1,9 +1,9 @@
-/storage/emulated/0/github/vaman/arm/codes/blink/GCC_Project/output/dbg_bufferedprinttask.o: \
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/GCC_Project/output/dbg_bufferedprinttask.o: \
  /root/pygmy-dev/pygmy-sdk/Libraries/Utils/src/dbg_bufferedprinttask.c \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/deprecated_definitions.h \
@@ -11,7 +11,7 @@
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/mpu_wrappers.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/task.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/list.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/RtosTask.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/RtosTask.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/queue.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/task.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
@@ -25,13 +25,13 @@
  /root/pygmy-dev/pygmy-sdk/Libraries/CMSIS/inc/core_cm4_simd.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/Utils/inc/dbg_uart.h
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h:
 
@@ -47,7 +47,7 @@
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/list.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/RtosTask.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/RtosTask.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/queue.h:
 

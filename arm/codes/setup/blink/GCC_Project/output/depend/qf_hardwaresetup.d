@@ -1,9 +1,9 @@
-/storage/emulated/0/github/vaman/arm/codes/blink/GCC_Project/output/qf_hardwaresetup.o: \
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/GCC_Project/output/qf_hardwaresetup.o: \
  /root/pygmy-dev/pygmy-sdk/BSP/quickfeather/src/qf_hardwaresetup.c \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/deprecated_definitions.h \
@@ -32,16 +32,16 @@
  /root/pygmy-dev/pygmy-sdk/Libraries/Power/inc/s3x_err_base.h \
  /root/pygmy-dev/pygmy-sdk/HAL/inc/s3x_clock_hal.h \
  /root/pygmy-dev/pygmy-sdk/HAL/inc/eoss3_dev.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/s3x_pwrcfg.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Bootconfig.h
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/s3x_pwrcfg.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Bootconfig.h
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h:
 
@@ -99,6 +99,6 @@
 
 /root/pygmy-dev/pygmy-sdk/HAL/inc/eoss3_dev.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/s3x_pwrcfg.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/s3x_pwrcfg.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Bootconfig.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Bootconfig.h:

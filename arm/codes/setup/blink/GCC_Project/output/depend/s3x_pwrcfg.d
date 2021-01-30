@@ -1,10 +1,10 @@
-/storage/emulated/0/github/vaman/arm/codes/blink/GCC_Project/output/s3x_pwrcfg.o: \
- /storage/emulated/0/github/vaman/arm/codes/blink/src/s3x_pwrcfg.c \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/GCC_Project/output/s3x_pwrcfg.o: \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/src/s3x_pwrcfg.c \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/Power/inc/s3x_clock.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/deprecated_definitions.h \
@@ -24,7 +24,7 @@
  /root/pygmy-dev/pygmy-sdk/Libraries/CMSIS/inc/core_cmFunc.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/CMSIS/inc/core_cm4_simd.h \
  /root/pygmy-dev/pygmy-sdk/HAL/inc/test_types.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/s3x_pwrcfg.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/s3x_pwrcfg.h \
  /root/pygmy-dev/pygmy-sdk/HAL/inc/eoss3_hal_audio.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/DatablockManager/inc/datablk_mgr.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/queue.h \
@@ -32,15 +32,15 @@
  /root/pygmy-dev/pygmy-sdk/Libraries/Power/inc/s3x_pi.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/Power/inc/s3x_err_base.h
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/Libraries/Power/inc/s3x_clock.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h:
 
@@ -80,7 +80,7 @@
 
 /root/pygmy-dev/pygmy-sdk/HAL/inc/test_types.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/s3x_pwrcfg.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/s3x_pwrcfg.h:
 
 /root/pygmy-dev/pygmy-sdk/HAL/inc/eoss3_hal_audio.h:
 

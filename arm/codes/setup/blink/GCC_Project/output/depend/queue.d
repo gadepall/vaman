@@ -1,8 +1,8 @@
-/storage/emulated/0/github/vaman/arm/codes/blink/GCC_Project/output/queue.o: \
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/GCC_Project/output/queue.o: \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/queue.c \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/deprecated_definitions.h \
@@ -15,9 +15,9 @@
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h:
 

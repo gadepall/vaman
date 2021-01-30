@@ -1,9 +1,9 @@
-/storage/emulated/0/github/vaman/arm/codes/blink/GCC_Project/output/main.o: \
- /storage/emulated/0/github/vaman/arm/codes/blink/src/main.c \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/GCC_Project/output/main.o: \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/src/main.c \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/deprecated_definitions.h \
@@ -15,7 +15,7 @@
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/queue.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/task.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/timers.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/RtosTask.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/RtosTask.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/queue.h \
  /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/portable.h \
  /root/pygmy-dev/pygmy-sdk/HAL/inc/eoss3_hal_gpio.h \
@@ -35,7 +35,7 @@
  /root/pygmy-dev/pygmy-sdk/Libraries/Power/inc/s3x_err_base.h \
  /root/pygmy-dev/pygmy-sdk/HAL/inc/s3x_clock_hal.h \
  /root/pygmy-dev/pygmy-sdk/HAL/inc/eoss3_dev.h \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/s3x_pwrcfg.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/s3x_pwrcfg.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/Utils/inc/ql_time.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/Power/inc/s3x_pi.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/Power/inc/s3x_err_base.h \
@@ -52,13 +52,13 @@
  /root/pygmy-dev/pygmy-sdk/Libraries/FPGA/inc/fpga_loader.h \
  /root/pygmy-dev/pygmy-sdk/s3-gateware/gateware.h
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/FreeRTOS.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/FreeRTOSConfig.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/FreeRTOSConfig.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/projdefs.h:
 
@@ -82,7 +82,7 @@
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/timers.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/RtosTask.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/RtosTask.h:
 
 /root/pygmy-dev/pygmy-sdk/FreeRTOS/include/queue.h:
 
@@ -122,7 +122,7 @@
 
 /root/pygmy-dev/pygmy-sdk/HAL/inc/eoss3_dev.h:
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/s3x_pwrcfg.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/s3x_pwrcfg.h:
 
 /root/pygmy-dev/pygmy-sdk/Libraries/Utils/inc/ql_time.h:
 

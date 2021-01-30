@@ -1,6 +1,6 @@
-/storage/emulated/0/github/vaman/arm/codes/blink/GCC_Project/output/cli_args.o: \
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/GCC_Project/output/cli_args.o: \
  /root/pygmy-dev/pygmy-sdk/Libraries/cli/src/cli_args.c \
- /storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h \
+ /storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/cli/inc/cli.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/cli/inc/cli/cli_structs.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/cli/inc/cli/cli_getkey.h \
@@ -11,7 +11,7 @@
  /root/pygmy-dev/pygmy-sdk/Libraries/cli/inc/cli/cli_print.h \
  /root/pygmy-dev/pygmy-sdk/Libraries/cli/inc/cli/cli_filesystem.h
 
-/storage/emulated/0/github/vaman/arm/codes/blink/inc/Fw_global_config.h:
+/storage/emulated/0/github/vaman/arm/codes/setup/blink/inc/Fw_global_config.h:
 
 /root/pygmy-dev/pygmy-sdk/Libraries/cli/inc/cli.h:
 
