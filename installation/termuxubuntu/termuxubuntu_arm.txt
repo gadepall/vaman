@@ -1,0 +1,145 @@
+proot-distro login ubuntu-20.04
+ap update 
+apt upgrade
+
+#Install ssh-server
+apt install openssh-server
+
+# Install arm toolchain and hardware tools
+apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev gcc-arm-none-eabi libnewlib-arm-none-eabi telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip
+
+#Install Python libraries (on device connecting pygmy to usb)
+pip3 install wheel python-constraint serial tinyfpgab apio
+
+#Pull all necessary tools
+cd ~
+#Need to check if pygmy-sdk can be reduced by keeping only the basic hardware
+#components.
+git clone --recursive https://github.com/optimuslogic/pygmy-dev
+
+
+#Create directory for building the toolchain
+mkdir -p /root/symbiflow
+export  INSTALL_DIR=/root/symbiflow
+
+#Download and extract symbiflow
+curl $(curl https://storage.googleapis.com/symbiflow-arch-defs-install/latest) > /root/arch.tar.gz
+tar -C $INSTALL_DIR -xvf /root/arch.tar.gz
+
+export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
+
+#Install fasm 
+cd /root/pygmy-dev/tools/quicklogic-fasm
+pip3 install -r requirements.txt
+python3 setup.py install
+cd /root/
+
+#Install yosys
+cd /root/pygmy-dev/tools/quicklogic-yosys
+make config-gcc
+make -j4 install PREFIX=$INSTALL_DIR
+cd /root/
+
+#install yosys-symbiflow
+cd /root/pygmy-dev/tools/yosys-symbiflow-plugins
+export PATH=$INSTALL_DIR/bin:$PATH
+make -j4 install
+cd /root/
+
+#install vtr
+cd /root/pygmy-dev/tools/vtr-verilog-to-routing
+make -j4
+cd /root/
+
+
+cp /root/pygmy-dev/tools/vtr-verilog-to-routing/build/vpr/vpr $INSTALL_DIR/bin
+cp /root/pygmy-dev/tools/vtr-verilog-to-routing/build/utils/fasm/genfasm $INSTALL_DIR/bin
+
+#add path to .bashrc
+nano ~/.bashrc
+#paste the following 3 lines at the end of the file
+export  INSTALL_DIR=/root/symbiflow
+export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
+export PATH=/root/symbiflow/bin:$PATH
+#Ctrl+X save and exit.  reboot for the settings to be updated.
+reboot
+#After login
+cd /root/
+
+
+#Check the executables on Path
+vpr -h
+yosys -h
+qlfasm -h
+ql_symbiflow -h
+
+#Test installation
+cd $INSTALL_DIR/quicklogic-arch-defs/tests/counter_16bit
+ql_symbiflow -compile -d ql-eos-s3 -P pd64 -v counter_16bit.v -t top -p chandalar.pcf -dump binary
+#top.bin must be generated successfully 
+
+#Blink program
+cd /root/
+svn co https://github.com/gadepall/pygmy/trunk/installation/blink
+ql_symbiflow -compile -src /root/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+#helloworldfpga.bin must be generated successfully in /root/blink
+
+#Now flashing to the board through usb
+apio drivers --serial-enable
+
+
+#From termux-ubuntu
+cd /storage/emulated/0/Download
+svn co https://github.com/gadepall/pygmy/trunk/installation/blink
+ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+#helloworldfpga.bin must be generated successfully in /storage/emulated/0/Download/#blink
+
+#Transfer .bin file to RPI
+scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+
+#On RPI execute the following 
+
+python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+
+#ssh -tt -n -L 8086:localhost:8086 pi@192.168.0.114 '/usr/sbin/ser2net -d -C "8086:raw:600:/#dev/ttyACM0:115200 NONE 1STOPBIT 8DATABITS -XONXOFF LOCAL -RTSCTS #HANGUP_WHEN_DONE "' 
+#Modify the ip address 10.0.0.8 and the port /dev/ttyACM0 if necessary  The terminal will #hang, do not disturb it.
+
+#avrdude -p atmega328p -c arduino -P net:localhost:8086 -U flash:w:hello.hex
+
+#python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-#programmer-gui.py --port net:localhost:8086  --appfpga /storage/emulated/0/Download/#blink/helloworldfpga.bin --mode fpga
+
+#End FPGA hello world
+
+
+#ARM Hello world
+#Test the GNU RM GCC Embedded toolchain
+arm-none-eabi-gcc --version
+
+#Download the helloworld program
+cd ˜
+svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/blink
+cd GCC_Project
+make
+
+#blink.bin should be generated in ouput/bin/ directory
+#Transfer .bin file to RPI
+scp  output/bin/blink.bin pi@192.168.0.114:
+#Suitably modify the ip address above
+
+#On RPI execute the following 
+sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4
+#This will flash the .bin file to the pygmy
+
+#End ARM testing
+
+##For RPI4 in 64 -bit mode (Ubuntu 20.04):
+##OR for Termux on Android (ubuntu 20.04 proot)#Download and unzip:
+#cd $INSTALL_DIR
+#wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
+#tar -xvjf  gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
+#export PATH=$INSTALL_DIR/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
+
+
+
+
+

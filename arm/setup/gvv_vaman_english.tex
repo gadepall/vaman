@@ -341,8 +341,10 @@ https://github.com/gadepall/vaman/tree/master/fpga/setup/codes/
 \item Login to termux-ubuntu on the android device and execute the following commands
 \begin{lstlisting}
 cd /storage/emulated/0/Download
-svn co https://github.com/gadepall/pygmy/trunk/installation/blink
-ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
+%svn co https://github.com/gadepall/pygmy/trunk/installation/blink
+ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t \
+helloworldfpga -p quickfeather.pcf -dump binary
 scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
 \end{lstlisting}
 Make sure that the appropriate IP address for the raspberry pi is given in the above command.

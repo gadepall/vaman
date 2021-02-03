@@ -16,7 +16,7 @@ git clone --recursive https://github.com/optimuslogic/pygmy-dev
 
 #Create directory for building the toolchain
 mkdir -p symbiflow
-export  INSTALL_DIR=˜/storage/symbiflow
+export  INSTALL_DIR=/home/user/storage/symbiflow
 
 #Download and extract symbiflow
 curl $(curl https://storage.googleapis.com/symbiflow-arch-defs-install/latest) > /home/user/storage/arch.tar.gz
@@ -92,35 +92,6 @@ scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
 python3 /home/user/storage/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
 
 #End FPGA hello world
-
-
-#ARM Hello world
-#Test the GNU RM GCC Embedded toolchain
-arm-none-eabi-gcc --version
-
-#Download the helloworld program
-cd ˜
-svn co https://github.com/user/vaman/trunk/arm/codes/setup/blink
-cd GCC_Project
-make
-
-#blink.bin should be generated in ouput/bin/ directory
-#Transfer .bin file to RPI
-scp  output/bin/blink.bin pi@192.168.0.114:
-#Suitably modify the ip address above
-
-#On RPI execute the following 
-sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4
-#This will flash the .bin file to the pygmy
-
-#End ARM testing
-
-##For RPI4 in 64 -bit mode (Ubuntu 20.04):
-##OR for Termux on Android (ubuntu 20.04 phome/user/storage)#Download and unzip:
-#cd $INSTALL_DIR
-#wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
-#tar -xvjf  gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
-#export PATH=$INSTALL_DIR/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
 
 
 
