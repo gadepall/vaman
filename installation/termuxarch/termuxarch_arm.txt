@@ -1,23 +1,25 @@
 #ARM Hello world
 
-cd /home/gadepall/storage/
+cd /home/gadepall/txhome/
 wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
 tar -xvjf  gcc-arm-none-eabi-9-2020-q2-update-aarch64-linux.tar.bz2
-export PATH=/home/gadepall/storage/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
+export PATH=/home/gadepall/txhome/symbiflow/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
 
 
 #Test the GNU RM GCC Embedded toolchain
 arm-none-eabi-gcc --version
 
 #Download the helloworld program
-cd /home/gadepall/storage/
+cd /home/gadepall/txhome/
+mkdir arm-examples
 svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/blink
 cd blink/GCC_Project/
+rm -rf output/*
 nano config.mk
-#Change the following path in the file
+#Change the following path in the file so that you point to the pygmy-sdk directory
 export PROJ_ROOT=/root/pygmy-dev/pygmy-sdk
 #or
-export PROJ_ROOT=/home/user/storage/pygmy-dev/pygmy-sdk
+export PROJ_ROOT=/home/gadepall/storage/pygmy-dev/pygmy-sdk
 #if required
 make -j4
 
@@ -27,7 +29,7 @@ scp  output/bin/blink.bin pi@192.168.0.114:
 #Suitably modify the ip address above
 
 #On RPI execute the following 
-sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4
+sudo python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  /home/pi/blink.bin --mode m4
 #This will flash the .bin file to the pygmy
 
 #End ARM testing
