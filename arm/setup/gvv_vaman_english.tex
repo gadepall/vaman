@@ -342,7 +342,6 @@ https://github.com/gadepall/vaman/tree/master/fpga/setup/codes/
 \begin{lstlisting}
 cd /storage/emulated/0/Download
 svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
-%svn co https://github.com/gadepall/pygmy/trunk/installation/blink
 ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t \
 helloworldfpga -p quickfeather.pcf -dump binary
 scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
@@ -350,7 +349,7 @@ scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
 Make sure that the appropriate IP address for the raspberry pi is given in the above command.
 \item Now execute the following commands on the raspberry pi.
 \begin{lstlisting}
-python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
 \end{lstlisting}
 \item Make sure that the correct USB port address is given in the above command.  Then press the button to the right of the USB port.  After some time, the LED will start blinking red.
 \end{enumerate}

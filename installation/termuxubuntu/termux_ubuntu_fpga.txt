@@ -86,7 +86,7 @@ ql_symbiflow -compile -src /root/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v 
 
 #From termux-ubuntu
 cd /storage/emulated/0/Download
-svn co https://github.com/gadepall/pygmy/trunk/installation/blink
+svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
 ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
 #helloworldfpga.bin must be generated successfully in /storage/emulated/0/Download/#blink
 

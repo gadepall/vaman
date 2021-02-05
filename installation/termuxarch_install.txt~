@@ -78,7 +78,7 @@ ql_symbiflow -compile -d ql-eos-s3 -P pd64 -v counter_16bit.v -t top -p chandala
 
 #Blink program
 cd /home/gadepall/txhome/
-svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
+svn co https://github.com/user/pygmy/trunk/installation/blink
 ql_symbiflow -compile -src /home/gadepall/txhome/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
 #helloworldfpga.bin must be generated successfully in /home/gadepall/txhome/blink
 

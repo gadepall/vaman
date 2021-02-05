@@ -1,6 +1,6 @@
 startarch
 pacman -Syu
-pacman -S base-devel   python-lxml python-simplejson 
+pacman -S base-devel  tcl python-lxml python-simplejson 
 
 #Install Python libraries (on device connecting pygmy to usb)
 pip install wheel python-constraint serial tinyfpgab apio
@@ -16,51 +16,51 @@ git clone --recursive https://github.com/optimuslogic/pygmy-dev
 
 #Create directory for building the toolchain
 mkdir -p symbiflow
-export  INSTALL_DIR=/home/user/storage/symbiflow
+export  INSTALL_DIR=/home/user/txhome/symbiflow
 
 #Download and extract symbiflow
-curl $(curl https://storage.googleapis.com/symbiflow-arch-defs-install/latest) > /home/user/storage/arch.tar.gz
-tar -C $INSTALL_DIR -xvf /home/user/storage/arch.tar.gz
+curl $(curl https://storage.googleapis.com/symbiflow-arch-defs-install/latest) > /home/user/txhome/arch.tar.gz
+tar -C $INSTALL_DIR -xvf /home/user/txhome/arch.tar.gz
 
 export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
 
 #Install fasm 
-cd /home/user/storage/pygmy-dev/tools/quicklogic-fasm
+cd /home/user/txhome/pygmy-dev/tools/quicklogic-fasm
 sudo pip install -r requirements.txt
 sudo python setup.py install
-cd /home/user/storage/
+cd /home/user/txhome/
 
 #Install yosys
-cd /home/user/storage/pygmy-dev/tools/quicklogic-yosys
+cd /home/user/txhome/pygmy-dev/tools/quicklogic-yosys
 make config-gcc
 make -j4 install PREFIX=$INSTALL_DIR
-cd /home/user/storage/
+cd /home/user/txhome/
 
 #install yosys-symbiflow
-cd /home/user/storage/pygmy-dev/tools/yosys-symbiflow-plugins
+cd /home/user/txhome/pygmy-dev/tools/yosys-symbiflow-plugins
 export PATH=$INSTALL_DIR/bin:$PATH
 make -j4 install
-cd /home/user/storage/
+cd /home/user/txhome/
 
 #install vtr
-cd /home/user/storage/pygmy-dev/tools/vtr-verilog-to-routing
+cd /home/user/txhome/pygmy-dev/tools/vtr-verilog-to-routing
 make -j4
-cd /home/user/storage/
+cd /home/user/txhome/
 
 
-cp /home/user/storage/pygmy-dev/tools/vtr-verilog-to-routing/build/vpr/vpr $INSTALL_DIR/bin
-cp /home/user/storage/pygmy-dev/tools/vtr-verilog-to-routing/build/utils/fasm/genfasm $INSTALL_DIR/bin
+cp /home/user/txhome/pygmy-dev/tools/vtr-verilog-to-routing/build/vpr/vpr $INSTALL_DIR/bin
+cp /home/user/txhome/pygmy-dev/tools/vtr-verilog-to-routing/build/utils/fasm/genfasm $INSTALL_DIR/bin
 
 #add path to .bashrc
-nano /home/user/storage/.bashrc
+nano /home/user/txhome/.bashrc
 #paste the following 3 lines at the end of the file
-export  INSTALL_DIR=/home/user/storage/symbiflow
+export  INSTALL_DIR=/home/user/txhome/symbiflow
 export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
-export PATH=/home/user/storage/symbiflow/bin:$PATH
+export PATH=/home/user/txhome/symbiflow/bin:$PATH
 #Ctrl+X save and exit.  reboot for the settings to be updated.
 reboot
 #After login
-cd /home/user/storage/
+cd /home/user/txhome/
 
 
 #Check the executables on Path
@@ -75,10 +75,10 @@ ql_symbiflow -compile -d ql-eos-s3 -P pd64 -v counter_16bit.v -t top -p chandala
 #top.bin must be generated successfully 
 
 #Blink program
-cd /home/user/storage/
-svn co https://github.com/user/pygmy/trunk/installation/blink
-ql_symbiflow -compile -src /home/user/storage/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
-#helloworldfpga.bin must be generated successfully in /home/user/storage/blink
+cd /home/user/txhome/
+svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
+ql_symbiflow -compile -src /home/user/txhome/fpga-examples/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+#helloworldfpga.bin must be generated successfully in /home/user/txhome/blink
 
 #Now flashing to the board through usb
 apio drivers --serial-enable
@@ -89,7 +89,7 @@ scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
 
 #On RPI execute the following 
 
-python3 /home/user/storage/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+python3 /home/user/txhome/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
 
 #End FPGA hello world
 
