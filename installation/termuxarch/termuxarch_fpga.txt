@@ -1,17 +1,13 @@
-startarch
-pacman -Syu
-pacman -S base-devel  tcl python-lxml python-simplejson 
-
-#Install Python libraries (on device connecting pygmy to usb)
-pip install wheel python-constraint serial tinyfpgab apio
-
 #login as user
 startarch l user
+sudo pacman -Syu
+sudo pacman -S base-devel  tcl python-lxml python-simplejson 
+cd /home/user/txhome
+
 
 #Pull all necessary tools
 #Need to check if pygmy-sdk can be reduced by keeping only the basic hardware
 #components.
-cd storage
 git clone --recursive https://github.com/optimuslogic/pygmy-dev
 
 #Create directory for building the toolchain
@@ -19,7 +15,12 @@ mkdir -p symbiflow
 export  INSTALL_DIR=/home/user/txhome/symbiflow
 
 #Download and extract symbiflow
-curl $(curl https://storage.googleapis.com/symbiflow-arch-defs-install/latest) > /home/user/txhome/arch.tar.gz
+https://iith-my.sharepoint.com/:u:/g/personal/gadepall_ee_iith_ac_in/Ebot5QHEYXBAo-7n4hnvJu0B8vMrTIdj_COHJC2cmDY1ww?e=bqDxHI
+
+cp arch.tar.gz /home/user/txhome/arch.tar.gz
+#Ignore the following
+#curl $(curl https://storage.googleapis.com/symbiflow-arch-defs-install/latest) > /home/user/txhome/arch.tar.gz
+
 tar -C $INSTALL_DIR -xvf /home/user/txhome/arch.tar.gz
 
 export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
@@ -52,13 +53,13 @@ cp /home/user/txhome/pygmy-dev/tools/vtr-verilog-to-routing/build/vpr/vpr $INSTA
 cp /home/user/txhome/pygmy-dev/tools/vtr-verilog-to-routing/build/utils/fasm/genfasm $INSTALL_DIR/bin
 
 #add path to .bashrc
-nano /home/user/txhome/.bashrc
+nano /home/user/.bashrc
 #paste the following 3 lines at the end of the file
 export  INSTALL_DIR=/home/user/txhome/symbiflow
 export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
 export PATH=/home/user/txhome/symbiflow/bin:$PATH
 #Ctrl+X save and exit.  reboot for the settings to be updated.
-reboot
+exit
 #After login
 cd /home/user/txhome/
 
@@ -77,20 +78,29 @@ ql_symbiflow -compile -d ql-eos-s3 -P pd64 -v counter_16bit.v -t top -p chandala
 #Blink program
 cd /home/user/txhome/
 mkdir fpga-examples
+cd fpga-examples
 svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
 ql_symbiflow -compile -src /home/user/txhome/fpga-examples/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
 #helloworldfpga.bin must be generated successfully in /home/user/txhome/blink
 
+#Transfer .bin file to RPI from texmuxarch
+scp /home/user/txhome/blink/helloworldfpga.bin storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+
+
+#On RPi
+git clone --recursive https://github.com/QuickLogic-Corp/TinyFPGA-Programmer-Application.git
+sudo pip3 install tinyfpgab pyserial
+sudo reboot
+
+#Install Python libraries (on device connecting pygmy to usb)
+#sudo pip install wheel python-constraint serial tinyfpgab apio
+
 #Now flashing to the board through usb
-apio drivers --serial-enable
-
-
-#Transfer .bin file to RPI
-scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+#sudo apio drivers --serial-enable
 
 #On RPI execute the following 
 
-python3 /home/user/txhome/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+sudo python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
 
 #End FPGA hello world
 
