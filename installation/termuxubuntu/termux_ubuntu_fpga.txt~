@@ -3,10 +3,10 @@ apt update
 apt upgrade
 
 #Install ssh-server
-apt install openssh-server
+apt install openssh-server sshpass
 
 # Install arm toolchain and hardware tools
-apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev gcc-arm-none-eabi libnewlib-arm-none-eabi telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip python3-setuptools 
+apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev gcc-arm-none-eabi libnewlib-arm-none-eabi telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl  python3-setuptools python3-pip
 
 
 #Pull all necessary tools
@@ -21,10 +21,12 @@ mkdir -p /root/symbiflow
 export  INSTALL_DIR=/root/symbiflow
 
 #Download and extract symbiflow
-curl $(curl https://storage.googleapis.com/symbiflow-arch-defs-install/latest) > /root/arch.tar.gz
-tar -C $INSTALL_DIR -xvf /root/arch.tar.gz
+https://iith-my.sharepoint.com/:u:/g/personal/gadepall_ee_iith_ac_in/Ebot5QHEYXBAo-7n4hnvJu0B8vMrTIdj_COHJC2cmDY1ww?e=bqDxHI
+cp arch.tar.gz /root/arch.tar.gz
 
-export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
+tar -C $INSTALL_DIR  -xvf /root/arch.tar.gz
+
+export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python3:$PATH"
 
 #Install fasm 
 cd /root/pygmy-dev/tools/quicklogic-fasm
@@ -57,7 +59,7 @@ cp /root/pygmy-dev/tools/vtr-verilog-to-routing/build/utils/fasm/genfasm $INSTAL
 nano ~/.bashrc
 #paste the following 3 lines at the end of the file
 export  INSTALL_DIR=/root/symbiflow
-export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
+export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python3:$PATH"
 export PATH=/root/symbiflow/bin:$PATH
 #Ctrl+X save and exit.  reboot for the settings to be updated.
 #reboot
@@ -78,28 +80,22 @@ ql_symbiflow -compile -d ql-eos-s3 -P pd64 -v counter_16bit.v -t top -p chandala
 
 #Blink program
 cd /root/
-https://github.com/gadepall/vaman/tree/master/fpga/setup/codes/blink
-ql_symbiflow -compile -src /root/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
-#helloworldfpga.bin must be generated successfully in /root/blink
-
-
-#From termux-ubuntu
-cd /storage/emulated/0/Download
+mkdir fpga-examples
+cd fpga-examples
 svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
-ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
-#helloworldfpga.bin must be generated successfully in /storage/emulated/0/Download/#blink
+
+ql_symbiflow -compile -src /root/fpga-examples/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+#helloworldfpga.bin must be generated successfully in /root/fpga-examples/blink
 
 #Transfer .bin file to RPI
-scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+scp /root/fpga-examples/blink/helloworldfpga.bin pi@192.168.0.114:
+#Suitably modify the above ip address
 
-
-#Install Python libraries (on device connecting pygmy to usb)
-pip3 install wheel python-constraint serial tinyfpgab apio
-apio drivers --serial-enable
-reboot
-
-#In RPI  home directory
+#On RPi
 git clone --recursive https://github.com/QuickLogic-Corp/TinyFPGA-Programmer-Application.git
+sudo pip3 install tinyfpgab pyserial
+sudo reboot
+
 
 # Then execute the following 
 python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga

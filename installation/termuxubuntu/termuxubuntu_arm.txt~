@@ -42,8 +42,6 @@ sudo python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py
 #On termuxubuntu, the source c file is located at
 blink/src/main.c
 
-#You may make changes here to modify the colour of the led etc..
-
 
 #End ARM testing
 
