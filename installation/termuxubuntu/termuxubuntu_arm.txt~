@@ -13,15 +13,15 @@ apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl
 arm-none-eabi-gcc --version
 
 #Download the pygmy-sdk
-cd ˜
+cd /data/data/com.termux/files/home/
 git clone --recursive https://github.com/optimuslogic/pygmy-dev
 
 #Download the helloworld program
-cd ˜
+cd /data/data/com.termux/files/home/
 mkdir arm-examples
 cd arm-examples
 svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/blink
-cd GCC_Project
+cd blink/GCC_Project
 make
 
 #blink.bin should be generated in ouput/bin/ directory
@@ -33,6 +33,7 @@ scp  output/bin/blink.bin pi@192.168.0.114:
 
 #If Tinyfpga is not installed 
 git clone --recursive https://github.com/QuickLogic-Corp/TinyFPGA-Programmer-Application.git
+sudo apt install python3-pip
 sudo pip3 install tinyfpgab pyserial
 sudo reboot
 
@@ -41,6 +42,8 @@ sudo python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py
 
 #On termuxubuntu, the source c file is located at
 blink/src/main.c
+
+#You may make changes here to modify the colour of the led etc..
 
 
 #End ARM testing

@@ -13,16 +13,16 @@ apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl
 arm-none-eabi-gcc --version
 
 #Download the pygmy-sdk
-cd ˜
+cd /data/data/com.termux/files/home/
 git clone --recursive https://github.com/optimuslogic/pygmy-dev
 
 #Download the helloworld program
-cd ˜
+cd /data/data/com.termux/files/home/
 mkdir arm-examples
 cd arm-examples
 svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/blink
-cd GCC_Project
-make
+cd blink/GCC_Project
+make -j4
 
 #blink.bin should be generated in ouput/bin/ directory
 #Transfer .bin file to RPI
@@ -33,6 +33,7 @@ scp  output/bin/blink.bin pi@192.168.0.114:
 
 #If Tinyfpga is not installed 
 git clone --recursive https://github.com/QuickLogic-Corp/TinyFPGA-Programmer-Application.git
+sudo apt install python3-pip
 sudo pip3 install tinyfpgab pyserial
 sudo reboot
 
