@@ -1,0 +1,462 @@
+VPR FPGA Placement and Routing.
+Version: 8.1.0-dev+dadca7ecf
+Revision: v8.0.0-rc2-2894-gdadca7ecf
+Compiled: 2020-10-14T15:08:54
+Compiler: GNU 7.3.0 on Linux-4.15.0-1028-gcp x86_64
+Build Info: Release IPO VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+vpr /home/somesh/qorc-sdk/fpga_toolchain_install/v1.3.1/quicklogic-arch-defs/share/arch/ql-eos-s3_wlcsp/arch.timing.xml top.eblif --device ql-eos-s3 --max_router_iterations 500 --routing_failure_predictor off --router_high_fanout_threshold -1 --constant_net_method route --route_chan_width 100 --clock_modeling route --place_delay_model delta_override --router_lookahead map --check_route quick --strict_checks off --allow_dangling_combinational_nodes on --disable_errors check_unbuffered_edges:check_route --congested_routing_iteration_threshold 0.8 --incremental_reroute_delay_ripup off --base_cost_type delay_normalized_length_bounded --bb_factor 10 --initial_pres_fac 4.0 --check_rr_graph off --suppress_warnings ,sum_pin_class:check_unbuffered_edges:load_rr_indexed_data_T_values:check_rr_node:trans_per_R:check_route:set_rr_graph_tool_comment:warn_model_missing_timing --read_rr_graph /home/somesh/qorc-sdk/fpga_toolchain_install/v1.3.1/quicklogic-arch-defs/share/arch/ql-eos-s3_wlcsp/rr_graph_ql-eos-s3_wlcsp.rr_graph.real.bin --read_placement_delay_lookup /home/somesh/qorc-sdk/fpga_toolchain_install/v1.3.1/quicklogic-arch-defs/share/arch/ql-eos-s3_wlcsp/rr_graph_ql-eos-s3_wlcsp.place_delay.bin --sdc_file /home/somesh/pygmy-dev/onion-apps/qorc_gpiocontroller_wb/build/top_dummy.sdc --pack
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /home/somesh/qorc-sdk/fpga_toolchain_install/v1.3.1/quicklogic-arch-defs/share/arch/ql-eos-s3_wlcsp/arch.timing.xml
+Circuit name: top
+
+# Loading Architecture Description
+# Loading Architecture Description took 0.51 seconds (max_rss 30.7 MiB, delta_rss +24.8 MiB)
+# Building complex block graph
+# Building complex block graph took 0.11 seconds (max_rss 39.5 MiB, delta_rss +8.7 MiB)
+# Load circuit
+# Load circuit took 0.03 seconds (max_rss 42.3 MiB, delta_rss +2.8 MiB)
+# Clean circuit
+Absorbed 2027 LUT buffers
+Inferred  106 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred   70 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 85
+Swept block(s)      : 1
+Constant Pins Marked: 176
+# Clean circuit took 0.03 seconds (max_rss 50.0 MiB, delta_rss +7.7 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 50.0 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 50.0 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 375
+    .input    :      32
+    .output   :      32
+    ASSP      :       1
+    BIDIR_CELL:      32
+    C_FRAG    :      19
+    F_FRAG    :       1
+    GMUX_IC   :       2
+    GND       :       1
+    Q_FRAG    :      71
+    T_FRAG    :     183
+    VCC       :       1
+  Nets  : 431
+    Avg Fanout:     5.5
+    Max Fanout:   733.0
+    Min Fanout:     1.0
+Warning 1: Assuming clocks may propagate through u_gclkbuff_clock (GMUX_IC) from pin u_gclkbuff_clock.IC[0] to u_gclkbuff_clock.IZ[0] (assuming a non-inverting buffer).
+Warning 2: Assumed 1 netlist logic connections may be clock buffers. To override this behaviour explicitly create clocks at the appropriate netlist pins.
+  Netlist Clocks: 1
+# Build Timing Graph
+Warning 3: Assuming clocks may propagate through u_gclkbuff_clock (GMUX_IC) from pin u_gclkbuff_clock.IC[0] to u_gclkbuff_clock.IZ[0] (assuming a non-inverting buffer).
+Warning 4: Assumed 1 netlist logic connections may be clock buffers. To override this behaviour explicitly create clocks at the appropriate netlist pins.
+Adding edge from 'u_gclkbuff_clock.IC[0]' (tnode: 2561) -> 'u_gclkbuff_clock.IZ[0]' (tnode: 2562) to allow clocks to propagate
+Adding edge from 'u_gclkbuff_reset.IC[0]' (tnode: 2564) -> 'u_gclkbuff_reset.IZ[0]' (tnode: 2565) to allow clocks to propagate
+  Timing Graph Nodes: 2784
+  Timing Graph Edges: 4371
+  Timing Graph Levels: 14
+# Build Timing Graph took 0.00 seconds (max_rss 50.0 MiB, delta_rss +0.0 MiB)
+Warning 5: Assuming clocks may propagate through u_gclkbuff_clock (GMUX_IC) from pin u_gclkbuff_clock.IC[0] to u_gclkbuff_clock.IZ[0] (assuming a non-inverting buffer).
+Warning 6: Assumed 1 netlist logic connections may be clock buffers. To override this behaviour explicitly create clocks at the appropriate netlist pins.
+Netlist contains 1 clocks
+  Netlist Clock 'Sys_Clk0' Fanout: 1 pins (0.0%), 1 blocks (0.3%)
+# Load Timing Constraints
+Warning 7: Assuming clocks may propagate through u_gclkbuff_clock (GMUX_IC) from pin u_gclkbuff_clock.IC[0] to u_gclkbuff_clock.IZ[0] (assuming a non-inverting buffer).
+Warning 8: Assumed 1 netlist logic connections may be clock buffers. To override this behaviour explicitly create clocks at the appropriate netlist pins.
+
+SDC file '/home/somesh/pygmy-dev/onion-apps/qorc_gpiocontroller_wb/build/top_dummy.sdc' contained no SDC commands
+Warning 9: Assuming clocks may propagate through u_gclkbuff_clock (GMUX_IC) from pin u_gclkbuff_clock.IC[0] to u_gclkbuff_clock.IZ[0] (assuming a non-inverting buffer).
+Warning 10: Assumed 1 netlist logic connections may be clock buffers. To override this behaviour explicitly create clocks at the appropriate netlist pins.
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on netlist clock 'Sys_Clk0'
+   * optimize netlist clock to run as fast as possible
+Timing constraints created 1 clocks
+  Constrained Clock 'Sys_Clk0' Source: 'u_qlal4s3b_cell_macro.Sys_Clk0[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 50.0 MiB, delta_rss +0.0 MiB)
+Timing analysis: ON
+Circuit netlist file: top.net
+Circuit placement file: top.place
+Circuit routing file: top.route
+Circuit SDC file: /home/somesh/pygmy-dev/onion-apps/qorc_gpiocontroller_wb/build/top_dummy.sdc
+
+Packer: ENABLED
+Placer: DISABLED
+Router: DISABLED
+Analysis: DISABLED
+
+NetlistOpts.abosrb_buffer_luts            : true
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: auto
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+RoutingArch.directionality: BI_DIRECTIONAL
+RoutingArch.switch_block_type: WILTON
+RoutingArch.Fs: 3
+
+# Packing
+Begin packing 'top.eblif'.
+Warning 11: All 4 clocks will be treated as global.
+
+After removing unused inputs...
+	total blocks: 375, total nets: 431, total inputs: 32, total outputs: 32
+Begin prepacking.
+Finish prepacking.
+Using inter-cluster delay: 1.2e-14
+Warning 12: Unable to determine most common block type (perhaps the device grid was empty?)
+Warning 13: Unable to infer which block type is a logic block
+Warning 14: Unable to identify logic block type to apply default pin utilization targets to; this may result in denser packing than desired
+Warning 15: Unable to determine most common block type (perhaps the device grid was empty?)
+Warning 16: Unable to infer which block type is a logic block
+Warning 17: Unable to identify logic block type to apply default packer high fanout thresholds; this may result in denser packing than desired
+Packing with pin utilization targets: TL-LOGIC:1,1 TL-RAM:1,1 TL-MULT:1,1 TL-BIDIR:1,1 TL-CLOCK:1,1 TL-SDIOMUX:1,1 TL-GMUX:1,1 TL-ASSP:1,1 TL-SYN_VCC:1,1 TL-SYN_GND:1,1
+Packing with high fanout thresholds: TL-LOGIC:128 TL-RAM:128 TL-MULT:128 TL-BIDIR:128 TL-CLOCK:128 TL-SDIOMUX:128 TL-GMUX:128 TL-ASSP:128 TL-SYN_VCC:128 TL-SYN_GND:128
+Not enough resources expand FPGA size to (39 x 35)
+Complex block 0: 'u_qlal4s3b_cell_macro' (PB-ASSP) .
+Complex block 1: '$iopadmap$top.GPIO_io[0]' (PB-BIDIR) .
+Complex block 2: '$iopadmap$top.GPIO_io[1]' (PB-BIDIR) .
+Complex block 3: '$iopadmap$top.GPIO_io[10]' (PB-BIDIR) .
+Complex block 4: '$iopadmap$top.GPIO_io[11]' (PB-BIDIR) .
+Complex block 5: '$iopadmap$top.GPIO_io[12]' (PB-BIDIR) .
+Complex block 6: '$iopadmap$top.GPIO_io[13]' (PB-BIDIR) .
+Complex block 7: '$iopadmap$top.GPIO_io[14]' (PB-BIDIR) .
+Complex block 8: '$iopadmap$top.GPIO_io[15]' (PB-BIDIR) .
+Complex block 9: '$iopadmap$top.GPIO_io[16]' (PB-BIDIR) .
+Complex block 10: '$iopadmap$top.GPIO_io[17]' (PB-BIDIR) .
+Complex block 11: '$iopadmap$top.GPIO_io[18]' (PB-BIDIR) .
+Complex block 12: '$iopadmap$top.GPIO_io[19]' (PB-BIDIR) .
+Complex block 13: '$iopadmap$top.GPIO_io[2]' (PB-BIDIR) .
+Complex block 14: '$iopadmap$top.GPIO_io[20]' (PB-BIDIR) .
+Complex block 15: '$iopadmap$top.GPIO_io[21]' (PB-BIDIR) .
+Complex block 16: '$iopadmap$top.GPIO_io[22]' (PB-BIDIR) .
+Complex block 17: '$iopadmap$top.GPIO_io[23]' (PB-BIDIR) .
+Complex block 18: '$iopadmap$top.GPIO_io[24]' (PB-BIDIR) .
+Complex block 19: '$iopadmap$top.GPIO_io[25]' (PB-BIDIR) .
+Complex block 20: '$iopadmap$top.GPIO_io[26]' (PB-BIDIR) .
+Complex block 21: '$iopadmap$top.GPIO_io[27]' (PB-BIDIR) .
+Complex block 22: '$iopadmap$top.GPIO_io[28]' (PB-BIDIR) .
+Complex block 23: '$iopadmap$top.GPIO_io[29]' (PB-BIDIR) .
+Complex block 24: '$iopadmap$top.GPIO_io[3]' (PB-BIDIR) .
+Complex block 25: '$iopadmap$top.GPIO_io[30]' (PB-BIDIR) .
+Complex block 26: '$iopadmap$top.GPIO_io[31]' (PB-BIDIR) .
+Complex block 27: '$iopadmap$top.GPIO_io[4]' (PB-BIDIR) .
+Complex block 28: '$iopadmap$top.GPIO_io[5]' (PB-BIDIR) .
+Complex block 29: '$iopadmap$top.GPIO_io[6]' (PB-BIDIR) .
+Complex block 30: '$iopadmap$top.GPIO_io[7]' (PB-BIDIR) .
+Complex block 31: '$iopadmap$top.GPIO_io[8]' (PB-BIDIR) .
+Complex block 32: '$iopadmap$top.GPIO_io[9]' (PB-BIDIR) .
+Complex block 33: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_D_LUT3_O.t_frag' (PB-LOGIC) ...
+Complex block 34: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_1_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 35: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_10_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 36: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_11_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 37: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_12_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 38: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_13_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 39: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_14_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 40: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_15_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 41: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_16_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 42: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_17_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 43: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_18_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 44: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_19_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 45: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_2_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 46: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_20_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 47: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_21_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 48: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_22_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 49: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_23_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 50: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_24_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 51: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_25_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 52: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_26_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 53: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_27_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 54: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_28_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 55: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_29_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 56: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_3_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 57: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_30_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 58: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_31_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 59: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_4_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 60: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_5_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 61: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_6_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 62: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_7_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 63: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_8_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 64: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_out_dffc_Q_9_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 65: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 66: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_1_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 67: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_10_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 68: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_11_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 69: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_12_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 70: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_13_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 71: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_14_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 72: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_15_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 73: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_16_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 74: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_17_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 75: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_18_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 76: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_19_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 77: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_2_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 78: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_20_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 79: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_21_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 80: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_22_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 81: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_23_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 82: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_24_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 83: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_25_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 84: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_26_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 85: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_27_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 86: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_28_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 87: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_29_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 88: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_3_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 89: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_30_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 90: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_31_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 91: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_4_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 92: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_5_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 93: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_6_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 94: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_7_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 95: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_8_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 96: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.GPIO_OE_dffc_Q_9_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 97: 'u_AL4S3B_FPGA_IP.u_AL4S3B_FPGA_QL_Reserved.Default_Cntr_nxt_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 98: 'u_AL4S3B_FPGA_IP.u_AL4S3B_FPGA_QL_Reserved.WBs_ACK_o_dffc_Q_D_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 99: 'u_AL4S3B_FPGA_IP.u_AL4S3B_FPGA_QL_Reserved.Default_State_nxt_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 100: 'u_AL4S3B_FPGA_IP.u_AL4S3B_FPGA_QL_Reserved.Default_Cntr_nxt_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 101: 'u_AL4S3B_FPGA_IP.u_AL4S3B_FPGA_Registers.WBs_ACK_o_nxt_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 102: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.WBs_ACK_o_LUT4_I0.c_frag' (PB-LOGIC) ..
+Complex block 103: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.WBs_ACK_o_nxt_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 104: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.WBs_WE_i_LUT4_I1.c_frag' (PB-LOGIC) .
+Complex block 105: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.WBs_WE_i_LUT4_I1_1.c_frag' (PB-LOGIC) .
+Complex block 106: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.WBs_WE_i_LUT4_I1_2.c_frag' (PB-LOGIC) .
+Complex block 107: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.WBs_WE_i_LUT4_I1_3.c_frag' (PB-LOGIC) .
+Complex block 108: 'u_AL4S3B_FPGA_IP.u_AL4S3B_FPGA_QL_Reserved.Default_Cntr_dffp_Q_2' (PB-LOGIC) ...
+Complex block 109: 'WBs_RD_DAT_LUT3_O_I1_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 110: 'WBs_RD_DAT_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 111: 'WBs_RD_DAT_LUT4_O_1.c_frag' (PB-LOGIC) .
+Complex block 112: 'WBs_RD_DAT_LUT4_O_2.c_frag' (PB-LOGIC) .
+Complex block 113: 'WBs_RD_DAT_LUT4_O_3.c_frag' (PB-LOGIC) .
+Complex block 114: 'WBs_RD_DAT_LUT4_O_4.c_frag' (PB-LOGIC) .
+Complex block 115: 'WBs_RD_DAT_LUT4_O_5.c_frag' (PB-LOGIC) .
+Complex block 116: 'WBs_RD_DAT_LUT4_O_6.c_frag' (PB-LOGIC) .
+Complex block 117: 'WBs_RD_DAT_LUT4_O_7.c_frag' (PB-LOGIC) .
+Complex block 118: 'WBs_RD_DAT_LUT4_O_8.c_frag' (PB-LOGIC) .
+Complex block 119: 'WBs_RD_DAT_LUT4_O_9.c_frag' (PB-LOGIC) .
+Complex block 120: 'WBs_RD_DAT_LUT4_O_I2_LUT4_O.c_frag' (PB-LOGIC) .
+Complex block 121: 'WB_RST_LUT2_I0.t_frag' (PB-LOGIC) ..
+Complex block 122: 'WBs_RD_DAT_LUT2_O_I1_LUT2_O.t_frag' (PB-LOGIC) ..
+Complex block 123: 'WBs_RD_DAT_LUT3_O.t_frag' (PB-LOGIC) ..
+Complex block 124: 'WBs_RD_DAT_LUT3_O_1.t_frag' (PB-LOGIC) ..
+Complex block 125: 'WBs_RD_DAT_LUT3_O_10.t_frag' (PB-LOGIC) ..
+Complex block 126: 'WBs_RD_DAT_LUT3_O_11.t_frag' (PB-LOGIC) ..
+Complex block 127: 'WBs_RD_DAT_LUT3_O_12.t_frag' (PB-LOGIC) ..
+Complex block 128: 'WBs_RD_DAT_LUT3_O_15.t_frag' (PB-LOGIC) ..
+Complex block 129: 'WBs_RD_DAT_LUT3_O_16.t_frag' (PB-LOGIC) ..
+Complex block 130: 'WBs_RD_DAT_LUT3_O_2.t_frag' (PB-LOGIC) ..
+Complex block 131: 'WBs_RD_DAT_LUT3_O_4.t_frag' (PB-LOGIC) ..
+Complex block 132: 'WBs_RD_DAT_LUT3_O_6.t_frag' (PB-LOGIC) ..
+Complex block 133: 'WBs_RD_DAT_LUT3_O_7.t_frag' (PB-LOGIC) ..
+Complex block 134: 'WBs_RD_DAT_LUT3_O_9_I0_LUT2_O.t_frag' (PB-LOGIC) ..
+Complex block 135: 'WBs_RD_DAT_LUT4_O_1_I1_LUT2_O.t_frag' (PB-LOGIC) ..
+Complex block 136: 'WBs_RD_DAT_LUT4_O_2_I1_LUT2_O.t_frag' (PB-LOGIC) ..
+Complex block 137: 'WBs_RD_DAT_LUT4_O_3_I1_LUT2_O.t_frag' (PB-LOGIC) ..
+Complex block 138: 'WBs_RD_DAT_LUT4_O_4_I1_LUT2_O.t_frag' (PB-LOGIC) ..
+Complex block 139: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.WBs_ACK_o_nxt_LUT4_O_I1_LUT3_I1.t_frag' (PB-LOGIC) ..
+Complex block 140: 'u_AL4S3B_FPGA_IP.GPIO_controller_0.WBs_WE_i_LUT3_I0.t_frag' (PB-LOGIC) ..
+Complex block 141: 'u_AL4S3B_FPGA_IP.WBs_DAT_o_FPGA_Reg_LUT2_O_I0_LUT2_I1.t_frag' (PB-LOGIC) ..
+Complex block 142: 'u_AL4S3B_FPGA_IP.WBs_DAT_o_FPGA_Reg_LUT2_O_I0_LUT3_O_I1_LUT2_I1_O_LUT2_I1.t_frag' (PB-LOGIC) ..
+Complex block 143: 'u_AL4S3B_FPGA_IP.WBs_DAT_o_QL_Reserved_LUT2_O.t_frag' (PB-LOGIC) .
+Complex block 144: 'u_gclkbuff_clock' (PB-GMUX) .
+Complex block 145: 'u_gclkbuff_reset' (PB-GMUX) .
+Complex block 146: '$false' (PB-SYN_GND) .
+Complex block 147: '$true' (PB-SYN_VCC) .
+	EMPTY: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
+	PB-SYN_GND: # blocks: 1, average # input + clock pins used: 0, average # output pins used: 1
+	PB-BIDIR: # blocks: 32, average # input + clock pins used: 3, average # output pins used: 1
+	PB-ASSP: # blocks: 1, average # input + clock pins used: 161, average # output pins used: 57
+	PB-LOGIC: # blocks: 111, average # input + clock pins used: 16.8288, average # output pins used: 1.84685
+	PB-SDIOMUX: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
+	PB-MULT: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
+	PB-GMUX: # blocks: 2, average # input + clock pins used: 2, average # output pins used: 1
+	PB-CLOCK: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
+	PB-RAM: # blocks: 0, average # input + clock pins used: 0, average # output pins used: 0
+	PB-SYN_VCC: # blocks: 1, average # input + clock pins used: 0, average # output pins used: 1
+Absorbed logical nets 133 out of 431 nets, 298 nets not absorbed.
+Incr Slack updates 1 in 6.2335e-05 sec
+Full Max Req/Worst Slack updates 1 in 7.235e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 7.5971e-05 sec
+FPGA sized to 39 x 35 (ql-eos-s3)
+Device Utilization: 0.11 (target 1.00)
+	Block Utilization: 1.00 Type: PB-SYN_GND
+	Block Utilization: 1.00 Type: PB-BIDIR
+	Block Utilization: 1.00 Type: PB-ASSP
+	Block Utilization: 0.12 Type: PB-LOGIC
+	Block Utilization: 0.40 Type: PB-GMUX
+	Block Utilization: 1.00 Type: PB-SYN_VCC
+
+
+Netlist conversion complete.
+
+# Packing took 0.13 seconds (max_rss 53.0 MiB, delta_rss +3.0 MiB)
+# Load Packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file 'top.net'.
+Detected 2 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.070664 seconds).
+# Load Packing took 0.07 seconds (max_rss 53.9 MiB, delta_rss +1.0 MiB)
+Warning 18: Netlist contains 0 global net to non-global architecture pin connections
+Warning 19: Logic block #146 ($false) has only 1 output pin '$false.GND0_GND[0]'. It may be a constant generator.
+Warning 20: Logic block #147 ($true) has only 1 output pin '$true.VCC0_VCC[0]'. It may be a constant generator.
+
+Netlist num_nets: 298
+Netlist num_blocks: 148
+Netlist EMPTY blocks: 0.
+Netlist PB-SYN_GND blocks: 1.
+Netlist PB-BIDIR blocks: 32.
+Netlist PB-ASSP blocks: 1.
+Netlist PB-LOGIC blocks: 111.
+Netlist PB-SDIOMUX blocks: 0.
+Netlist PB-MULT blocks: 0.
+Netlist PB-GMUX blocks: 2.
+Netlist PB-CLOCK blocks: 0.
+Netlist PB-RAM blocks: 0.
+Netlist PB-SYN_VCC blocks: 1.
+Netlist inputs pins: 32
+Netlist output pins: 96
+
+
+Pb types usage...
+  PB-SYN_GND        : 1
+   GND              : 1
+  PB-BIDIR          : 32
+   BIDIR            : 32
+    INOUT           : 32
+     bidir          : 32
+     inpad          : 32
+     outpad         : 32
+  PB-ASSP           : 1
+   ASSP             : 1
+  PB-LOGIC          : 111
+   LOGIC            : 111
+    FRAGS           : 111
+     c_frag_modes   : 111
+      SINGLE        : 19
+       c_frag       : 19
+      SPLIT         : 92
+       b_frag       : 92
+       t_frag       : 91
+     f_frag         : 1
+     q_frag_modes   : 71
+      INT           : 69
+       q_frag       : 69
+      EXT           : 2
+       q_frag       : 2
+  PB-GMUX           : 2
+   GMUX             : 2
+    IC              : 2
+     gmux           : 2
+  PB-SYN_VCC        : 1
+   VCC              : 1
+
+# Create Device
+## Build Device Grid
+FPGA sized to 39 x 35: 1365 grid tiles (ql-eos-s3)
+
+Resource usage...
+	Netlist
+		1	blocks of type: PB-SYN_GND
+	Architecture
+		1	blocks of type: TL-SYN_GND
+	Netlist
+		32	blocks of type: PB-BIDIR
+	Architecture
+		32	blocks of type: TL-BIDIR
+	Netlist
+		1	blocks of type: PB-ASSP
+	Architecture
+		1	blocks of type: TL-ASSP
+	Netlist
+		111	blocks of type: PB-LOGIC
+	Architecture
+		891	blocks of type: TL-LOGIC
+	Netlist
+		0	blocks of type: PB-SDIOMUX
+	Architecture
+		14	blocks of type: TL-SDIOMUX
+	Netlist
+		0	blocks of type: PB-MULT
+	Architecture
+		2	blocks of type: TL-MULT
+	Netlist
+		2	blocks of type: PB-GMUX
+	Architecture
+		5	blocks of type: TL-GMUX
+	Netlist
+		0	blocks of type: PB-CLOCK
+	Architecture
+		5	blocks of type: TL-CLOCK
+	Netlist
+		0	blocks of type: PB-RAM
+	Architecture
+		4	blocks of type: TL-RAM
+	Netlist
+		1	blocks of type: PB-SYN_VCC
+	Architecture
+		1	blocks of type: TL-SYN_VCC
+
+Device Utilization: 0.11 (target 1.00)
+	Physical Tile TL-LOGIC:
+	Block Utilization: 0.12 Logical Block: PB-LOGIC
+	Physical Tile TL-RAM:
+	Block Utilization: 0.00 Logical Block: PB-RAM
+	Physical Tile TL-MULT:
+	Block Utilization: 0.00 Logical Block: PB-MULT
+	Physical Tile TL-BIDIR:
+	Block Utilization: 1.00 Logical Block: PB-BIDIR
+	Physical Tile TL-CLOCK:
+	Block Utilization: 0.00 Logical Block: PB-CLOCK
+	Physical Tile TL-SDIOMUX:
+	Block Utilization: 0.00 Logical Block: PB-SDIOMUX
+	Physical Tile TL-GMUX:
+	Block Utilization: 0.40 Logical Block: PB-GMUX
+	Physical Tile TL-ASSP:
+	Block Utilization: 1.00 Logical Block: PB-ASSP
+	Physical Tile TL-SYN_VCC:
+	Block Utilization: 1.00 Logical Block: PB-SYN_VCC
+	Physical Tile TL-SYN_GND:
+	Block Utilization: 1.00 Logical Block: PB-SYN_GND
+
+## Build Device Grid took 0.01 seconds (max_rss 54.2 MiB, delta_rss +0.0 MiB)
+## Loading routing resource graph
+
+
+## Loading routing resource graph took 0.67 seconds (max_rss 357.2 MiB, delta_rss +303.0 MiB)
+  RR Graph Nodes: 1396446
+  RR Graph Edges: 2337988
+# Create Device took 1.39 seconds (max_rss 357.2 MiB, delta_rss +303.0 MiB)
+
+
+Flow timing analysis took 0.000750566 seconds (0.000592715 STA, 0.000157851 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+VPR succeeded
+The entire flow of VPR took 2.32 seconds (max_rss 357.2 MiB)

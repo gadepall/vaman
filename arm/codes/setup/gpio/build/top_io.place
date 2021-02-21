@@ -1,0 +1,34 @@
+#Block Name           x   y   z    pcf_line
+#-------------------- --  --  -    ----
+$iopadmap$top.GPIO_io[0]   4   3  0  # set_io GPIO_io(0)   IO_0
+$iopadmap$top.GPIO_io[1]   6   3  0  # set_io GPIO_io(1)   IO_1
+$iopadmap$top.GPIO_io[2]   8   3  0  # set_io GPIO_io(2)   IO_2
+$iopadmap$top.GPIO_io[3]  10   3  0  # set_io GPIO_io(3)   IO_3
+$iopadmap$top.GPIO_io[4]  12   3  0  # set_io GPIO_io(4)   IO_4
+$iopadmap$top.GPIO_io[5]  14   3  0  # set_io GPIO_io(5)   IO_5
+$iopadmap$top.GPIO_io[6]  16   3  0  # set_io GPIO_io(6)   IO_6
+$iopadmap$top.GPIO_io[7]  18   3  0  # set_io GPIO_io(7)   IO_7
+$iopadmap$top.GPIO_io[8]  20   3  0  # set_io GPIO_io(8)   IO_8
+$iopadmap$top.GPIO_io[9]  22   3  0  # set_io GPIO_io(9)   IO_9
+$iopadmap$top.GPIO_io[10]  24   3  0  # set_io GPIO_io(10)  IO_10
+$iopadmap$top.GPIO_io[11]  26   3  0  # set_io GPIO_io(11)  IO_11
+$iopadmap$top.GPIO_io[12]  28   3  0  # set_io GPIO_io(12)  IO_12
+$iopadmap$top.GPIO_io[13]  30   3  0  # set_io GPIO_io(13)  IO_13
+$iopadmap$top.GPIO_io[14]  32   3  0  # set_io GPIO_io(14)  IO_14
+$iopadmap$top.GPIO_io[15]  34   3  0  # set_io GPIO_io(15)  IO_15
+$iopadmap$top.GPIO_io[16]  34  32  0  # set_io GPIO_io(16)  IO_16
+$iopadmap$top.GPIO_io[17]  32  32  0  # set_io GPIO_io(17)  IO_17
+$iopadmap$top.GPIO_io[18]  30  32  0  # set_io GPIO_io(18)  IO_18
+$iopadmap$top.GPIO_io[19]  28  32  0  # set_io GPIO_io(19)  IO_19
+$iopadmap$top.GPIO_io[20]  26  32  0  # set_io GPIO_io(20)  IO_20
+$iopadmap$top.GPIO_io[21]  24  32  0  # set_io GPIO_io(21)  IO_21
+$iopadmap$top.GPIO_io[22]  22  32  0  # set_io GPIO_io(22)  IO_22
+$iopadmap$top.GPIO_io[23]  20  32  0  # set_io GPIO_io(23)  IO_23
+$iopadmap$top.GPIO_io[24]  18  32  0  # set_io GPIO_io(24)  IO_24
+$iopadmap$top.GPIO_io[25]  16  32  0  # set_io GPIO_io(25)  IO_25
+$iopadmap$top.GPIO_io[26]  14  32  0  # set_io GPIO_io(26)  IO_26
+$iopadmap$top.GPIO_io[27]  12  32  0  # set_io GPIO_io(27)  IO_27
+$iopadmap$top.GPIO_io[28]  10  32  0  # set_io GPIO_io(28)  IO_28
+$iopadmap$top.GPIO_io[29]   8  32  0  # set_io GPIO_io(29)  IO_29
+$iopadmap$top.GPIO_io[30]   6  32  0  # set_io GPIO_io(30)  IO_30
+$iopadmap$top.GPIO_io[31]   4  32  0  # set_io GPIO_io(31)  IO_31

@@ -1,0 +1,38 @@
+#Unconstrained setup timing startpoint/endpoint
+
+timing_node_id node_type node_name
+-------------- --------- ---------
+0 .input GPIO_io(0)_$inp.inpad[0]
+1 .input GPIO_io(1)_$inp.inpad[0]
+2 .input GPIO_io(10)_$inp.inpad[0]
+3 .input GPIO_io(11)_$inp.inpad[0]
+4 .input GPIO_io(12)_$inp.inpad[0]
+5 .input GPIO_io(13)_$inp.inpad[0]
+6 .input GPIO_io(14)_$inp.inpad[0]
+7 .input GPIO_io(15)_$inp.inpad[0]
+8 .input GPIO_io(16)_$inp.inpad[0]
+9 .input GPIO_io(17)_$inp.inpad[0]
+10 .input GPIO_io(18)_$inp.inpad[0]
+11 .input GPIO_io(19)_$inp.inpad[0]
+12 .input GPIO_io(2)_$inp.inpad[0]
+13 .input GPIO_io(20)_$inp.inpad[0]
+14 .input GPIO_io(21)_$inp.inpad[0]
+15 .input GPIO_io(22)_$inp.inpad[0]
+16 .input GPIO_io(23)_$inp.inpad[0]
+17 .input GPIO_io(24)_$inp.inpad[0]
+18 .input GPIO_io(25)_$inp.inpad[0]
+19 .input GPIO_io(26)_$inp.inpad[0]
+20 .input GPIO_io(27)_$inp.inpad[0]
+21 .input GPIO_io(28)_$inp.inpad[0]
+22 .input GPIO_io(29)_$inp.inpad[0]
+23 .input GPIO_io(3)_$inp.inpad[0]
+24 .input GPIO_io(30)_$inp.inpad[0]
+25 .input GPIO_io(31)_$inp.inpad[0]
+26 .input GPIO_io(4)_$inp.inpad[0]
+27 .input GPIO_io(5)_$inp.inpad[0]
+28 .input GPIO_io(6)_$inp.inpad[0]
+29 .input GPIO_io(7)_$inp.inpad[0]
+30 .input GPIO_io(8)_$inp.inpad[0]
+31 .input GPIO_io(9)_$inp.inpad[0]
+
+#End of unconstrained setup startpoint/endpoint report

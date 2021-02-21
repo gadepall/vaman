@@ -4,7 +4,7 @@
 sudo apt install openssh-server
 
 # Install arm toolchain and hardware tools
-sudo apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip subversion
+sudo apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev gcc-arm-none-eabi libnewlib-arm-none-eabi telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl python3-pip subversion
 
 #Install Python libraries (on device connecting pygmy to usb)
 pip3 install wheel python-constraint serial tinyfpgab apio
@@ -21,8 +21,10 @@ git clone --recursive https://github.com/optimuslogic/pygmy-dev
 mkdir -p /home/pi/symbiflow
 export  INSTALL_DIR=/home/pi/symbiflow
 
-#Download and extract symbiflow
-curl $(curl https://storage.googleapis.com/symbiflow-arch-defs-install/latest) > /home/pi/arch.tar.gz
+
+#Download arch.tar.gz to /home/pi/ and extract symbiflow
+https://iith-my.sharepoint.com/:u:/g/personal/gadepall_ee_iith_ac_in/Ebot5QHEYXBAo-7n4hnvJu0B8vMrTIdj_COHJC2cmDY1ww?e=bqDxHI
+
 tar -C $INSTALL_DIR -xvf /home/pi/arch.tar.gz
 
 export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python:$PATH"
