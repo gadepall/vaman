@@ -351,7 +351,7 @@ scp  output/bin/blink.bin pi@192.168.0.114:
 ऊपर blink.bin  सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें। 
 \item अब रास्पबेरी पै  में प्रवेश कर निम्न  आदेश का चालयन करें
 \begin{lstlisting}
-sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4
+sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4-fpga
 \end{lstlisting}
 \item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक श्वेत रंग  में श्मीलित होगा। 
 \end{enumerate}
@@ -372,26 +372,25 @@ codes/setup/blink/src/main.c
 की  इन पङ्क्तियों पर ध्यान दें । 
 %
 \begin{lstlisting}
-vTaskDelay(1000);
-    HAL_GPIO_Write(6, 1);
-    HAL_GPIO_Write(4, 1);
-    HAL_GPIO_Write(5, 1);
-    vTaskDelay(1000);
-    HAL_GPIO_Write(6, 0);
-    HAL_GPIO_Write(4, 0);                                                                                                  
-    HAL_GPIO_Write(5, 0);
+    PyHal_Set_GPIO(18,1);//blue
+    PyHal_Set_GPIO(21,1);//green
+    PyHal_Set_GPIO(22,1);//red
+        HAL_DelayUSec(2000000);
+    PyHal_Set_GPIO(18,0);
+    PyHal_Set_GPIO(21,0);
+    PyHal_Set_GPIO(22,0);
 \end{lstlisting}
 %
-इससे हम ज्ञात कर सकते हैं की वामन के दीप का शमीलनकाल 1000 ms = 1 s।  
+इससे हम ज्ञात कर सकते हैं की वामन के दीप का शमीलनकाल 2000 000us = 2 s।  
 \item निर्देश \ref{सम:क्रमादेश} में 
 \label{सम:द्विआधार}
 \begin{lstlisting}
-vTaskDelay(1000);
+        HAL_DelayUSec(2000000);
 \end{lstlisting}
 %
 को 
 \begin{lstlisting}
-vTaskDelay(500);
+        HAL_DelayUSec(1000000);
 \end{lstlisting}
 से प्रतिस्थापित कर क्रमादेश का चालयन करें ।  क्या श्मीलनकाल में कोई परिवर्तन द्रश्य है?
 \item रक्तिम रंगोत्पदन के लिए निम्न गूढ़ का चालयन करें।  
