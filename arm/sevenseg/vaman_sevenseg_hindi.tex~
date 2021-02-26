@@ -64,7 +64,8 @@
 
 %\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
 \usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
-\setmainfont{Sanskrit_2003.ttf}
+\setmainfont[ Path = fonts/]{Sanskrit_2003.ttf}
+%\setmainfont{Sanskrit_2003.ttf}
 %\setmainfont{Nakula.ttf}
 %\setmainfont{Lohit-Devanagari.ttf}
 
@@ -186,7 +187,7 @@ literate = {-}{-}1
 
 \title{
 %	\logo{
-वामन द्वारा आर्म क्रमादेश से परिचय
+वामन द्वारा सप्तांश प्रदर्शी का नियंत्रण
 %	}
 }
 \author{ गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
@@ -306,7 +307,7 @@ literate = {-}{-}1
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-इस लेख में  वामन  के द्वारा आर्म-क्रमादेशन  से छात्रों का परिचय कराया जाएगा।
+इस आलेख में वामन को  दशक गणित्र के रूप में उपयोग करने का विधान प्रस्तुत है.
 
 
 %ॐ श्री गणेशाय नमः॥
@@ -318,15 +319,12 @@ literate = {-}{-}1
 %\section{Nomenclature}
 \printnomenclature[1.7in]
 \input{hindi/nomen.tex}
-
 \section{तंत्रांश}
-%
-निम्न जालबन्धन से इस लिख में उपयोग किए गए समस्त क्रमादेश अवाहरत करें।
+इस आलेख के समस्त क्रमादेश निम्न जालबन्धन में उपलब्ध हैं.
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/arm/codes/blink
+https://github.com/gadepall/vaman/tree/master/fpga/sevenseg/codes
 \end{lstlisting}
-
-
+%
 \section{सप्रतिष्ठान}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
@@ -335,90 +333,33 @@ https://github.com/gadepall/vaman/tree/master/arm/codes/blink
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-\item वामन एवं रास्पबेरी पै  को यूएसबी रज्जु से योजित करें।
-\item योजित स्थल के निकट वाम दिशा में एक प्रकाश उत्सर्जक यंत्र एवं गण्ड  उपस्थित है।  वहीं दक्षिण में एक और गण्ड है।  
-\item दक्षिण गण्ड को दबाकर शीघ्र वाम गण्ड को दबायें।  हरित दीप श्मीलित होते हुए दिखेगा।  यह संकेत हैं कि वामन
-क्रमादेश के लिए सिद्ध है।
-
-\item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों का चालयन करें।
-\begin{lstlisting}
-cd ˜
-svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/blink
-cd GCC_Project
-make
-scp  output/bin/blink.bin pi@192.168.0.114:
-\end{lstlisting}
-ऊपर blink.bin  सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें। 
-\item अब रास्पबेरी पै  में प्रवेश कर निम्न  आदेश का चालयन करें
-\begin{lstlisting}
-sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4-fpga
-\end{lstlisting}
-\item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक श्वेत रंग  में श्मीलित होगा। 
-\end{enumerate}
-%
-\section{अतिकाल}
-
-\renewcommand{\theequation}{\theenumi}
-\renewcommand{\thefigure}{\theenumi}
-\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
-\numberwithin{equation}{enumi}
-\numberwithin{figure}{enumi}
-\numberwithin{table}{enumi}
-\item निम्न वेरिलॉग क्रमादेश
-\label{सम:क्रमादेश}
-\begin{lstlisting}
-codes/setup/blink/src/main.c
-\end{lstlisting}
-की  इन पङ्क्तियों पर ध्यान दें । 
-%
-\begin{lstlisting}
-    PyHal_Set_GPIO(18,1);//blue
-    PyHal_Set_GPIO(21,1);//green
-    PyHal_Set_GPIO(22,1);//red
-        HAL_DelayUSec(2000000);
-    PyHal_Set_GPIO(18,0);
-    PyHal_Set_GPIO(21,0);
-    PyHal_Set_GPIO(22,0);
-\end{lstlisting}
-%
-इससे हम ज्ञात कर सकते हैं की वामन के दीप का शमीलनकाल 2000 000us = 2 s।  
-\item निर्देश \ref{सम:क्रमादेश} में 
-\label{सम:द्विआधार}
-\begin{lstlisting}
-        HAL_DelayUSec(2000000);
-\end{lstlisting}
-%
-को 
-\begin{lstlisting}
-        HAL_DelayUSec(1000000);
-\end{lstlisting}
-से प्रतिस्थापित कर क्रमादेश का चालयन करें ।  क्या श्मीलनकाल में कोई परिवर्तन द्रश्य है?
-\item रक्तिम रंगोत्पदन के लिए निम्न गूढ़ का चालयन करें।  
-\begin{lstlisting}
-codes/setup/red/src/main.c
-\end{lstlisting}
-इदान हरित एवं नील रंग में दीप को श्मीलित करें।
-
-\item इदान  आर्म-जीसीसी  के द्वारा दीप में स्थायी रूप से  हरित वर्ण को उपलब्ध करें।
-\\
-\solution निम्न क्रमादेश का चालयन करें।
-\begin{lstlisting}
-codes/setup/onoff/src/main.c
-\end{lstlisting}
-\item  सारणी \ref{table:input} एवं आकृति. \ref{fig:pin_sheet} द्वारा वामन में आगत कुश का उपयोग कर परिपथफलक में उपस्थित दीप
-को प्रकाशित करें.  एक अन्य कुश को निर्गत रूप देकर किसी बाह्य दीप को प्रकाशोर्जित करें.
-
-\begin{table}[]
+\item आकृति. \ref{fig:pin_sheet} में  वामन के समस्त कुशाव्यूह  प्रस्तुत हैं.  कुशाव्यूह J5 को  आकृति \ref{fig:sevenseg} में प्रदत्त सप्तांश प्रदर्शी के कुशों से सारणी \ref{table:sevenseg} के द्वारा योजित करें। ध्यान  रहे कि COM एवं 3.3V के मध्य एक प्रतिरोधी अनिवार्य है। 
+\begin{table}[!ht]
 \centering
-\begin{tabular}{|l|l|l|}
-\hline
-प्रकार & वामन कुश  &  गम्य \\ \hline
-आगत &  IO\_28 &  GND\\ \hline
-निर्गत  & IO\_11  &  LED\\ \hline
-\end{tabular}
-\caption{वामन के आगत/निर्गत कुश.}
-\label{table:input}
+\resizebox{\columnwidth}{!}{
+\input{tables/vaman_sevenseg.tex}
+}
+\caption{सप्तांश प्रदर्शी-वामन कुश योजना.}
+\label{table:sevenseg}
 \end{table}
+
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg.tex}
+}
+\caption{सप्तांश प्रदर्शी}
+\label{fig:sevenseg}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg12.tex}
+}
+\caption{सारणी \ref{table:arduinoport} की चित्राकृति. }
+\label{fig:sevenseg12}
+\end{figure}
+
 
 \begin{figure*}[!ht]
 \centering
@@ -426,14 +367,81 @@ codes/setup/onoff/src/main.c
 \caption{कुश आरेख}
 \label{fig:pin_sheet}
 \end{figure*}
-\solution निम्न क्रमादेश का चालयन करें. तत्पश्चात GND से योजित तंतु को दूर करें  एवं पुनः मेलन करें.  इस क्रिया 
-को परस्पर दोहरायें.
-\begin{lstlisting}
-codes/input/blink_ip.v
-codes/input/pygmy.pcf
-\end{lstlisting}
 
+
+
+\item अब निम्न क्रमादेश का चालयन करें।
+\label{code:sevenseg}
+\begin{lstlisting}
+codes/static/sevenseg.v
+\end{lstlisting}
+उत्पत्त helloworldfpga.bin सञ्चिका  को  वामन में प्रस्फुरण करें।  प्रदर्शी में आप 5 अंक देख पाएंगे।
+निम्न पङ्क्तियों से  यह अंक  प्रदर्शित होता  है।
+\begin{lstlisting}
+assign     a=0;
+assign     b=1;
+assign     c=0;
+assign     d=0;
+assign     e=1;
+assign     f=0;
+assign     g=0;
+\end{lstlisting}
+\item उपरोक्त क्रमादेश में उचित संशोधन करके सारणी \ref{table:arduinoport} एवं आकृति.  \ref{fig:sevenseg12} की सहायता से 0-9 सभी अंकों तो प्रदर्शित करें.
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tables/arduinoport.tex}
+}
+\caption{सप्तांश प्रदर्शी के कुश मूल्यों से उप्तन्न दशमलव संख्या. }
+\label{table:arduinoport}
+\end{table}
 \end{enumerate}
+%
+\section{उदाहरण}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+
+
+
+\item  सारणी \ref{table:sevenseg} एवं 
+आकृति \ref{fig:pins}  की PU 64 सारणी के माध्यम से निम्न सञ्चिका में सप्तांश प्रदर्शी के खंडों के कुश-मानचित्र का बोध होता है.  
+%इसमें संशोधन कर वामन के कुशों के अनेक संचय के लिए क्रमादेश \ref{code:sevenseg} का चालयन करें.
+\begin{lstlisting}
+codes/static/pygmy.pcf
+\end{lstlisting}
+\item निम्न क्रमादेश का चालयन करें.  इसमें प्रदर्शी के समस्त कुशों को एक द्विआधारी शब्द से नियंत्रित किया गया है, जिसका मात्राभार 7 है.
+\begin{lstlisting}
+codes/static/sevenseg_word.v
+\end{lstlisting}
+उपोरोक्त सञ्चिका में निम्न पङ्क्ति से प्रदर्शी पर अंक 4 उपलब्ध होता है.  यह घटना सारणी \ref{table:arduinoport}  के पूर्ण रूप में सत्यापित है. 
+\begin{lstlisting}
+gpio_out=7'b0100100;
+\end{lstlisting}
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width = \textwidth]{figs/pins.jpg}
+\caption{कुश पर्याय}
+\label{fig:pins}
+\end{figure*}
+\item उपरोक्त क्रमादेश में उचित संशोदान करें जिससे आगत मूल्य दशमलव अंक  हो. इसके लिए वेरिलॉग फलन का उपयोग करें.
+\\
+\solution  निम्न सञ्चिका को निष्पादित करें.
+\begin{lstlisting}
+codes/static/sevenseg_dec.v
+\end{lstlisting}
+\item वामन को एक दशक गणित्र बनावें.
+\\
+\solution निम्न सञ्चिका को निष्पादित करें.
+\begin{lstlisting}
+codes/loop/decade_counter.v
+\end{lstlisting}
+\end{enumerate}
+%
+
 \end{document}
 
 
