@@ -322,7 +322,7 @@ literate = {-}{-}1
 \section{तंत्रांश}
 इस आलेख के समस्त क्रमादेश निम्न जालबन्धन में उपलब्ध हैं.
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/arm/sevenseg/codes
+https://github.com/gadepall/vaman/tree/master/arm/codes/sevenseg/
 \end{lstlisting}
 %
 \section{सप्रतिष्ठान}
@@ -373,18 +373,23 @@ https://github.com/gadepall/vaman/tree/master/arm/sevenseg/codes
 \item अब निम्न क्रमादेश का चालयन करें।
 \label{code:sevenseg}
 \begin{lstlisting}
-codes/static/sevenseg.v
+codes/sevenseg/static/src/main.c
 \end{lstlisting}
-उत्पत्त helloworldfpga.bin सञ्चिका  को  वामन में प्रस्फुरण करें।  प्रदर्शी में आप 5 अंक देख पाएंगे।
-निम्न पङ्क्तियों से  यह अंक  प्रदर्शित होता  है।
+उत्पत्त static.bin सञ्चिका  को  वामन में प्रस्फुरण करें।  प्रदर्शी में आप 7 अंक देख पाएंगे।
+निम्न फलन से  यह अंक  प्रदर्शित होता  है।
 \begin{lstlisting}
-assign     a=0;
-assign     b=1;
-assign     c=0;
-assign     d=0;
-assign     e=1;
-assign     f=0;
-assign     g=0;
+sevenseg(0,0,0,1,1,1,1);
+void sevenseg(int a, int b, int c, int d, int e, int f, int g)                                     
+{
+    //Seven Segment GPIO
+    PyHal_Set_GPIO(4,a);//a
+    PyHal_Set_GPIO(5,b);//b
+    PyHal_Set_GPIO(6,c);//c
+    PyHal_Set_GPIO(7,d);//d
+    PyHal_Set_GPIO(8,e);//e
+    PyHal_Set_GPIO(10,f);//f
+    PyHal_Set_GPIO(11,g);//g
+}
 \end{lstlisting}
 \item उपरोक्त क्रमादेश में उचित संशोधन करके सारणी \ref{table:arduinoport} एवं आकृति.  \ref{fig:sevenseg12} की सहायता से 0-9 सभी अंकों तो प्रदर्शित करें.
 \begin{table}[!ht]
@@ -408,36 +413,25 @@ assign     g=0;
 
 
 \item  सारणी \ref{table:sevenseg} एवं 
-आकृति \ref{fig:pins}  की PU 64 सारणी के माध्यम से निम्न सञ्चिका में सप्तांश प्रदर्शी के खंडों के कुश-मानचित्र का बोध होता है.  
+आकृति \ref{fig:pins}  की PU 64 सारणी के माध्यम से सप्तांश प्रदर्शी के खंडों के कुश-मानचित्र का बोध होता है.  
 %इसमें संशोधन कर वामन के कुशों के अनेक संचय के लिए क्रमादेश \ref{code:sevenseg} का चालयन करें.
-\begin{lstlisting}
-codes/static/pygmy.pcf
-\end{lstlisting}
-\item निम्न क्रमादेश का चालयन करें.  इसमें प्रदर्शी के समस्त कुशों को एक द्विआधारी शब्द से नियंत्रित किया गया है, जिसका मात्राभार 7 है.
-\begin{lstlisting}
-codes/static/sevenseg_word.v
-\end{lstlisting}
-उपोरोक्त सञ्चिका में निम्न पङ्क्ति से प्रदर्शी पर अंक 4 उपलब्ध होता है.  यह घटना सारणी \ref{table:arduinoport}  के पूर्ण रूप में सत्यापित है. 
-\begin{lstlisting}
-gpio_out=7'b0100100;
-\end{lstlisting}
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width = \textwidth]{figs/pins.jpg}
 \caption{कुश पर्याय}
 \label{fig:pins}
 \end{figure*}
-\item उपरोक्त क्रमादेश में उचित संशोदान करें जिससे आगत मूल्य दशमलव अंक  हो. इसके लिए वेरिलॉग फलन का उपयोग करें.
+\item क्रमादेश  \ref{code:sevenseg} में ऐसे फलन का उपयोग करें जिसमें  आगत मूल्य दशमलव अंक  हो. 
 \\
 \solution  निम्न सञ्चिका को निष्पादित करें.
 \begin{lstlisting}
-codes/static/sevenseg_dec.v
+codes/sevenseg/decimal/main.c
 \end{lstlisting}
 \item वामन को एक दशक गणित्र बनावें.
 \\
 \solution निम्न सञ्चिका को निष्पादित करें.
 \begin{lstlisting}
-codes/loop/decade_counter.v
+codes/sevenseg/loop/main.c
 \end{lstlisting}
 \end{enumerate}
 %

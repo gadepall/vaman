@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.2.13)  26 FEB 2021 14:01
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.2.13)  26 FEB 2021 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1989,40 +1989,31 @@ File: figs/pin_sheet.png Graphic file (type bmp)
 \gnumericColF=\skip102
 \gnumericColG=\skip103
 \gnumericColH=\skip104
-) [1
-
-
-]
+)
 File: figs/pins.jpg Graphic file (type bmp)
 <figs/pins.jpg>
- [2] [3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 445.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 445.
+ [1
+
+
+] [2] [3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 439.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 439.
 
 (./vaman_sevenseg_hindi.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 445.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 445.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 439.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 439.
+Package rerunfilecheck Info: File `vaman_sevenseg_hindi.out' has not changed.
+(rerunfilecheck)             Checksum: 3FC023B5208C1A2281B552F435139D75;234.
 
-
-Package rerunfilecheck Warning: File `vaman_sevenseg_hindi.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `vaman_sevenseg_hindi.out':
-(rerunfilecheck)             Before: 77960BD3FDE4F0EA613A8598A5AD88AF;180
-(rerunfilecheck)             After:  3FC023B5208C1A2281B552F435139D75;234.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 445.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 439.
  ) 
 Here is how much of TeX's memory you used:
  49514 strings out of 479819
  1139233 string characters out of 5895846
- 1656048 words of memory out of 5000000
+ 1674048 words of memory out of 5000000
  65687 multiletter control sequences out of 15000+600000
  559448 words of font info for 125 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191
