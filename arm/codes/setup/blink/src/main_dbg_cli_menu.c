@@ -29,173 +29,97 @@
 #include "cli.h"
 #include <stdbool.h>
 #include "dbg_uart.h"
-//#include "qlsh_commands.h"
+
 
 #if FEATURE_CLI_DEBUG_INTERFACE
 
-#if 0 //DEBUG_H2D_PROTOCOL
-#include "ql_hostTask.h"
-#include "h2d_protocol.h"
+
+static void set_gpio_output(const struct cli_cmd_entry *pEntry);
+
+static void set_gpio_input(const struct cli_cmd_entry *pEntry);
+static void get_gpio_value(const struct cli_cmd_entry *pEntry);
 
 
-static void GenerateInterruptToHost(const struct cli_cmd_entry *pEntry)
+const struct cli_cmd_entry qorc_gpioctlr[] =
 {
-    (void)pEntry;
-    // Add functionality here
-    return;
-}
+    CLI_CMD_SIMPLE( "setout", set_gpio_output, "setout IO_X VAL" ),
 
-static void GenerateInterruptToS3(const struct cli_cmd_entry *pEntry)
-{
-    (void)pEntry;
-        // Add functionality here
-    generate_interrupt_to_device();
-    
-    return;
-}
+    CLI_CMD_SIMPLE( "setin", set_gpio_input, "setin IO_X" ),
+    CLI_CMD_SIMPLE( "getval", get_gpio_value, "getval IO_X (must be setin first)" ),
 
-static void ClearInterruptToS3(const struct cli_cmd_entry *pEntry)
-{
-    (void)pEntry;
-        // Add functionality here    
-    clear_interrupt_to_device();
-    
-    return;
-}
-
-static void ReadDataFromS3(const struct cli_cmd_entry *pEntry)
-{
-    (void)pEntry;
-        // Add functionality here
-    dbg_str("sending HOST_CMD_READ_DATA_FROM_S3 cmd to host task. \n");
-    struct xQ_Packet hostMsg;
-    hostMsg.ucCommand = HOST_CMD_READ_DATA_FROM_S3;
-    addPktToQueue_Host(&hostMsg, CTXT_TASK);
-    
-    return;
-}
-static void WriteDataToS3(const struct cli_cmd_entry *pEntry)
-{
-    (void)pEntry;
-        // Add functionality here
-    dbg_str("sent HOST_CMD_WRTIE_DATA_TO_S3 cmd to host task. \n");
-    struct xQ_Packet hostMsg;
-    hostMsg.ucCommand = HOST_CMD_WRTIE_DATA_TO_S3;
-    addPktToQueue_Host(&hostMsg, CTXT_TASK);
-    
-    return;
-}
-
-static void send_cmd(const struct cli_cmd_entry *pEntry)
-{
-        // Add functionality here
-    dbg_str_int("CMD_HOST", pEntry->cookie);
-    struct xQ_Packet hostMsg;
-    hostMsg.ucCommand = HOST_SEND_CMD_TO_DEVICE;
-    hostMsg.ucData[0] = pEntry->cookie;
-    addPktToQueue_Host(&hostMsg, CTXT_TASK);
-    
-    return;
-}
-#endif
-
-#if 0
-extern int opus_test_en;
-static void opus_test_on(const struct cli_cmd_entry *pEntry)
-{
-    (void)pEntry;
-        // Add functionality here
-    dbg_str("opus test on \n");
-    opus_test_en = 1;
-    
-    return;
-}
-
-static void opus_test_off(const struct cli_cmd_entry *pEntry)
-{
-    (void)pEntry;
-        // Add functionality here
-    dbg_str("opus test off \n");
-    opus_test_en = 0;
-    
-    return;
-}
-#endif
-
-#if 0
-extern void display_rx_buf_addr_size(void);
-
-static void rx_buf_addr(const struct cli_cmd_entry *pEntry)
-{
-    (void)pEntry;
-        // Add functionality here
-    display_rx_buf_addr_size();
-    return;
-}
-uint8_t ch_number = 0;
-static void set_rx_channel(const struct cli_cmd_entry *pEntry)
-{
-    
-    (void)pEntry;
-        // Add functionality here
-    CLI_uint8_getshow( "ch_number", &ch_number );
-    host_set_rx_channel(ch_number);
-    return;
-}
-#endif
-
-static void togglegreenled(const struct cli_cmd_entry *pEntry)
-{
-    static bool fLit = false;
-    (void)pEntry;
-    fLit = !fLit;
-    HAL_GPIO_Write(5, fLit);
-    return;
-}
-
-static void toggleredled(const struct cli_cmd_entry *pEntry)
-{
-    static bool fLit = false;
-    (void)pEntry;
-    fLit = !fLit;
-    HAL_GPIO_Write(6, fLit);
-    return;
-}
-
-static void toggleblueled(const struct cli_cmd_entry *pEntry)
-{
-    static bool fLit = false;
-    (void)pEntry;
-    fLit = !fLit;
-    HAL_GPIO_Write(4, fLit);
-    return;
-}
-
-static void userbutton(const struct cli_cmd_entry *pEntry)
-{
-    uint8_t ucVal;
-    (void)pEntry;
- 
-    HAL_GPIO_Read(0, &ucVal);
-    if (ucVal) {
-        CLI_puts("Not pressed");
-    } else {
-         CLI_puts("Pressed");
-    }
-    return;
-}
-
-const struct cli_cmd_entry qf_diagnostic[] =
-{
-    CLI_CMD_SIMPLE( "red", toggleredled, "toggle red led" ),
-    CLI_CMD_SIMPLE( "green", togglegreenled, "toggle green led" ),
-    CLI_CMD_SIMPLE( "blue", toggleblueled, "toggle blue led" ),
-    CLI_CMD_SIMPLE( "userbutton", userbutton, "show state of user button" ),
     CLI_CMD_TERMINATE()
 };
 
+uint32_t scratch32;
+
+
+uint8_t gpionum_output = 0;
+uint8_t gpioval_output = 0;
+static void set_gpio_output(const struct cli_cmd_entry *pEntry)
+{
+    (void)pEntry;
+
+    CLI_uint8_getshow( "io", &gpionum_output);
+    
+    scratch32 = *(uint32_t*)(0x40024008);
+
+    *(uint32_t*)(0x40024008) = scratch32 | (0x1 << gpionum_output);
+
+    CLI_uint8_getshow( "val", &gpioval_output);
+
+    scratch32 = *(uint32_t*)(0x40024004);
+
+    if(gpioval_output > 0)
+    {
+        *(uint32_t*)(0x40024004) = scratch32 | (0x1 << gpionum_output);
+    }
+    else
+    {
+        *(uint32_t*)(0x40024004) = scratch32 & ~(0x1 << gpionum_output);
+    }    
+
+    return;
+}
+
+
+uint8_t gpionum_input = 0;
+static void set_gpio_input(const struct cli_cmd_entry *pEntry)
+{
+    (void)pEntry;
+
+    CLI_uint8_getshow( "io", &gpionum_input);
+    
+    scratch32 = *(uint32_t*)(0x40024008);
+
+    *(uint32_t*)(0x40024008) = scratch32 | (0x1 << gpionum_output);
+    return;
+}
+
+
+uint8_t gpioval_input = 0;
+static void get_gpio_value(const struct cli_cmd_entry *pEntry)
+{
+    (void)pEntry;
+
+    CLI_uint8_getshow( "io", &gpionum_input);
+    
+    CLI_uint8_getshow( "val", &gpioval_input);
+
+    scratch32 = *(uint32_t*)(0x40024000);
+
+    gpioval_input = (scratch32 >> gpionum_input) & 0x1;
+
+    CLI_printf("read value = %d\n", gpioval_input);
+ 
+    return;
+}
+
+
+
 const struct cli_cmd_entry my_main_menu[] = {
-    CLI_CMD_SUBMENU( "diag", qf_diagnostic, "QuickFeather diagnostic commands" ),
+    
+    CLI_CMD_SUBMENU( "gpioctlr", qorc_gpioctlr, "FPGA led controller" ),
+    
     CLI_CMD_TERMINATE()
 };
 

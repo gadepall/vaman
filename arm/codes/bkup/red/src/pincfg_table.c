@@ -97,7 +97,49 @@ PadConfig pincfg_table[] =
     .ucSmtTrg = PAD_SMT_TRIG_DIS,
   },
   
- 
+  // LEDS
+   { // setup blue LED
+    .ucPin = PAD_18,
+    .ucFunc = PAD18_FUNC_SEL_GPIO_4,
+    .ucCtrl = PAD_CTRL_SRC_A0,
+    .ucMode = PAD_MODE_OUTPUT_EN,
+    .ucPull = PAD_NOPULL,
+    .ucDrv = PAD_DRV_STRENGTH_4MA,
+    .ucSpeed = PAD_SLEW_RATE_SLOW,
+    .ucSmtTrg = PAD_SMT_TRIG_DIS,
+  },
+  { // setup green LED
+    .ucPin = PAD_21,
+    .ucFunc = PAD21_FUNC_SEL_GPIO_5,
+    .ucCtrl = PAD_CTRL_SRC_A0,
+    .ucMode = PAD_MODE_OUTPUT_EN,
+    .ucPull = PAD_NOPULL,
+    .ucDrv = PAD_DRV_STRENGTH_4MA,
+    .ucSpeed = PAD_SLEW_RATE_SLOW,
+    .ucSmtTrg = PAD_SMT_TRIG_DIS,
+  },
+  { // setup red LED
+    .ucPin = PAD_22,
+    .ucFunc = PAD22_FUNC_SEL_GPIO_6,
+    .ucCtrl = PAD_CTRL_SRC_A0,
+    .ucMode = PAD_MODE_OUTPUT_EN,
+    .ucPull = PAD_NOPULL,
+    .ucDrv = PAD_DRV_STRENGTH_4MA,
+    .ucSpeed = PAD_SLEW_RATE_SLOW,
+    .ucSmtTrg = PAD_SMT_TRIG_DIS,
+  },
+  
+   {
+    // Pad6 is the user button
+    .ucPin = PAD_6,
+    .ucFunc = PAD6_FUNC_SEL_GPIO_0,
+    .ucMode = PAD_MODE_INPUT_EN,
+    .ucPull = PAD_PULLUP,
+    .ucDrv = PAD_DRV_STRENGTH_4MA,
+    .ucSpeed = PAD_SLEW_RATE_SLOW,
+    .ucSmtTrg = PAD_SMT_TRIG_DIS
+  },
+
   
    { // Pad 33 -- Test clock
     .ucPin = PAD_33,
@@ -149,7 +191,37 @@ PadConfig pincfg_table[] =
     .ucPull = PAD_NOPULL,
   },
   
-
+  //------------- USB ---------------//
+   { // Pad 37 -- USB Pullup control
+    .ucPin = PAD_37,
+    .ucFunc = PAD37_FUNC_SEL_FBIO_37,
+    .ucCtrl = PAD_CTRL_SRC_FPGA,
+    .ucMode = PAD_MODE_OUTPUT_EN,
+    .ucPull = PAD_NOPULL,
+    .ucDrv = PAD_DRV_STRENGHT_4MA,
+    .ucSpeed = PAD_SLEW_RATE_SLOW,
+    .ucSmtTrg = PAD_SMT_TRIG_DIS,
+  },
+  { // Pad 41 -- USB D-
+    .ucPin = PAD_41,
+    .ucFunc = PAD41_FUNC_SEL_FBIO_41,
+    .ucCtrl = PAD_CTRL_SRC_FPGA,
+    .ucMode = PAD_MODE_OUTPUT_EN,
+    .ucPull = PAD_NOPULL,
+    .ucDrv = PAD_DRV_STRENGHT_4MA,
+    .ucSpeed = PAD_SLEW_RATE_SLOW,
+    .ucSmtTrg = PAD_SMT_TRIG_DIS,
+  },
+  { // Pad 41 -- USB D+
+    .ucPin = PAD_42,
+    .ucFunc = PAD42_FUNC_SEL_FBIO_42,
+    .ucCtrl = PAD_CTRL_SRC_FPGA,
+    .ucMode = PAD_MODE_OUTPUT_EN,
+    .ucPull = PAD_NOPULL,
+    .ucDrv = PAD_DRV_STRENGHT_4MA,
+    .ucSpeed = PAD_SLEW_RATE_SLOW,
+    .ucSmtTrg = PAD_SMT_TRIG_DIS,
+  },
 
 };
 

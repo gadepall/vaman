@@ -33,7 +33,6 @@
 /*    Include the generic headers required for QORC */
 #include "eoss3_hal_gpio.h"
 #include "eoss3_hal_rtc.h"
-#include "eoss3_hal_timer.h"
 #include "eoss3_hal_fpga_usbserial.h"
 #include "ql_time.h"
 #include "s3x_clock_hal.h"
@@ -43,6 +42,8 @@
 
 #include "cli.h"
 
+#include "fpga_loader.h"    // API for loading FPGA
+#include "gateware.h"           // FPGA bitstream to load into FPGA
 
 extern const struct cli_cmd_entry my_main_menu[];
 
@@ -57,44 +58,58 @@ const char *SOFTWARE_VERSION_STR;
 
 extern void qf_hardwareSetup();
 static void nvic_init(void);
-void PyHal_Set_GPIO(uint8_t gpionum, uint8_t gpioval);
+
+void toggleLED()
+{
+    while (1)
+    { 
+    // dbg_str("high\n");
+    vTaskDelay(1000);      
+    HAL_GPIO_Write(6, 1);//red led
+    HAL_GPIO_Write(4, 1);
+    HAL_GPIO_Write(5, 1);
+    vTaskDelay(1000);
+    HAL_GPIO_Write(6, 0);
+    HAL_GPIO_Write(4, 0);
+    HAL_GPIO_Write(5, 0);
+    // dbg_str("low\n");
+    }
+}
 
 int main(void)
 {
-    uint32_t i=0,j=0,k=0;
-    SOFTWARE_VERSION_STR = "qorc-onion-apps/qf_hello-fpga-gpio-ctlr";
+
+    SOFTWARE_VERSION_STR = "qorc-sdk/qf_apps/qf_helloworldsw";
     
     qf_hardwareSetup();
     nvic_init();
-
+    S3x_Clk_Disable(S3X_FB_21_CLK);
+    S3x_Clk_Disable(S3X_FB_16_CLK);
+    S3x_Clk_Enable(S3X_A1_CLK);
+    S3x_Clk_Enable(S3X_CFG_DMA_A1_CLK);
+    load_fpga(axFPGABitStream_length,axFPGABitStream);
+    // Use 0x6141 as USB serial product ID (USB PID)
+    HAL_usbserial_init2(false, false, 0x6141);        // Start USB serial not using interrupts
+    for (int i = 0; i != 4000000; i++) ;   // Give it time to enumerate
+    
     dbg_str("\n\n");
     dbg_str( "##########################\n");
-    dbg_str( "Quicklogic QuickFeather FPGA GPIO CONTROLLER EXAMPLE\n");
+    dbg_str( "Quicklogic QuickFeather LED / User Button Test\n");
     dbg_str( "SW Version: ");
     dbg_str( SOFTWARE_VERSION_STR );
     dbg_str( "\n" );
     dbg_str( __DATE__ " " __TIME__ "\n" );
     dbg_str( "##########################\n\n");
-
-    dbg_str( "\n\nHello GPIO!!\n\n");	// <<<<<<<<<<<<<<<<<<<<<  Change me!
+	
+	dbg_str( "\n\nHello world!!\n\n");	// <<<<<<<<<<<<<<<<<<<<<  Change me!
 
     CLI_start_task( my_main_menu );
-	HAL_Delay_Init();
-while(1)
-{
-    //Test GPIO Code
-    PyHal_Set_GPIO(18,1);//blue
-    PyHal_Set_GPIO(21,1);//green
-    PyHal_Set_GPIO(22,1);//red
-	HAL_DelayUSec(2000000);    
-    PyHal_Set_GPIO(18,0);
-    PyHal_Set_GPIO(21,0);
-    PyHal_Set_GPIO(22,0);
-	HAL_DelayUSec(2000000);    
-}
+        
+    xTaskCreate(toggleLED, "led", 1048, NULL, 10, NULL);
+
     /* Start the tasks and timer running. */
     vTaskStartScheduler();
-    dbg_str("\n");
+    dbg_str("\n");    
 
     while(1);
 }
@@ -114,37 +129,6 @@ static void nvic_init(void)
 void SystemInit(void)
 {
 
-}
-
-//gpionum --> 0 --> 31 corresponding to the IO PADs
-//gpioval --> 0 or 1
-#define FGPIO_DIRECTION_REG (0x40024008)
-#define FGPIO_OUTPUT_REG (0x40024004)
-
-void PyHal_Set_GPIO(uint8_t gpionum, uint8_t gpioval)
-{
-    uint32_t tempscratch32;
-
-    if (gpionum > 31)
-        return;
-
-    tempscratch32 = *(uint32_t*)(FGPIO_DIRECTION_REG);
-
-    *(uint32_t*)(FGPIO_DIRECTION_REG) = tempscratch32 | (0x1 << gpionum);
-
-    
-    tempscratch32 = *(uint32_t*)(FGPIO_OUTPUT_REG);
-
-    if(gpioval > 0)
-    {
-        *(uint32_t*)(FGPIO_OUTPUT_REG) = tempscratch32 | (0x1 << gpionum);
-    }
-    else
-    {
-        *(uint32_t*)(FGPIO_OUTPUT_REG) = tempscratch32 & ~(0x1 << gpionum);
-    }    
-
-    return;
 }
 
 

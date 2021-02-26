@@ -33,7 +33,6 @@
 /*    Include the generic headers required for QORC */
 #include "eoss3_hal_gpio.h"
 #include "eoss3_hal_rtc.h"
-#include "eoss3_hal_timer.h"
 #include "eoss3_hal_fpga_usbserial.h"
 #include "ql_time.h"
 #include "s3x_clock_hal.h"
@@ -57,11 +56,10 @@ const char *SOFTWARE_VERSION_STR;
 
 extern void qf_hardwareSetup();
 static void nvic_init(void);
-void PyHal_Set_GPIO(uint8_t gpionum, uint8_t gpioval);
 
 int main(void)
 {
-    uint32_t i=0,j=0,k=0;
+
     SOFTWARE_VERSION_STR = "qorc-onion-apps/qf_hello-fpga-gpio-ctlr";
     
     qf_hardwareSetup();
@@ -79,19 +77,7 @@ int main(void)
     dbg_str( "\n\nHello GPIO!!\n\n");	// <<<<<<<<<<<<<<<<<<<<<  Change me!
 
     CLI_start_task( my_main_menu );
-	HAL_Delay_Init();
-while(1)
-{
-    //Test GPIO Code
-    PyHal_Set_GPIO(18,1);//blue
-    PyHal_Set_GPIO(21,1);//green
-    PyHal_Set_GPIO(22,1);//red
-	HAL_DelayUSec(2000000);    
-    PyHal_Set_GPIO(18,0);
-    PyHal_Set_GPIO(21,0);
-    PyHal_Set_GPIO(22,0);
-	HAL_DelayUSec(2000000);    
-}
+
     /* Start the tasks and timer running. */
     vTaskStartScheduler();
     dbg_str("\n");
@@ -114,37 +100,6 @@ static void nvic_init(void)
 void SystemInit(void)
 {
 
-}
-
-//gpionum --> 0 --> 31 corresponding to the IO PADs
-//gpioval --> 0 or 1
-#define FGPIO_DIRECTION_REG (0x40024008)
-#define FGPIO_OUTPUT_REG (0x40024004)
-
-void PyHal_Set_GPIO(uint8_t gpionum, uint8_t gpioval)
-{
-    uint32_t tempscratch32;
-
-    if (gpionum > 31)
-        return;
-
-    tempscratch32 = *(uint32_t*)(FGPIO_DIRECTION_REG);
-
-    *(uint32_t*)(FGPIO_DIRECTION_REG) = tempscratch32 | (0x1 << gpionum);
-
-    
-    tempscratch32 = *(uint32_t*)(FGPIO_OUTPUT_REG);
-
-    if(gpioval > 0)
-    {
-        *(uint32_t*)(FGPIO_OUTPUT_REG) = tempscratch32 | (0x1 << gpionum);
-    }
-    else
-    {
-        *(uint32_t*)(FGPIO_OUTPUT_REG) = tempscratch32 & ~(0x1 << gpionum);
-    }    
-
-    return;
 }
 
 

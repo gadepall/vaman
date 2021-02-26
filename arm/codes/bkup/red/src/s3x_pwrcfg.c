@@ -190,7 +190,7 @@ S3x_Pi S3Pi [] = {
             .name = "FB",
             .pctrl = PI_CTRL(0xa0, 0xa4, 0x200, 0x210, 1, 2, 2),
             .ginfo = PI_GINFO(4, S3X_FB_02_CLK, S3X_FB_16_CLK, S3X_FB_21_CLK , S3X_CLKGATE_FB, 0),
-            .cfg_state = PI_NO_CFG,
+            .cfg_state = PI_SET_SHDN,
         },
         
         [PI_AD0_ADMA] =  {
