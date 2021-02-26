@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.2.13)  26 FEB 2021 19:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.2.13)  26 FEB 2021 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**vaman_setup_hindi
-(./vaman_setup_hindi.tex
+**vaman_setup_english
+(./vaman_setup_english.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
@@ -1729,10 +1729,10 @@ Package tocbasic Info: setting babel extension for `nls' on input line 164.
 \nomitemsep=\skip93
 )
 \@nomenclaturefile=\write4
-\openout4 = `vaman_setup_hindi.nlo'.
+\openout4 = `vaman_setup_english.nlo'.
 
-Package nomencl Info: Writing nomenclature file vaman_setup_hindi.nlo on input 
-line 63.
+Package nomencl Info: Writing nomenclature file vaman_setup_english.nlo on inpu
+t line 63.
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.gates.logic.US.code.tex
@@ -1766,8 +1766,8 @@ ex-text;"
 Package Listings Warning: Unknown column format `fullflexible literate' on inpu
 t line 100.
 
-(./vaman_setup_hindi.aux)
-\openout1 = `vaman_setup_hindi.aux'.
+(./vaman_setup_english.aux)
+\openout1 = `vaman_setup_english.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 107.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
@@ -1885,9 +1885,9 @@ LaTeX Info: Redefining \ref on input line 107.
 LaTeX Info: Redefining \pageref on input line 107.
 LaTeX Info: Redefining \nameref on input line 107.
 
-(./vaman_setup_hindi.out) (./vaman_setup_hindi.out)
+(./vaman_setup_english.out) (./vaman_setup_english.out)
 \@outlinefile=\write5
-\openout5 = `vaman_setup_hindi.out'.
+\openout5 = `vaman_setup_english.out'.
 
 \c@lstlisting=\count404
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
@@ -1950,54 +1950,58 @@ File: ot1txtt.fd 2000/12/15 v3.1
 \c@lemma=\count408
 \c@example=\count409
 \c@rem=\count410
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 263.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 266.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 13.29996pt on input line 263.
+(Font)              scaled to size 13.29996pt on input line 266.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 9.30992pt on input line 263.
+(Font)              scaled to size 9.30992pt on input line 266.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 263.
+(Font)              scaled to size 6.64998pt on input line 266.
 
 
 LaTeX Font Warning: Font shape `TU/Sanskrit_2003.ttf(0)/m/sc' undefined
 (Font)              using `TU/Sanskrit_2003.ttf(0)/m/n' instead on input line 2
-66.
+69.
 
-(./vaman_setup_hindi.toc)
+(./vaman_setup_english.toc)
 \tf@toc=\write6
-\openout6 = `vaman_setup_hindi.toc'.
+\openout6 = `vaman_setup_english.toc'.
 
- (./vaman_setup_hindi.nls
+
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
-))
-(./hindi/nomen.tex) [1
+)
+Underfull \hbox (badness 3471) in paragraph at lines 344--345
+[]\TU/Sanskrit_2003.ttf(0)/m/sc/12 Connect the raspberry pi to pygmy
+ []
+
+[1
 
 
 ] [2
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
- (./vaman_setup_hindi.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 438.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
-Package rerunfilecheck Info: File `vaman_setup_hindi.out' has not changed.
-(rerunfilecheck)             Checksum: 4BFAD8C485D5F659DC0BC12A0F349C49;234.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 455.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 455.
+ (./vaman_setup_english.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 455.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 455.
+Package rerunfilecheck Info: File `vaman_setup_english.out' has not changed.
+(rerunfilecheck)             Checksum: 971E43E36A6E9E1E92920D15C9BBFFEF;123.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 438.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 455.
  ) 
 Here is how much of TeX's memory you used:
- 49228 strings out of 479819
- 1133836 string characters out of 5895846
- 1666036 words of memory out of 5000000
- 65420 multiletter control sequences out of 15000+600000
+ 49212 strings out of 479819
+ 1133598 string characters out of 5895846
+ 1675044 words of memory out of 5000000
+ 65411 multiletter control sequences out of 15000+600000
  559448 words of font info for 125 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191
- 60i,6n,91p,676b,1022s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,7n,91p,678b,1028s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on vaman_setup_hindi.pdf (2 pages).
+Output written on vaman_setup_english.pdf (2 pages).

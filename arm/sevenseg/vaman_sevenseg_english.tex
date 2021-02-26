@@ -187,11 +187,16 @@ literate = {-}{-}1
 
 \title{
 %	\logo{
-वामन द्वारा आर्म क्रमादेश से परिचय
+Display control through C 
+%वामन द्वारा सप्तांश प्रदर्शी का नियंत्रण
+%वामन द्वारा सप्तांश प्रदर्शी का नियंत्रण
 %	}
 }
-\author{ गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
-	\thanks{*रचयिता भारतीय प्रौद्योगिकी संस्थान, हैदराबाद,५०२२८५ के विद्युत अभियान्त्रिकी विभाग में कार्यरत हैं, ईमेल:gadepall@ee.iith.ac.in। यह लेख मुक्त स्रोत विचारधारा के अनुरूप  है।}
+\author{ 
+%गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
+%	\thanks{*रचयिता भारतीय प्रौद्योगिकी संस्थान, हैदराबाद,५०२२८५ के विद्युत अभियान्त्रिकी विभाग में कार्यरत हैं, ईमेल:gadepall@ee.iith.ac.in। यह लेख मुक्त स्रोत विचारधारा के अनुरूप  है।}
+G V V Sharma$^{*}$% <-this % stops a space
+	\thanks{*The author is with the Department of Electrical Engineering, IIT Hyderabad, 502285. email:gadepall@ee.iith.ac.in। All content in this manual is released under GNU/GPL.}
 	
 }	
 %\title{
@@ -268,13 +273,13 @@ literate = {-}{-}1
 
 \bigskip
 
-\renewcommand{\thefigure}{\theenumi}
-\renewcommand{\thetable}{\theenumi}
-\renewcommand{\abstractname}{सार}
-\renewcommand{\nomname}{नामकरण}
-\renewcommand{\solution}{हल: }
-\renewcommand{\figurename}{आकृति.}
-\renewcommand{\tablename}{सारणी.}
+%\renewcommand{\thefigure}{\theenumi}
+%\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\abstractname}{सार}
+%\renewcommand{\nomname}{नामकरण}
+%\renewcommand{\solution}{हल: }
+%\renewcommand{\figurename}{Fig. .}
+%\renewcommand{\tablename}{Table.}
 %\renewcommand{\theequation}{\theenumi}
 
 %\begin{abstract}
@@ -307,7 +312,8 @@ literate = {-}{-}1
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-इस लेख में  वामन  के द्वारा आर्म-क्रमादेशन  से छात्रों का परिचय कराया जाएगा।
+This document shows how to implement a decade counter using arm-gcc on pygmy.
+%इस आलेख में वामन को  दशक गणित्र के रूप में उपयोग करने का विधान प्रस्तुत है.
 
 
 %ॐ श्री गणेशाय नमः॥
@@ -317,18 +323,15 @@ literate = {-}{-}1
 \end{abstract}
 
 %\section{Nomenclature}
-\printnomenclature[1.7in]
-\input{hindi/nomen.tex}
-
-\section{तंत्रांश}
-%
-निम्न जालबन्धन से इस लिख में उपयोग किए गए समस्त क्रमादेश अवाहरत करें।
+%\printnomenclature[1.7in]
+%\input{hindi/nomen.tex}
+\section{Software}
+All codes used in this document are available at the following link
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/arm/codes/blink
+https://github.com/gadepall/vaman/tree/master/arm/codes/sevenseg/
 \end{lstlisting}
-
-
-\section{सप्रतिष्ठान}
+%
+\section{Setup}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
@@ -336,105 +339,112 @@ https://github.com/gadepall/vaman/tree/master/arm/codes/blink
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-\item वामन एवं रास्पबेरी पै  को यूएसबी रज्जु से योजित करें।
-\item योजित स्थल के निकट वाम दिशा में एक प्रकाश उत्सर्जक यंत्र एवं गण्ड  उपस्थित है।  वहीं दक्षिण में एक और गण्ड है।  
-\item दक्षिण गण्ड को दबाकर शीघ्र वाम गण्ड को दबायें।  हरित दीप श्मीलित होते हुए दिखेगा।  यह संकेत हैं कि वामन
-क्रमादेश के लिए सिद्ध है।
+\item Fig.\ref{fig:pin_sheet} shows all the pin banks of the pygmy. Connect the pins of the
+display in Fig.  \ref{fig:sevenseg} to bank J5 of the pygmy using Table \ref{table:sevenseg}.
+The COM pin should be connected to 3.3V through a resistor.
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tables/pygmy_sevenseg.tex}
+}
+\caption{Display-Pygmy connection.}
+\label{table:sevenseg}
+\end{table}
 
-\item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों का चालयन करें।
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg.tex}
+}
+\caption{Seven Segment Display}
+\label{fig:sevenseg}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg12.tex}
+}
+\caption{Pictorial representation of Table \ref{table:arduinoport}.}
+\label{fig:sevenseg12}
+\end{figure}
+
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width = \textwidth]{figs/pin_sheet.png}
+\caption{Pin Diagram}
+\label{fig:pin_sheet}
+\end{figure*}
+
+
+
+\item Now execute the following code
+\label{code:sevenseg}
 \begin{lstlisting}
-cd ˜
-svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/
-cd GCC_Project
-make
-scp  output/bin/blink.bin pi@192.168.0.114:
+codes/sevenseg/static/src/main.c
 \end{lstlisting}
-ऊपर blink.bin  सञ्चिका प्रेषण पूर्व रास्पबेरी पै का उचित अनिकेत दें। 
-\item अब रास्पबेरी पै  में प्रवेश कर निम्न  आदेश का चालयन करें
+Flash static.bin obtained upon execution of the above code to the pygmy.  You should see the number7 on the display.  The following function generates this number.
 \begin{lstlisting}
-sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4-fpga
+sevenseg(0,0,0,1,1,1,1);
+void sevenseg(int a, int b, int c, int d, int e, int f, int g)                                     
+{
+    //Seven Segment GPIO
+    PyHal_Set_GPIO(4,a);//a
+    PyHal_Set_GPIO(5,b);//b
+    PyHal_Set_GPIO(6,c);//c
+    PyHal_Set_GPIO(7,d);//d
+    PyHal_Set_GPIO(8,e);//e
+    PyHal_Set_GPIO(10,f);//f
+    PyHal_Set_GPIO(11,g);//g
+}
 \end{lstlisting}
-\item उपरोक्त आदेश में उचित पत्तन दें। तत्पश्चात यूएसबी पत्तन के दक्षिण दिशा में गण्ड को दबायें। कुछ समय पश्चचात प्रकाश उत्सर्जक श्वेत रंग  में श्मीलित होगा। 
+\item Modify the above program using Table \ref{table:arduinoport} and Fig. \ref{fig:sevenseg12} 
+to display 0-9.
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tables/arduinoport.tex}
+}
+\caption{Decimal number generation on the display. }
+\label{table:arduinoport}
+\end{table}
 \end{enumerate}
 %
-\section{अतिकाल}
-
+\section{Examples}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{enumi}
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
-\item निम्न सी क्रमादेश
-\label{सम:क्रमादेश}
-\begin{lstlisting}
-codes/setup/blink/src/main.c
-\end{lstlisting}
-की  इन पङ्क्तियों पर ध्यान दें । 
-%
-\begin{lstlisting}
-    PyHal_Set_GPIO(18,1);//blue
-    PyHal_Set_GPIO(21,1);//green
-    PyHal_Set_GPIO(22,1);//red
-        HAL_DelayUSec(2000000);
-    PyHal_Set_GPIO(18,0);
-    PyHal_Set_GPIO(21,0);
-    PyHal_Set_GPIO(22,0);
-\end{lstlisting}
-%
-इससे हम ज्ञात कर सकते हैं की वामन के दीप का शमीलनकाल 2000 000us = 2 s।  
-\item निर्देश \ref{सम:क्रमादेश} में 
-\label{सम:द्विआधार}
-\begin{lstlisting}
-        HAL_DelayUSec(2000000);
-\end{lstlisting}
-%
-को 
-\begin{lstlisting}
-        HAL_DelayUSec(1000000);
-\end{lstlisting}
-से प्रतिस्थापित कर क्रमादेश का चालयन करें ।  क्या श्मीलनकाल में कोई परिवर्तन द्रश्य है?
-\item रक्तिम रंगोत्पदन के लिए निम्न गूढ़ का चालयन करें।  
-\begin{lstlisting}
-codes/setup/red/src/main.c
-\end{lstlisting}
-इदान हरित एवं नील रंग में दीप को श्मीलित करें।
 
-\item इदान  आर्म-जीसीसी  के द्वारा दीप में स्थायी रूप से  हरित वर्ण को उपलब्ध करें।
+
+
+\item   Table \ref{table:sevenseg} and PU 64 Table in 
+Fig.  \ref{fig:pins}  show how to use the pins of the pygmy to drive the seven segment display.
+%इसमें संशोधन कर वामन के कुशों के अनेक संचय के लिए क्रमादेश \ref{code:sevenseg} का चालयन करें.
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width = \textwidth]{figs/pins.jpg}
+\caption{कुश पर्याय}
+\label{fig:pins}
+\end{figure*}
+\item Use a function taking decimal input in the code in  \ref{code:sevenseg} to generate 
+numbers on the display.
 \\
-\solution निम्न क्रमादेश का चालयन करें।
+\solution  Execute the following file.
 \begin{lstlisting}
-codes/setup/onoff/src/main.c
+codes/sevenseg/decimal/main.c
 \end{lstlisting}
-%\item  सारणी \ref{table:input} एवं आकृति. \ref{fig:pin_sheet} द्वारा वामन में आगत कुश का उपयोग कर परिपथफलक में उपस्थित दीप
-%को प्रकाशित करें.  एक अन्य कुश को निर्गत रूप देकर किसी बाह्य दीप को प्रकाशोर्जित करें.
-%
-%\begin{table}[]
-%\centering
-%\begin{tabular}{|l|l|l|}
-%\hline
-%प्रकार & वामन कुश  &  गम्य \\ \hline
-%आगत &  IO\_28 &  GND\\ \hline
-%निर्गत  & IO\_11  &  LED\\ \hline
-%\end{tabular}
-%\caption{वामन के आगत/निर्गत कुश.}
-%\label{table:input}
-%\end{table}
-
-%\begin{figure*}[!ht]
-%\centering
-%\includegraphics[width = \textwidth]{figs/pin_sheet.png}
-%\caption{कुश आरेख}
-%\label{fig:pin_sheet}
-%\end{figure*}
-%\solution निम्न क्रमादेश का चालयन करें. तत्पश्चात GND से योजित तंतु को दूर करें  एवं पुनः मेलन करें.  इस क्रिया 
-%को परस्पर दोहरायें.
-%\begin{lstlisting}
-%codes/input/blink_ip.v
-%codes/input/pygmy.pcf
-%\end{lstlisting}
-
+\item Program the pygmy to function as a decade counter.
+\\
+\solution Execute the following code.
+\begin{lstlisting}
+codes/sevenseg/loop/main.c
+\end{lstlisting}
 \end{enumerate}
+%
+
 \end{document}
 
 

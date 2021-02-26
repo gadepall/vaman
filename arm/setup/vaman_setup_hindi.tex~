@@ -344,7 +344,7 @@ https://github.com/gadepall/vaman/tree/master/arm/codes/blink
 \item अब एंड्राइड यंत्र में टेरमक्स-उबुन्टु में प्रवेश करें ऐवं निम्न आदेशों का चालयन करें।
 \begin{lstlisting}
 cd ˜
-svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/
+svn co https://github.com/gadepall/vaman/trunk/arm/codes/setup/blink
 cd GCC_Project
 make
 scp  output/bin/blink.bin pi@192.168.0.114:
