@@ -1,6 +1,7 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.2.13)  26 FEB 2021 19:17
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.2.13)  7 MAR 2021 09:59
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **vaman_setup_hindi
 (./vaman_setup_hindi.tex
@@ -1766,13 +1767,12 @@ ex-text;"
 Package Listings Warning: Unknown column format `fullflexible literate' on inpu
 t line 100.
 
-(./vaman_setup_hindi.aux)
+No file vaman_setup_hindi.aux.
 \openout1 = `vaman_setup_hindi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 107.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 107.
-
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
@@ -1889,10 +1889,13 @@ LaTeX Info: Redefining \nameref on input line 107.
 \@outlinefile=\write5
 \openout5 = `vaman_setup_hindi.out'.
 
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 \c@lstlisting=\count404
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
 07.
-
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
@@ -1963,11 +1966,13 @@ LaTeX Font Warning: Font shape `TU/Sanskrit_2003.ttf(0)/m/sc' undefined
 (Font)              using `TU/Sanskrit_2003.ttf(0)/m/n' instead on input line 2
 66.
 
-(./vaman_setup_hindi.toc)
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write6
 \openout6 = `vaman_setup_hindi.toc'.
 
- (./vaman_setup_hindi.nls
+(./vaman_setup_hindi.nls
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 
@@ -1975,29 +1980,52 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 (./hindi/nomen.tex) [1
 
 
-] [2
-
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
+
+LaTeX Warning: Reference `सम:क्रमादेश' on page 2 undefined on input line 387.
+
+
+LaTeX Warning: Reference `table:input' on page 2 undefined on input line 410.
+
+
+LaTeX Warning: Reference `fig:pin_sheet' on page 2 undefined on input line 410.
+
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 413.
+
+File: figs/pin_sheet.png Graphic file (type bmp)
+<figs/pin_sheet.png>
+[2
+
+] [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 439.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 439.
  (./vaman_setup_hindi.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 438.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 439.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 439.
 Package rerunfilecheck Info: File `vaman_setup_hindi.out' has not changed.
 (rerunfilecheck)             Checksum: 4BFAD8C485D5F659DC0BC12A0F349C49;234.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 438.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 439.
  ) 
 Here is how much of TeX's memory you used:
- 49228 strings out of 479819
- 1133836 string characters out of 5895846
- 1666036 words of memory out of 5000000
- 65420 multiletter control sequences out of 15000+600000
+ 49249 strings out of 479819
+ 1134105 string characters out of 5895846
+ 1668833 words of memory out of 5000000
+ 65441 multiletter control sequences out of 15000+600000
  559448 words of font info for 125 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191
- 60i,6n,91p,676b,1022s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,91p,676b,1022s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on vaman_setup_hindi.pdf (2 pages).
+Output written on vaman_setup_hindi.pdf (3 pages).

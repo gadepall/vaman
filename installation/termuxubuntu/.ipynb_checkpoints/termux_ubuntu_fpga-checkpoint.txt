@@ -1,0 +1,107 @@
+pdata/data/com.termux/files-distro login ubuntu-20.04
+apt update 
+apt upgrade
+
+#Install ssh-server
+apt install openssh-server sshpass
+
+# Install arm toolchain and hardware tools
+apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl-dev tcl tcl-tclreadline libreadline-dev  autoconf libtool make automake texinfo pkg-config libusb-1.0-0 libusb-1.0-0-dev gcc-arm-none-eabi libnewlib-arm-none-eabi telnet python3 apt-utils libxslt-dev python3-lxml python3-simplejson cmake curl  python3-setuptools python3-pip
+
+
+#Pull all necessary tools
+cd ~
+#Need to check if pygmy-sdk can be reduced by keeping only the basic hardware
+#components.
+git clone --recursive https://github.com/optimuslogic/pygmy-dev
+
+
+#Create directory for building the toolchain
+#mkdir -p /data/data/com.termux/files/symbiflow
+mkdir -p /data/data/com.termux/files/home/symbiflow
+export  INSTALL_DIR=/data/data/com.termux/files/home/symbiflow
+
+#Download and extract symbiflow
+https://iith-my.sharepoint.com/:u:/g/personal/gadepall_ee_iith_ac_in/Ebot5QHEYXBAo-7n4hnvJu0B8vMrTIdj_COHJC2cmDY1ww?e=bqDxHI
+
+cp arch.tar.gz /data/data/com.termux/files/home/arch.tar.gz
+
+tar -C $INSTALL_DIR  -xvf /data/data/com.termux/files/home/arch.tar.gz
+
+export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python3:$PATH"
+
+#Install fasm 
+cd /data/data/com.termux/files/home/pygmy-dev/tools/quicklogic-fasm
+pip3 install -r requirements.txt
+python3 setup.py install
+cd /data/data/com.termux/files/home/
+
+#Install yosys
+cd /data/data/com.termux/files/home/pygmy-dev/tools/quicklogic-yosys
+make config-gcc
+make -j4 install PREFIX=$INSTALL_DIR
+cd /data/data/com.termux/files/home/
+
+#install yosys-symbiflow
+cd /data/data/com.termux/files/home/pygmy-dev/tools/yosys-symbiflow-plugins
+export PATH=$INSTALL_DIR/bin:$PATH
+make -j4 install
+cd /data/data/com.termux/files/home/
+
+#install vtr
+cd /data/data/com.termux/files/home/pygmy-dev/tools/vtr-verilog-to-routing
+make -j4
+cd /data/data/com.termux/files/home/
+
+
+cp /data/data/com.termux/files/home/pygmy-dev/tools/vtr-verilog-to-routing/build/vpr/vpr $INSTALL_DIR/bin
+cp /data/data/com.termux/files/home/pygmy-dev/tools/vtr-verilog-to-routing/build/utils/fasm/genfasm $INSTALL_DIR/bin
+
+#add path to .bashrc
+nano ~/.bashrc
+#paste the following 3 lines at the end of the file
+export  INSTALL_DIR=/data/data/com.termux/files/home/symbiflow
+export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python3:$PATH"
+export PATH=/data/data/com.termux/files/home/symbiflow/bin:$PATH
+#Ctrl+X save and exit.  reboot for the settings to be updated.
+#reboot
+#After login
+cd /data/data/com.termux/files/home/
+
+
+#Check the executables on Path
+vpr -h
+yosys -h
+qlfasm -h
+ql_symbiflow -h
+
+#Test installation
+cd $INSTALL_DIR/quicklogic-arch-defs/tests/counter_16bit
+ql_symbiflow -compile -d ql-eos-s3 -P pd64 -v counter_16bit.v -t top -p chandalar.pcf -dump binary
+#top.bin must be generated successfully 
+
+#Blink program
+cd /data/data/com.termux/files/home/
+mkdir fpga-examples
+cd fpga-examples
+svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
+
+ql_symbiflow -compile -src /data/data/com.termux/files/home/fpga-examples/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+#helloworldfpga.bin must be generated successfully in /data/data/com.termux/files/home/fpga-examples/blink
+
+#Transfer .bin file to RPI
+scp /data/data/com.termux/files/home/fpga-examples/blink/helloworldfpga.bin pi@192.168.0.114:
+#Suitably modify the above ip address
+
+#On RPi
+git clone --recursive https://github.com/QuickLogic-Corp/TinyFPGA-Programmer-Application.git
+sudo pip3 install tinyfpgab pyserial
+sudo reboot
+
+
+# Then execute the following 
+python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+
+#End FPGA hello world
+
+
