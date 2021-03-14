@@ -383,7 +383,7 @@ codes/setup/blink/src/main.c
         HAL_DelayUSec(2000000);    
 \end{lstlisting}
 %
-इससे हम ज्ञात कर सकते हैं की वामन के दीप का शमीलनकाल 2000 000us = 2 s है।  
+इससे हम ज्ञात कर सकते हैं की वामन के दीप का श्मीलनकाल 2000 000us = 2 s है।  
 \item निर्देश \ref{सम:क्रमादेश} में 
 \label{सम:द्विआधार}
 \begin{lstlisting}
@@ -408,15 +408,17 @@ codes/setup/red/src/main.c
 codes/setup/onoff/src/main.c
 \end{lstlisting}
 \item  सारणी \ref{table:input} एवं आकृति. \ref{fig:pin_sheet} द्वारा वामन में आगत कुश का उपयोग कर परिपथफलक में उपस्थित दीप
-को ज्वलित करें.  एक अन्य कुश को निर्गत रूप देकर किसी बाह्य दीप को प्रकाशोर्जित करें.
+को ज्वलित करें.  
+%एक अन्य कुश को निर्गत रूप देकर किसी बाह्य दीप को प्रकाशोर्जित करें.
 
 \begin{table}[]
 \centering
 \begin{tabular}{|l|l|l|}
 \hline
 प्रकार & वामन कुश  &  गम्य \\ \hline
-आगत &  IO\_28 &  GND\\ \hline
-निर्गत  & IO\_11  &  LED\\ \hline
+आगत &  IO\_5 &  GND\\ \hline
+%आगत &  IO\_28 &  GND\\ \hline
+%निर्गत  & IO\_11  &  LED\\ \hline
 \end{tabular}
 \caption{वामन के आगत/निर्गत कुश.}
 \label{table:input}
@@ -428,8 +430,12 @@ codes/setup/onoff/src/main.c
 \caption{कुश आरेख}
 \label{fig:pin_sheet}
 \end{figure*}
-%\solution निम्न क्रमादेश का चालयन करें. तत्पश्चात GND से योजित तंतु को दूर करें  एवं पुनः मेलन करें.  इस क्रिया 
-%को परस्पर दोहरायें.
+\solution निम्न क्रमादेश का चालयन करें. तत्पश्चात GND से योजित तंतु को दूर करें  एवं पुनः मेलन करें.  इस क्रिया 
+को परस्पर दोहरायें.  आप देख सकते हैं कि तंतु को गण्ड से योजित करने पर दीप पटल रंग में शमीलित होगा। तंतु दूर करने पर श्वेत-हरित श्मीलन होगा। 
+\begin{lstlisting}
+codes/setup/gpio/src/main.c
+\end{lstlisting}
+
 %\begin{lstlisting}
 %codes/input/blink_ip.v
 %codes/input/pygmy.pcf

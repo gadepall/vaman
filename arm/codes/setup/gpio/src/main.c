@@ -1,12 +1,14 @@
 /*==========================================================
-Code by G V V Sharma
-March 14, 2021,
+Code by Chettiar Chandrakumar
+March 4, 2021,
+Revised by G V V Sharma
+March 7, 2021,
 Released under GNU/GPL
 https://www.gnu.org/licenses/gpl-3.0.en.html
 /*==========================================================
  *
  *    File   : main.c
- *    Purpose: main for keeping Pygmy  onboard led green
+ *    Purpose: main for Pygmy gpio input
  *                                                          
  *=========================================================*/
 
@@ -81,19 +83,28 @@ int main(void)
     PyHal_GPIO_SetDir(21,1);
     PyHal_GPIO_SetDir(22,1);
 
-    PyHal_GPIO_Set(21,1);//green
-//     while(1)
-//     {
-//         //Test GPIO Code
-// //         PyHal_GPIO_Set(18,1);//blue
+    PyHal_GPIO_SetDir(5,0); //Input
 
-// //         PyHal_GPIO_Set(22,1);//red
-// //        HAL_DelayUSec(2000000);    
-// //         PyHal_GPIO_Set(18,0);
-// //         PyHal_GPIO_Set(21,0);
-// //        PyHal_GPIO_Set(22,0);
-// //        HAL_DelayUSec(2000000);    
-//     }
+    //for (i=0; i<100;i++)
+    while(1)
+    {
+        //Test GPIO Code
+        PyHal_GPIO_Set(18,1);//blue
+        PyHal_GPIO_Set(22,1);//red
+        HAL_DelayUSec(2000000);    
+        PyHal_GPIO_Set(18,0);
+        PyHal_GPIO_Set(22,0);
+        HAL_DelayUSec(2000000);    
+        //Check GPIO IO_5 status (3.3v/GND)
+        if (PyHal_GPIO_Get(5) == 0)
+        {
+            PyHal_GPIO_Set(21,0); //Turn GREEN LED off
+        }
+        else
+        {
+            PyHal_GPIO_Set(21,1); //Turn GREEN LED on
+        }
+    }
     /* Start the tasks and timer running. */
     vTaskStartScheduler();
     dbg_str("\n");
