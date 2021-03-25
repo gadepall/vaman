@@ -8,14 +8,22 @@ wget https://github.com/gadepall/vaman/blob/master/fpga-arm/boot/qorc_bootloader
 python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py  --port /dev/ttyACM0 --bootloader qorc_bootloader_dual.bin --mode m4
 
 
+#Download top.bin and gpio.bin
+wget https://github.com/gadepall/vaman/raw/master/fpga-arm/boot/top.bin
+wget https://github.com/gadepall/vaman/raw/master/fpga-arm/boot/gpio.bin
+
+
+#Flash using the following command
+python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --m4app gpio.bin --appfpga top.bin --mode m4-fpga
+
+
+#The following is only for experts
 #Download fpga-arm
 svn co https://github.com/gadepall/vaman/trunk/fpga-arm
 
 #Generate top.bin for gpio-arm
 ql_symbiflow -compile -d ql-eos-s3 -P pu64 -v fpga/rtl/*.v -t top -p fpga/rtl/quickfeather.pcf -dump jlink binary
 
-#Download top.bin and flash using the following command
-python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --m4app m4.bin --appfpga top.bin --mode m4-fpga
 #python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --appfpga top.bin --mode m4-fpga
 
 #Github link for generating top.bin and m4.bin
