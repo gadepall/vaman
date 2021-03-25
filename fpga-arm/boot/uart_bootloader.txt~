@@ -1,18 +1,9 @@
 #Put vaman in bootloader mode
-#Download qorc_bootloader_dual.bin 
-
-wget https://github.com/gadepall/vaman/blob/master/fpga-arm/boot/qorc_bootloader_dual.bin
+#Download qorc_bootloader_dual.bin
 
 #Execute the following instruction to ensure that vaman can be programmed through
 #USB as well as UART
 python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py  --port /dev/ttyACM0 --bootloader qorc_bootloader_dual.bin --mode m4
-
-
-#Download fpga-arm
-svn co https://github.com/gadepall/vaman/trunk/fpga-arm
-
-#Generate top.bin for gpio-arm
-ql_symbiflow -compile -d ql-eos-s3 -P pu64 -v fpga/rtl/*.v -t top -p fpga/rtl/quickfeather.pcf -dump jlink binary
 
 #Download top.bin and flash using the following command
 python3 /home/pi/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --m4app m4.bin --appfpga top.bin --mode m4-fpga
