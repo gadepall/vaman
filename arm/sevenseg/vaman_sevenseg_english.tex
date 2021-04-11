@@ -383,19 +383,20 @@ The COM pin should be connected to 3.3V through a resistor.
 \begin{lstlisting}
 codes/sevenseg/static/src/main.c
 \end{lstlisting}
-Flash static.bin obtained upon execution of the above code to the pygmy.  You should see the number7 on the display.  The following function generates this number.
+Flash static.bin obtained upon execution of the above code to the pygmy.  You should see the number 7 on the display.  The following function generates this number.
 \begin{lstlisting}
 sevenseg(0,0,0,1,1,1,1);
 void sevenseg(int a, int b, int c, int d, int e, int f, int g)                                     
 {
     //Seven Segment GPIO
-    PyHal_Set_GPIO(4,a);//a
-    PyHal_Set_GPIO(5,b);//b
-    PyHal_Set_GPIO(6,c);//c
-    PyHal_Set_GPIO(7,d);//d
-    PyHal_Set_GPIO(8,e);//e
-    PyHal_Set_GPIO(10,f);//f
-    PyHal_Set_GPIO(11,g);//g
+    PyHal_GPIO_Set(4,a);//a
+    PyHal_GPIO_Set(5,b);//b
+    PyHal_GPIO_Set(6,c);//c
+    PyHal_GPIO_Set(7,d);//d
+    PyHal_GPIO_Set(8,e);//e
+    PyHal_GPIO_Set(10,f);//f
+    PyHal_GPIO_Set(11,g);//g
+}
 }
 \end{lstlisting}
 \item Modify the above program using Table \ref{table:arduinoport} and Fig. \ref{fig:sevenseg12} 
@@ -426,7 +427,7 @@ Fig.  \ref{fig:pins}  show how to use the pins of the pygmy to drive the seven s
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width = \textwidth]{figs/pins.jpg}
-\caption{कुश पर्याय}
+\caption{Pin map.}
 \label{fig:pins}
 \end{figure*}
 \item Use a function taking decimal input in the code in  \ref{code:sevenseg} to generate 

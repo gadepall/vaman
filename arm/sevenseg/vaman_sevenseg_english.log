@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.2.13)  26 FEB 2021 18:51
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.2.13)  11 APR 2021 12:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1996,11 +1996,11 @@ File: figs/pin_sheet.png Graphic file (type bmp)
 File: figs/pins.jpg Graphic file (type bmp)
 <figs/pins.jpg>
  [2] [3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 448.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 448.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 449.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 449.
  (./vaman_sevenseg_english.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 448.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 448.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 449.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 449.
 Package rerunfilecheck Info: File `vaman_sevenseg_english.out' has not changed.
 
 (rerunfilecheck)             Checksum: 86374FCC1CF84D88F079B775909327C5;126.
@@ -2008,7 +2008,7 @@ Package rerunfilecheck Info: File `vaman_sevenseg_english.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 448.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 449.
  ) 
 Here is how much of TeX's memory you used:
  49498 strings out of 479819

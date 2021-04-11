@@ -382,13 +382,14 @@ sevenseg(0,0,0,1,1,1,1);
 void sevenseg(int a, int b, int c, int d, int e, int f, int g)                                     
 {
     //Seven Segment GPIO
-    PyHal_Set_GPIO(4,a);//a
-    PyHal_Set_GPIO(5,b);//b
-    PyHal_Set_GPIO(6,c);//c
-    PyHal_Set_GPIO(7,d);//d
-    PyHal_Set_GPIO(8,e);//e
-    PyHal_Set_GPIO(10,f);//f
-    PyHal_Set_GPIO(11,g);//g
+    PyHal_GPIO_Set(4,a);//a
+    PyHal_GPIO_Set(5,b);//b
+    PyHal_GPIO_Set(6,c);//c
+    PyHal_GPIO_Set(7,d);//d
+    PyHal_GPIO_Set(8,e);//e
+    PyHal_GPIO_Set(10,f);//f
+    PyHal_GPIO_Set(11,g);//g
+}
 }
 \end{lstlisting}
 \item उपरोक्त क्रमादेश में उचित संशोधन करके सारणी \ref{table:arduinoport} एवं आकृति.  \ref{fig:sevenseg12} की सहायता से 0-9 सभी अंकों तो प्रदर्शित करें.
