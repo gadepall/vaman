@@ -2,7 +2,7 @@
 startarch l user
 sudo pacman -Syu
 sudo pacman -S base-devel  tcl python-lxml python-simplejson 
-cd /home/user/txhome
+cd /data/data/com.termux/files/home/
 
 
 #Pull all necessary tools
