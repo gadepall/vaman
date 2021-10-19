@@ -84,7 +84,7 @@ ql_symbiflow -compile -src /data/data/com.termux/files/home/fpga-examples/blink 
 #helloworldfpga.bin must be generated successfully in /data/data/com.termux/files/home/blink
 
 #Transfer .bin file to RPI from texmuxarch
-scp /data/data/com.termux/files/home/blink/helloworldfpga.bin storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+scp /data/data/com.termux/files/home/fpga-examples/blink/helloworldfpga.bin  pi@192.168.0.114:
 
 
 #On RPi
