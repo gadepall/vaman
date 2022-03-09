@@ -1,0 +1,27 @@
+#Install Dependencies
+
+sudo apt update && sudo apt upgrade
+sudo apt install libtbb2 --fix-missing
+
+#Install qorc-sdk
+git clone https://github.com/QuickLogic-Corp/qorc-sdk
+cd qorc-sdk
+source envsetup.sh
+
+#Test FPGA installation
+mkdir fpga-examples
+cd fpga-examples
+svn co https://github.com/gadepall/vaman/trunk/fpga/setup/codes/blink
+
+#Building the binary
+ql_symbiflow -compile -src ~/qorc-sdk/fpga-examples/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
+#helloworldfpga.bin must be generated successfully in ~/qorc-sdk/fpga-examples/blink 
+
+#Now put the vaman board in download mode (Press the right button so that the blue led blinks and then immediately long press the left button so that the green led breathes)
+
+#Flashing the binary (make sure that the tinypga=programmer path below is correct)
+
+python3 tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga ~/qorc-sdk/fpga-examples/blink/helloworldfpga.bin --mode fpga
+
+
+
