@@ -21,7 +21,7 @@ ql_symbiflow -compile -src ~/qorc-sdk/fpga-examples/blink -d ql-eos-s3 -P PU64 -
 
 #Flashing the binary (make sure that the tinypga=programmer path below is correct)
 
-python3 tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga ~/qorc-sdk/fpga-examples/blink/helloworldfpga.bin --mode fpga
+python3 ~/qorc-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga ~/qorc-sdk/fpga-examples/blink/helloworldfpga.bin --mode fpga
 
 
 
