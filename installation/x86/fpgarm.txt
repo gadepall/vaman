@@ -1,7 +1,7 @@
 #Install Dependencies
 
 sudo apt update && sudo apt upgrade
-sudo apt install libtbb2 --fix-missing
+sudo apt install curl libtbb2 --fix-missing
 
 #Install qorc-sdk
 git clone https://github.com/QuickLogic-Corp/qorc-sdk
