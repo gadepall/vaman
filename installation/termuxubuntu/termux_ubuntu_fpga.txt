@@ -36,11 +36,7 @@ nano requirements.txt
 -e git+https://github.com/symbiflow/fasm.git#egg=fasm
 -e git+https://github.com/antmicro/quicklogic-fasm-utils.git#egg=fasm-utils
 
-
 pip3 install -r requirements.txt
-#git clone -q https://github.com/symbiflow/fasm.git /data/data/com.termux/files/home/pygmy-dev/tools/quicklogic-fasm/src/fasm
-#git clone -q https://github.com/antmicro/quicklogic-fasm-utils.git /data/data/com.termux/files/home/pygmy-dev/tools/quicklogic-fasm/src/fasm-utils
-
 python3 setup.py install
 cd /data/data/com.termux/files/home/
 
