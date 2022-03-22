@@ -17,7 +17,6 @@ git clone --recursive https://github.com/optimuslogic/pygmy-dev
 
 
 #Create directory for building the toolchain
-#mkdir -p /data/data/com.termux/files/symbiflow
 mkdir -p /data/data/com.termux/files/home/symbiflow
 export  INSTALL_DIR=/data/data/com.termux/files/home/symbiflow
 
@@ -32,7 +31,10 @@ export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-
 
 #Install fasm 
 cd /data/data/com.termux/files/home/pygmy-dev/tools/quicklogic-fasm
-pip3 install -r requirements.txt
+#pip3 install -r requirements.txt
+git clone -q https://github.com/symbiflow/fasm.git /data/data/com.termux/files/home/pygmy-dev/tools/quicklogic-fasm/src/fasm
+git clone -q https://github.com/antmicro/quicklogic-fasm-utils.git /data/data/com.termux/files/home/pygmy-dev/tools/quicklogic-fasm/src/fasm-utils
+
 python3 setup.py install
 cd /data/data/com.termux/files/home/
 
