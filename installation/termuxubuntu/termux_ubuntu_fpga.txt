@@ -10,7 +10,7 @@ apt install build-essential libssl-dev libffi-dev python3-dev bison flex git tcl
 
 
 #Pull all necessary tools
-cd ~
+cd  /data/data/com.termux/files/home/
 #Need to check if pygmy-sdk can be reduced by keeping only the basic hardware
 #components.
 git clone --recursive https://github.com/optimuslogic/pygmy-dev
