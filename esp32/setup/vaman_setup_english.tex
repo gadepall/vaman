@@ -329,11 +329,11 @@ This document provides a simple introduction to programming the ESP32 on Vaman u
 All codes used in this document are available at the following link
 %निम्न जालबन्धन से इस लिख में उपयोग किए गए समस्त क्रमादेश अवाहरत करें।
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/esp32/codes/setup
+https://github.com/gadepall/vaman/tree/master/esp32/setup/codes
 \end{lstlisting}
 
 
-\section{Setup}
+\section{Hardware Setup}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
@@ -358,6 +358,29 @@ you should see the USB-UART connector detected.
 
 \end{enumerate}
 %
+\section{Blink LED}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+\item On termux, 
+\begin{lstlisting}
+svn co https://github.com/gadepall/vaman/trunk/esp32/setup/codes
+cd codes
+pio run
+\end{lstlisting}
+\item Transfer the bin file to the rpi 
+\begin{lstlisting}
+scp .pio/build/esp32doit-devkit-v1/firmware.bin pi@192.168.50.252:./hi/.pio/build/esp32doit-devkit-v1/firmware.bin
+\end{lstlisting}
+\item On rpi,
+\begin{lstlisting}
+cd /home/pi/hi
+pio run -t nobuild -t upload
+\end{lstlisting}
+\end{enumerate}
 %\section{Delay}
 %
 %\renewcommand{\theequation}{\theenumi}
