@@ -1,0 +1,39 @@
+#On termux
+
+apt update && apt upgrade
+apt install python3-pip
+
+pip3 install platformio
+
+#Download sample directory for esp32 and arduino
+svn co https://github.com/gadepall/termux/trunk/pio/Projects/hi
+pio lib --global install "stempedia/DabbleESP32"
+
+#Install xtensa and espressif32
+cd Projects/hi
+pio run
+
+#This will also build firmware.bin in 
+.pio/build/esp32doit-devkit-v1/firmware.bin 
+
+#comment the following line like this if you are using  your laptop
+;platform_packages = toolchain-xtensa32@https://github.com/esphome/esphome-docker-base/releases/download/v1.4.0/toolchain-xtensa32.tar.gz
+
+
+#On your rpi
+pip3 install platformio
+mkdir -p ~/hi/.pio/build/esp32doit-devkit-v1/
+cd hi
+wget https://raw.githubusercontent.com/gadepall/termux/main/pio/Projects/hi/platformio.ini
+nano platformio.ini
+#comment the following line like this if you are using rpi3
+;platform_packages = toolchain-xtensa32@https://github.com/esphome/esphome-docker-base/releases/download/v1.4.0/toolchain-xtensa32.tar.gz
+
+#From your phone
+scp .pio/build/esp32doit-devkit-v1/firmware.bin pi@192.168.50.252:./hi/.pio/build/esp32doit-devkit-v1/firmware.bin
+
+#On your rpi
+cd ~/hi
+pio run -t nobuild -t upload
+-------------------------------End ESP32 installation --------------------
+
