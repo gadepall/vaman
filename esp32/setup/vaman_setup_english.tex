@@ -393,8 +393,8 @@ you should see the USB-UART connector detected.
 \numberwithin{table}{enumi}
 \item On termux on your phone, 
 \begin{lstlisting}
-svn co https://github.com/gadepall/vaman/trunk/esp32/setup/codes/ide
-cd ide
+svn co https://github.com/gadepall/vaman/trunk/esp32/setup/codes/ide/blink
+cd blink
 pio run
 \end{lstlisting}
 \item Transfer the ini and bin files to the rpi 
@@ -410,13 +410,51 @@ pio run -t nobuild -t upload
 \end{lstlisting}
 \item On your phone, open 
 \begin{lstlisting}
-src/main.cpp
+src/main.cpp 
 \end{lstlisting}
 and change the delay to 
 \begin{lstlisting}
 delay(2000);
 \end{lstlisting}
 and exectute the code by following the steps above.
+\end{enumerate}
+
+\section{ESP IDF}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+\item Earlier, we were using the arduino framework, where the programming language was arduino.  In the following directory, the same functionality is achieved through a C program.
+\begin{lstlisting}
+svn co https://github.com/gadepall/vaman/trunk/esp32/setup/codes/idf/blink
+cd blink
+pio run
+\end{lstlisting}
+\item The flashing process remains the same.
+\end{enumerate}
+\section{Raspberry Pi}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+\item Since the RPi supports UART through its GPIO pins, a separate USB UART adapter is not required.  Table 
+		\ref{table:vaman-uart} can be accordingly modified to obtain Table 
+		\ref{table:rpi-vaman-uart}
+			\begin{table}[!h]
+		\input{tables/rpi-vaman-uart.tex}
+		\caption{}
+		\label{table:rpi-vaman-uart}
+	\end{table}
+\item After executing 
+\begin{lstlisting}
+pio run -t nobuild -t upload
+\end{lstlisting}
+while the dots and dashes are printed on the screen, disconnect the EN wire from GND.  The Vaman-ESP should now flash.
+\item After flashing, disconnect pin 0 on Vaman-ESP from GND. Power on Vaman and the appropriate LED will blink.
 \end{enumerate}
 %\section{Delay}
 %

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2022.4.24)  24 APR 2022 14:18
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2022.4.24)  24 APR 2022 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1965,20 +1965,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [1
 
 
-] [2
-
-] (./vaman_setup_english.aux)
+] (./tables/rpi-vaman-uart.tex) [2] (./vaman_setup_english.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `vaman_setup_english.out' has not changed.
-(rerunfilecheck)             Checksum: 05E3BCBA9A245E1E0ACEFF71C80C8927;142.
+(rerunfilecheck)             Checksum: 63A56BAC16F4CA710F49F75EF695CF0B;237.
  ) 
 Here is how much of TeX's memory you used:
- 51066 strings out of 477220
- 1189561 string characters out of 5832722
- 1849525 words of memory out of 5000000
- 69841 multiletter control sequences out of 15000+600000
+ 51071 strings out of 477220
+ 1189674 string characters out of 5832722
+ 1886561 words of memory out of 5000000
+ 69843 multiletter control sequences out of 15000+600000
  430540 words of font info for 128 fonts, out of 8000000 for 9000
  1351 hyphenation exceptions out of 8191
  113i,12n,116p,682b,2190s stack positions out of 5000i,500n,10000p,200000b,80000s
