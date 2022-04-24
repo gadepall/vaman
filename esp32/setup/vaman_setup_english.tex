@@ -1,3 +1,6 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 %
 \usepackage{setspace}
@@ -329,7 +332,7 @@ This document provides a simple introduction to programming the ESP32 on Vaman u
 All codes used in this document are available at the following link
 %निम्न जालबन्धन से इस लिख में उपयोग किए गए समस्त क्रमादेश अवाहरत करें।
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/esp32/setup/codes
+https://github.com/gadepall/vaman/tree/master/esp32/setup/codes/
 \end{lstlisting}
 
 
@@ -363,6 +366,21 @@ you should see the USB-UART connector detected.
 		\caption{}
 		\label{table:esp-display}
 	\end{table}
+	The GPIO pins are listed in Table 
+		\ref{table:esp-pins}
+	\begin{table}[!h]
+		\input{tables/esp-pins.tex}
+		\caption{}
+		\label{table:esp-pins}
+	\end{table}
+	Note that these pins can be used for several functions, refer to the ESP32 datasheet
+		for details.  The Vaman pin diagram is available in 
+		Fig. \ref{fig:lc}
+	\begin{figure}[!h]
+		\includegraphics[width=\columnwidth]{figs/lc.jpg}
+		\caption{}
+		\label{fig:lc}
+	\end{figure}
 
 \end{enumerate}
 %
@@ -373,14 +391,16 @@ you should see the USB-UART connector detected.
 \numberwithin{equation}{enumi}
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
-\item On termux, 
+\item On termux on your phone, 
 \begin{lstlisting}
-svn co https://github.com/gadepall/vaman/trunk/esp32/setup/codes
-cd codes
+svn co https://github.com/gadepall/vaman/trunk/esp32/setup/codes/ide
+cd ide
 pio run
 \end{lstlisting}
-\item Transfer the bin file to the rpi 
+\item Transfer the ini and bin files to the rpi 
 \begin{lstlisting}
+scp platformio.ini pi@192.168.50.252:./hi/platformio.ini
+
 scp .pio/build/esp32doit-devkit-v1/firmware.bin pi@192.168.50.252:./hi/.pio/build/esp32doit-devkit-v1/firmware.bin
 \end{lstlisting}
 \item On rpi,
@@ -388,6 +408,15 @@ scp .pio/build/esp32doit-devkit-v1/firmware.bin pi@192.168.50.252:./hi/.pio/buil
 cd /home/pi/hi
 pio run -t nobuild -t upload
 \end{lstlisting}
+\item On your phone, open 
+\begin{lstlisting}
+src/main.cpp
+\end{lstlisting}
+and change the delay to 
+\begin{lstlisting}
+delay(2000);
+\end{lstlisting}
+and exectute the code by following the steps above.
 \end{enumerate}
 %\section{Delay}
 %
