@@ -3,3 +3,5 @@
 \contentsline {section}{\numberline {3}Blink LED}{1}{section.3}%
 \contentsline {section}{\numberline {4}ESP IDF}{2}{section.4}%
 \contentsline {section}{\numberline {5}Raspberry Pi}{2}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Enable Serial Communication}{2}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Flash Vaman-ESP}{2}{subsection.5.2}%

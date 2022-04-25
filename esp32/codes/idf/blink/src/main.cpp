@@ -9,24 +9,24 @@
 #include "driver/gpio.h"
 #include "sdkconfig.h"
 
-//Assign variable to pin number 18 for simplicity
-#define g GPIO_NUM_18
+//Assign variable to pin number 2 for simplicity
+#define dot GPIO_NUM_2
 
 
 extern "C" void app_main() 
 {
 	//Configure corresponding pin as gpio
-  gpio_pad_select_gpio(g);
+  gpio_pad_select_gpio(dot);
 
   // Declaring pin as output
- gpio_set_direction(g, GPIO_MODE_OUTPUT);
+ gpio_set_direction(dot, GPIO_MODE_OUTPUT);
 
  while(1)
  {
 	 //Blink code
-         gpio_set_level(g,0);//Output 0
+         gpio_set_level(dot,0);//Output 0
 vTaskDelay(1000 / portTICK_PERIOD_MS);//Blink Delay
-         gpio_set_level(g,1);
+         gpio_set_level(dot,1);
 vTaskDelay(1000 / portTICK_PERIOD_MS);//Output 1
 
  }

@@ -435,9 +435,33 @@ pio run
 \item The flashing process remains the same.
 \end{enumerate}
 \section{Raspberry Pi}
+\subsection{Enable Serial Communication}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
-\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+\item On the RPi, 
+\begin{lstlisting}
+sudo raspi-config
+\end{lstlisting}
+\item Select Interfacing Options
+\item Then select Serial Port
+\item Reply no to login shell over serial
+\item Say yes to running hardware over serial port.
+\item Install minicom and start it
+\begin{lstlisting}
+sudo apt install minicom
+minicom -b 115200 -o -D /dev/serial0
+\end{lstlisting}
+Type Jai Hind.  If you see it displayed on screen, your serial port is working.
+\end{enumerate}
+
+\subsection{Flash Vaman-ESP}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
 \numberwithin{equation}{enumi}
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
@@ -449,6 +473,12 @@ pio run
 		\caption{}
 		\label{table:rpi-vaman-uart}
 	\end{table}
+	On RPi, the pin numbers for serial communication are Tx=8, Rx=10.
+\item Modify your platformio.ini file by adding the line 
+\begin{lstlisting}
+upload_port = /dev/serial0
+\end{lstlisting}
+
 \item After executing 
 \begin{lstlisting}
 pio run -t nobuild -t upload
