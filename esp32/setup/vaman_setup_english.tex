@@ -450,12 +450,13 @@ sudo raspi-config
 \item Then select Serial Port
 \item Reply no to login shell over serial
 \item Say yes to running hardware over serial port.
+\item Connect the rpi tx (pin 8) and rx (pin 10)
 \item Install minicom and start it
 \begin{lstlisting}
 sudo apt install minicom
 minicom -b 115200 -o -D /dev/serial0
 \end{lstlisting}
-Type Jai Hind.  If you see it displayed on screen, your serial port is working.
+Type namaste.  If you see it displayed on screen, your serial port is working.
 \end{enumerate}
 
 \subsection{Flash Vaman-ESP}
