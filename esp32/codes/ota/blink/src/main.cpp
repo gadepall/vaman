@@ -1,16 +1,4 @@
-#include <Arduino.h>
 
-#include <Arduino.h>
-
-// void setup(){
-// 	pinMode(18, OUTPUT);
-// }
-// void loop(){
-// 	digitalWrite(18, HIGH);
-// 	delay(100);
-// 	digitalWrite(18, LOW);
-// 	delay(100);
-// }
 
 //----------------------Skeleton Code--------------------//
 #include <WiFi.h>
@@ -19,7 +7,7 @@
 
 //    Can be client or even host   //
 #ifndef STASSID
-#define STASSID "gvv"  // Add your network credentials
+#define STASSID "gvv"  // Replace with your network credentials
 #define STAPSK  "abcd"
 #endif
 
