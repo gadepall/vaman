@@ -381,7 +381,6 @@ you should see the USB-UART connector detected.
 		\caption{}
 		\label{fig:lc}
 	\end{figure}
-
 \end{enumerate}
 %
 \section{Blink LED}
@@ -487,6 +486,22 @@ pio run -t nobuild -t upload
 while the dots and dashes are printed on the screen, disconnect the EN wire from GND.  The Vaman-ESP should now flash.
 \item After flashing, disconnect pin 0 on Vaman-ESP from GND. Power on Vaman and the appropriate LED will blink.
 \end{enumerate}
+
+\section{OTA}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+\item It is possible to flash the Vaman-ESP32 wirelessly.
+\item Flash the following code 
+\begin{lstlisting}
+
+\end{lstlisting}
+\end{enumerate}
+
+
 %\section{Delay}
 %
 %\renewcommand{\theequation}{\theenumi}
