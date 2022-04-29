@@ -494,11 +494,23 @@ while the dots and dashes are printed on the screen, disconnect the EN wire from
 \numberwithin{equation}{enumi}
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
-\item It is possible to flash the Vaman-ESP32 wirelessly.
-\item Flash the following code 
+\item Flash the following code through USB-UART using a laptop.  We faced some issues with RPi.
 \begin{lstlisting}
-
+https://github.com/gadepall/vaman/tree/master/esp32/codes/ota/setup
 \end{lstlisting}
+		after entering your wifi username and password (in quotes below)
+\begin{lstlisting}
+#define STASSID "..." // Add your network credentials
+#define STAPSK  "..."
+\end{lstlisting}
+in src/main.cpp file
+\item Assuming that the username is gvv and password is abcd, flash the following code wirelessly
+\begin{lstlisting}
+#define STASSID "..." // Add your network credentials
+#define STAPSK  "..."
+\end{lstlisting}
+
+
 \end{enumerate}
 
 

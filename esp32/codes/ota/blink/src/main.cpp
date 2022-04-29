@@ -1,3 +1,17 @@
+#include <Arduino.h>
+
+#include <Arduino.h>
+
+// void setup(){
+// 	pinMode(18, OUTPUT);
+// }
+// void loop(){
+// 	digitalWrite(18, HIGH);
+// 	delay(100);
+// 	digitalWrite(18, LOW);
+// 	delay(100);
+// }
+
 //----------------------Skeleton Code--------------------//
 #include <WiFi.h>
 #include <WiFiUdp.h>
@@ -5,8 +19,8 @@
 
 //    Can be client or even host   //
 #ifndef STASSID
-#define STASSID "............"  // Add your network credentials
-#define STAPSK  "............"
+#define STASSID "gvv"  // Add your network credentials
+#define STAPSK  "abcd"
 #endif
 
 const char* ssid = STASSID;
@@ -35,6 +49,8 @@ void setup(){
   //-------------------//
   // Custom setup code //
   //-------------------//
+	pinMode(2, OUTPUT);	
+
 }
 
 void loop() {
@@ -43,4 +59,10 @@ void loop() {
   //-------------------//
   // Custom loop code  //
   //-------------------//
+  	digitalWrite(2, HIGH);
+	delay(100);
+	digitalWrite(2, LOW);
+	delay(100);
 }
+
+
