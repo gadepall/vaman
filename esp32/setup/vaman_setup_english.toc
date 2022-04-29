@@ -5,3 +5,4 @@
 \contentsline {section}{\numberline {5}Raspberry Pi}{2}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Enable Serial Communication}{2}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Flash Vaman-ESP}{2}{subsection.5.2}%
+\contentsline {section}{\numberline {6}OTA}{3}{section.6}%

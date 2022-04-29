@@ -504,11 +504,23 @@ https://github.com/gadepall/vaman/tree/master/esp32/codes/ota/setup
 #define STAPSK  "..."
 \end{lstlisting}
 in src/main.cpp file
+\item You should be able to find the ip address of your vaman-esp using 
+\begin{lstlisting}
+ifconfig
+nmap -sn 192.168.231.1/24
+\end{lstlisting}
+where your computer's ip address is the output of ifconfig and given by 192.168.231.x
 \item Assuming that the username is gvv and password is abcd, flash the following code wirelessly
 \begin{lstlisting}
-#define STASSID "..." // Add your network credentials
-#define STAPSK  "..."
+https://github.com/gadepall/vaman/tree/master/esp32/codes/ota/blink
 \end{lstlisting}
+through 
+\begin{lstlisting}
+pio run 
+pio run -t nobuild -t upload --upload-port 192.168.231.245
+\end{lstlisting}
+where you may replace the above ip address with the ip address of your vaman-esp.
+\item Connect pin 2 to an LED  to see it blinking.
 
 
 \end{enumerate}
