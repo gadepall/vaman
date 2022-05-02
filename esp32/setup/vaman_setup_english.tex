@@ -483,7 +483,7 @@ upload_port = /dev/serial0
 \begin{lstlisting}
 pio run -t nobuild -t upload
 \end{lstlisting}
-while the dots and dashes are printed on the screen, disconnect the EN wire from GND.  The Vaman-ESP should now flash.
+while the dots and dashes are printed on the screen, disconnect the EN wire from GND.   Make sure that the Vaman board is not powering any device while flashing.  The Vaman-ESP should now flash.
 \item After flashing, disconnect pin 0 on Vaman-ESP from GND. Power on Vaman and the appropriate LED will blink.
 \end{enumerate}
 
@@ -496,7 +496,7 @@ while the dots and dashes are printed on the screen, disconnect the EN wire from
 \numberwithin{table}{enumi}
 \item Flash the following code through USB-UART using a laptop.  We faced some issues with RPi.
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/esp32/codes/ota/setup
+https://github.com/gadepall/vaman/tree/master/esp32/codes/ide/ota/setup
 \end{lstlisting}
 		after entering your wifi username and password (in quotes below)
 \begin{lstlisting}
@@ -512,7 +512,7 @@ nmap -sn 192.168.231.1/24
 where your computer's ip address is the output of ifconfig and given by 192.168.231.x
 \item Assuming that the username is gvv and password is abcd, flash the following code wirelessly
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/esp32/codes/ota/blink
+https://github.com/gadepall/vaman/tree/master/esp32/codes/ide/blink
 \end{lstlisting}
 through 
 \begin{lstlisting}

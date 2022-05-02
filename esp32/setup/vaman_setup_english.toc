@@ -1,8 +1,8 @@
 \contentsline {section}{\numberline {1}Software}{1}{section.1}%
 \contentsline {section}{\numberline {2}Hardware Setup}{1}{section.2}%
-\contentsline {section}{\numberline {3}Blink LED}{1}{section.3}%
+\contentsline {section}{\numberline {3}Blink LED}{2}{section.3}%
 \contentsline {section}{\numberline {4}ESP IDF}{2}{section.4}%
 \contentsline {section}{\numberline {5}Raspberry Pi}{2}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Enable Serial Communication}{2}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Flash Vaman-ESP}{2}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Flash Vaman-ESP}{3}{subsection.5.2}%
 \contentsline {section}{\numberline {6}OTA}{3}{section.6}%
