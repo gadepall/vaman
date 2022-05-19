@@ -380,8 +380,8 @@ Plug the LCD in Fig. \ref{fig:lcd} to the breadboard.
 \end{figure}
 
 %
-\item
-Connect the 220$\Omega$ resistance from $V_{cc}$ to pin 15 (Led+) of the LCD.
+%\item
+%Connect the 220$\Omega$ resistance from $V_{cc}$ to pin 15 (Led+) of the LCD.
 
 %
 %%
@@ -393,21 +393,25 @@ Connect the 220$\Omega$ resistance from $V_{cc}$ to pin 15 (Led+) of the LCD.
 %Connect pin 3 of the LCD to GND.  This is required for contrast.
 %
 \item
-Connect the ESP32 pins to LCD pins as per Table \ref{Table:1}.
+Connect the ESP32 pins to LCD pins as per Table \ref{Table:1}. Make sure that all 5V sources are connected to the LCD through a 220 $\Omega$ resistance.
 \begin{table}[h]
 \centering
 \input{./figs/table1.tex}
-\caption{}
+\caption{Make sure that all 5V sources are connected to the LCD through a 220 $\Omega$ resistance.}
 \label{Table:1}
 \end{table}
 
-\item Execute the following code
-\item
-Execute the following code after editing the wifi credentials
+\item Execute the following code after editing the wifi credentials
 
 \begin{lstlisting}
 https://github.com/gadepall/vaman/tree/master/esp32/codes/ide/lcd/setup
 \end{lstlisting}
+You should see the following  message
+\begin{lstlisting}
+Hi
+This is CSP Lab
+\end{lstlisting}
+\item Modify the above code to display your name.
 \end{enumerate}
 \section{Measuring the resistance}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
@@ -502,6 +506,7 @@ V_{out}&=\frac{R_1}{R_1+R_2}V_{in} \\
 \end{align}
 %
 In the above, $V_{in} = 5$V, $R_1 = 220 \Omega$.
+\item Repeat the exercise with another unknown resistance.
 \end{enumerate}
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.8)  17 MAY 2022 11:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.8)  19 MAY 2022 14:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1072,28 +1072,28 @@ Package epstopdf Info: Source file: <./figs/breadboard.eps>
 (epstopdf)                    size: 115800 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/breadboard-eps-conv
 erted-to.pdf ./figs/breadboard.eps>
-(epstopdf)             \includegraphics on input line 425.
+(epstopdf)             \includegraphics on input line 429.
 Package epstopdf Info: Output file is already uptodate.
 <./figs/breadboard-eps-converted-to.pdf, id=5, 774.895pt x 252.945pt>
 File: ./figs/breadboard-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs/breadboard-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/breadboard-eps-converted-to.pdf  used on input 
-line 425.
+line 429.
 (pdftex.def)             Requested size: 252.0pt x 82.25632pt.
-(./figs/vrr.tex) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./figs/lcd-eps-converted-to.pdf>] [2 <./figs/breadboard-eps-converted-to.pdf>
-]
+ <./figs/lcd-eps-converted-to.pdf>] (./figs/vrr.tex) [2 <./figs/breadboard-eps-
+converted-to.pdf>]
 (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 34343 strings out of 478238
- 815885 string characters out of 5850457
- 1528237 words of memory out of 5000000
- 52136 multiletter control sequences out of 15000+600000
+ 34353 strings out of 478238
+ 815963 string characters out of 5850457
+ 1532237 words of memory out of 5000000
+ 52146 multiletter control sequences out of 15000+600000
  548989 words of font info for 205 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 84i,13n,80p,496b,1235s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,13n,80p,496b,1688s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/te
 xmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/share/texmf-dist/fonts/type1
 /public/txfonts/rtxr.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/rtxs
@@ -1102,7 +1102,7 @@ xmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb>
 </usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 196410 bytes).
+Output written on main.pdf (2 pages, 196748 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream
