@@ -524,6 +524,27 @@ where you may replace the above ip address with the ip address of your vaman-esp
 
 
 \end{enumerate}
+\section{OTA}
+\renewcommand{\theequation}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\numberwithin{table}{enumi}
+\item Connect the pins between Vaman-ESP32 and Vaman-PYGMY as per Table \ref{table:onboard}
+\begin{table}[h]
+\centering
+\input{./tables/onboard.tex}
+\caption{}
+\label{table:onboard}
+\end{table}
+\item Flash the following code OTA
+\begin{lstlisting}
+https://github.com/gadepall/vaman/tree/master/esp32/codes/ide/ota/blinkt
+\end{lstlisting}
+You should see the onboard green LED blinking.
+\item Change the blink duration to 100 ms.
+\end{enumerate}
 
 
 %\section{Delay}
