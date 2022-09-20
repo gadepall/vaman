@@ -17,7 +17,7 @@
 %\restoresymbol{TXF}{iint}
 %\usepackage{wasysym}
 \usepackage{amsthm}
-\usepackage{iithtlc}
+%\usepackage{iithtlc}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -187,21 +187,18 @@ literate = {-}{-}1
 
 \title{
 %	\logo{
-Digital Design through Pygmy
+Display control through C 
+%वामन द्वारा सप्तांश प्रदर्शी का नियंत्रण
+%वामन द्वारा सप्तांश प्रदर्शी का नियंत्रण
 %	}
 }
 \author{ 
 %गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
 %	\thanks{*रचयिता भारतीय प्रौद्योगिकी संस्थान, हैदराबाद,५०२२८५ के विद्युत अभियान्त्रिकी विभाग में कार्यरत हैं, ईमेल:gadepall@ee.iith.ac.in। यह लेख मुक्त स्रोत विचारधारा के अनुरूप  है।}
 G V V Sharma$^{*}$% <-this % stops a space
-	\thanks{*The author is with the Department of Electrical Engineering, IIT Hyderabad, 502285. email:gadepall@ee.iith.ac.in. All content in this manual is released under GNU/GPL.}
+	\thanks{*The author is with the Department of Electrical Engineering, IIT Hyderabad, 502285. email:gadepall@ee.iith.ac.in। All content in this manual is released under GNU/GPL.}
 	
 }	
-
-% \author{ गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
-% 	\thanks{*रचयिता भारतीय प्रौद्योगिकी संस्थान, हैदराबाद,५०२२८५ के विद्युत अभियान्त्रिकी विभाग में कार्यरत हैं, ईमेल:gadepall@ee.iith.ac.in। यह लेख मुक्त स्रोत विचारधारा के अनुरूप  है।}
-	
-% }	
 %\title{
 %	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
 %}
@@ -276,13 +273,13 @@ G V V Sharma$^{*}$% <-this % stops a space
 
 \bigskip
 
-\renewcommand{\thefigure}{\theenumi}
-\renewcommand{\thetable}{\theenumi}
-% \renewcommand{\abstractname}{सार}
-% \renewcommand{\nomname}{नामकरण}
-% \renewcommand{\solution}{हल: }
-% \renewcommand{\figurename}{आकृति.}
-% \renewcommand{\tablename}{सारणी.}
+%\renewcommand{\thefigure}{\theenumi}
+%\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\abstractname}{सार}
+%\renewcommand{\nomname}{नामकरण}
+%\renewcommand{\solution}{हल: }
+%\renewcommand{\figurename}{Fig. .}
+%\renewcommand{\tablename}{Table.}
 %\renewcommand{\theequation}{\theenumi}
 
 %\begin{abstract}
@@ -315,9 +312,8 @@ G V V Sharma$^{*}$% <-this % stops a space
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-  This document shows how to use the pygmy to design a decade counter using a finite state machine (FSM).
-%इस आलेख में वामन को  दशक गणित्र के रूप में उपयोग करने का विधान प्रस्तुत है।
-
+This document shows how to implement a decade counter using arm-gcc on Vaman.
+%इस आलेख में वामन को  दशक गणित्र के रूप में उपयोग करने का विधान प्रस्तुत है.
 
 
 %ॐ श्री गणेशाय नमः॥
@@ -327,15 +323,12 @@ G V V Sharma$^{*}$% <-this % stops a space
 \end{abstract}
 
 %\section{Nomenclature}
-% \printnomenclature[1.7in]
-% \input{hindi/nomen.tex}
+%\printnomenclature[1.7in]
+%\input{hindi/nomen.tex}
 \section{Software}
-%\section{तंत्रांश}
-All codes in this document are available at the following links. 
-%इस आलेख के समस्त क्रमादेश निम्न जालबन्धन में उपलब्ध हैं।
+All codes used in this document are available at the following link
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/arm/codes/decoders
-https://github.com/gadepall/vaman/tree/master/arm/codes/fsm
+https://github.com/gadepall/vaman/tree/master/arm/codes/sevenseg/
 \end{lstlisting}
 %
 \section{Setup}
@@ -346,117 +339,16 @@ https://github.com/gadepall/vaman/tree/master/arm/codes/fsm
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-
-
-\item Execute Table  \ref{table:disp_dec} using the pygmy and a seven segment display. 
-\\
-\solution The outputs $a,b,c,d,e,f,g$ in Table  \ref{table:disp_dec}  are expressed in terms of the inputs  $A,B,C,D$ through the following
-equations. 
-%
-\begin{align}
-\label{eq:disp_a}
-a &= AB^{\prime}C^{\prime}D^{\prime}+A^{\prime}B^{\prime}CD^{\prime}
-\\
-\label{eq:disp_b}
-b &= AB^{\prime}CD^{\prime}+A^{\prime}BCD^{\prime}
-\\
-\label{eq:disp_c}
-c &= {D}^{\prime}{C}^{\prime}B{A}^{\prime}
-\\
-d &= AB^{\prime}C^{\prime}D^{\prime}+A^{\prime}B^{\prime}CD^{\prime}+ABCD^{\prime}+AB^{\prime}C^{\prime}D
-\label{eq:disp_d}
-\\
-e &= AB^{\prime}C^{\prime}D^{\prime}+ABC^{\prime}D^{\prime}+A^{\prime}B^{\prime}CD^{\prime}+AB^{\prime}CD^{\prime}
-\nonumber \\
-&\quad +ABCD^{\prime}+AB^{\prime}C^{\prime}D
-\label{eq:disp_e}
-\\
-f &= AB^{\prime}C^{\prime}D^{\prime}+A^{\prime}BC^{\prime}D^{\prime}+ABC^{\prime}D^{\prime}+ABCD^{\prime}
-\label{eq:disp_f}
-\\
-g &= A^{\prime}B^{\prime}C^{\prime}D^{\prime}+AB^{\prime}C^{\prime}D^{\prime}+ABCD^{\prime}
-\label{eq:disp_g}
-\end{align}
-\begin{table}
-\centering
-\input{./tables/disp_dec.tex}
-\caption{Truth table for the display decoder}
-\label{table:disp_dec}
-\end{table}
-%
-Now execute the following code.  
-\begin{lstlisting}
-codes/decoders/dispdec/main.c
-\end{lstlisting}
-%Connect $A, B, C, D$ को GND से योजित करें।  तत्पश्चात चरों के भिन्न संचय के लिये प्रदर्शी में प्राप्त अंकों को सारणी \ref{table:disp_dec}  से सत्यापित करें।
-For different values of $A,B,C,D$, execute the above code to verify Table \ref{table:disp_dec}.
-
-%\item सारणी \ref{table:counter_decoder} में एक परवर्ती निष्कूटक के गुणधर्म का उल्लेख है।  बूलीय समीकरणों के द्वारा $A,B,C,D$ को $W,X,Y,Z$ के व्यञ्जकों में व्यक्त करें।  इसके पश्चात वामन के द्वारा परवर्ती निष्कूटक को कार्यान्वयित करें। 
-
-\item Table \ref{table:counter_decoder} shows the logic for the incrementing decoder.  Express $A,B,C,D$ in terms of $W,X,Y,Z$.
-\label{prob:counter_decoder}
-\begin{table}
-\centering
-\input{./tables/counter_decoder.tex}
-\caption{Truth table for the incrementing decoder}
-\label{table:counter_decoder}
-\end{table}
-\\
-\solution The desired expressions are available below. 
-\begin{align}
-\label{eq:inc_A}
-A &= W^{\prime}X^{\prime}Y^{\prime}Z^{\prime} + W^{\prime}XY^{\prime}Z^{\prime}
-+W^{\prime}X^{\prime}YZ^{\prime}
-\nonumber \\
- & \quad +W^{\prime}XYZ^{\prime}
-+W^{\prime}X^{\prime}Y^{\prime}Z
-\\
-\label{eq:inc_B}
-B &= WX^{\prime}Y^{\prime}Z^{\prime} + W^{\prime}XY^{\prime}Z^{\prime}
-\nonumber \\ 
-& \quad 
-+WX^{\prime}YZ^{\prime}
-+W^{\prime}XYZ^{\prime}
-\\
-\label{eq:inc_C}
-C &= WXY^{\prime}Z^{\prime} + W^{\prime}X^{\prime}YZ^{\prime}
-\nonumber \\ 
-& \quad 
-+WX^{\prime}YZ^{\prime}
-+W^{\prime}XYZ^{\prime}
-\\
-D &= WXYZ^{\prime} + W^{\prime}X^{\prime}Y^{\prime}Z
-\label{eq:inc_D}
-\end{align}
-Execute the following code.  You should see the next number displayed.
-%निम्न क्रमादेश का चालयन करें। प्रदर्शी में परवर्ती अंक उत्पन्न होंगे।
-
-\begin{lstlisting}
-codes/decoders/incdec/main.c
-\end{lstlisting}
-%
-% \item आकृति. \ref{fig:pin_sheet} में  वामन के समस्त कुशाव्यूह  प्रस्तुत हैं।  कुशाव्यूह J5 को  आकृति \ref{fig:sevenseg} में प्रदत्त सप्तांश प्रदर्शी के कुशों से सारणी \ref{table:vaman_dispdec} के द्वारा योजित करें। ध्यान  रहे कि COM एवं 3.3V के मध्य एक प्रतिरोधी अनिवार्य है।  तत्पश्चात निम्न क्रमादेश का चालयन  करें। 
-%
-\item Fig. \ref{fig:pin_sheet} shows the pin diagram for the pygmy.  Connect the pins in bank J5 to the seven segment display using
-Fig. \ref{fig:sevenseg} and Table \ref{table:vaman_dispdec}.  Do not forget to put a resistor between COM and 3.3V.  Then execute the following code 
-\begin{lstlisting}
-codes/fsm/dispdec/main.c
-\end{lstlisting}
-%
-
+\item Fig.\ref{fig:pin_sheet} shows all the pin banks of the Vaman. Connect the pins of the
+display in Fig.  \ref{fig:sevenseg} to bank J5 of the Vaman using Table \ref{table:sevenseg}.
+The COM pin should be connected to 3.3V through a resistor.
 \begin{table}[!ht]
 \centering
-\parbox{.45\columnwidth}{
-%\resizebox{0.5\columnwidth}{!}{
-\input{tables/pygmy_sevenseg.tex}
+\resizebox{\columnwidth}{!}{
+\input{tables/Vaman_sevenseg.tex}
 }
-\hfill
-\parbox{.45\columnwidth}{
-%\resizebox{0.5\columnwidth}{!}{
-\input{tables/pygmy_dispdec.tex}
-}
-\caption{Pin connection between the pygmy and seven segment display}
-\label{table:vaman_dispdec}
+\caption{Display-Vaman connection.}
+\label{table:sevenseg}
 \end{table}
 
 \begin{figure}[!ht]
@@ -464,24 +356,62 @@ codes/fsm/dispdec/main.c
 \resizebox{\columnwidth}{!}{
 \input{figs/sevenseg.tex}
 }
-\caption{Seven segment display. }
+\caption{Seven Segment Display}
 \label{fig:sevenseg}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg12.tex}
+}
+\caption{Pictorial representation of Table \ref{table:arduinoport}.}
+\label{fig:sevenseg12}
 \end{figure}
 
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width = \textwidth]{figs/pin_sheet.png}
-\caption{Pin diagram}
+\caption{Pin Diagram}
 \label{fig:pin_sheet}
 \end{figure*}
-%
-\item Modify the above code to obtain a decade counter.
+
+
+
+\item Now execute the following code
+\label{code:sevenseg}
+\begin{lstlisting}
+codes/sevenseg/static/src/main.c
+\end{lstlisting}
+Flash static.bin obtained upon execution of the above code to the Vaman.  You should see the number 7 on the display.  The following function generates this number.
+\begin{lstlisting}
+sevenseg(0,0,0,1,1,1,1);
+void sevenseg(int a, int b, int c, int d, int e, int f, int g)                                     
+{
+    //Seven Segment GPIO
+    PyHal_GPIO_Set(4,a);//a
+    PyHal_GPIO_Set(5,b);//b
+    PyHal_GPIO_Set(6,c);//c
+    PyHal_GPIO_Set(7,d);//d
+    PyHal_GPIO_Set(8,e);//e
+    PyHal_GPIO_Set(10,f);//f
+    PyHal_GPIO_Set(11,g);//g
+}
+}
+\end{lstlisting}
+\item Modify the above program using Table \ref{table:arduinoport} and Fig. \ref{fig:sevenseg12} 
+to display 0-9.
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tables/arduinoport.tex}
+}
+\caption{Decimal number generation on the display. }
+\label{table:arduinoport}
+\end{table}
 \end{enumerate}
-
 %
-
-\section{Decade Counter }
+\section{Examples}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
@@ -489,25 +419,33 @@ codes/fsm/dispdec/main.c
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-\item Use the pygmy to implement all the decoders in Fig.  \ref{fig:vaman_decade_counter}.  Implement the delay using a flip flop.  This is an 
-example of an FSM which is implemented using a sequential circuit.
 
-% के आधार पर क्रमादेश \ref{prob:counter_decoder}
-% में संशोधन करें एवं वामन के द्वारा दशक गणित्र का निर्माण करें।
-\begin{figure}[!ht]
+
+\item   Table \ref{table:sevenseg} and PU 64 Table in 
+Fig.  \ref{fig:pins}  show how to use the pins of the Vaman to drive the seven segment display.
+%इसमें संशोधन कर वामन के कुशों के अनेक संचय के लिए क्रमादेश \ref{code:sevenseg} का चालयन करें.
+\begin{figure*}[!ht]
 \centering
-\resizebox{\columnwidth}{!}{
-\input{figs/pygmy_decade_counter.tex}
-}
-\caption{Block diagram of a decade counter.}
-\label{fig:vaman_decade_counter}
-\end{figure}
-
-
+\includegraphics[width = \textwidth]{figs/pins.jpg}
+\caption{Pin map.}
+\label{fig:pins}
+\end{figure*}
+\item Use a function taking decimal input in the code in  \ref{code:sevenseg} to generate 
+numbers on the display.
+\\
+\solution  Execute the following file.
+\begin{lstlisting}
+codes/sevenseg/decimal/main.c
+\end{lstlisting}
+\item Program the Vaman to function as a decade counter.
+\\
+\solution Execute the following code.
+\begin{lstlisting}
+codes/sevenseg/loop/main.c
+\end{lstlisting}
 \end{enumerate}
 %
 
 \end{document}
-
 
 

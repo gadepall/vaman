@@ -17,7 +17,7 @@
 %\restoresymbol{TXF}{iint}
 %\usepackage{wasysym}
 \usepackage{amsthm}
-\usepackage{iithtlc}
+%\usepackage{iithtlc}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -58,13 +58,13 @@
 \usepackage{chngcntr}
 \usepackage{blkarray}
 \usepackage{karnaugh-map}
-%\usepackage{fontspec}
+\usepackage{fontspec}
 \usepackage[intoc]{nomencl}
 \makenomenclature
 
 %\usetikzlibrary{arrows, shapes.gates.logic.US, calc}
 \usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
-%\setmainfont{Sanskrit_2003.ttf}
+\setmainfont{Sanskrit_2003.ttf}
 %\setmainfont{Nakula.ttf}
 %\setmainfont{Lohit-Devanagari.ttf}
 
@@ -182,17 +182,15 @@ literate = {-}{-}1
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 
-%\vspace{3cm}
+\vspace{3cm}
 
 \title{
-	\logo{
-Introduction to Pygmy
-	}
+%	\logo{
+Digital Design through Vaman
+%	}
 }
 \author{ G. V. V. Sharma $^{*}$% <-this % stops a space
 	\thanks{*The author is with the Department of Electrical Engineering, IIT Hyderabad, 502285, India. email: gadepall@ee.iith.ac.in.  All material in this document is released under GNU GPL.  Free to use for anything.}
-%\author{ गाड़ेपल्लि वेंकट विश्वनाथ शर्मा $^{*}$% <-this % stops a space
-%	\thanks{*रचयिता भारतीय प्रौद्योगिकी संस्थान, हैदराबाद,५०२२८५ के विद्युत अभियान्त्रिकी विभाग में कार्यरत हैं, ईमेल:gadepall@ee.iith.ac.in। यह लेख मुक्त स्रोत विचारधारा के अनुरूप  है।}
 	
 }	
 %\title{
@@ -269,8 +267,8 @@ Introduction to Pygmy
 
 \bigskip
 
-%\renewcommand{\thefigure}{\theenumi}
-%\renewcommand{\thetable}{\theenumi}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
 %\renewcommand{\abstractname}{सार}
 %\renewcommand{\nomname}{नामकरण}
 %\renewcommand{\solution}{हल: }
@@ -308,7 +306,9 @@ Introduction to Pygmy
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-This document provides a simple introduction to software and hardware using the Pygmy FPGA/microcontroller board.  The exercises provided here are suitable for students from primary school till college.
+In this document we show how to design a decade counter using Vaman and
+boolean logic.
+
 
 %ॐ श्री गणेशाय नमः॥
 %\\
@@ -319,13 +319,12 @@ This document provides a simple introduction to software and hardware using the 
 %\section{Nomenclature}
 %\printnomenclature[1.7in]
 %\input{hindi/nomen.tex}
-%
 \section{Software}
-Download codes from the following link
+All codes used in this manual are available at the following link.
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/fpga/setup/codes/
+https://github.com/gadepall/vaman/tree/master/fpga/boolean/codes
 \end{lstlisting}
-%%
+%
 \section{Setup}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
@@ -334,122 +333,146 @@ https://github.com/gadepall/vaman/tree/master/fpga/setup/codes/
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-\item Connect the Pygmy to the Raspberry Pi through USB.
-\item There is a button and an LED to the left of the USB port on the Pygmy.  There is another button to the right of teh LED.
-\item Press the right button first and immediately press the left button.  The LED will be blinking green.  The Pygmy is now in bootloader mode.
+
+\item Fig. \ref{fig:pin_sheet} shows the pin diagram for the Vaman.  Using the bank J5, connect the pins of  the seven segment display in Fig. \ref{fig:sevenseg} to the Vaman according to Table  \ref{table:vaman_dispdec}.  Make sure that the COM pin is connected to 3.3V through a resistor.
+\begin{table}[!ht]
+\centering
+\parbox{.45\columnwidth}{
+%\resizebox{0.5\columnwidth}{!}{
+\input{tables/pygmy_sevenseg.tex}
+}
+\hfill
+\parbox{.45\columnwidth}{
+%\resizebox{0.5\columnwidth}{!}{
+\input{tables/pygmy_dispdec.tex}
+}
+\caption{Pin connections between Vaman and the display.}
+\label{table:vaman_dispdec}
+\end{table}
+
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg.tex}
+}
+\caption{Seven segement display}
+\label{fig:sevenseg}
+\end{figure}
+
+
+\begin{figure*}[!ht]
+\centering
+\includegraphics[width = \textwidth]{figs/pin_sheet.png}
+\caption{Pin diagram}
+\label{fig:pin_sheet}
+\end{figure*}
+
+\item Implement  Table \ref{table:disp_dec} using the Vaman and the display.
+\\
+\solution In Table \ref{table:disp_dec}, the output variables   $a,b,c,d,e,f,g$ can be expressed
+in terms of the input variables $W,X,Y,Z$ as
 %
-\item Login to termux-ubuntu on the android device and execute the following commands
+\begin{align}
+\label{eq:disp_a}
+a &= WX^{\prime}Y^{\prime}Z^{\prime}+W^{\prime}X^{\prime}YZ^{\prime}
+\\
+\label{eq:disp_b}
+b &= WX^{\prime}YZ^{\prime}+W^{\prime}XYZ^{\prime}
+\\
+\label{eq:disp_c}
+c &= {Z}^{\prime}{Y}^{\prime}X{W}^{\prime}
+\\
+d &= WX^{\prime}Y^{\prime}Z^{\prime}+W^{\prime}X^{\prime}YZ^{\prime}+WXYZ^{\prime}+WX^{\prime}Y^{\prime}Z
+\label{eq:disp_d}
+\\
+e &= WX^{\prime}Y^{\prime}Z^{\prime}+WXY^{\prime}Z^{\prime}+W^{\prime}X^{\prime}YZ^{\prime}+WX^{\prime}YZ^{\prime}
+\nonumber \\
+&\quad +WXYZ^{\prime}+WX^{\prime}Y^{\prime}Z
+\label{eq:disp_e}
+\\
+f &= WX^{\prime}Y^{\prime}Z^{\prime}+W^{\prime}XY^{\prime}Z^{\prime}+WXY^{\prime}Z^{\prime}+WXYZ^{\prime}
+\label{eq:disp_f}
+\\
+g &= W^{\prime}X^{\prime}Y^{\prime}Z^{\prime}+WX^{\prime}Y^{\prime}Z^{\prime}+WXYZ^{\prime}
+\label{eq:disp_g}
+\end{align}
+\begin{table}
+\centering
+\input{./tables/disp_dec.tex}
+\caption{Truth table for the display decoder.}
+\label{table:disp_dec}
+\end{table}
+%
+Execute the following program.
 \begin{lstlisting}
-cd /storage/emulated/0/Download
-svn co https://github.com/gadepall/pygmy/trunk/installation/blink
-ql_symbiflow -compile -src /storage/emulated/0/Download/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p quickfeather.pcf -dump binary
-scp /storage/emulated/0/Download/blink/helloworldfpga.bin pi@192.168.0.114:
+codes/decoders/dispdec.v
+codes/decoders/Vaman.pcf
 \end{lstlisting}
-Make sure that the appropriate IP address for the raspberry pi is given in the above command.
-\item Now execute the following commands on the raspberry pi.
+Connect $W, X, Y, Z$ to GND.  For different values of the input variables, verify the output
+in on the display using Table \ref{table:disp_dec}.
+\item Table  \ref{table:counter_decoder} describes the properties of the incrementing decoder.
+Using Boolean logic, express $A,B,C,D$ in terms of  $W,X,Y,Z$.  Subsequently, implement this decoder by implementing the the expressions so obtained in the Vaman using verilog.
+\label{prob:counter_decoder}
+\begin{table}
+\centering
+\input{./tables/counter_decoder.tex}
+\caption{Truth table for the incrementing decoder.}
+\label{table:counter_decoder}
+\end{table}
+\\
+\solution The following equations contain the desired expressions.
+\begin{align}
+\label{eq:inc_A}
+A &= W^{\prime}X^{\prime}Y^{\prime}Z^{\prime} + W^{\prime}XY^{\prime}Z^{\prime}
++W^{\prime}X^{\prime}YZ^{\prime}
+\nonumber \\
+ & \quad +W^{\prime}XYZ^{\prime}
++W^{\prime}X^{\prime}Y^{\prime}Z
+\\
+\label{eq:inc_B}
+B &= WX^{\prime}Y^{\prime}Z^{\prime} + W^{\prime}XY^{\prime}Z^{\prime}
+\nonumber \\ 
+& \quad 
++WX^{\prime}YZ^{\prime}
++W^{\prime}XYZ^{\prime}
+\\
+\label{eq:inc_C}
+C &= WXY^{\prime}Z^{\prime} + W^{\prime}X^{\prime}YZ^{\prime}
+\nonumber \\ 
+& \quad 
++WX^{\prime}YZ^{\prime}
++W^{\prime}XYZ^{\prime}
+\\
+D &= WXYZ^{\prime} + W^{\prime}X^{\prime}Y^{\prime}Z
+\label{eq:inc_D}
+\end{align}
+Execute the following code.  The next number should be displayed.
 \begin{lstlisting}
-python3 /root/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga
+codes/decoders/incdec.v
 \end{lstlisting}
-\item Make sure that the correct USB port address is given in the above command.  Then press the button to the right of the USB port.  After some time, the LED will start blinking red.
 \end{enumerate}
-%%
-\section{Frequency}
 %
+\section{Decade Counter}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{enumi}
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
-\item In the following verilog program, 
-\label{eq:program}
-\begin{lstlisting}
-codes/blink/helloworldfpga.v
-\end{lstlisting}
-pay attention to the following lines
-%%
-\begin{lstlisting}
-delay = delay+1;                                                                                                   
-if(delay > 20000000)
-begin
-delay=27'b0;
-led=!led;
-end
-\end{lstlisting}
-%%
-It may be deduced from the above that the blink frequency is 20 MHz.
-\item In instruction  \ref{eq:program}, replace
-\label{eq:binary}
-\begin{lstlisting}
-if(delay > 20000000)
-\end{lstlisting}
-%
-with
-\begin{lstlisting}
-if(delay==27'b1001100010010110100000000)
-\end{lstlisting}
-and execute the verilog code.
-\item Since the delay is 20 MHz, the blink period is 1 second.  Modify the verilog code
-so that the blink period becomes 0.5s.
-\item Find the bit length of 20 MHz.
-\\
-\solution 
-\begin{align}
-\log_2\brak{20000000} \approx 27
-\end{align}
-\item Obtain the above answer using a Python code.
-\\
-\solution Exeucte the following code and compare with instruction  \ref{eq:binary}.
-\begin{lstlisting}
-codes/blink/freq_count.py
-\end{lstlisting}
-\item Replace  the following line in the code in instruciton  \ref{eq:program} 
-\begin{lstlisting}
-assign redled = led; //If you want to change led colour to red,
-\end{lstlisting}
-with
-\begin{lstlisting}
-assign blueled = led; 
-\end{lstlisting}
-and execute the code.
-\item Ensure that the LED stays on in green colour.
-\solution  Execute the following code
-\begin{lstlisting}
-codes/blink/onoff.v
-\end{lstlisting}
-\item  Using Table \ref{table:input} and Fig.  \ref{fig:pin_sheet}, control the onboard LED
-through an external input. Connect an external LED and control it using an output pin as well.
 
-
-\begin{table}[]
+\item Using Fig. \ref{fig:vaman_decade_counter} and modifying the code in Problem \ref{prob:counter_decoder}, design the decade counter.
+\begin{figure}[!ht]
 \centering
-\begin{tabular}{|l|l|l|}
-\hline
-Type & Pygmy Pin  &  Connection \\ \hline
-Input &  IO\_28 &  GND\\ \hline
-Output  & IO\_11  &  LED\\ \hline
-\end{tabular}
-\caption{Pygmy Input/Output.}
-\label{table:input}
-\end{table}
-
-\begin{figure*}[!ht]
-\centering
-\includegraphics[width = \textwidth]{figs/pin_sheet.png}
-\caption{कुश आरेख}
-\label{fig:pin_sheet}
-\end{figure*}
-\solution Execute the following code and take out the input pin connect to GND. Plug it again.
-Do this repeatedly.
-
-\begin{lstlisting}
-codes/input/blink_ip.v
-codes/input/pygmy.pcf
-\end{lstlisting}
-
-
+\resizebox{\columnwidth}{!}{
+\input{figs/pygmy_decade_counter.tex}
+}
+\caption{Block diagram of the decade counter.}
+\label{fig:vaman_decade_counter}
+\end{figure}
+\item Design and implement the down counter.
 \end{enumerate}
-\end{document}
+%
 
+\end{document}
 
 

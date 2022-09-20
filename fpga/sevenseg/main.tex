@@ -17,7 +17,7 @@
 %\restoresymbol{TXF}{iint}
 %\usepackage{wasysym}
 \usepackage{amsthm}
-\usepackage{iithtlc}
+%\usepackage{iithtlc}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -186,10 +186,11 @@ literate = {-}{-}1
 
 \title{
 %	\logo{
-Digital Design through Pygmy
+Display Control through Vaman
 %	}
 }
-\author{ G. V. V. Sharma $^{*}$% <-this % stops a space
+\author{ 
+G. V. V. Sharma $^{*}$% <-this % stops a space
 	\thanks{*The author is with the Department of Electrical Engineering, IIT Hyderabad, 502285, India. email: gadepall@ee.iith.ac.in.  All material in this document is released under GNU GPL.  Free to use for anything.}
 	
 }	
@@ -272,7 +273,7 @@ Digital Design through Pygmy
 %\renewcommand{\abstractname}{सार}
 %\renewcommand{\nomname}{नामकरण}
 %\renewcommand{\solution}{हल: }
-%\renewcommand{\figurename}{आकृति.}
+%\renewcommand{\figurename}{Fig. }
 %\renewcommand{\tablename}{सारणी.}
 %\renewcommand{\theequation}{\theenumi}
 
@@ -306,8 +307,8 @@ Digital Design through Pygmy
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-In this document we show how to design a decade counter using Pygmy and
-boolean logic.
+We show how to use Vaman as a decade counter.
+%इस आलेख में वामन को  दशक गणित्र के रूप में उपयोग करने का विधान प्रस्तुत है.
 
 
 %ॐ श्री गणेशाय नमः॥
@@ -322,7 +323,7 @@ boolean logic.
 \section{Software}
 All codes used in this manual are available at the following link.
 \begin{lstlisting}
-https://github.com/gadepall/vaman/tree/master/fpga/boolean/codes
+https://github.com/gadepall/vaman/tree/master/fpga/sevenseg/codes
 \end{lstlisting}
 %
 \section{Setup}
@@ -334,20 +335,17 @@ https://github.com/gadepall/vaman/tree/master/fpga/boolean/codes
 \numberwithin{table}{enumi}
 
 
-\item Fig. \ref{fig:pin_sheet} shows the pin diagram for the pygmy.  Using the bank J5, connect the pins of  the seven segment display in Fig. \ref{fig:sevenseg} to the pygmy according to Table  \ref{table:vaman_dispdec}.  Make sure that the COM pin is connected to 3.3V through a resistor.
+\item The pin sheet for the Vaman is available in Fig.  \ref{fig:pin_sheet}.  
+Connect the pins in the bank J5 of the Vaman with the seven segment display  shown in 
+Fig.  \ref{fig:sevenseg} according to Table \ref{table:sevenseg}.  Ensure that the COM pin
+is connected to 3.3V through a resistor.
 \begin{table}[!ht]
 \centering
-\parbox{.45\columnwidth}{
-%\resizebox{0.5\columnwidth}{!}{
+\resizebox{\columnwidth}{!}{
 \input{tables/pygmy_sevenseg.tex}
 }
-\hfill
-\parbox{.45\columnwidth}{
-%\resizebox{0.5\columnwidth}{!}{
-\input{tables/pygmy_dispdec.tex}
-}
-\caption{Pin connections between pygmy and the display.}
-\label{table:vaman_dispdec}
+\caption{Seven segment display - Vaman connection.}
+\label{table:sevenseg}
 \end{table}
 
 \begin{figure}[!ht]
@@ -355,104 +353,58 @@ https://github.com/gadepall/vaman/tree/master/fpga/boolean/codes
 \resizebox{\columnwidth}{!}{
 \input{figs/sevenseg.tex}
 }
-\caption{Seven segement display}
+\caption{seven segment display }
 \label{fig:sevenseg}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{figs/sevenseg12.tex}
+}
+\caption{Companion figure for Table \ref{table:arduinoport}. }
+\label{fig:sevenseg12}
 \end{figure}
 
 
 \begin{figure*}[!ht]
 \centering
 \includegraphics[width = \textwidth]{figs/pin_sheet.png}
-\caption{Pin diagram}
+\caption{Pin Diagram }
 \label{fig:pin_sheet}
 \end{figure*}
 
-\item Implement  Table \ref{table:disp_dec} using the pygmy and the display.
-\\
-\solution In Table \ref{table:disp_dec}, the output variables   $a,b,c,d,e,f,g$ can be expressed
-in terms of the input variables $W,X,Y,Z$ as
-%
-\begin{align}
-\label{eq:disp_a}
-a &= WX^{\prime}Y^{\prime}Z^{\prime}+W^{\prime}X^{\prime}YZ^{\prime}
-\\
-\label{eq:disp_b}
-b &= WX^{\prime}YZ^{\prime}+W^{\prime}XYZ^{\prime}
-\\
-\label{eq:disp_c}
-c &= {Z}^{\prime}{Y}^{\prime}X{W}^{\prime}
-\\
-d &= WX^{\prime}Y^{\prime}Z^{\prime}+W^{\prime}X^{\prime}YZ^{\prime}+WXYZ^{\prime}+WX^{\prime}Y^{\prime}Z
-\label{eq:disp_d}
-\\
-e &= WX^{\prime}Y^{\prime}Z^{\prime}+WXY^{\prime}Z^{\prime}+W^{\prime}X^{\prime}YZ^{\prime}+WX^{\prime}YZ^{\prime}
-\nonumber \\
-&\quad +WXYZ^{\prime}+WX^{\prime}Y^{\prime}Z
-\label{eq:disp_e}
-\\
-f &= WX^{\prime}Y^{\prime}Z^{\prime}+W^{\prime}XY^{\prime}Z^{\prime}+WXY^{\prime}Z^{\prime}+WXYZ^{\prime}
-\label{eq:disp_f}
-\\
-g &= W^{\prime}X^{\prime}Y^{\prime}Z^{\prime}+WX^{\prime}Y^{\prime}Z^{\prime}+WXYZ^{\prime}
-\label{eq:disp_g}
-\end{align}
-\begin{table}
-\centering
-\input{./tables/disp_dec.tex}
-\caption{Truth table for the display decoder.}
-\label{table:disp_dec}
-\end{table}
-%
-Execute the following program.
+
+
+\item Now execute the following code.
+\label{code:sevenseg}
 \begin{lstlisting}
-codes/decoders/dispdec.v
-codes/decoders/pygmy.pcf
+codes/static/sevenseg.v
 \end{lstlisting}
-Connect $W, X, Y, Z$ to GND.  For different values of the input variables, verify the output
-in on the display using Table \ref{table:disp_dec}.
-\item Table  \ref{table:counter_decoder} describes the properties of the incrementing decoder.
-Using Boolean logic, express $A,B,C,D$ in terms of  $W,X,Y,Z$.  Subsequently, implement this decoder by implementing the the expressions so obtained in the pygmy using verilog.
-\label{prob:counter_decoder}
-\begin{table}
-\centering
-\input{./tables/counter_decoder.tex}
-\caption{Truth table for the incrementing decoder.}
-\label{table:counter_decoder}
-\end{table}
-\\
-\solution The following equations contain the desired expressions.
-\begin{align}
-\label{eq:inc_A}
-A &= W^{\prime}X^{\prime}Y^{\prime}Z^{\prime} + W^{\prime}XY^{\prime}Z^{\prime}
-+W^{\prime}X^{\prime}YZ^{\prime}
-\nonumber \\
- & \quad +W^{\prime}XYZ^{\prime}
-+W^{\prime}X^{\prime}Y^{\prime}Z
-\\
-\label{eq:inc_B}
-B &= WX^{\prime}Y^{\prime}Z^{\prime} + W^{\prime}XY^{\prime}Z^{\prime}
-\nonumber \\ 
-& \quad 
-+WX^{\prime}YZ^{\prime}
-+W^{\prime}XYZ^{\prime}
-\\
-\label{eq:inc_C}
-C &= WXY^{\prime}Z^{\prime} + W^{\prime}X^{\prime}YZ^{\prime}
-\nonumber \\ 
-& \quad 
-+WX^{\prime}YZ^{\prime}
-+W^{\prime}XYZ^{\prime}
-\\
-D &= WXYZ^{\prime} + W^{\prime}X^{\prime}Y^{\prime}Z
-\label{eq:inc_D}
-\end{align}
-Execute the following code.  The next number should be displayed.
+Flash the helloworldfpga.bin file to Vaman. You should see the number 5 displayed.
+The following lines are used for generating numbers on the display.
 \begin{lstlisting}
-codes/decoders/incdec.v
+assign     a=0;
+assign     b=1;
+assign     c=0;
+assign     d=0;
+assign     e=1;
+assign     f=0;
+assign     g=0;
 \end{lstlisting}
+\item Modify the above code appropriately 
+with the help of  Table \ref{table:arduinoport} and  Fig.  \ref{fig:sevenseg12} 
+to generate the numbers from 0-9 on the display.
+\begin{table}[!ht]
+\centering
+\resizebox{\columnwidth}{!}{
+\input{tables/arduinoport.tex}
+}
+\caption{Pin values used for generating decimal numbers on the seven segment display. }
+\label{table:arduinoport}
+\end{table}
 \end{enumerate}
 %
-\section{Decade Counter}
+\section{Examples}
 \renewcommand{\theequation}{\theenumi}
 \renewcommand{\thefigure}{\theenumi}
 \begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
@@ -460,20 +412,45 @@ codes/decoders/incdec.v
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-\item Using Fig. \ref{fig:vaman_decade_counter} and modifying the code in Problem \ref{prob:counter_decoder}, design the decade counter.
-\begin{figure}[!ht]
+
+
+\item  Table \ref{table:sevenseg} and
+the PU 64 table in Fig. \ref{fig:pins}  explain the pin numbering in the following file.
+\begin{lstlisting}
+codes/static/Vaman.pcf
+\end{lstlisting}
+\item Execute the code below.  All the pins in the display are controlled using a 7 bit word.
+\begin{lstlisting}
+codes/static/sevenseg_word.v
+\end{lstlisting}
+The above file is used for generating the number 4 on the display.  The process is
+explained by the completion of 
+Table \ref{table:arduinoport}. 
+\begin{lstlisting}
+gpio_out=7'b0100100;
+\end{lstlisting}
+\begin{figure*}[!ht]
 \centering
-\resizebox{\columnwidth}{!}{
-\input{figs/pygmy_decade_counter.tex}
-}
-\caption{Block diagram of the decade counter.}
-\label{fig:vaman_decade_counter}
-\end{figure}
-\item Design and implement the down counter.
+\includegraphics[width = \textwidth]{figs/pins.jpg}
+\caption{Pin Definitions}
+\label{fig:pins}
+\end{figure*}
+\item Use a verilog function that takes a decimal input and display it on the seven segement
+display. 
+\\
+\solution  Execute the following code.
+\begin{lstlisting}
+codes/static/sevenseg_dec.v
+\end{lstlisting}
+\item Use the Vaman as a decade counter.
+\\
+\solution Execute the following code.
+\begin{lstlisting}
+codes/loop/decade_counter.v
+\end{lstlisting}
 \end{enumerate}
-%
+%%
 
 \end{document}
-
 
 
