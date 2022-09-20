@@ -17,7 +17,7 @@
 %\restoresymbol{TXF}{iint}
 %\usepackage{wasysym}
 \usepackage{amsthm}
-\usepackage{iithtlc}
+%\usepackage{iithtlc}
 \usepackage{mathrsfs}
 \usepackage{txfonts}
 \usepackage{stfloats}
@@ -187,7 +187,7 @@ literate = {-}{-}1
 
 \title{
 %	\logo{
-Introduction to ARM-GCC using Pygmy
+Introduction to ARM-GCC using Vaman
 %	}
 }
 \author{ 
@@ -310,7 +310,7 @@ G V V Sharma$^{*}$% <-this % stops a space
 %\IEEEpeerreviewmaketitle
 
 \begin{abstract}
-This document provides a simple introduction to ARM programming using Pygmy.
+This document provides a simple introduction to ARM programming using Vaman.
 %इस लेख में  वामन  के द्वारा आर्म-क्रमादेशन  से छात्रों का परिचय कराया जाएगा।
 
 
@@ -341,10 +341,10 @@ https://github.com/gadepall/vaman/tree/master/arm/codes/setup
 \numberwithin{figure}{enumi}
 \numberwithin{table}{enumi}
 
-\item Connect the raspberry pi to pygmy through USB.
+\item Connect the raspberry pi to Vaman through USB.
 \item On the left of the USB port, an LED and a button can be seen.  Another button is visible on
 the right of the USB port.
-\item Press the right button and immediately press the left button.  The green LED starts blinking.  The pygmy is now in download mode.
+\item Press the right button and immediately press the left button.  The green LED starts blinking.  The Vaman is now in download mode.
 mode.
 %दक्षिण गण्ड को दबाकर शीघ्र वाम गण्ड को दबायें।  हरित दीप श्मीलित होते हुए दिखेगा।  यह संकेत हैं कि वामन
 %क्रमादेश के लिए सिद्ध है।
@@ -362,7 +362,7 @@ Appropriately modify the above ip address before sending blink.bin to the pi.
 \item Now log on to the RPi and execute teh following
 %अब रास्पबेरी पै  में प्रवेश कर निम्न  आदेश का चालयन करें
 \begin{lstlisting}
-sudo python3 /home/pi/pygmy-dev/pygmy-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4-fpga
+sudo python3 /home/pi/Vaman-dev/Vaman-sdk/TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0  --m4app  blink.bin --mode m4-fpga
 \end{lstlisting}
 \item Enter the appropriate USB device port above while executing.  Press the button to the right
 after the above command is successfully executed.  The LED will start blinking. 
@@ -436,7 +436,7 @@ Input &  IO\_5 &  GND\\ \hline
 %आगत &  IO\_28 &  GND\\ \hline
 %निर्गत  & IO\_11  &  LED\\ \hline
 \end{tabular}
-\caption{Pygmy control through external input.}
+\caption{Vaman control through external input.}
 \label{table:input}
 \end{table}
 
@@ -454,6 +454,5 @@ codes/setup/gpio/src/main.c
 
 \end{enumerate}
 \end{document}
-
 
 
