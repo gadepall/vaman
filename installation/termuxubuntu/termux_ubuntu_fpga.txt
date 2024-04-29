@@ -31,7 +31,7 @@ export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-
 
 #Install fasm 
 cd /data/data/com.termux/files/home/pygmy-dev/tools/quicklogic-fasm
-nano requirements.txt
+nvim requirements.txt
 #modify the lines so that they look like
 -e git+https://github.com/symbiflow/fasm.git#egg=fasm
 -e git+https://github.com/antmicro/quicklogic-fasm-utils.git#egg=fasm-utils
@@ -62,7 +62,7 @@ cp /data/data/com.termux/files/home/pygmy-dev/tools/vtr-verilog-to-routing/build
 cp /data/data/com.termux/files/home/pygmy-dev/tools/vtr-verilog-to-routing/build/utils/fasm/genfasm $INSTALL_DIR/bin
 
 #add path to .bashrc
-nano ~/.bashrc
+nvim ~/.bashrc
 #paste the following 3 lines at the end of the file
 export  INSTALL_DIR=/data/data/com.termux/files/home/symbiflow
 export PATH="$INSTALL_DIR/quicklogic-arch-defs/bin:$INSTALL_DIR/quicklogic-arch-defs/bin/python3:$PATH"
